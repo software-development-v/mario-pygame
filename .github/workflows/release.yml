@@ -21,7 +21,7 @@ jobs:
                 os: [ubuntu-latest]
                 node_version: [20.8.1]
                 pnpm_version: [latest]
-                python_version: [3.9]
+                python_version: [3.12.3]
             fail-fast: false
 
         steps:
@@ -60,8 +60,8 @@ jobs:
 
             - name: Create and activate virtual environment
               run: |
-                  python -m venv venv
-                  source venv/bin/activate
+                  python -m venv ./venv
+                  source ./venv/bin/activate
 
             - name: Install dependencies
               run: |
