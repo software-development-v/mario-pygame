@@ -116,6 +116,53 @@ Run the game with the following command:
   [commit convention](docs/commit-convention.md).
 - Make sure your code is well-documented.
 
+## Pull Request Process
+
+When you are ready to submit your changes, follow these steps:
+
+- You need to commit your changes using the `git commit` command - without a
+  message the husky hooks will be in-charge of that.
+- You need to create a new branch with a semantic prefix (e.g., `feature/`,
+  `fix/`, `docs/`) and a descriptive name.
+- Push your changes to the branch and open a pull request on GitHub.
+- Wait for the maintainers to review your pull request.
+
+## Pull Request Review Guidelines
+
+All pull requests will be evaluated based on the following criteria:
+
+1. **Semantic Commits:**
+
+   - Ensure that commit messages follow semantic commit conventions as agreed
+     upon by the team.
+
+2. **Code Conventions:**
+
+   - Adhere to all code conventions enforced by Pyright.
+   - Follow additional coding rules and standards discussed and agreed upon by
+     the team.
+
+3. **Test Execution:**
+
+   - Run all tests and ensure they pass successfully.
+   - Use Pytest for running tests.
+
+4. **CI Model and Pipelines:**
+
+   - The pull request must pass all stages of the Continuous Integration (CI)
+     model and associated pipelines.
+   - This includes using GitHub Actions for branch name enforcement
+     (`deepakputhraya/action-branch-name@master`), semantic pull request checks
+     (`amannn/action-semantic-pull-request@v5`), and commit message checking
+     (`gsactions/commit-message-checker@v2`).
+
+5. **Task or Feature Completion:**
+   - The pull request should successfully complete the task or feature it is
+     intended to address.
+
+By adhering to these guidelines, we ensure that our codebase remains clean,
+maintainable, and aligned with our project goals and standards.
+
 ## License
 
 By contributing to Mario built with Pygame, you agree that your contributions

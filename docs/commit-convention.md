@@ -1,4 +1,4 @@
-# Commit Convetion Guider
+# Commit Convetion Guide
 
 To ensure a clean and readable commit history, we follow the commit convention
 described below.
