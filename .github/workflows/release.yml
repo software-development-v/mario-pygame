@@ -61,7 +61,8 @@ jobs:
             - name: Create and activate virtual environment
               run: |
                   python -m venv ./venv
-                  source ./venv/bin/activate
+                  . ./venv/bin/activate
+                  echo PATH=$PATH >> $GITHUB_ENV
 
             - name: Install dependencies
               run: |
