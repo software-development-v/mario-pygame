@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+pnpm run check:code
+pnpm run test

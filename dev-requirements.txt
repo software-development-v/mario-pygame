@@ -1,0 +1,4 @@
+pyright
+black
+pytest
+isort

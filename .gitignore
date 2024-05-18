@@ -1,0 +1,21 @@
+# python virtual environment
+venv
+.venv
+
+# PyCharm
+.idea/
+
+# Vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Output
+__pycache__/
+build/
+output/
+out/
+.pytest_cache/
+
+# Node
+node_modules/
