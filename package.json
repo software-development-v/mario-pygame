@@ -1,8 +1,52 @@
 {
     "name": "mario-pygame",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "version": "0.1.0",
+    "private": false,
+    "description": "A simple Mario game using Pygame",
+    "keywords": [
+        "mario",
+        "pygame",
+        "python",
+        "game"
+    ],
+    "license": "MIT",
+    "author": {
+        "email": "morales.patty.jose@gmail.com",
+        "name": "Tutuma's Team"
+    },
+    "contributors": [
+        {
+            "name": "Jose Manuel Morales Patty",
+            "email": "morales.patty.jose@gmail.com"
+        },
+        {
+            "name": "Denis Gandarillas Delgado"
+        },
+        {
+            "name": "Daniel Espinoza Escalera",
+            "email": "daniel.espinoza.8812451@usalesiana.edu.bo"
+        },
+        {
+            "name": "Victor Alejandro Cespedes Cartagena",
+            "email": "victor.cespedes.9374448@usalesiana.edu.bo"
+        },
+        {
+            "name": "Jheremy Tancara Zambrana",
+            "email": "jheremykay777@gmail.com"
+        },
+        {
+            "name": "Jefferson Coronel Lavadenz",
+            "email": "jefersson.coronel.13622689@usalesiana.edu.bo"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/software-development-v/mario-pygame.git"
+    },
+    "bugs": {
+        "url": "https://github.com/software-development-v/mario-pygame/issues"
+    },
+    "homepage": "https://github.com/software-development-v/mario-pygame#readme",
     "scripts": {
         "lint": "pyright src",
         "format": "black src && isort src",
@@ -10,14 +54,18 @@
         "test": "pytest",
         "prepare": "husky"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
     "devDependencies": {
         "@commitlint/cli": "^19.3.0",
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/commit-analyzer": "^12.0.0",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/github": "^10.0.4",
+        "@semantic-release/npm": "^12.0.1",
+        "@semantic-release/release-notes-generator": "^13.0.0",
         "commitizen": "^4.3.0",
         "cz-conventional-changelog": "^3.3.0",
-        "husky": "^9.0.11"
+        "husky": "^9.0.11",
+        "semantic-release": "^23.1.1"
     },
     "husky": {
         "hooks": {
