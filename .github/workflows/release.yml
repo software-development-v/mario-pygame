@@ -53,23 +53,32 @@ jobs:
             - name: Install deps
               run: pnpm install
 
-            - name: Set up Python
+            - name: Set up Python ${{ matrix.python_version }}
               uses: actions/setup-python@v2
               with:
                   python-version: ${{ matrix.python_version }}
 
             - name: Create and activate virtual environment
               run: |
-                  python -m venv ./venv
-                  . ./venv/bin/activate
-                  echo PATH=$PATH >> $GITHUB_ENV
+                  python -m venv venv
+                  echo "PYTHON_VENV=venv" >> $GITHUB_ENV
+                  echo "${{ runner.tool_cache }}/venv/bin" >> $GITHUB_PATH
+                  source venv/bin/activate
 
-            - name: Install dependencies
+            - name: Install Python dependencies
               run: |
+                  source venv/bin/activate
                   pip install -r requirements.txt
                   pip install -r dev-requirements.txt
 
+            - name: Run pyright
+              run: |
+                  source venv/bin/activate
+                  pyright src
+
             - name: Semantic release
-              run: pnpx semantic-release
+              run: |
+                  source venv/bin/activate
+                  pnpx semantic-release
               env:
                   GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
