@@ -14,6 +14,6 @@ jobs:
               with:
                   regex: '([a-z])+\/([a-z_-])+\/([a-z_-])+'
                   allowed_prefixes: "feature,stable,fix,chore,docs,feat,build,ci,test,refactor,perf"
-                  ignore: main,stage,test,develop
+                  ignore: main,stage,develop
                   min_length: 4
                   max_length: 120
