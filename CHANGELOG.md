@@ -2,6 +2,13 @@
 
 ## Mario Built with Pygame
 
+## [1.2.2](https://github.com/software-development-v/mario-pygame/compare/v1.2.1...v1.2.2) (2024-05-20)
+
+
+### Bug Fixes
+
+* update release config ([2df1a99](https://github.com/software-development-v/mario-pygame/commit/2df1a99b1aaf88eae5ad9fb06461efeed5a807a0))
+
 ## [1.2.1](https://github.com/software-development-v/mario-pygame/compare/v1.2.0...v1.2.1) (2024-05-20)
 
 ### Bug Fixes
