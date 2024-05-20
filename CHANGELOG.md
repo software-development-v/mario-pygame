@@ -4,10 +4,10 @@
 
 ## [1.2.2](https://github.com/software-development-v/mario-pygame/compare/v1.2.1...v1.2.2) (2024-05-20)
 
-
 ### Bug Fixes
 
-* update release config ([2df1a99](https://github.com/software-development-v/mario-pygame/commit/2df1a99b1aaf88eae5ad9fb06461efeed5a807a0))
+- update release config
+  ([2df1a99](https://github.com/software-development-v/mario-pygame/commit/2df1a99b1aaf88eae5ad9fb06461efeed5a807a0))
 
 ## [1.2.1](https://github.com/software-development-v/mario-pygame/compare/v1.2.0...v1.2.1) (2024-05-20)
 
@@ -16,11 +16,11 @@
 - update CHANGELOG.md
   ([0ad0fe4](https://github.com/software-development-v/mario-pygame/commit/0ad0fe477b91c7cdfef9c7c417dd47ea7448f3ca))
 
-# [1.2.0](https://github.com/software-development-v/mario-pygame/compare/v1.1.0...v1.2.0) (2024-05-20)
+## [1.2.0](https://github.com/software-development-v/mario-pygame/compare/v1.1.0...v1.2.0) (2024-05-20)
 
-# [1.1.0](https://github.com/software-development-v/mario-pygame/compare/v1.0.0...v1.1.0) (2024-05-20)
+## [1.1.0](https://github.com/software-development-v/mario-pygame/compare/v1.0.0...v1.1.0) (2024-05-20)
 
-# [1.0.0](https://github.com/software-development-v/mario-pygame/compare/v1.0.0...v.0.1.0) (2024-05-20)
+## [1.0.0](https://github.com/software-development-v/mario-pygame/compare/v1.0.0...v.0.1.0) (2024-05-20)
 
 ### Features
 
