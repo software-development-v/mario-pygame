@@ -18,7 +18,7 @@ const config = {
             "@semantic-release/changelog",
             {
                 changelogFile: "CHANGELOG.md",
-                changelogTitle: "# Changelog\n\n## Mario Built with Pygame\n\n",
+                changelogTitle: "# Changelog\n## Mario Built with Pygame",
             },
         ],
         [
