@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
 
 pnpm run check:code
-source venv/bin/activate
 pnpm run test
