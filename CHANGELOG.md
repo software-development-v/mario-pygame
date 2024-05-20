@@ -2,6 +2,14 @@
 
 ## Mario Built with Pygame
 
+## [1.2.3](https://github.com/software-development-v/mario-pygame/compare/v1.2.2...v1.2.3) (2024-05-20)
+
+
+### Bug Fixes
+
+* remove source from pre-commit hook ([bcd0c5b](https://github.com/software-development-v/mario-pygame/commit/bcd0c5b4a669a67327e99f0e7c0822ec3114650b))
+* test problems ([c3897da](https://github.com/software-development-v/mario-pygame/commit/c3897da3c21229e7c1ab87e6e7b38b0a0799b5e0))
+
 ## [1.2.2](https://github.com/software-development-v/mario-pygame/compare/v1.2.1...v1.2.2) (2024-05-20)
 
 ### Bug Fixes
