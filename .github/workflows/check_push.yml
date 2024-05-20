@@ -1,21 +1,15 @@
-name: CI/CD_PUSH_MAIN_RELEASE
-run-name: ${{ github.actor }}
+name: CI/CD_PUSH
 
 on:
     push:
         branches:
-            - "main"
-
-permissions:
-    contents: write
-    issues: write
-    pull-requests: write
-    id-token: write
+            - "**"
+            - "!main"
 
 jobs:
     validate-code:
         runs-on: ${{ matrix.os }}
-        name: Relase New Version
+        name: Install, Check Code and Test
         strategy:
             matrix:
                 os: [ubuntu-latest]
@@ -25,18 +19,10 @@ jobs:
             fail-fast: false
 
         steps:
-            - name: Generate token
-              id: generate_token
-              uses: tibdex/github-app-token@v1
-              with:
-                  app_id: ${{ secrets.APP_ID }}
-                  private_key: ${{ secrets.APP_PRIVATE_KEY }}
-
             - name: Get the last commit
               uses: actions/checkout@v3
               with:
                   fetch-depth: 1
-                  token: ${{ steps.generate_token.outputs.token }}
 
             - name: Setup pnpm
               uses: pnpm/action-setup@v2
@@ -71,9 +57,8 @@ jobs:
                   pip install -r requirements.txt
                   pip install -r dev-requirements.txt
 
-            - name: Semantic release
+            - name: Check code and Test
               run: |
                   source venv/bin/activate
-                  pnpx semantic-release
-              env:
-                  GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+                  pnpm run check:code
+                  pnpm run test
