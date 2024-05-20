@@ -10,6 +10,8 @@ const config = {
                     { type: "ci", release: "minor" },
                     { type: "chore", release: "minor" },
                     { type: "docs", release: "minor" },
+                    { type: "test", release: "patch" },
+                    { type: "perf", release: "minor" },
                 ],
             },
         ],

@@ -1,7 +1,14 @@
 import pygame
 
-from utils.constants import FPS, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, WHITE_COLOR
-from utils.text_utils import get_centered_message
+from src.utils.constants import (
+    FPS,
+    ICON,
+    SCREEN_HEIGHT,
+    SCREEN_WIDTH,
+    TITLE,
+    WHITE_COLOR,
+)
+from src.utils.text_utils import get_centered_message
 
 
 class Game:
