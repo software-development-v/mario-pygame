@@ -1,4 +1,9 @@
 # Changelog
+## Mario Built with Pygame
+
+# [1.1.0](https://github.com/software-development-v/mario-pygame/compare/v1.0.0...v1.1.0) (2024-05-20)
+
+# Changelog
 
 ## Mario Built with Pygame
 
