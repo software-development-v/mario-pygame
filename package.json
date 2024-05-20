@@ -1,6 +1,6 @@
 {
     "name": "mario-pygame",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "private": false,
     "description": "A simple Mario game using Pygame",
     "keywords": [
