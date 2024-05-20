@@ -70,11 +70,6 @@ improve code quality. To set it up, follow these steps:
   1. Install all the recommended extensions for the project
      `.vscode/extensions.json`.
 
-- On PyCharm:
-
-  1. Go to `File` > `Settings` > `Plugins` and search for "Pyright".
-  2. Install the plugin and restart the IDE.
-
 ### Setting Up Black for Code Formatting
 
 Black is a code formatter for Python that can help you maintain a consistent and
@@ -85,11 +80,6 @@ readable code style. To set it up, follow these steps:
   1. Install all the recommended extensions for the project
      `.vscode/extensions.json`.
 
-- On PyCharm:
-
-  1. Go to `File` > `Settings` > `Plugins` and search for "Black".
-  2. Install the plugin and restart the IDE.
-
 ## Testing
 
 - Run the test suite with the following command:
@@ -97,6 +87,20 @@ readable code style. To set it up, follow these steps:
   ```bash
   pytest
   ```
+
+- If you have problems with the dependencies, run the following command:
+
+  - On Windows:
+
+    ```bash
+    venv\Scripts\activate
+    ```
+
+  - On macOS and Linux:
+
+    ```bash
+    source venv/bin/activate
+    ```
 
 - Add new tests to cover the changes you make.
 
