@@ -18,3 +18,6 @@ class Infrastructure:
     def continue_game(self) -> None:
         # TODO: Implement this method to continue the game
         pass
+
+    def get_game_render(self) -> GameRenderer:
+        return self.render_game

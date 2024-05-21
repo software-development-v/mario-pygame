@@ -17,8 +17,8 @@ class GameController:
     def add_points(self, points: int) -> None:
         self.points_game += points
 
-    def load_game(self) -> None:
-        # TODO: Implement this method so it loads the game
+    def init_game(self) -> None:
+        # TODO: Implement this method so it run the game
         pass
 
     def handle_collisions(self) -> None:
@@ -28,3 +28,6 @@ class GameController:
     def update(self) -> None:
         # TODO: Implement this method to update the game
         self.handle_collisions()
+
+    def get_infrastructure(self) -> Infrastructure:
+        return self.infrastructure_game
