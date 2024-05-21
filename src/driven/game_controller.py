@@ -1,32 +1,30 @@
-from typing import Any
+from src.design.infraestructure import Infrastructure
+from src.domain.game_manager import GameManager
+from src.utils.constants import INIT_GAME_POINTS
+
 
 class GameController:
-    def __init__(self, game_manager: Any, infrastructure_game: Any):
-        self._game_manager = game_manager  # GameManager instance
-        self._infrastructure_game = infrastructure_game  # Infrastructure instance
-        self._points_game = 0  # Game points
+    def __init__(
+        self, game_manager: GameManager, infrastructure_game: Infrastructure
+    ):
+        self.game_manager = game_manager
+        self.infrastructure_game = infrastructure_game
+        self.points_game = INIT_GAME_POINTS
 
-    def get_points(self) -> None:
-        # Prints the current game points
-        print(f"Points: {self._points_game}")
+    def get_points(self) -> int:
+        return self.points_game
 
     def add_points(self, points: int) -> None:
-        # Adds points to the game points counter and prints the total
-        self._points_game += points
-        print(f"Added {points} points. Total: {self._points_game}")
+        self.points_game += points
 
     def load_game(self) -> None:
-        # Simulated method to load the game
-        print("Loading game...")
-        # Here you could load resources, initialize states, etc.
-        print("Game loaded.")
+        # TODO: Implement this method so it loads the game
+        pass
 
     def handle_collisions(self) -> None:
-        # Simulated method to handle collisions in the game
-        print("Handling collisions...")
-        # Here would go the logic to handle collisions in the game
+        # TODO: Implement this method to handle collisions between game entities
+        pass
 
     def update(self) -> None:
-        # Method to update the game state on each frame
+        # TODO: Implement this method to update the game
         self.handle_collisions()
-        # Other game updates, like moving sprites, etc.
