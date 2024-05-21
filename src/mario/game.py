@@ -56,12 +56,3 @@ class Game:
 
     def run(self) -> None:
         pass
-
-    def update(self) -> None:
-        pass
-
-    def events(self) -> None:
-        pass
-
-    def draw(self) -> None:
-        pass
