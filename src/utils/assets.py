@@ -1,12 +1,24 @@
-from os import path
+from pygame import image, transform
 
-from pygame import image
+PICTURE_WIDTH = 200
+PICTURE_HEIGHT = 200
 
-IMG_DIR = path.join(path.dirname(__file__), "../../", "assets")
+ICON = image.load("assets/player.png")
+BG = image.load("assets/enemy.png")
 
-ICON = image.load(path.join(IMG_DIR, "logo.png"))
-BG = image.load(path.join(IMG_DIR, "background.png"))
-PLAYER = image.load(path.join(IMG_DIR, "player.png"))
-ENEMY = image.load(path.join(IMG_DIR, "enemy.png"))
-OBSTACLE = image.load(path.join(IMG_DIR, "obstacle.png"))
-POWER_UP = image.load(path.join(IMG_DIR, "power-up.png"))
+PLAYER = transform.scale(
+    image.load("assets/player.png"),
+    (PICTURE_WIDTH, PICTURE_HEIGHT),
+)
+ENEMY = transform.scale(
+    image.load("assets/enemy.png"),
+    (PICTURE_WIDTH, PICTURE_HEIGHT),
+)
+OBSTACLE = transform.scale(
+    image.load("assets/obstacle.png"),
+    (PICTURE_WIDTH, PICTURE_HEIGHT),
+)
+POWER_UP = transform.scale(
+    image.load("assets/power-up.png"),
+    (PICTURE_WIDTH, PICTURE_HEIGHT),
+)

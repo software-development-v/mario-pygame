@@ -1,5 +1,8 @@
+from pygame.time import Clock
+
 from src.design.render.game_renderer import GameRenderer
 from src.design.settings.settings import Settings
+from src.utils.constants import FPS
 
 
 class Infrastructure:
@@ -19,5 +22,7 @@ class Infrastructure:
         # TODO: Implement this method to continue the game
         pass
 
-    def get_game_render(self) -> GameRenderer:
-        return self.render_game
+    def render(self, clock: Clock) -> None:
+        clock.tick(FPS)
+
+        self.render_game.render()

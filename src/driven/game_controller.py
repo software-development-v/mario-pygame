@@ -1,3 +1,6 @@
+from pygame import QUIT, display, event, quit
+from pygame.time import Clock
+
 from src.design.infraestructure import Infrastructure
 from src.domain.game_manager import GameManager
 from src.utils.constants import INIT_GAME_POINTS
@@ -17,17 +20,25 @@ class GameController:
     def add_points(self, points: int) -> None:
         self.points_game += points
 
-    def init_game(self) -> None:
-        # TODO: Implement this method so it run the game
-        pass
+    def init_game(self, running: bool, clock: Clock) -> None:
+        while running:
+            self.events()
+            self.update()
+            self.draw(clock)
+
+    def events(self) -> None:
+        for e in event.get():
+            if e.type == QUIT:
+                display.quit()
+                quit()
+                exit()
 
     def handle_collisions(self) -> None:
         # TODO: Implement this method to handle collisions between game entities
         pass
 
     def update(self) -> None:
-        # TODO: Implement this method to update the game
         self.handle_collisions()
 
-    def get_infrastructure(self) -> Infrastructure:
-        return self.infrastructure_game
+    def draw(self, clock: Clock) -> None:
+        self.infrastructure_game.render(clock)
