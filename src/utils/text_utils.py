@@ -1,6 +1,7 @@
 from pygame import Rect, Surface, font
 
-from src.utils.constants import BLACK_COLOR, SCREEN_HEIGHT, SCREEN_WIDTH
+from src.utils.colors import BLACK_COLOR
+from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH
 
 
 def get_centered_message(

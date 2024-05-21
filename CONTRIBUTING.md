@@ -108,9 +108,17 @@ readable code style. To set it up, follow these steps:
 
 Run the game with the following command:
 
-```bash
-./run.sh
-```
+- On Windows:
+
+  ```powershell
+  .\run.exe
+  ```
+
+- On macOS and Linux:
+
+  ```bash
+  ./run.sh
+  ```
 
 ## Development Guidelines
 
