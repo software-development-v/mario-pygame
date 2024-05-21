@@ -29,8 +29,16 @@ class Game:
 
         display.set_caption(TITLE)
         display.set_icon(ICON)
+
         screen = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-        render = GameRenderer(screen, PLAYER, ENEMY, OBSTACLE, POWER_UP)
+
+        render = GameRenderer(
+            screen,
+            PLAYER,
+            ENEMY,
+            OBSTACLE,
+            POWER_UP,
+        )
 
         keyboard_conf = KeyboardConf()
         game_settings = Settings(
@@ -52,7 +60,8 @@ class Game:
         game_manager = GameManager(level_manager)
 
         self.clock = time.Clock()
+        self.running = True
         self.game_controller = GameController(game_manager, infrastructure)
 
     def run(self) -> None:
-        pass
+        self.game_controller.init_game(self.running, self.clock)
