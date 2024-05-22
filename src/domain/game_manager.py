@@ -9,9 +9,12 @@ class GameManager:
         # TODO: Implement this method to start the game
         pass
 
-    def update_game(self) -> None:
-        # TODO: Implement this method to update the game
+    def handle_collisions(self) -> None:
+        # TODO: Implement this method to handle collisions between game entities
         pass
+
+    def update_game(self) -> None:
+        self.handle_collisions()
 
     def end_game(self) -> None:
         # TODO: Implement this method to end the game

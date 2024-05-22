@@ -1,7 +1,7 @@
-from src.design.settings.keyboard.command.command import Command
+from src.design.settings.keyboard.command.steering_command import MovementCommand
 
 
-class MoveRight(Command):
+class MoveRight(MovementCommand):
     def execute(self):
         # TODO: Implement this method to move the player right
         pass

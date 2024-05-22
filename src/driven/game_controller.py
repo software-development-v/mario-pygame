@@ -3,7 +3,6 @@ from pygame.time import Clock
 
 from src.design.infraestructure import Infrastructure
 from src.domain.game_manager import GameManager
-from src.utils.constants import INIT_GAME_POINTS
 
 
 class GameController:
@@ -12,13 +11,6 @@ class GameController:
     ):
         self.game_manager = game_manager
         self.infrastructure_game = infrastructure_game
-        self.points_game = INIT_GAME_POINTS
-
-    def get_points(self) -> int:
-        return self.points_game
-
-    def add_points(self, points: int) -> None:
-        self.points_game += points
 
     def init_game(self, running: bool, clock: Clock) -> None:
         while running:
@@ -33,12 +25,12 @@ class GameController:
                 quit()
                 exit()
 
-    def handle_collisions(self) -> None:
-        # TODO: Implement this method to handle collisions between game entities
+    def handle_input(self) -> None:
+        # TODO: Implement this method handle input that processes user input
         pass
 
     def update(self) -> None:
-        self.handle_collisions()
+        self.handle_input()
 
     def draw(self, clock: Clock) -> None:
         self.infrastructure_game.render(clock)
