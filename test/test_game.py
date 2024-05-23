@@ -1,4 +1,4 @@
-from src.mario.game import Game
+from src.game import Game
 
 
 def test_game_instance():
