@@ -22,3 +22,8 @@ POWER_UP = transform.scale(
     image.load("assets/power-up.png"),
     (PICTURE_WIDTH, PICTURE_HEIGHT),
 )
+
+CINEMATICS_ROOT = "assets/cinematics"
+
+FINAL_CINEMATIC_VIDEO = CINEMATICS_ROOT + "/final_cinematic/video.mp4"
+FINAL_CINEMATIC_AUDIO = CINEMATICS_ROOT + "/final_cinematic/audio.mp3"
