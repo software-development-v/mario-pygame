@@ -1,6 +1,6 @@
 from pygame import Surface
 
-from src.scene_abstraction.behaviors.render import IRender
+from src.scenes.render import IRender
 from src.state.game_state import GameState
 from src.utils.colors import WHITE_COLOR
 from src.utils.text import get_centered_message

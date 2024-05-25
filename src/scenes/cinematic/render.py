@@ -4,7 +4,7 @@ import cv2 as cv
 from pygame import QUIT, Surface, display, event, image, mixer, quit, time
 
 from src.enums.state import State
-from src.scene_abstraction.behaviors.render import IRender
+from src.scenes.render import IRender
 from src.state.game_state import GameState
 from src.utils.constants import (
     BGR_FORMAT,
