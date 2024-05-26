@@ -1,5 +1,6 @@
-import pygame
 from typing import List
+
+import pygame
 
 
 class Element:
