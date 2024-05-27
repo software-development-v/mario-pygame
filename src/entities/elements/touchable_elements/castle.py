@@ -11,10 +11,10 @@ class Castle(Element):
         self,
         x: int,
         y: int,
-        type: str = CastleSubTypeEnum.DEFAULT_CASTLE.value,
+        type: CastleSubTypeEnum = CastleSubTypeEnum.DEFAULT_CASTLE,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(50, 50),
-            image_configurations[ImageConfigTypeEnum.CASTLE.value][type],
+            image_configurations[ImageConfigTypeEnum.CASTLE.value][type.value],
         )

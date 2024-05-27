@@ -11,10 +11,12 @@ class MisteryBox(Element):
         self,
         x: int,
         y: int,
-        type: str = MisteryBoxSubTypeEnum.DEFAULT_MISTERY_BOX.value,
+        type: MisteryBoxSubTypeEnum = MisteryBoxSubTypeEnum.DEFAULT_MISTERY_BOX,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(50, 50),
-            image_configurations[ImageConfigTypeEnum.MISTERY_BOX.value][type],
+            image_configurations[ImageConfigTypeEnum.MISTERY_BOX.value][
+                type.value
+            ],
         )

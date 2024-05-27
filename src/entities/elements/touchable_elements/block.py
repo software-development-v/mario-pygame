@@ -11,10 +11,10 @@ class Block(Element):
         self,
         x: int,
         y: int,
-        type: str = BlockSubTypeEnum.OVERWORLD_BLOCK.value,
+        type: BlockSubTypeEnum = BlockSubTypeEnum.OVERWORLD_BLOCK,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(50, 50),
-            image_configurations[ImageConfigTypeEnum.BLOCK.value][type],
+            image_configurations[ImageConfigTypeEnum.BLOCK.value][type.value],
         )

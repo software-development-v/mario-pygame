@@ -11,10 +11,10 @@ class Pipe(Element):
         self,
         x: int,
         y: int,
-        type: str = PipeSubTypeEnum.SMALL_PIPE.value,
+        type: PipeSubTypeEnum = PipeSubTypeEnum.SMALL_PIPE,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(50, 50),
-            image_configurations[ImageConfigTypeEnum.PIPE.value][type],
+            image_configurations[ImageConfigTypeEnum.PIPE.value][type.value],
         )

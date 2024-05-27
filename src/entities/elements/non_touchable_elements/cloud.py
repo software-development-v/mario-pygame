@@ -8,11 +8,14 @@ from src.utils.size import Size
 
 class Cloud(Element):
     def __init__(
-        self, x: int, y: int, type: str = CloudSubTypeEnum.SMALL_CLOUD.value
+        self,
+        x: int,
+        y: int,
+        type: CloudSubTypeEnum = CloudSubTypeEnum.SMALL_CLOUD,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(100, 50),
-            image_configurations[ImageConfigTypeEnum.CLOUD.value][type],
+            image_configurations[ImageConfigTypeEnum.CLOUD.value][type.value],
             is_touchable=False,
         )

@@ -11,10 +11,10 @@ class Flag(Element):
         self,
         x: int,
         y: int,
-        type: str = FlagSubTypeEnum.DEFAULT_FLAG.value,
+        type: FlagSubTypeEnum = FlagSubTypeEnum.DEFAULT_FLAG,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(50, 50),
-            image_configurations[ImageConfigTypeEnum.FLAG.value][type],
+            image_configurations[ImageConfigTypeEnum.FLAG.value][type.value],
         )

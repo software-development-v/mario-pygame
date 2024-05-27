@@ -8,11 +8,14 @@ from src.utils.size import Size
 
 class Bush(Element):
     def __init__(
-        self, x: int, y: int, type: str = BushSubTypeEnum.SMALL_BUSH.value
+        self,
+        x: int,
+        y: int,
+        type: BushSubTypeEnum = BushSubTypeEnum.SMALL_BUSH,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(100, 50),
-            image_configurations[ImageConfigTypeEnum.BUSH.value][type],
+            image_configurations[ImageConfigTypeEnum.BUSH.value][type.value],
             is_touchable=False,
         )

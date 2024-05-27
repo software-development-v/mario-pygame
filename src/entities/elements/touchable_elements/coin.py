@@ -11,10 +11,10 @@ class Coin(Element):
         self,
         x: int,
         y: int,
-        type: str = CoinSubTypeEnum.DEFAULT_COIN.value,
+        type: CoinSubTypeEnum = CoinSubTypeEnum.DEFAULT_COIN,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(50, 50),
-            image_configurations[ImageConfigTypeEnum.COIN.value][type],
+            image_configurations[ImageConfigTypeEnum.COIN.value][type.value],
         )
