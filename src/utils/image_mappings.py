@@ -1,14 +1,14 @@
 from typing import Dict, List
 
-image_configurations: Dict[str, Dict[int, List[str]]] = {
+image_configurations: Dict[str, Dict[str, List[str]]] = {
     "Block": {
-        1: [
+        "overworld-block": [
             "block1_level1.png",
             "block2_level1.png",
             "block3_level1.png",
             "block4_level1.png",
         ],
-        2: [
+        "underground-block": [
             "block1_level2.png",
             "block2_level2.png",
             "block3_level2.png",
@@ -16,17 +16,31 @@ image_configurations: Dict[str, Dict[int, List[str]]] = {
         ],
     },
     "MisteryBox": {
-        1: [
+        "default-mistery-box": [
             "mistery_box_asset_1.png",
             "mistery_box_asset_2.png",
             "mistery_box_asset_3.png",
         ]
     },
-    "Castle": {1: ["castle.png"]},
-    "Flag": {1: ["flag.png"]},
-    "Pipe": {1: ["small_pipe.png"]},
-    "Cloud": {1: ["medium_cloud.png"]},
-    "Bush": {1: ["bush.png"]},
-    "Mountain": {1: ["mountain.png"]},
-    "Coin": {1: ["coin1.png", "coin2.png", "coin3.png", "coin4.png"]},
+    "Pipe": {
+        "small-pipe": ["small_pipe.png"],
+        "medium-pipe": ["medium_pipe.png"],
+        "big-pipe": ["big_pipe.png"],
+    },
+    "Cloud": {
+        "small-cloud": ["small_cloud.png"],
+        "medium-cloud": ["medium_cloud.png"],
+        "big-cloud": ["big_cloud.png"],
+    },
+    "Bush": {
+        "small-bush": ["small_bush.png"],
+        "medium-bush": ["medium_bush.png"],
+        "big-bush": ["big_bush.png"],
+    },
+    "Castle": {"default-castle": ["castle.png"]},
+    "Flag": {"default-flag": ["flag.png"]},
+    "Mountain": {"default-mountain": ["mountain.png"]},
+    "Coin": {
+        "default-coin": ["coin1.png", "coin2.png", "coin3.png", "coin4.png"]
+    },
 }
