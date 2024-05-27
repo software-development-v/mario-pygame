@@ -1,8 +1,10 @@
 from typing import List
-from src.utils.size import Size
-from src.utils.position import Position
-from src.entities.i_entity import IEntity
+
 import pygame
+
+from src.entities.i_entity import IEntity
+from src.utils.position import Position
+from src.utils.size import Size
 
 
 class Element(IEntity):
