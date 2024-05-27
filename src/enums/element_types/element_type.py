@@ -10,4 +10,4 @@ class ImageConfigTypeEnum(Enum):
     CASTLE = "Castle"
     FLAG = "Flag"
     MOUNTAIN = "Mountain"
-    COIN = "Coina"
+    COIN = "Coin"
