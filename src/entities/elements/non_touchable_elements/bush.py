@@ -6,13 +6,13 @@ from src.utils.position import Position
 from src.utils.size import Size
 
 
-class BigBush(Element):
-    def __init__(self, x: int, y: int) -> None:
+class Bush(Element):
+    def __init__(
+        self, x: int, y: int, type: str = BushSubTypeEnum.SMALL_BUSH.value
+    ) -> None:
         super().__init__(
             Position(x, y),
             Size(100, 50),
-            image_configurations[ImageConfigTypeEnum.BUSH.value][
-                BushSubTypeEnum.BIG_BUSH.value
-            ],
+            image_configurations[ImageConfigTypeEnum.BUSH.value][type],
             is_touchable=False,
         )

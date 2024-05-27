@@ -6,16 +6,15 @@ from src.utils.position import Position
 from src.utils.size import Size
 
 
-class BigPipe(Element):
+class Pipe(Element):
     def __init__(
         self,
         x: int,
         y: int,
+        type: str = PipeSubTypeEnum.SMALL_PIPE.value,
     ) -> None:
         super().__init__(
             Position(x, y),
             Size(50, 50),
-            image_configurations[ImageConfigTypeEnum.PIPE.value][
-                PipeSubTypeEnum.BIG_PIPE.value
-            ],
+            image_configurations[ImageConfigTypeEnum.PIPE.value][type],
         )

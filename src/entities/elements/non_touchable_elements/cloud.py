@@ -6,13 +6,13 @@ from src.utils.position import Position
 from src.utils.size import Size
 
 
-class SmallCloud(Element):
-    def __init__(self, x: int, y: int) -> None:
+class Cloud(Element):
+    def __init__(
+        self, x: int, y: int, type: str = CloudSubTypeEnum.SMALL_CLOUD.value
+    ) -> None:
         super().__init__(
             Position(x, y),
             Size(100, 50),
-            image_configurations[ImageConfigTypeEnum.CLOUD.value][
-                CloudSubTypeEnum.SMALL_CLOUD.value
-            ],
+            image_configurations[ImageConfigTypeEnum.CLOUD.value][type],
             is_touchable=False,
         )
