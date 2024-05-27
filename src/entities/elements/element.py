@@ -1,19 +1,21 @@
 from typing import List
-
+from src.utils.size import Size
+from src.utils.position import Position
+from src.entities.i_entity import IEntity
 import pygame
 
 
-class Element:
+class Element(IEntity):
     def __init__(
         self,
-        x: int,
-        y: int,
-        width: int,
-        height: int,
+        position: Position,
+        size: Size,
         images: List[str],
         is_touchable: bool = True,
     ) -> None:
-        self.rect = pygame.Rect(x, y, width, height)
+        self.rect = pygame.Rect(
+            position.x, position.y, size.width, size.height
+        )
         self.images: List[pygame.Surface] = [
             pygame.image.load(img) for img in images
         ]
@@ -21,9 +23,6 @@ class Element:
         self.last_update = pygame.time.get_ticks()
         self.animation_interval = 100
         self.is_touchable = is_touchable
-
-    def set_images(self, images: List[str]) -> None:
-        self.images = [pygame.image.load(img) for img in images]
 
     def draw(self, screen: pygame.Surface) -> None:
         screen.blit(self.images[self.current_image_index], self.rect)
