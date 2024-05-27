@@ -1,7 +1,20 @@
 from src.entities.elements.element import Element
+from src.enums.element_types.element_type import ImageConfigTypeEnum
+from src.enums.element_types.flag_sub_type import FlagSubTypeEnum
 from src.utils.image_mappings import image_configurations
+from src.utils.position import Position
+from src.utils.size import Size
 
 
 class Flag(Element):
-    def __init__(self, x: int, y: int, level: int = 1) -> None:
-        super().__init__(x, y, 25, 25, image_configurations["Flag"][level])
+    def __init__(
+        self,
+        x: int,
+        y: int,
+        type: str = FlagSubTypeEnum.DEFAULT_FLAG.value,
+    ) -> None:
+        super().__init__(
+            Position(x, y),
+            Size(50, 50),
+            image_configurations[ImageConfigTypeEnum.FLAG.value][type],
+        )
