@@ -1,93 +1,45 @@
-from sys import exit
-from typing import List
-
-from pygame import QUIT, display, event, init, mixer, quit, time
-
-from src.enums.state import State
-from src.events.behaviors.input_handler import IInputHandler
-from src.events.control_handler import ControlHandler
-from src.events.keyboard_handler import KeyboardHandler
-from src.scene_abstraction.scene import Scene
-from src.scenes.cinematic.scene import CinematicScene
-from src.scenes.mode_selection.scene import ModeSelectionScene
-from src.settings.control import ControlSettings
-from src.state.game_state import GameState
-from src.utils.assets import FINAL_CINEMATIC_AUDIO, FINAL_CINEMATIC_VIDEO, ICON
-from src.utils.constants import FPS, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
+from .enums import GameState, Level, World
+from .managers import GameManager
+from .scenes import FinalCinematicScene, ModeSelectionScene, Scene, TransitionLevelScene
+from .utils.constants import FPS
 
 
 class Game:
     def __init__(self) -> None:
-        init()
-        mixer.init()
-        display.set_caption(TITLE)
-        display.set_icon(ICON)
+        self.game_manager: GameManager = GameManager()
+        self.scene: Scene = self.reset_game()
 
-        self.clock = time.Clock()
-        self.screen = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-
-        self.control_settings = ControlSettings()
-        self.game_state = GameState()
-        self.events_handler: List[IInputHandler] = [
-            KeyboardHandler(),
-            ControlHandler(self.control_settings),
-        ]
-
-        self.game = self.reset()
-
-    def event(self) -> None:
-        events = event.get()
-
-        for e in events:
-            if e.type == QUIT:
-                quit()
-                exit()
-
-        for handler in self.events_handler:
-            handler.handle(events, self.game_state.events)
-
-    def run(self) -> None:
-        while self.game_state.state == State.RUNNING:
-            self.event()
-
-            self.game.display()
-            display.update()
-
-            self.clock.tick(FPS)
-
-        if self.game_state.state == State.RESTART:
-            self.reset_game()
-
-        if self.game_state.state == State.NEXT:
-            self.go_to_next_scene()
-
-    def reset_game(self) -> None:
-        self.game = self.reset()
-        self.reload_game()
-
-    def go_to_next_scene(self) -> None:
-        display.flip()
-
-        next_scene = self.game.next_scene()
-
-        if next_scene is None:
-            self.reset_game()
-            return
-
-        self.game = next_scene
-        self.reload_game()
-
-    def reload_game(self) -> None:
-        self.game_state.reset()
-        self.run()
-
-    def reset(self) -> Scene:
+    def reset_game(self) -> Scene:
         return ModeSelectionScene(
-            self.game_state,
-            CinematicScene(
-                self.game_state,
-                FINAL_CINEMATIC_VIDEO,
-                FINAL_CINEMATIC_AUDIO,
-                None,
+            self.game_manager,
+            TransitionLevelScene(
+                self.game_manager,
+                World.ONE,
+                Level.FIRST,
+                FinalCinematicScene(self.game_manager),
             ),
         )
+
+    def handle_display(self) -> None:
+        self.scene.display()
+        self.game_manager.display.update()
+        self.game_manager.clock.tick(FPS)
+
+    def next_scene(self) -> None:
+        next_scene: Scene | None = self.scene.next_scene()
+
+        if next_scene is None:
+            self.scene = self.reset_game()
+        else:
+            self.scene = next_scene
+
+        self.game_manager.game_state = GameState.RUNNING
+
+    def run(self) -> None:
+        while self.game_manager.game_state == GameState.RUNNING:
+            self.game_manager.handle_events()
+            self.handle_display()
+
+        self.game_manager.handle_states(self.next_scene)
+
+        self.run()

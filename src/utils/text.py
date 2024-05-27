@@ -2,8 +2,8 @@ from typing import Tuple
 
 from pygame import Rect, Surface, font
 
-from src.utils.colors import BLACK_COLOR
-from src.utils.constants import FONT_SIZE, HALF, SCREEN_HEIGHT, SCREEN_WIDTH
+from .colors import BLACK_COLOR
+from .constants import FONT_SIZE, HALF, SCREEN_HEIGHT, SCREEN_WIDTH
 
 
 def get_centered_message(

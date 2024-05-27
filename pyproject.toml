@@ -2,10 +2,8 @@
 include = ["src/**"]
 strict = ["src/**"]
 exclude = ["venv"]
-
 venvPath = "."
 venv = "venv"
-
 reportImportCycles = "error"
 
 [tool.black]
