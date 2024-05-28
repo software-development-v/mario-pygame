@@ -3,9 +3,6 @@ class Position:
         self.x = x
         self.y = y
 
-    def __repr__(self) -> str:
-        return f"Position(x={self.x}, y={self.y})"
-
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Position):
             return NotImplemented

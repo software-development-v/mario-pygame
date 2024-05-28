@@ -1,4 +1,6 @@
 from .controller_input import ControllerInput
+from .element_sub_type import ElementSubType
+from .element_type import ElementType
 from .game_event import GameEvent
 from .game_state import GameState
 from .hero_state import HeroState
@@ -16,4 +18,6 @@ __all__ = [
     "World",
     "HeroType",
     "HeroState",
+    "ElementType",
+    "ElementSubType",
 ]

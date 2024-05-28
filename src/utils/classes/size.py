@@ -3,9 +3,6 @@ class Size:
         self.width = width
         self.height = height
 
-    def __repr__(self) -> str:
-        return f"Size(width={self.width}, height={self.height})"
-
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Size):
             return NotImplemented
