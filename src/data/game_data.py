@@ -2,8 +2,9 @@ from typing import Dict, List
 
 from pygame import Surface
 
-from src.data.background.background_color import BackgroundColor
+from .background import BackgroundColor
 from src.enums import HeroState, HeroType, Level, World
+from src.utils import Position
 from src.utils.colors import BLUE_SKY
 
 from .level_data import LevelData
@@ -19,7 +20,7 @@ class GameData:
                     400,
                     BackgroundColor(BLUE_SKY),
                     "test",
-                    (0, 0),
+                    Position(0,0),
                     {},
                     {},
                     {}

@@ -1,4 +1,5 @@
-from src.scenes.concretes.level.level_scene import LevelScene
+from .scenes.concretes.transition_level.transition_level_scene import TransitionLevelScene
+from .scenes.concretes.level.level_scene import LevelScene
 from .enums import GameState, Level, World
 from .managers import GameManager
 from .scenes import FinalCinematicScene, ModeSelectionScene, Scene
@@ -13,11 +14,16 @@ class Game:
     def reset_game(self) -> Scene:
         return ModeSelectionScene(
             self.game_manager,
-            LevelScene(
+            TransitionLevelScene(
                 self.game_manager,
                 World.ONE,
                 Level.FIRST,
-                FinalCinematicScene(self.game_manager)
+                LevelScene(
+                    self.game_manager,
+                    World.ONE,
+                    Level.FIRST,
+                    FinalCinematicScene(self.game_manager)
+                )
             )
         )
 
