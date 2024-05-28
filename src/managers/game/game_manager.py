@@ -1,70 +1,45 @@
-from sys import exit
-from typing import Callable, Dict, List, Optional
-
-from pygame import QUIT, Event, display, event, init, mixer, quit, time
-
-from src.data import GameData
-from src.enums import GameEvent, GameState
-from src.inputs import ControllerInputHandler, IInputHandler, KeyboardInputHandler
-from src.utils.assets import ICON
-from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
-
+from typing import Callable
+import pygame
+from src.enums import GameState
+from src.enums.game_event import GameEvent
+from src.utils.constants import SCREEN_WIDTH, SCREEN_HEIGHT, TITLE
+from .player import Player
 
 class GameManager:
     def __init__(self) -> None:
-        init()
-
-        self.mixer = mixer
-        self.display = display
-        self.event = event
-        self.clock = time.Clock()
+        pygame.init()
+        self.mixer = pygame.mixer
+        self.display = pygame.display
+        self.event = pygame.event
+        self.clock = pygame.time.Clock()
         self.initialize()
 
         self.game_state = GameState.RUNNING
-        self.game_events: Dict[GameEvent, bool] = self.reset_game_events()
-        self.game_data = GameData()
-        self.inputs_handler: List[IInputHandler] = [
-            KeyboardInputHandler(),
-            ControllerInputHandler(),
-        ]
+        self.player = Player(100, 100, [
+            pygame.image.load("assets/mario/mario1.png"),
+            pygame.image.load("assets/mario/mario2.png"),
+            pygame.image.load("assets/mario/mario3.png")
+        ])
 
     def initialize(self) -> None:
         self.mixer.init()
         self.display.set_caption(TITLE)
-        self.display.set_icon(ICON)
         self.screen = self.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-
-    def reset_game_events(self) -> Dict[GameEvent, bool]:
-        return {
-            GameEvent.UP: False,
-            GameEvent.DOWN: False,
-            GameEvent.LEFT: False,
-            GameEvent.RIGHT: False,
-            GameEvent.JUMP: False,
-            GameEvent.RUN: False,
-            GameEvent.ATTACK: False,
-            GameEvent.PAUSE: False,
-        }
-
-    def check_close_event(self, events: Optional[List[Event]] = None) -> None:
-        if events is None:
-            events = self.event.get()
-
-        for e in events:
-            if e.type == QUIT:
-                quit()
-                exit()
 
     def handle_events(self) -> None:
         events = self.event.get()
 
-        self.check_close_event(events)
+        self.check_close_event(events) # type: ignore
 
-        for handler in self.inputs_handler:
-            handler.handle(events, self.game_events)
+        for handler in self.inputs_handler: # type: ignore
+            handler.handle(events, self.game_events) # type: ignore
+            if self.game_events[GameEvent.LEFT]: # type: ignore
+                self.player.move_left()
+            if self.game_events[GameEvent.RIGHT]: # type: ignore
+                self.player.move_right()
 
     def handle_states(self, next_scene: Callable[[], None]) -> None:
         if self.game_state == GameState.NEXT_SCENE:
             next_scene()
 
-        self.game_events = self.reset_game_events()
+        self.player.update() 

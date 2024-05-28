@@ -1,7 +1,7 @@
-from .enums import GameState, Level, World
-from .managers import GameManager
-from .scenes import FinalCinematicScene, ModeSelectionScene, Scene, TransitionLevelScene
-from .utils.constants import FPS
+from src.managers.game.game_manager import GameManager
+from src.scenes import FinalCinematicScene, ModeSelectionScene, Scene, TransitionLevelScene
+from src.enums import GameState, Level, World
+from utils.constants import FPS
 
 
 class Game:
@@ -43,3 +43,4 @@ class Game:
         self.game_manager.handle_states(self.next_scene)
 
         self.run()
+        
