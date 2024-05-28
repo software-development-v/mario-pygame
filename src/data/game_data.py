@@ -2,7 +2,9 @@ from typing import Dict, List
 
 from pygame import Surface
 
+from src.data.background.background_color import BackgroundColor
 from src.enums import HeroState, HeroType, Level, World
+from src.utils.colors import BLUE_SKY
 
 from .level_data import LevelData
 
@@ -11,10 +13,15 @@ class GameData:
     def __init__(self):
         self.levels_data: Dict[World, Dict[Level, LevelData]] = {
             World.ONE: {
-                Level.FIRST: LevelData(),
-                Level.SECOND: LevelData(),
-                Level.THIRD: LevelData(),
-                Level.FOURTH: LevelData(),
+                Level.FIRST: LevelData(
+                    Level.FIRST, 400,
+                    BackgroundColor(BLUE_SKY),
+                    "test",
+                    (0, 0),
+                    {},
+                    {},
+                    {}
+                )
             },
         }
 
