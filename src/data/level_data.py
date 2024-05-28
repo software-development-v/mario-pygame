@@ -6,10 +6,12 @@ from src.data.background.i_background import IBackground
 from src.entities.abstractions.elements.element import Element
 from src.entities.interfaces.i_entity import IEntity
 from src.enums.level import Level
+from src.enums.world import World
 from src.utils.classes.position import Position
 
 
 class LevelData:
+    world:World
     level:Level
     time = 0
     background:IBackground
@@ -19,6 +21,7 @@ class LevelData:
     elements:Dict[Position,Element]
     power_ups : Dict[Position,IEntity]
     def __init__(self,
+                 world:World,
                  level:Level,
                  time:int,
                  background:IBackground,
@@ -28,6 +31,8 @@ class LevelData:
                  elements:Dict[Position,Element],
                  power_ups:Dict[Position,IEntity]
                  ) -> None:
+
+        self.world = world
         self.level = level
         self.time = time
         self.background = background

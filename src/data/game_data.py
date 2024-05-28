@@ -14,7 +14,9 @@ class GameData:
         self.levels_data: Dict[World, Dict[Level, LevelData]] = {
             World.ONE: {
                 Level.FIRST: LevelData(
-                    Level.FIRST, 400,
+                    World.ONE,
+                    Level.FIRST,
+                    400,
                     BackgroundColor(BLUE_SKY),
                     "test",
                     (0, 0),
