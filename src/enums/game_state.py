@@ -8,3 +8,5 @@ class GameState(Enum):
     BACK_SCENE = "BACK_SCENE"
     JUMP_SCENE = "JUMP_SCENE"
     PAUSE = "PAUSE"
+    QUIT = "QUIT"
+
