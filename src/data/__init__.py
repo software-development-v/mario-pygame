@@ -1,4 +1,3 @@
-from .game_data import GameData
-from .game_data import LevelData
+from .game_data import GameData, LevelData
 
-__all__ = ["GameData","LevelData"]
+__all__ = ["GameData", "LevelData"]

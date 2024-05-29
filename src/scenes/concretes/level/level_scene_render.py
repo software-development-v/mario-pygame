@@ -12,12 +12,11 @@ class LevelSceneRender(IRender):
         self.level = level
 
     def render(self, game_manager: GameManager) -> None:
-        level_data = game_manager.game_data.get_level_data(self.world, self.level)
+        level_data = game_manager.game_data.get_level_data(
+            self.world, self.level
+        )
         game_manager.screen.blit(level_data.get_background(), (0, 0))
 
         message = "Playing: Press X or Space to finish"
         text, text_rect = get_centered_message(message)
         game_manager.screen.blit(text, text_rect)
-
-
-

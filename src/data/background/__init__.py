@@ -1,4 +1,4 @@
-from .interfaces import IBackground
 from .concretes.background_color import BackgroundColor
+from .interfaces import IBackground
 
-__all__ = ["IBackground","BackgroundColor"]
+__all__ = ["IBackground", "BackgroundColor"]

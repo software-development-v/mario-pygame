@@ -1,8 +1,6 @@
-from .scenes.concretes.transition_level.transition_level_scene import TransitionLevelScene
-from .scenes.concretes.level.level_scene import LevelScene
 from .enums import GameState, Level, World
 from .managers import GameManager
-from .scenes import FinalCinematicScene, ModeSelectionScene, Scene
+from .scenes import FinalCinematicScene, ModeSelectionScene, Scene, TransitionLevelScene
 from .utils.constants import FPS
 
 
@@ -18,13 +16,8 @@ class Game:
                 self.game_manager,
                 World.ONE,
                 Level.FIRST,
-                LevelScene(
-                    self.game_manager,
-                    World.ONE,
-                    Level.FIRST,
-                    FinalCinematicScene(self.game_manager)
-                )
-            )
+                FinalCinematicScene(self.game_manager),
+            ),
         )
 
     def handle_display(self) -> None:
