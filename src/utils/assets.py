@@ -30,6 +30,18 @@ PLAYER_HIJITA2 = transform.scale(
     image.load("assets/warrior/warrior3.png"),
     (PICTURE_WIDTH, PICTURE_HEIGHT),
 )
+PLAYER_CUMPA = transform.scale(
+    image.load("assets/luigi/luigi1.png"),
+    (PICTURE_WIDTH, PICTURE_HEIGHT),
+)
+PLAYER_CUMPA1 = transform.scale(
+    image.load("assets/luigi/luigi2.png"),
+    (PICTURE_WIDTH, PICTURE_HEIGHT),
+)
+PLAYER_CUMPA2 = transform.scale(
+    image.load("assets/luigi/luigi3.png"),
+    (PICTURE_WIDTH, PICTURE_HEIGHT),
+)
 ENEMY = transform.scale(
     image.load("assets/enemy.png"),
     (PICTURE_WIDTH, PICTURE_HEIGHT),
@@ -42,6 +54,7 @@ POWER_UP = transform.scale(
     image.load("assets/power-up.png"),
     (PICTURE_WIDTH, PICTURE_HEIGHT),
 )
+VALUE = 0
 
 CINEMATICS_ROOT = "assets/cinematics"
 

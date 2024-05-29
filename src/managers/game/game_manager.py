@@ -4,11 +4,11 @@ from typing import Callable, Dict, List, Optional
 from pygame import QUIT, Event, display, event, init, mixer, quit, time
 
 from src.data import GameData
-from src.enums import GameEvent, GameState
+from src.enums import GameEvent, GameState, HeroType
 from src.inputs import ControllerInputHandler, IInputHandler, KeyboardInputHandler
 from src.utils.assets import ICON
-from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
-
+from src.utils.constants import CURRENT_CHARACTER_INDEX, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
+from src.managers.game.hero import Hero
 
 class GameManager:
     def __init__(self) -> None:
@@ -27,6 +27,10 @@ class GameManager:
             KeyboardInputHandler(),
             ControllerInputHandler(),
         ]
+
+        self.character_names = [HeroType.PARIENTE, HeroType.HIJITA, HeroType.CUMPA]
+        self.current_character_index = CURRENT_CHARACTER_INDEX
+        self.hero = Hero(self.character_names[self.current_character_index])
 
     def initialize(self) -> None:
         self.mixer.init()
@@ -68,3 +72,13 @@ class GameManager:
             next_scene()
 
         self.game_events = self.reset_game_events()
+
+    def move_hero_left(self) -> None:
+        self.hero.move_left()
+
+    def move_hero_right(self) -> None:
+        self.hero.move_right()
+
+    def change_hero(self) -> None:
+        self.current_character_index = (self.current_character_index + 1) % len(self.character_names)
+        self.hero.change_hero(self.character_names[self.current_character_index])
