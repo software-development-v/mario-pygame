@@ -1,3 +1,4 @@
+from .background_type import BackgroundType
 from .controller_input import ControllerInput
 from .element_sub_type import ElementSubType
 from .element_type import ElementType
@@ -20,4 +21,5 @@ __all__ = [
     "HeroState",
     "ElementType",
     "ElementSubType",
+    "BackgroundType",
 ]
