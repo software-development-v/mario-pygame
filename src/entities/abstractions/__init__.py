@@ -1,3 +1,3 @@
-from .elements import Element
+from .element import Element
 
 __all__ = ["Element"]

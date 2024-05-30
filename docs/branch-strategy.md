@@ -47,7 +47,6 @@ The following branch names are ignored by the convention check and do not need
 to follow the naming rules:
 
 - **main**
-- **stage**
 - **develop**
 
 ### Length Constraints

@@ -2,8 +2,7 @@ from typing import Optional
 
 from src.entities import Hero
 from src.enums import HeroType, Level, World
-from src.managers import GameManager
-from src.managers.concretes.entity_managers.obstacle_manager import ObstacleManager
+from src.managers import GameManager, ObstacleManager
 
 from ...abstractions import InteractScene, Scene
 from .level_scene_render import LevelSceneRender
@@ -30,14 +29,12 @@ class LevelScene(InteractScene):
         )
 
     def setup_level(self, game_manager: GameManager, hero: HeroType) -> None:
-        game_manager.hero = Hero(
-            game_manager.game_data.get_hero_data(hero),
-        )
-
         level_data = game_manager.game_data.get_level_data(
             self.world, self.level
         )
 
-        game_manager.elements_manager = ObstacleManager(
-            level_data.get_elements()
+        game_manager.hero = Hero(
+            game_manager.game_data.get_hero_data(hero),
+            level_data.player_start_position,
         )
+        game_manager.managers = [ObstacleManager(level_data.elements)]

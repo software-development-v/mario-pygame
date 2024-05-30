@@ -1,7 +1,6 @@
 from src.enums import ElementSubType, ElementType
-from src.utils.classes import Position, Size
-from src.utils.constants import BLOCK_WIDTH, BLOCK_HEIGHT
-from src.utils.mappings import image_mappings
+from src.utils.classes import Position
+from src.utils.surfaces import elements
 
 from ....abstractions import Element
 
@@ -14,7 +13,6 @@ class Mountain(Element):
     ) -> None:
         super().__init__(
             position,
-            Size(BLOCK_WIDTH,BLOCK_HEIGHT),
-            image_mappings[ElementType.MOUNTAIN][element_sub_type],
+            elements[ElementType.MOUNTAIN][element_sub_type],
             is_touchable=False,
         )

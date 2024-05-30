@@ -4,13 +4,13 @@ from pygame import Rect, Surface, font
 
 from .assets import GAME_FONT
 from .colors import BLACK_COLOR
-from .constants import FONT_SIZE, HALF, SCREEN_HEIGHT, SCREEN_WIDTH
+from .constants import FONT_SIZE, SCREEN_HEIGHT, SCREEN_WIDTH
 
 
 def get_centered_message(
     message: str,
-    width: int = SCREEN_WIDTH // HALF,
-    height: int = SCREEN_HEIGHT // HALF,
+    width: int = SCREEN_WIDTH // 2,
+    height: int = SCREEN_HEIGHT // 2,
     size: int = FONT_SIZE,
     text_color: Tuple[int, int, int] = BLACK_COLOR,
 ) -> tuple[Surface, Rect]:

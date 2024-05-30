@@ -23,5 +23,5 @@ __all__ = [
     "HeroLevel",
     "ElementType",
     "ElementSubType",
-    "BackgroundType"
+    "BackgroundType",
 ]

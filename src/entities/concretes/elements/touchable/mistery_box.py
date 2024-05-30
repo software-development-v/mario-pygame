@@ -1,7 +1,6 @@
 from src.enums import ElementSubType, ElementType
-from src.utils.classes import Position, Size
-from src.utils.constants import BLOCK_HEIGHT, BLOCK_WIDTH
-from src.utils.mappings import image_mappings
+from src.utils.classes import Position
+from src.utils.surfaces import elements
 
 from ....abstractions import Element
 
@@ -14,6 +13,5 @@ class MisteryBox(Element):
     ) -> None:
         super().__init__(
             position,
-            Size(BLOCK_WIDTH, BLOCK_HEIGHT),
-            image_mappings[ElementType.MISTERY_BOX][element_sub_type],
+            elements[ElementType.MISTERY_BOX][element_sub_type],
         )
