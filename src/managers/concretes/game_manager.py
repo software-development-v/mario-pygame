@@ -1,6 +1,6 @@
 from sys import exit
 from typing import Callable, Dict, List, Optional
-
+from .entity_managers.obstacle_manager import ObstacleManager
 from pygame import QUIT, Event, display, event, init, mixer, quit, time
 
 from src.data import GameData
@@ -16,6 +16,10 @@ from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
 
 
 class GameManager:
+
+    hero: Hero
+    elements_manager :ObstacleManager
+
     def __init__(self) -> None:
         init()
 
@@ -33,7 +37,6 @@ class GameManager:
             ControllerInputHandler(),
         ]
 
-        self.hero: Optional[Hero] = None
 
     def initialize(self) -> None:
         self.mixer.init()

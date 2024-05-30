@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 from pygame import Surface
 
@@ -36,3 +36,6 @@ class LevelData:
 
     def get_background(self) -> Surface:
         return self.background.get_background()
+
+    def get_elements(self)-> List[IEntity]:
+        return list(self.elements.values())

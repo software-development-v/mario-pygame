@@ -1,6 +1,6 @@
 from src.enums import ElementSubType, ElementType
 from src.utils.classes import Position, Size
-from src.utils.constants import TOUCHABLE_HEIGHT, TOUCHABLE_WIDTH
+from src.utils.constants import BLOCK_HEIGHT, BLOCK_WIDTH
 from src.utils.mappings import image_mappings
 
 from ....abstractions import Element
@@ -14,6 +14,6 @@ class Coin(Element):
     ) -> None:
         super().__init__(
             position,
-            Size(TOUCHABLE_WIDTH, TOUCHABLE_HEIGHT),
+            Size(BLOCK_WIDTH, BLOCK_HEIGHT),
             image_mappings[ElementType.COIN][element_sub_type],
         )

@@ -1,6 +1,7 @@
 from typing import List
 
 from pygame import Rect, Surface, image, time
+import pygame
 
 from src.utils.classes import Position, Size
 from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX
@@ -24,7 +25,8 @@ class Element(IEntity):
         self.is_touchable = is_touchable
 
     def draw(self, screen: Surface) -> None:
-        screen.blit(self.images[self.current_image_index], self.rect)
+        element_surface = pygame.transform.scale(self.images[self.current_image_index],self.rect.size)
+        screen.blit(element_surface, self.rect)
 
     def update(self) -> None:
         current_time = time.get_ticks()

@@ -5,13 +5,13 @@ from src.enums import ElementSubType, ElementType
 image_mappings: Dict[ElementType, Dict[ElementSubType, List[str]]] = {
     ElementType.BLOCK: {
         ElementSubType.OVERWORLD_BLOCK: [
-            "block1_level1.png",
-            "block2_level1.png",
-            "block3_level1.png",
-            "block4_level1.png",
+            "assets/elements/touchable/block/floor.png",
+            "assets/elements/touchable/block/floor.png",
+            "assets/elements/touchable/block/floor.png",
+            "assets/elements/touchable/block/floor.png",
         ],
         ElementSubType.UNDERGROUND_BLOCK: [
-            "block1_level2.png",
+            "assets/elements/touchable/block/floor.png",
             "block2_level2.png",
             "block3_level2.png",
             "block4_level2.png",
@@ -25,14 +25,14 @@ image_mappings: Dict[ElementType, Dict[ElementSubType, List[str]]] = {
         ]
     },
     ElementType.PIPE: {
-        ElementSubType.SMALL_PIPE: ["small_pipe.png"],
-        ElementSubType.MEDIUM_PIPE: ["medium_pipe.png"],
-        ElementSubType.BIG_PIPE: ["big_pipe.png"],
+        ElementSubType.SMALL_PIPE: ["assets/elements/touchable/pipe/small_pipe.png"],
+        ElementSubType.MEDIUM_PIPE: ["assets/elements/touchable/pipe/medium_pipe.png"],
+        ElementSubType.BIG_PIPE: ["assets/elements/touchable/pipe/big_pipe.png"],
     },
     ElementType.CLOUD: {
-        ElementSubType.SMALL_CLOUD: ["small_cloud.png"],
-        ElementSubType.MEDIUM_CLOUD: ["medium_cloud.png"],
-        ElementSubType.BIG_CLOUD: ["big_cloud.png"],
+        ElementSubType.SMALL_CLOUD: ["assets/elements/non_touchable/cloud/small_cloud.png"],
+        ElementSubType.MEDIUM_CLOUD: ["assets/elements/non_touchable/cloud/medium_cloud.png"],
+        ElementSubType.BIG_CLOUD: ["assets/elements/non_touchable/cloud/big_cloud.png"],
     },
     ElementType.BUSH: {
         ElementSubType.SMALL_BUSH: ["small_bush.png"],
