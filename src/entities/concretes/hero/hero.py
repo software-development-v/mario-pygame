@@ -3,7 +3,11 @@ from typing import Dict, List
 from pygame import Surface, time
 
 from src.enums import GameEvent, HeroLevel, HeroState
-from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX, PLAYER_INIT_POS
+from src.utils.constants import (
+    ANIMATION_INTERVAL,
+    INIT_IMAGE_INDEX,
+    PLAYER_INIT_POS,
+)
 
 from ...interfaces import IDrawable
 

@@ -1,6 +1,11 @@
 from .enums import GameState, HeroType, Level, World
 from .managers import GameManager
-from .scenes import FinalCinematicScene, ModeSelectionScene, Scene, TransitionLevelScene
+from .scenes import (
+    FinalCinematicScene,
+    ModeSelectionScene,
+    Scene,
+    TransitionLevelScene,
+)
 from .utils.constants import FPS
 
 

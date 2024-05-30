@@ -120,10 +120,10 @@ class ControllerInputHandler(IInputHandler):
                 self.sensibility[ControllerInput.R_TWO.value]
                 > DEFAULT_R_TWO_SENSIBILITY
             ):
-                game_events[
-                    self.control_input[ControllerInput.R_TWO.value]
-                ] = True
+                game_events[self.control_input[ControllerInput.R_TWO.value]] = (
+                    True
+                )
             else:
-                game_events[
-                    self.control_input[ControllerInput.R_TWO.value]
-                ] = False
+                game_events[self.control_input[ControllerInput.R_TWO.value]] = (
+                    False
+                )
