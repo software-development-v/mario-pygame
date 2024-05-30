@@ -1,6 +1,6 @@
 from typing import Optional
 
-from src.enums import Level, World
+from src.enums import HeroType, Level, World
 from src.managers import GameManager
 
 from ...abstractions import Scene
@@ -14,10 +14,11 @@ class TransitionLevelScene(Scene):
         game_manager: GameManager,
         world: World,
         level: Level,
+        hero: HeroType,
         next_scene: Optional["Scene"],
     ) -> None:
         super().__init__(
             game_manager,
             TransitionLevelSceneRender(world, level),
-            LevelScene(game_manager, world, level, next_scene),
+            LevelScene(game_manager, world, level, hero, next_scene),
         )

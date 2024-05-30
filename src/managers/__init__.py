@@ -1,3 +1,3 @@
-from .game import GameManager
+from .concretes import GameManager
 
 __all__ = ["GameManager"]

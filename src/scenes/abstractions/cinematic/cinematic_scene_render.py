@@ -38,9 +38,7 @@ class CinematicSceneRender(IRender):
             resized_img = cv.resize(img, scene_size)
 
             game_manager.screen.blit(
-                image.frombuffer(
-                    resized_img.tobytes(), scene_size, BGR_FORMAT
-                ),
+                image.frombuffer(resized_img.tobytes(), scene_size, BGR_FORMAT),
                 VIDEO_SCREEN_POSITION,
             )
             game_manager.display.update()

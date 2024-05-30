@@ -1,6 +1,11 @@
-from .enums import GameState, Level, World
+from .enums import GameState, HeroType, Level, World
 from .managers import GameManager
-from .scenes import FinalCinematicScene, ModeSelectionScene, Scene, TransitionLevelScene
+from .scenes import (
+    FinalCinematicScene,
+    ModeSelectionScene,
+    Scene,
+    TransitionLevelScene,
+)
 from .utils.constants import FPS
 
 
@@ -16,6 +21,7 @@ class Game:
                 self.game_manager,
                 World.ONE,
                 Level.FIRST,
+                HeroType.HIJITA,
                 FinalCinematicScene(self.game_manager),
             ),
         )

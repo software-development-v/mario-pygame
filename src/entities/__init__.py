@@ -6,6 +6,7 @@ from .concretes import (
     Cloud,
     Coin,
     Flag,
+    Hero,
     MisteryBox,
     Mountain,
     Pipe,
@@ -24,4 +25,5 @@ __all__ = [
     "Flag",
     "MisteryBox",
     "Pipe",
+    "Hero",
 ]

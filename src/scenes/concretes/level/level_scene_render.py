@@ -20,3 +20,6 @@ class LevelSceneRender(IRender):
         message = "Playing: Press X or Space to finish"
         text, text_rect = get_centered_message(message)
         game_manager.screen.blit(text, text_rect)
+
+        if game_manager.hero is not None:
+            game_manager.hero.draw(game_manager.screen)

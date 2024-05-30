@@ -1,12 +1,9 @@
 from abc import ABC, abstractmethod
 
-import pygame
+from .i_drawable import IDrawable
 
 
-class IEntity(ABC):
-    @abstractmethod
-    def draw(self, screen: pygame.Surface) -> None:
-        pass
+class IEntity(IDrawable, ABC):
 
     @abstractmethod
     def update(self) -> None:

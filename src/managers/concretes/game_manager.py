@@ -4,8 +4,13 @@ from typing import Callable, Dict, List, Optional
 from pygame import QUIT, Event, display, event, init, mixer, quit, time
 
 from src.data import GameData
+from src.entities import Hero
 from src.enums import GameEvent, GameState
-from src.inputs import ControllerInputHandler, IInputHandler, KeyboardInputHandler
+from src.inputs import (
+    ControllerInputHandler,
+    IInputHandler,
+    KeyboardInputHandler,
+)
 from src.utils.assets import ICON
 from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
 
@@ -27,6 +32,8 @@ class GameManager:
             KeyboardInputHandler(),
             ControllerInputHandler(),
         ]
+
+        self.hero: Optional[Hero] = None
 
     def initialize(self) -> None:
         self.mixer.init()
