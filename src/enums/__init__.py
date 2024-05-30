@@ -4,6 +4,7 @@ from .element_sub_type import ElementSubType
 from .element_type import ElementType
 from .game_event import GameEvent
 from .game_state import GameState
+from .hero_level import HeroLevel
 from .hero_state import HeroState
 from .hero_type import HeroType
 from .keyboard_input import KeyboardInput
@@ -19,6 +20,7 @@ __all__ = [
     "World",
     "HeroType",
     "HeroState",
+    "HeroLevel",
     "ElementType",
     "ElementSubType",
     "BackgroundType",

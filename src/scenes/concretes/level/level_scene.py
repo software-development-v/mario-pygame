@@ -1,6 +1,7 @@
 from typing import Optional
 
-from src.enums import Level, World
+from src.entities import Hero
+from src.enums import HeroType, Level, World
 from src.managers import GameManager
 
 from ...abstractions import InteractScene, Scene
@@ -14,8 +15,10 @@ class LevelScene(InteractScene):
         game_manager: GameManager,
         world: World,
         level: Level,
+        hero: HeroType,
         next_scene: Optional["Scene"] = None,
     ):
+        self.setup_level(game_manager, hero)
         super().__init__(
             game_manager,
             LevelSceneRender(world, level),
@@ -23,5 +26,7 @@ class LevelScene(InteractScene):
             next_scene,
         )
 
-    def setup_level(self) -> None:
-        pass
+    def setup_level(self, game_manager: GameManager, hero: HeroType) -> None:
+        game_manager.hero = Hero(
+            game_manager.game_data.get_hero_data(hero),
+        )
