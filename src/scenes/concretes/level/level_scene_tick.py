@@ -12,5 +12,7 @@ class LevelSceneTick(ITick):
         if game_manager.game_events[GameEvent.JUMP]:
             game_manager.game_state = GameState.NEXT_SCENE
 
-        if game_manager.hero is not None:
-            game_manager.hero.update(game_manager.game_events)
+        game_manager.hero.update(game_manager.game_events)
+
+        for manager in game_manager.managers:
+            manager.update()

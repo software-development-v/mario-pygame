@@ -2,11 +2,11 @@ from enum import Enum
 
 
 class World(Enum):
-    ONE = "ONE"
-    TWO = "TWO"
-    THREE = "THREE"
-    FOUR = "FOUR"
-    FIVE = "FIVE"
-    SIX = "SIX"
-    SEVEN = "SEVEN"
-    EIGHT = "EIGHT"
+    ONE = "one"
+    TWO = "two"
+    THREE = "three"
+    FOUR = "four"
+    FIVE = "five"
+    SIX = "six"
+    SEVEN = "seven"
+    EIGHT = "eight"

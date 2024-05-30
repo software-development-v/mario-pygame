@@ -1,0 +1,340 @@
+{
+    "level": "FIRST",
+    "world": "ONE",
+    "time": 400,
+    "background": {
+        "type": "COLOR",
+        "resource": [37, 150, 190]
+    },
+    "background_music": "LEVEL_01",
+    "start_player_position": {
+        "x": 12,
+        "y": 700
+    },
+    "enemies": [],
+    "elements": [
+        {
+            "position": [100, 100],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [850, 200],
+            "type": "CLOUD",
+            "subtype": "MEDIUM_CLOUD"
+        },
+        {
+            "position": [1200, 100],
+            "type": "CLOUD",
+            "subtype": "BIG_CLOUD"
+        },
+
+        {
+            "position": [0, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [50, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [100, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [150, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [200, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [250, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [300, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [350, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [400, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [450, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [500, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [550, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [600, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [650, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [700, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [750, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [800, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [850, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1050, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1100, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+
+        {
+            "position": [1150, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1200, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1250, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1300, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1350, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1400, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1450, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1500, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1550, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1600, 850],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [0, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [50, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [100, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [150, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [200, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [250, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [300, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [350, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [400, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [450, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [500, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [550, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [600, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [650, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [700, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [750, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [800, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [850, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1050, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1100, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1150, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1200, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1250, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1300, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1350, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1400, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1450, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1500, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1550, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1600, 800],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [1400, 700],
+            "type": "PIPE",
+            "subtype": "SMALL_PIPE"
+        }
+    ],
+    "power_ups": []
+}

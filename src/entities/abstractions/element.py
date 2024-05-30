@@ -1,30 +1,30 @@
 from typing import List
 
-from pygame import Rect, Surface, image, time
+from pygame import Surface, time
 
-from src.utils.classes import Position, Size
+from src.utils.classes import Position
 from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX
 
-from ...interfaces import IEntity
+from ..interfaces import IEntity
 
 
 class Element(IEntity):
     def __init__(
         self,
         position: Position,
-        size: Size,
-        images: List[str],
+        images: List[Surface],
         is_touchable: bool = True,
     ) -> None:
-        self.rect = Rect(position.x, position.y, size.width, size.height)
-        self.images: List[Surface] = [image.load(img) for img in images]
+        self.position = position
+        self.images: List[Surface] = images
         self.current_image_index = INIT_IMAGE_INDEX
         self.last_update = time.get_ticks()
         self.animation_interval = ANIMATION_INTERVAL
         self.is_touchable = is_touchable
 
     def draw(self, screen: Surface) -> None:
-        screen.blit(self.images[self.current_image_index], self.rect)
+        element_surface = self.images[self.current_image_index]
+        screen.blit(element_surface, self.position.to_tuple())
 
     def update(self) -> None:
         current_time = time.get_ticks()

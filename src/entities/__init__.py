@@ -11,6 +11,7 @@ from .concretes import (
     Mountain,
     Pipe,
 )
+from .factories import ElementFactory
 from .interfaces import IEntity
 
 __all__ = [
@@ -26,4 +27,5 @@ __all__ = [
     "MisteryBox",
     "Pipe",
     "Hero",
+    "ElementFactory",
 ]

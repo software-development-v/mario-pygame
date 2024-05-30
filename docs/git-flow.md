@@ -28,17 +28,12 @@ overview of our Git Flow:
 ## Pull Requests and Merging
 
 1. **Feature Development:**
+
    - Developers work on their branches and, upon completion, create a pull
-     request (PR) to merge their branch into the `stage` branch.
-2. **Testing:**
+     request (PR) to merge their branch into the `develop` branch.
 
-   - The `stage` branch serves as the integration branch where all features are
-     tested throughout the week.
-   - Features and fixes are merged into `stage` and undergo thorough testing to
-     ensure stability and functionality.
-
-3. **Sprint Completion:**
-   - At the end of each sprint, the `stage` branch is merged into the `main`
+2. **Sprint Completion:**
+   - At the end of each sprint, the `develop` branch is merged into the `main`
      branch.
    - This merge signifies the completion of the sprint and the release of a new
      version of the application.

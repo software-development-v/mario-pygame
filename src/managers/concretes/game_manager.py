@@ -14,8 +14,13 @@ from src.inputs import (
 from src.utils.assets import ICON
 from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
 
+from ..abstractions import Manager
+
 
 class GameManager:
+    hero: Hero
+    managers: List[Manager]
+
     def __init__(self) -> None:
         init()
 
@@ -32,8 +37,6 @@ class GameManager:
             KeyboardInputHandler(),
             ControllerInputHandler(),
         ]
-
-        self.hero: Optional[Hero] = None
 
     def initialize(self) -> None:
         self.mixer.init()

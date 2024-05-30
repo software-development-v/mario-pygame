@@ -21,5 +21,7 @@ class LevelSceneRender(IRender):
         text, text_rect = get_centered_message(message)
         game_manager.screen.blit(text, text_rect)
 
-        if game_manager.hero is not None:
-            game_manager.hero.draw(game_manager.screen)
+        game_manager.hero.draw(game_manager.screen)
+
+        for manager in game_manager.managers:
+            manager.draw(game_manager.screen)
