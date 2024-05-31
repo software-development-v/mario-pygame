@@ -15,12 +15,12 @@ class LevelSceneTick(ITick):
     def tick(self, game_manager: GameManager) -> None:
         seconds_elapsed = (
             time.get_ticks() - self.level_manager.start_tick
-        ) / TO_SECONDS
+        ) // TO_SECONDS
 
-        if int(seconds_elapsed) > INIT_GAME_THRESHOLD:
+        if seconds_elapsed >= INIT_GAME_THRESHOLD:
             self.level_manager.current_time = (
                 self.level_manager.start_time
-                - int(seconds_elapsed)
+                - seconds_elapsed
                 + INIT_GAME_THRESHOLD
             )
 
