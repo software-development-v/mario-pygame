@@ -12,6 +12,6 @@ class ModeSelectionSceneRender(IRender):
     def render(self, game_manager: GameManager) -> None:
         game_manager.screen.fill(WHITE_COLOR)
         text, text_rect = get_centered_message(
-            "Main menu: Press X or Space to play the game"
+            "         Super Piton Bros\nPress X or Space to play the game"
         )
         game_manager.screen.blit(text, text_rect)

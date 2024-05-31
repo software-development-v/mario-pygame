@@ -1,3 +1,3 @@
-from .concretes import GameManager, ObstacleManager
+from .concretes import GameManager, LevelManager, ObstacleManager
 
-__all__ = ["GameManager", "ObstacleManager"]
+__all__ = ["GameManager", "ObstacleManager", "LevelManager"]
