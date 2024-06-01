@@ -23,7 +23,7 @@ class TransitionLevelSceneRender(IRender):
             game_manager.check_close_event()
             game_manager.screen.fill(BLACK_COLOR)
             text, text_rect = get_centered_message(
-                f"Enter to World {self.world} - Level {self.level}",
+                f"Enter to {self.world} - {self.level}",
                 text_color=WHITE_COLOR,
             )
             game_manager.screen.blit(text, text_rect)

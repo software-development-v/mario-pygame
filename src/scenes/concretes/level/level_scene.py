@@ -1,8 +1,10 @@
 from typing import Optional
 
+from pygame import time
+
 from src.entities import Hero
 from src.enums import HeroType, Level, World
-from src.managers import GameManager, ObstacleManager
+from src.managers import GameManager, LevelManager, ObstacleManager
 
 from ...abstractions import InteractScene, Scene
 from .level_scene_render import LevelSceneRender
@@ -18,23 +20,33 @@ class LevelScene(InteractScene):
         hero: HeroType,
         next_scene: Optional["Scene"] = None,
     ):
-        self.level = level
-        self.world = world
-        self.setup_level(game_manager, hero)
+        self.level_manager: LevelManager
+        self.setup_level(game_manager, hero, world, level)
         super().__init__(
             game_manager,
-            LevelSceneRender(world, level),
-            LevelSceneTick(),
+            LevelSceneRender(self.level_manager),
+            LevelSceneTick(self.level_manager),
             next_scene,
         )
 
-    def setup_level(self, game_manager: GameManager, hero: HeroType) -> None:
-        level_data = game_manager.game_data.get_level_data(
-            self.world, self.level
-        )
+    def setup_level(
+        self,
+        game_manager: GameManager,
+        hero: HeroType,
+        world: World,
+        level: Level,
+    ) -> None:
+        level_data = game_manager.game_data.get_level_data(world, level)
 
-        game_manager.hero = Hero(
-            game_manager.game_data.get_hero_data(hero),
-            level_data.player_start_position,
+        self.level_manager = LevelManager(
+            Hero(
+                game_manager.game_data.get_hero_data(hero),
+                level_data.player_start_position,
+            ),
+            [ObstacleManager(level_data.elements)],
+            world,
+            level,
+            level_data.get_background(),
+            level_data.time,
+            time.get_ticks(),
         )
-        game_manager.managers = [ObstacleManager(level_data.elements)]
