@@ -1,13 +1,14 @@
-from src.enums import GameEvent, GameState
-from src.managers import GameManager
+from src.enums import GameEvent
+from src.inputs import IEventManager
 
-from ...interfaces import ITick
+from ...interfaces import ISceneManager, ITick
 
 
 class ModeSelectionSceneTick(ITick):
-    def __init__(self) -> None:
-        super().__init__()
+    def tick(
+        self, events_manager: IEventManager, scene_manager: ISceneManager
+    ) -> None:
+        events = events_manager.get_events()
 
-    def tick(self, game_manager: GameManager) -> None:
-        if game_manager.game_events[GameEvent.JUMP]:
-            game_manager.game_state = GameState.NEXT_SCENE
+        if events[GameEvent.JUMP]:
+            scene_manager.next_scene()

@@ -1,38 +1,23 @@
-from pygame import time
-
-from src.enums import GameState, Level, World
-from src.managers import GameManager
+from src.level import ILevelManager
 from src.utils.colors import BLACK_COLOR, WHITE_COLOR
-from src.utils.constants import FPS, TRASITION_DURATION
 from src.utils.text import get_centered_message
 
-from ...interfaces import IRender
+from ...interfaces import IRender, ISceneManager
 
 
 class TransitionLevelSceneRender(IRender):
-    def __init__(self, world: World, level: Level) -> None:
-        super().__init__()
-        self.world = world
-        self.level = level
+    def __init__(self, level_manager: ILevelManager) -> None:
+        self.__level_manager = level_manager
 
-    def render(self, game_manager: GameManager) -> None:
-        start_time = time.get_ticks()
-        running = True
+    def render(self, scene_manager: ISceneManager) -> None:
+        screen = scene_manager.get_screen()
+        world = self.__level_manager.get_world()
+        level = self.__level_manager.get_level()
 
-        while running:
-            game_manager.check_close_event()
-            game_manager.screen.fill(BLACK_COLOR)
-            text, text_rect = get_centered_message(
-                f"Enter to {self.world} - {self.level}",
-                text_color=WHITE_COLOR,
-            )
-            game_manager.screen.blit(text, text_rect)
-            game_manager.display.update()
+        text, text_rect = get_centered_message(
+            f"Enter to {world} - {level}",
+            text_color=WHITE_COLOR,
+        )
 
-            current_time = time.get_ticks()
-            if current_time - start_time >= TRASITION_DURATION:
-                running = False
-
-            game_manager.clock.tick(FPS)
-
-        game_manager.game_state = GameState.NEXT_SCENE
+        screen.fill(BLACK_COLOR)
+        screen.blit(text, text_rect)

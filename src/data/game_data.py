@@ -5,15 +5,15 @@ from pygame import Surface
 from src.enums import HeroLevel, HeroState, HeroType, Level, World
 from src.utils.assets import CUMPA_IDLE, HIJITA_IDLE, PARIENTE_IDLE
 
-from .level_data import LevelData
+from .interfaces import IGameData, ILevelData
 from .mappers import LevelMapper
 
 
-class GameData:
+class GameData(IGameData):
     def __init__(self):
         self.level_mapper = LevelMapper()
 
-        self.level_data: Dict[World, Dict[Level, LevelData]] = {}
+        self.level_data: Dict[World, Dict[Level, ILevelData]] = {}
 
         self.heroes_data: Dict[
             HeroType, Dict[HeroLevel, Dict[HeroState, List[Surface]]]
@@ -74,7 +74,7 @@ class GameData:
             },
         }
 
-    def get_level_data(self, world: World, level: Level) -> LevelData:
+    def get_level_data(self, world: World, level: Level) -> ILevelData:
         if (
             (self.level_data == {})
             or (self.level_data[world] == {})

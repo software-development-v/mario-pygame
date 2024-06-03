@@ -1,24 +1,32 @@
 from abc import ABC
 from typing import Optional
 
-from src.managers import GameManager
+from src.inputs import IEventManager
 
-from ..interfaces import IRender
+from ..interfaces import IRender, IScene, ISceneManager, ITick
 
 
-class Scene(ABC):
+class Scene(IScene, ABC):
     def __init__(
         self,
-        game_manager: GameManager,
+        scene_manager: ISceneManager,
+        events_manager: IEventManager,
         scene_render: IRender,
-        next_scene: Optional["Scene"] = None,
+        tick_handler: ITick,
+        next_scene: Optional[IScene] = None,
     ) -> None:
-        self.game_manager = game_manager
-        self.scene_render = scene_render
-        self.next = next_scene
+        self.__scene_manager = scene_manager
+        self.__events_manager = events_manager
+        self.__tick_handler = tick_handler
+        self.__scene_render = scene_render
+        self.__next_scene = next_scene
 
-    def next_scene(self) -> Optional["Scene"]:
-        return self.next
+    def next_scene(self) -> Optional[IScene]:
+        return self.__next_scene
+
+    def set_next_scene(self, scene: IScene) -> None:
+        self.__next_scene = scene
 
     def display(self) -> None:
-        self.scene_render.render(self.game_manager)
+        self.__tick_handler.tick(self.__events_manager, self.__scene_manager)
+        self.__scene_render.render(self.__scene_manager)

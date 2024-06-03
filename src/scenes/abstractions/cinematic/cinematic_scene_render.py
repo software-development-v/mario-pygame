@@ -1,48 +1,38 @@
 import cv2 as cv
+from cv2.typing import MatLike
 from pygame import image
+from pygame.mixer import Sound
 
-from src.enums import GameState
-from src.managers import GameManager
-from src.utils.constants import (
-    BGR_FORMAT,
-    SCREEN_HEIGHT,
-    SCREEN_WIDTH,
-    VIDEO_SCREEN_POSITION,
-)
+from src.utils.constants import BGR_FORMAT, SCREEN_SIZE, VIDEO_SCREEN_POSITION
 
-from ...interfaces import IRender
+from ...interfaces import IRender, ISceneManager
 
 
 class CinematicSceneRender(IRender):
-    def __init__(self, video_path: str, audio_path: str) -> None:
-        super().__init__()
-        self.audio_path = audio_path
-        self.cap = cv.VideoCapture(video_path)
+    def __init__(
+        self,
+        capture: cv.VideoCapture,
+        success: bool,
+        image: MatLike,
+        audio: Sound,
+    ) -> None:
+        self.__capture = capture
+        self.__success = success
+        self.__image = image
+        self.__audio = audio
 
-    def render(self, game_manager: GameManager) -> None:
-        scene_size = (SCREEN_WIDTH, SCREEN_HEIGHT)
+    def render(self, scene_manager: ISceneManager) -> None:
+        if not self.__success:
+            self.__audio.stop()
+            scene_manager.next_scene()
+            return
 
-        frame_rate = self.cap.get(cv.CAP_PROP_FPS)
-        success = self.cap.read()
+        screen = scene_manager.get_screen()
 
-        audio = game_manager.mixer.Sound(self.audio_path)
-        audio.play()
+        resized_img = cv.resize(self.__image, SCREEN_SIZE)
+        screen.blit(
+            image.frombuffer(resized_img.tobytes(), SCREEN_SIZE, BGR_FORMAT),
+            VIDEO_SCREEN_POSITION,
+        )
 
-        while success:
-            game_manager.check_close_event()
-            success, img = self.cap.read()
-
-            if not success:
-                break
-
-            resized_img = cv.resize(img, scene_size)
-
-            game_manager.screen.blit(
-                image.frombuffer(resized_img.tobytes(), scene_size, BGR_FORMAT),
-                VIDEO_SCREEN_POSITION,
-            )
-            game_manager.display.update()
-            game_manager.clock.tick(frame_rate)
-
-        audio.stop()
-        game_manager.game_state = GameState.NEXT_SCENE
+        self.__success, self.__image = self.__capture.read()

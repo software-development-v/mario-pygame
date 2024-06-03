@@ -1,12 +1,9 @@
 from abc import ABC, abstractmethod
 
-from src.managers import GameManager
+from .i_scene_manager import ISceneManager
 
 
 class IRender(ABC):
     @abstractmethod
-    def render(
-        self,
-        game_manager: GameManager,
-    ) -> None:
+    def render(self, scene_manager: ISceneManager) -> None:
         pass
