@@ -3,15 +3,17 @@ from typing import Callable, Dict
 
 from src.enums import GameEvent, SceneAction
 
-from .i_scene import IScene
 
-
-class ITick(ABC):
+class IScene(ABC):
     @abstractmethod
-    def tick(
+    def display(
         self,
         game_events: Dict[GameEvent, bool],
-        set_next_scene: Callable[[IScene], None],
+        set_next_scene: Callable[["IScene"], None],
         dispatcher: Dict[SceneAction, Callable[[], None]],
     ) -> None:
+        pass
+
+    @abstractmethod
+    def _set_frame_rate(self, frame_rate: float):
         pass

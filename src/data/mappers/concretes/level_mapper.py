@@ -8,8 +8,9 @@ from src.utils.colors import BLACK_COLOR
 from src.utils.directories import LEVELS_DIR
 
 from ...background import BackgroundColor, IBackground
+from ...interfaces import ILevelData
 from ...level_data import LevelData
-from ..interfaces.i_level_mapper import ILevelMapper
+from ..interfaces import ILevelMapper
 from ..validations.json_validation import validate_level_data
 
 
@@ -18,7 +19,7 @@ class LevelMapper(ILevelMapper):
     def __init__(self) -> None:
         self.element_factory = ElementFactory()
 
-    def map_level(self, world: World, level: Level) -> LevelData:
+    def map_level(self, world: World, level: Level) -> ILevelData:
         data = self.read_file_level(world, level)
 
         validate_level_data(data)
@@ -79,8 +80,8 @@ class LevelMapper(ILevelMapper):
 
         return mappedElements
 
-    def _map_enemies(self, enemies: list[Dict[str, Any]]) -> List[IEntity]:
+    def _map_enemies(self, _enemies: list[Dict[str, Any]]) -> List[IEntity]:
         return []
 
-    def _map_power_ups(self, power_ups: list[Dict[str, Any]]) -> List[IEntity]:
+    def _map_power_ups(self, _power_ups: list[Dict[str, Any]]) -> List[IEntity]:
         return []

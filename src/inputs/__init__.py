@@ -1,4 +1,11 @@
 from .concretes import ControllerInputHandler, KeyboardInputHandler
-from .interfaces import IInputHandler
+from .event_manager import EventManager
+from .interfaces import IEventManager, IInputHandler
 
-__all__ = ["IInputHandler", "ControllerInputHandler", "KeyboardInputHandler"]
+__all__ = [
+    "IInputHandler",
+    "ControllerInputHandler",
+    "KeyboardInputHandler",
+    "EventManager",
+    "IEventManager",
+]
