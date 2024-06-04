@@ -1,15 +1,23 @@
+from typing import Callable, Dict
+
+from src.enums import SceneAction
 from src.utils.colors import WHITE_COLOR
 from src.utils.text import get_centered_message
 
-from ...interfaces import IRender, ISceneManager
+from ...interfaces import IRender, IScene
 
 
 class ModeSelectionSceneRender(IRender):
-    def render(self, scene_manager: ISceneManager) -> None:
-        screen = scene_manager.get_screen()
+    def __init__(self) -> None:
+        super().__init__()
 
-        screen.fill(WHITE_COLOR)
+    def render(
+        self,
+        set_next_scene: Callable[[IScene], None],
+        dispatcher: Dict[SceneAction, Callable[[], None]],
+    ) -> None:
+        self._screen.fill(WHITE_COLOR)
         text, text_rect = get_centered_message(
             "         Super Piton Bros\nPress X or Space to play the game"
         )
-        screen.blit(text, text_rect)
+        self._screen.blit(text, text_rect)

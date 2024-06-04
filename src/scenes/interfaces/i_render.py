@@ -1,9 +1,21 @@
 from abc import ABC, abstractmethod
+from typing import Callable, Dict
 
-from .i_scene_manager import ISceneManager
+from pygame import Surface, display
+
+from src.enums import SceneAction
+
+from .i_scene import IScene
 
 
 class IRender(ABC):
+    def __init__(self):
+        self._screen: Surface = display.get_surface()
+
     @abstractmethod
-    def render(self, scene_manager: ISceneManager) -> None:
+    def render(
+        self,
+        set_next_scene: Callable[[IScene], None],
+        dispatcher: Dict[SceneAction, Callable[[], None]],
+    ) -> None:
         pass

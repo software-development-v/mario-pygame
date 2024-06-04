@@ -1,17 +1,14 @@
 from abc import ABC, abstractmethod
+from typing import Dict
 
-from pygame import Surface
+from src.enums import GameEvent
 
 from .i_scene import IScene
 
 
 class ISceneManager(ABC):
     @abstractmethod
-    def reset_scene(self) -> IScene:
-        pass
-
-    @abstractmethod
-    def next_scene(self) -> None:
+    def get_initial_scene(self) -> IScene:
         pass
 
     @abstractmethod
@@ -19,17 +16,17 @@ class ISceneManager(ABC):
         pass
 
     @abstractmethod
-    def display_current_scene(self) -> None:
+    def pause_scene(self) -> None:
         pass
 
     @abstractmethod
-    def get_screen(self) -> Surface:
+    def continue_scene(self) -> None:
         pass
 
     @abstractmethod
-    def set_frame_rate(self, frame_rate: float) -> None:
+    def end_scene(self) -> None:
         pass
 
     @abstractmethod
-    def reset_frame_rate(self) -> None:
+    def display_current_scene(self, game_events: Dict[GameEvent, bool]) -> None:
         pass

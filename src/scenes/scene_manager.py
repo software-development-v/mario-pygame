@@ -1,80 +1,55 @@
-from pygame import Clock, Surface, display, time
+from typing import Dict, Optional
 
-from src.data import IGameData
-from src.enums import HeroType, Level, World
-from src.inputs import IEventManager
+from pygame import display
+
+from src.enums import GameEvent, SceneAction
 from src.utils.assets import ICON
-from src.utils.constants import FPS, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
+from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
 
-from .concretes import (
-    FinalCinematicScene,
-    ModeSelectionScene,
-    TransitionLevelScene,
-)
+from .concretes import ModeSelectionScene
 from .interfaces import IScene, ISceneManager
 
 
 class SceneManager(ISceneManager):
-    def __init__(
-        self, events_manager: IEventManager, game_data: IGameData
-    ) -> None:
-        self.__events_manager: IEventManager = events_manager
-        self.__game_data: IGameData = game_data
-        self.__current_scene: IScene = self.reset_scene()
-
+    def __init__(self) -> None:
         display.set_caption(TITLE)
         display.set_icon(ICON)
-        self.__screen: Surface = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-        self.__frame_rate: float = FPS
-        self.__clock: Clock = time.Clock()
+        self.__current_scene: IScene = self.get_initial_scene()
+        self.__next_scene: Optional[IScene] = None
+        self.__is_paused: bool = False
 
-    def reset_scene(self) -> IScene:
-        return ModeSelectionScene(
-            self,
-            self.__events_manager,
-            TransitionLevelScene(
-                self,
-                self.__events_manager,
-                self.__game_data,
-                HeroType.CUMPA,
-                World.ONE,
-                Level.FIRST,
-                FinalCinematicScene(
-                    self,
-                    self.__events_manager,
-                ),
-            ),
-        )
-
-    def next_scene(self) -> None:
-        next_scene = self.__current_scene.next_scene()
-
-        if next_scene is None:
-            self.__current_scene = self.reset_scene()
-        else:
-            self.__current_scene = next_scene
-
-        self.__events_manager.reset_events()
-        self.reset_frame_rate()
+    def get_initial_scene(self) -> IScene:
+        return ModeSelectionScene()
 
     def set_next_scene(self, scene: IScene) -> None:
-        scene.set_next_scene(self.__current_scene)
+        self.__next_scene = scene
 
-        self.__current_scene = scene
-        self.__events_manager.reset_events()
-        self.reset_frame_rate()
+    def pause_scene(self) -> None:
+        self.__is_paused = True
 
-    def display_current_scene(self) -> None:
-        self.__current_scene.display()
-        display.update()
-        self.__clock.tick(self.__frame_rate)
+    def continue_scene(self) -> None:
+        self.__is_paused = False
 
-    def get_screen(self) -> Surface:
-        return self.__screen
+    def end_scene(self) -> None:
+        if self.__next_scene is None:
+            self.__current_scene = self.get_initial_scene()
+            return
 
-    def set_frame_rate(self, frame_rate: float) -> None:
-        self.__frame_rate = frame_rate
+        self.__current_scene = self.__next_scene
+        self.__next_scene = None
 
-    def reset_frame_rate(self) -> None:
-        self.__frame_rate = FPS
+    def display_current_scene(self, game_events: Dict[GameEvent, bool]) -> None:
+        if self.__is_paused:
+            return
+
+        self.__current_scene.display(
+            game_events,
+            self.set_next_scene,
+            {
+                SceneAction.PAUSE: self.pause_scene,
+                SceneAction.CONTINUE: self.continue_scene,
+                SceneAction.END: self.end_scene,
+            },
+        )

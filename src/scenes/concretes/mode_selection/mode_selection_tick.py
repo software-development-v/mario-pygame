@@ -1,14 +1,21 @@
-from src.enums import GameEvent
-from src.inputs import IEventManager
+from typing import Callable, Dict
 
-from ...interfaces import ISceneManager, ITick
+from src.enums import GameEvent, HeroType, Level, SceneAction, World
+
+from ...interfaces import IScene, ITick
+from ..transition_level import TransitionLevelScene
 
 
 class ModeSelectionSceneTick(ITick):
     def tick(
-        self, events_manager: IEventManager, scene_manager: ISceneManager
+        self,
+        game_events: Dict[GameEvent, bool],
+        set_next_scene: Callable[[IScene], None],
+        dispatcher: Dict[SceneAction, Callable[[], None]],
     ) -> None:
-        events = events_manager.get_events()
 
-        if events[GameEvent.JUMP]:
-            scene_manager.next_scene()
+        if game_events[GameEvent.JUMP]:
+            set_next_scene(
+                TransitionLevelScene(HeroType.CUMPA, World.ONE, Level.FIRST)
+            )
+            dispatcher[SceneAction.END]()

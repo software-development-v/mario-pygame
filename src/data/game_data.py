@@ -3,6 +3,7 @@ from typing import Dict, List
 from pygame import Surface
 
 from src.enums import HeroLevel, HeroState, HeroType, Level, World
+from src.utils import Singleton
 from src.utils.assets import CUMPA_IDLE, HIJITA_IDLE, PARIENTE_IDLE
 
 from .interfaces import IGameData, ILevelData
@@ -10,6 +11,8 @@ from .mappers import LevelMapper
 
 
 class GameData(IGameData):
+    __metaclass__ = Singleton
+
     def __init__(self):
         self.level_mapper = LevelMapper()
 

@@ -18,7 +18,6 @@ class LevelManager(ILevelManager):
         level: Level,
         background: Surface,
         time: int,
-        start_tick: int,
     ) -> None:
         self.__hero = hero
         self.__managers = managers
@@ -27,7 +26,7 @@ class LevelManager(ILevelManager):
         self.__background = background
         self.__start_time = time
         self.__current_time = time
-        self.__start_tick = start_tick
+        self.__start_tick: int
 
     def get_hero(self) -> Hero:
         return self.__hero
@@ -55,3 +54,6 @@ class LevelManager(ILevelManager):
 
     def get_start_tick(self) -> int:
         return self.__start_tick
+
+    def set_start_tick(self, tick: int) -> None:
+        self.__start_tick = tick

@@ -8,6 +8,7 @@ from .hero_state import HeroState
 from .hero_type import HeroType
 from .keyboard_input import KeyboardInput
 from .level import Level
+from .scene_action import SceneAction
 from .world import World
 
 __all__ = [
@@ -22,4 +23,5 @@ __all__ = [
     "ElementType",
     "ElementSubType",
     "BackgroundType",
+    "SceneAction",
 ]

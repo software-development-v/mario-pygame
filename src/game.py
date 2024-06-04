@@ -1,6 +1,5 @@
 from pygame import init, mixer
 
-from .data import GameData, IGameData
 from .inputs import EventManager, IEventManager
 from .scenes import ISceneManager, SceneManager
 
@@ -11,13 +10,13 @@ class Game:
         mixer.init()
 
         self.__running = True
-        self.__game_data: IGameData = GameData()
         self.__events_manager: IEventManager = EventManager()
-        self.__scene_manager: ISceneManager = SceneManager(
-            self.__events_manager, self.__game_data
-        )
+        self.__scene_manager: ISceneManager = SceneManager()
 
     def run(self) -> None:
         while self.__running:
             self.__events_manager.handle_events()
-            self.__scene_manager.display_current_scene()
+            self.__scene_manager.display_current_scene(
+                self.__events_manager.get_events()
+            )
+            self.__events_manager.reset_events()

@@ -45,3 +45,7 @@ class ILevelManager(ABC):
     @abstractmethod
     def get_start_tick(self) -> int:
         pass
+
+    @abstractmethod
+    def set_start_tick(self, tick: int) -> None:
+        pass
