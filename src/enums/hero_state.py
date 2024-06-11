@@ -8,3 +8,4 @@ class HeroState(Enum):
     DUCK = "DUCK"
     BRAKE = "BRAKE"
     DEAD = "DEAD"
+    DOWN = "DOWN"
