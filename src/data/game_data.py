@@ -267,16 +267,18 @@ from src.utils.assets import (
     CUMPA_LVL_4_2_WALKING_2_BACK,
     CUMPA_LVL_4_2_WALKING_3_BACK,
 )
-
-from .level_data import LevelData
+from src.utils import Singleton
+from .interfaces import IGameData, ILevelData
 from .mappers import LevelMapper
 
 
-class GameData:
+class GameData(IGameData):
+    __metaclass__ = Singleton
+
     def __init__(self):
         self.level_mapper = LevelMapper()
 
-        self.level_data: Dict[World, Dict[Level, LevelData]] = {}
+        self.level_data: Dict[World, Dict[Level, ILevelData]] = {}
 
         self.heroes_data: Dict[
             HeroType, Dict[HeroLevel, Dict[HeroState, List[List[Surface]]]]
@@ -832,7 +834,7 @@ class GameData:
             },
         }
 
-    def get_level_data(self, world: World, level: Level) -> LevelData:
+    def get_level_data(self, world: World, level: Level) -> ILevelData:
         if (
             (self.level_data == {})
             or (self.level_data[world] == {})

@@ -1,24 +1,22 @@
 from abc import ABC
-from typing import Optional
+from typing import Callable, Dict
 
-from src.managers import GameManager
+from src.enums import GameEvent, SceneAction
 
-from ...interfaces import IRender, ITick
+from ...interfaces import IRender, IScene, ITick
 from ..scene import Scene
 
 
 class InteractScene(Scene, ABC):
+    def __init__(self, scene_render: IRender, tick_handler: ITick):
+        self.__tick_handler = tick_handler
+        super().__init__(scene_render)
 
-    def __init__(
+    def display(
         self,
-        game_manager: GameManager,
-        scene_render: IRender,
-        tick_handler: ITick,
-        next_scene: Optional["Scene"] = None,
+        game_events: Dict[GameEvent, bool],
+        set_next_scene: Callable[[IScene], None],
+        dispatcher: Dict[SceneAction, Callable[[], None]],
     ) -> None:
-        super().__init__(game_manager, scene_render, next_scene)
-        self.tick_handler = tick_handler
-
-    def display(self):
-        self.tick_handler.tick(self.game_manager)
-        super().display()
+        self.__tick_handler.tick(game_events, set_next_scene, dispatcher)
+        super().display(game_events, set_next_scene, dispatcher)

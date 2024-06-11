@@ -1,24 +1,32 @@
 from abc import ABC
-from typing import Optional
+from typing import Callable, Dict
 
-from src.managers import GameManager
+from pygame import Clock, display, time
 
-from ..interfaces import IRender
+from src.enums import GameEvent, SceneAction
+from src.utils.constants import FPS
+
+from ..interfaces import IRender, IScene
 
 
-class Scene(ABC):
+class Scene(IScene, ABC):
     def __init__(
         self,
-        game_manager: GameManager,
         scene_render: IRender,
-        next_scene: Optional["Scene"] = None,
     ) -> None:
-        self.game_manager = game_manager
-        self.scene_render = scene_render
-        self.next = next_scene
+        self.__scene_render = scene_render
+        self.__frame_rate: float = FPS
+        self.__clock: Clock = time.Clock()
 
-    def next_scene(self) -> Optional["Scene"]:
-        return self.next
+    def display(
+        self,
+        game_events: Dict[GameEvent, bool],
+        set_next_scene: Callable[["IScene"], None],
+        dispatcher: Dict[SceneAction, Callable[[], None]],
+    ) -> None:
+        self.__scene_render.render(set_next_scene, dispatcher)
+        display.update()
+        self.__clock.tick(self.__frame_rate)
 
-    def display(self) -> None:
-        self.scene_render.render(self.game_manager)
+    def _set_frame_rate(self, frame_rate: float):
+        self.__frame_rate = frame_rate

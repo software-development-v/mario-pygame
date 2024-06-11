@@ -1,3 +1,3 @@
-from .classes import Position, Size
+from .classes import Position, Singleton, Size
 
-__all__ = ["Position", "Size"]
+__all__ = ["Position", "Size", "Singleton"]

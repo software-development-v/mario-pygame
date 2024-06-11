@@ -1,13 +1,10 @@
-from .abstractions import Scene
-from .concretes import (
-    FinalCinematicScene,
-    ModeSelectionScene,
-    TransitionLevelScene,
-)
+from .concretes import ModeSelectionScene
+from .interfaces import IScene, ISceneManager
+from .scene_manager import SceneManager
 
 __all__ = [
-    "Scene",
+    "IScene",
     "ModeSelectionScene",
-    "FinalCinematicScene",
-    "TransitionLevelScene",
+    "ISceneManager",
+    "SceneManager",
 ]
