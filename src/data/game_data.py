@@ -4,7 +4,20 @@ from pygame import Surface
 
 from src.enums import HeroLevel, HeroState, HeroType, Level, World
 from src.utils import Singleton
-from src.utils.assets import CUMPA_IDLE, HIJITA_IDLE, PARIENTE_IDLE
+from src.utils.assets import (
+    CUMPA_IDLE,
+    CUMPA_WALK_ANIMATION_1,
+    CUMPA_WALK_ANIMATION_2,
+    CUMPA_WALK_ANIMATION_3,
+    HIJITA_IDLE,
+    HIJITA_WALK_ANIMATION_1,
+    HIJITA_WALK_ANIMATION_2,
+    HIJITA_WALK_ANIMATION_3,
+    PARIENTE_IDLE,
+    PARIENTE_WALK_ANIMATION_1,
+    PARIENTE_WALK_ANIMATION_2,
+    PARIENTE_WALK_ANIMATION_3,
+)
 
 from .interfaces import IGameData, ILevelData
 from .mappers import LevelMapper
@@ -24,7 +37,11 @@ class GameData(IGameData):
             HeroType.PARIENTE: {
                 HeroLevel.NORMAL: {
                     HeroState.IDLE: [PARIENTE_IDLE],
-                    HeroState.RUN: [],
+                    HeroState.RUN: [
+                        PARIENTE_WALK_ANIMATION_1,
+                        PARIENTE_WALK_ANIMATION_2,
+                        PARIENTE_WALK_ANIMATION_3,
+                    ],
                     HeroState.JUMP: [],
                     HeroState.DUCK: [],
                     HeroState.BRAKE: [],
@@ -42,7 +59,11 @@ class GameData(IGameData):
             HeroType.HIJITA: {
                 HeroLevel.NORMAL: {
                     HeroState.IDLE: [HIJITA_IDLE],
-                    HeroState.RUN: [],
+                    HeroState.RUN: [
+                        HIJITA_WALK_ANIMATION_1,
+                        HIJITA_WALK_ANIMATION_2,
+                        HIJITA_WALK_ANIMATION_3,
+                    ],
                     HeroState.JUMP: [],
                     HeroState.DUCK: [],
                     HeroState.BRAKE: [],
@@ -60,7 +81,11 @@ class GameData(IGameData):
             HeroType.CUMPA: {
                 HeroLevel.NORMAL: {
                     HeroState.IDLE: [CUMPA_IDLE],
-                    HeroState.RUN: [],
+                    HeroState.RUN: [
+                        CUMPA_WALK_ANIMATION_1,
+                        CUMPA_WALK_ANIMATION_2,
+                        CUMPA_WALK_ANIMATION_3,
+                    ],
                     HeroState.JUMP: [],
                     HeroState.DUCK: [],
                     HeroState.BRAKE: [],
