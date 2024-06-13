@@ -2,32 +2,27 @@ from .block import (
     OVERWORLD_BLOCK,
     OVERWORLD_BRICK,
     OVERWORLD_BROKE_BRICK,
-    OVERWORLD_BROKE_PIECE_1,
-    OVERWORLD_BROKE_PIECE_2,
+    OVERWORLD_BROKE_PIECE_LEFT,
+    OVERWORLD_BROKE_PIECE_RIGHT,
     MASTERY_BLOCK_1,
-    MASTERY_BLOCK_2
+    MASTERY_BLOCK_2,
 )
 from .pipe import (
     PIPE_BODY_STYLE_1,
     PIPE_BODY_STYLE_2,
     PIPE_BODY_STYLE_3,
     PIPE_BODY_STYLE_4,
-    PIPE_HEAD
+    PIPE_HEAD,
 )
 
-from .coin import (
-    COIN_1,
-    COIN_2,
-    COIN_3,
-    COIN_4
-)
+from .coin import COIN_1, COIN_2, COIN_3, COIN_4
 
 __all__ = [
     "OVERWORLD_BLOCK",
     "OVERWORLD_BRICK",
     "OVERWORLD_BROKE_BRICK",
-    "OVERWORLD_BROKE_PIECE_1",
-    "OVERWORLD_BROKE_PIECE_2",
+    "OVERWORLD_BROKE_PIECE_LEFT",
+    "OVERWORLD_BROKE_PIECE_RIGHT",
     "MASTERY_BLOCK_1",
     "MASTERY_BLOCK_2",
     "PIPE_BODY_STYLE_1",
@@ -38,5 +33,5 @@ __all__ = [
     "COIN_1",
     "COIN_2",
     "COIN_3",
-    "COIN_4"
+    "COIN_4",
 ]
