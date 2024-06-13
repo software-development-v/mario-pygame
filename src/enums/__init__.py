@@ -3,7 +3,6 @@ from .controller_input import ControllerInput
 from .element_sub_type import ElementSubType
 from .element_type import ElementType
 from .game_event import GameEvent
-from .game_manager import GameManager
 from .hero_level import HeroLevel
 from .hero_state import HeroState
 from .hero_type import HeroType
@@ -25,5 +24,4 @@ __all__ = [
     "ElementSubType",
     "BackgroundType",
     "SceneAction",
-    "GameManager",
 ]
