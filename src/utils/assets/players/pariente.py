@@ -19,3 +19,11 @@ PARIENTE_WALK_ANIMATION_2 = transform.scale(
 PARIENTE_WALK_ANIMATION_3 = transform.scale(
     image.load(PARIENTE_DIR + "walk_cycle_3.png"), PLAYER_SIZE
 )
+
+PARIENTE_JUMP = transform.scale(
+    image.load(PARIENTE_DIR + "jump.png"), PLAYER_SIZE
+)
+
+PARIENTE_DIE = transform.scale(
+    image.load(PARIENTE_DIR + "die.png"), PLAYER_SIZE
+)

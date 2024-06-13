@@ -17,3 +17,7 @@ CUMPA_WALK_ANIMATION_2 = transform.scale(
 CUMPA_WALK_ANIMATION_3 = transform.scale(
     image.load(CUMPA_DIR + "walk_cycle_3.png"), PLAYER_SIZE
 )
+
+CUMPA_JUMP = transform.scale(image.load(CUMPA_DIR + "jump.png"), PLAYER_SIZE)
+
+CUMPA_DIE = transform.scale(image.load(CUMPA_DIR + "die.png"), PLAYER_SIZE)

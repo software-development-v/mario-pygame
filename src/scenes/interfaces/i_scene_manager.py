@@ -28,5 +28,9 @@ class ISceneManager(ABC):
         pass
 
     @abstractmethod
+    def set_frame_rate(self, frame_rate: float) -> None:
+        pass
+
+    @abstractmethod
     def display_current_scene(self, game_events: Dict[GameEvent, bool]) -> None:
         pass

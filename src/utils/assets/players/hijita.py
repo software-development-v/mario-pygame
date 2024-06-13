@@ -17,3 +17,7 @@ HIJITA_WALK_ANIMATION_2 = transform.scale(
 HIJITA_WALK_ANIMATION_3 = transform.scale(
     image.load(HIJITA_DIR + "walk_cycle_3.png"), PLAYER_SIZE
 )
+
+HIJITA_JUMP = transform.scale(image.load(HIJITA_DIR + "jump.png"), PLAYER_SIZE)
+
+HIJITA_DIE = transform.scale(image.load(HIJITA_DIR + "die.png"), PLAYER_SIZE)

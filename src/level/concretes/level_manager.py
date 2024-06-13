@@ -1,26 +1,24 @@
-from typing import List
-
 from pygame import Surface
 
 from src.entities import Hero
 from src.enums import Level, World
 
-from ..abstractions import Manager
 from ..interfaces import ILevelManager
+from .entity_managers import ObstacleManager
 
 
 class LevelManager(ILevelManager):
     def __init__(
         self,
         hero: Hero,
-        managers: List[Manager],
+        obstacle_manager: ObstacleManager,
         world: World,
         level: Level,
         background: Surface,
         time: int,
     ) -> None:
         self.__hero = hero
-        self.__managers = managers
+        self.__obstacle_manager = obstacle_manager
         self.__world = world
         self.__level = level
         self.__background = background
@@ -31,8 +29,8 @@ class LevelManager(ILevelManager):
     def get_hero(self) -> Hero:
         return self.__hero
 
-    def get_managers(self) -> List[Manager]:
-        return self.__managers
+    def get_obstacle_manager(self) -> ObstacleManager:
+        return self.__obstacle_manager
 
     def get_world(self) -> World:
         return self.__world

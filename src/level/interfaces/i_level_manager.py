@@ -1,12 +1,11 @@
 from abc import ABC, abstractmethod
-from typing import List
 
 from pygame import Surface
 
 from src.entities import Hero
 from src.enums import Level, World
 
-from ..abstractions import Manager
+from ..concretes.entity_managers import ObstacleManager
 
 
 class ILevelManager(ABC):
@@ -15,7 +14,7 @@ class ILevelManager(ABC):
         pass
 
     @abstractmethod
-    def get_managers(self) -> List[Manager]:
+    def get_obstacle_manager(self) -> ObstacleManager:
         pass
 
     @abstractmethod
