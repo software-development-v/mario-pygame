@@ -1,4 +1,4 @@
-from .create_images import create_image
+from ..create_images import create_image
 from src.utils.constants import GENERAL_SIZE, BIG_SIZE
 from src.utils.directories import (
     CUMPA_LVL_1_BRAKE_DIR,
