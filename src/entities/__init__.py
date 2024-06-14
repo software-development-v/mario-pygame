@@ -12,10 +12,12 @@ from .concretes import (
     Pipe,
 )
 from .factories import ElementFactory
-from .interfaces import IEntity
+from .interfaces import IDrawable, IEntity, IUpdatable
 
 __all__ = [
     "IEntity",
+    "IDrawable",
+    "IUpdatable",
     "Element",
     "Bush",
     "Cloud",

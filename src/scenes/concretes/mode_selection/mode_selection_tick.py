@@ -2,20 +2,23 @@ from typing import Callable, Dict
 
 from src.enums import GameEvent, HeroType, Level, SceneAction, World
 
-from ...interfaces import IScene, ITick
+from ...abstractions import Tick
 from ..transition_level import TransitionLevelScene
 
 
-class ModeSelectionSceneTick(ITick):
+class ModeSelectionSceneTick(Tick):
+    def __init__(self, dispatcher: Dict[SceneAction, Callable[..., None]]):
+        super().__init__(dispatcher)
+
     def tick(
         self,
         game_events: Dict[GameEvent, bool],
-        set_next_scene: Callable[[IScene], None],
-        dispatcher: Dict[SceneAction, Callable[[], None]],
     ) -> None:
 
         if game_events[GameEvent.JUMP]:
-            set_next_scene(
-                TransitionLevelScene(HeroType.CUMPA, World.ONE, Level.FIRST)
+            self._dispatcher[SceneAction.SET_NEXT_SCENE](
+                TransitionLevelScene(
+                    HeroType.CUMPA, World.ONE, Level.FIRST, self._dispatcher
+                )
             )
-            dispatcher[SceneAction.END]()
+            self._dispatcher[SceneAction.END]()

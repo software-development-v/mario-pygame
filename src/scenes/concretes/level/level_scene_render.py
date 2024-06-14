@@ -1,23 +1,16 @@
-from typing import Callable, Dict
-
-from src.enums import SceneAction
 from src.level import ILevelManager
 from src.utils.colors import WHITE_COLOR
-from src.utils.text import get_centered_message, get_format_number, get_message
+from src.utils.text import get_format_number, get_message
 
-from ...interfaces import IRender, IScene
+from ...abstractions import Render
 
 
-class LevelSceneRender(IRender):
+class LevelSceneRender(Render):
     def __init__(self, level_manager: ILevelManager) -> None:
         self.level_manager = level_manager
         super().__init__()
 
-    def render(
-        self,
-        set_next_scene: Callable[[IScene], None],
-        dispatcher: Dict[SceneAction, Callable[[], None]],
-    ) -> None:
+    def render(self) -> None:
         background = self.level_manager.get_background()
         current_time = self.level_manager.get_current_time()
 
@@ -30,10 +23,8 @@ class LevelSceneRender(IRender):
         )
         self._screen.blit(time, time_rect)
 
-        message = "Playing: Press X or Space to finish"
-        text, text_rect = get_centered_message(message)
-        self._screen.blit(text, text_rect)
+        obstacle_manager = self.level_manager.get_obstacle_manager()
+        hero = self.level_manager.get_hero()
 
-        self.level_manager.get_hero().draw(self._screen)
-        for manager in self.level_manager.get_managers():
-            manager.draw(self._screen)
+        obstacle_manager.draw(self._screen)
+        hero.draw(self._screen)

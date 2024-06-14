@@ -1,5 +1,4 @@
-from ..create_images import create_image
-from src.utils.constants import GENERAL_SIZE, BIG_SIZE
+from src.utils.constants import BIG_SIZE, GENERAL_SIZE
 from src.utils.directories import (
     CUMPA_LVL_1_BRAKE_DIR,
     CUMPA_LVL_1_DEFAULT_DIR,
@@ -7,14 +6,14 @@ from src.utils.directories import (
     CUMPA_LVL_1_DOWN_DIR,
     CUMPA_LVL_1_JUMP_DIR,
     CUMPA_LVL_1_WALKING_DIR,
-    CUMPA_LVL_2_DEFAULT_DIR,
     CUMPA_LVL_2_BRAKE_DIR,
-    CUMPA_LVL_2_DUCK_DIR,
+    CUMPA_LVL_2_DEFAULT_DIR,
     CUMPA_LVL_2_DOWN_DIR,
+    CUMPA_LVL_2_DUCK_DIR,
     CUMPA_LVL_2_JUMP_DIR,
     CUMPA_LVL_2_WALKING_DIR,
-    CUMPA_LVL_3_DEFAULT_DIR,
     CUMPA_LVL_3_BRAKE_DIR,
+    CUMPA_LVL_3_DEFAULT_DIR,
     CUMPA_LVL_3_DOWN_DIR,
     CUMPA_LVL_3_DUCK_DIR,
     CUMPA_LVL_3_JUMP_DIR,
@@ -25,13 +24,15 @@ from src.utils.directories import (
     CUMPA_LVL_4_1_DOWN_DIR,
     CUMPA_LVL_4_1_JUMP_DIR,
     CUMPA_LVL_4_1_WALKING_DIR,
-    CUMPA_LVL_4_2_DEFAULT_DIR,
     CUMPA_LVL_4_2_BRAKE_DIR,
+    CUMPA_LVL_4_2_DEFAULT_DIR,
     CUMPA_LVL_4_2_DOWN_DIR,
     CUMPA_LVL_4_2_DUCK_DIR,
     CUMPA_LVL_4_2_JUMP_DIR,
     CUMPA_LVL_4_2_WALKING_DIR,
 )
+
+from ..create_images import create_image
 
 # ==== LEVEL 1 ====
 

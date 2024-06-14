@@ -2,6 +2,7 @@ from enum import Enum
 
 from pygame import (
     K_DOWN,
+    K_ESCAPE,
     K_LEFT,
     K_LSHIFT,
     K_RIGHT,
@@ -9,7 +10,6 @@ from pygame import (
     K_UP,
     K_a,
     K_d,
-    K_p,
     K_r,
     K_s,
     K_w,
@@ -28,4 +28,4 @@ class KeyboardInput(Enum):
     KEY_SPACE = K_SPACE
     KEY_SHIFT = K_LSHIFT
     KEY_R = K_r
-    KEY_P = K_p
+    KEY_ESCAPE = K_ESCAPE
