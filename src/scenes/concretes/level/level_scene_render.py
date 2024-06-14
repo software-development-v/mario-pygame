@@ -1,5 +1,5 @@
-from src.utils.camera import Camera
 from src.level import ILevelManager
+from src.utils.camera import Camera
 from src.utils.colors import WHITE_COLOR
 from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from src.utils.text import get_format_number, get_message

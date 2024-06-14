@@ -2,8 +2,8 @@ from typing import Dict, List
 
 from pygame import Surface, time, transform
 
-from src.utils.camera import Camera
 from src.enums import GameEvent, HeroLevel, HeroState
+from src.utils.camera import Camera
 from src.utils.classes import Position
 from src.utils.constants import (
     ANIMATION_INTERVAL,
