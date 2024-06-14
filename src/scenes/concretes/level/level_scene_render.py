@@ -1,6 +1,7 @@
 from src.entities.concretes.camera import Camera
 from src.level import ILevelManager
 from src.utils.colors import WHITE_COLOR
+from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from src.utils.text import get_format_number, get_message
 
 from ...abstractions import Render
@@ -9,7 +10,7 @@ from ...abstractions import Render
 class LevelSceneRender(Render):
     def __init__(self, level_manager: ILevelManager) -> None:
         self.level_manager = level_manager
-        self.camera = Camera(1600, 1200, 800, 600)
+        self.camera = Camera(SCREEN_WIDTH, SCREEN_HEIGHT, 800, 600, 800)
         super().__init__()
 
     def render(self) -> None:

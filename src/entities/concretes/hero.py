@@ -1,5 +1,7 @@
 from typing import Dict, List
+
 from pygame import Surface, time, transform
+
 from src.enums import GameEvent, HeroLevel, HeroState
 from src.utils.classes import Position
 from src.utils.constants import (
@@ -11,6 +13,7 @@ from src.utils.constants import (
     MAX_GRAVITY,
     SCREEN_HEIGHT,
 )
+
 from ..abstractions import Element
 from ..interfaces import IDrawable
 
