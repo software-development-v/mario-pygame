@@ -12,13 +12,12 @@ from ..interfaces import IDrawable
 class Hero(IDrawable):
     def __init__(
         self,
-        surfaces: Dict[HeroLevel, Dict[HeroState, List[List[Surface]]]],
+        surfaces: Dict[HeroLevel, Dict[HeroState, List[Surface]]],
         position: Position,
     ) -> None:
         self.surfaces = surfaces
         self.hero_level = HeroLevel.NORMAL
         self.hero_state = HeroState.IDLE
-        self.hero_phase = 0
         self.current_image_index = INIT_IMAGE_INDEX
         self.animatoin_interval = ANIMATION_INTERVAL
         self.last_update = time.get_ticks()
@@ -26,7 +25,7 @@ class Hero(IDrawable):
 
     def draw(self, screen: Surface) -> None:
         screen.blit(
-            self.surfaces[self.hero_level][self.hero_state][self.hero_phase][
+            self.surfaces[self.hero_level][self.hero_state][
                 self.current_image_index
             ],
             self.position.to_tuple(),

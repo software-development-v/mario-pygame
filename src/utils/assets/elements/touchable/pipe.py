@@ -1,4 +1,4 @@
-from src.utils.assets.players.create_images import create_image
+from src.utils.assets.create_images import create_image
 from src.utils.constants import BIG_SIZE
 from src.utils.directories import PIPE_BODY_DIR, PIPE_HEAD_DIR
 

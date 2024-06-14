@@ -16,5 +16,5 @@ class IGameData(ABC):
     @abstractmethod
     def get_hero_data(
         self, hero_type: HeroType
-    ) -> Dict[HeroLevel, Dict[HeroState, List[List[Surface]]]]:
+    ) -> Dict[HeroLevel, Dict[HeroState, List[Surface]]]:
         pass
