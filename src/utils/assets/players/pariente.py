@@ -52,11 +52,11 @@ PARIENTE_LVL_1_DIED = create_image(
 
 # Down
 PARIENTE_LVL_1_DOWN_1 = create_image(
-    PARIENTE_LVL_1_DOWN_DIR + "1.png", GENERAL_SIZE
+    PARIENTE_LVL_1_DOWN_DIR + "down_1.png", GENERAL_SIZE
 )
 
 PARIENTE_LVL_1_DOWN_2 = create_image(
-    PARIENTE_LVL_1_DOWN_DIR + "2.png", GENERAL_SIZE
+    PARIENTE_LVL_1_DOWN_DIR + "down_2.png", GENERAL_SIZE
 )
 
 # Jump
@@ -66,15 +66,15 @@ PARIENTE_LVL_1_JUMP = create_image(
 
 # Walking
 PARIENTE_LVL_1_WALKING_1 = create_image(
-    PARIENTE_LVL_1_WALKING_DIR + "1.png", GENERAL_SIZE
+    PARIENTE_LVL_1_WALKING_DIR + "walking_1.png", GENERAL_SIZE
 )
 
 PARIENTE_LVL_1_WALKING_2 = create_image(
-    PARIENTE_LVL_1_WALKING_DIR + "2.png", GENERAL_SIZE
+    PARIENTE_LVL_1_WALKING_DIR + "walking_2.png", GENERAL_SIZE
 )
 
 PARIENTE_LVL_1_WALKING_3 = create_image(
-    PARIENTE_LVL_1_WALKING_DIR + "3.png", GENERAL_SIZE
+    PARIENTE_LVL_1_WALKING_DIR + "walking_3.png", GENERAL_SIZE
 )
 
 # ==== LEVEL 2 ====
@@ -96,11 +96,11 @@ PARIENTE_LVL_2_DUCK = create_image(
 
 # Down
 PARIENTE_LVL_2_DOWN_1 = create_image(
-    PARIENTE_LVL_2_DOWN_DIR + "1.png", BIG_SIZE
+    PARIENTE_LVL_2_DOWN_DIR + "down_1.png", BIG_SIZE
 )
 
 PARIENTE_LVL_2_DOWN_2 = create_image(
-    PARIENTE_LVL_2_DOWN_DIR + "2.png", BIG_SIZE
+    PARIENTE_LVL_2_DOWN_DIR + "down_2.png", BIG_SIZE
 )
 
 # Jump
@@ -110,15 +110,15 @@ PARIENTE_LVL_2_JUMP = create_image(
 
 # Walking
 PARIENTE_LVL_2_WALKING_1 = create_image(
-    PARIENTE_LVL_2_WALKING_DIR + "1.png", BIG_SIZE
+    PARIENTE_LVL_2_WALKING_DIR + "walking_1.png", BIG_SIZE
 )
 
 PARIENTE_LVL_2_WALKING_2 = create_image(
-    PARIENTE_LVL_2_WALKING_DIR + "2.png", BIG_SIZE
+    PARIENTE_LVL_2_WALKING_DIR + "walking_2.png", BIG_SIZE
 )
 
 PARIENTE_LVL_2_WALKING_3 = create_image(
-    PARIENTE_LVL_2_WALKING_DIR + "3.png", BIG_SIZE
+    PARIENTE_LVL_2_WALKING_DIR + "walking_3.png", BIG_SIZE
 )
 
 # ==== LEVEL 3 ====
@@ -140,11 +140,11 @@ PARIENTE_LVL_3_DUCK = create_image(
 
 # Down
 PARIENTE_LVL_3_DOWN_1 = create_image(
-    PARIENTE_LVL_3_DOWN_DIR + "1.png", BIG_SIZE
+    PARIENTE_LVL_3_DOWN_DIR + "down_1.png", BIG_SIZE
 )
 
 PARIENTE_LVL_3_DOWN_2 = create_image(
-    PARIENTE_LVL_3_DOWN_DIR + "2.png", BIG_SIZE
+    PARIENTE_LVL_3_DOWN_DIR + "down_2.png", BIG_SIZE
 )
 
 # Jump
@@ -154,15 +154,15 @@ PARIENTE_LVL_3_JUMP = create_image(
 
 # Walking
 PARIENTE_LVL_3_WALKING_1 = create_image(
-    PARIENTE_LVL_3_WALKING_DIR + "1.png", BIG_SIZE
+    PARIENTE_LVL_3_WALKING_DIR + "walking_1.png", BIG_SIZE
 )
 
 PARIENTE_LVL_3_WALKING_2 = create_image(
-    PARIENTE_LVL_3_WALKING_DIR + "2.png", BIG_SIZE
+    PARIENTE_LVL_3_WALKING_DIR + "walking_2.png", BIG_SIZE
 )
 
 PARIENTE_LVL_3_WALKING_3 = create_image(
-    PARIENTE_LVL_3_WALKING_DIR + "3.png", BIG_SIZE
+    PARIENTE_LVL_3_WALKING_DIR + "walking_3.png", BIG_SIZE
 )
 
 # ==== LEVEL 4 ====
@@ -186,11 +186,11 @@ PARIENTE_LVL_4_1_DIED = create_image(
 
 # Down
 PARIENTE_LVL_4_1_DOWN_1 = create_image(
-    PARIENTE_LVL_4_1_DOWN_DIR + "1.png", GENERAL_SIZE
+    PARIENTE_LVL_4_1_DOWN_DIR + "down_1.png", GENERAL_SIZE
 )
 
 PARIENTE_LVL_4_1_DOWN_2 = create_image(
-    PARIENTE_LVL_4_1_DOWN_DIR + "2.png", GENERAL_SIZE
+    PARIENTE_LVL_4_1_DOWN_DIR + "down_2.png", GENERAL_SIZE
 )
 
 # Jump
@@ -200,15 +200,15 @@ PARIENTE_LVL_4_1_JUMP = create_image(
 
 # Walking
 PARIENTE_LVL_4_1_WALKING_1 = create_image(
-    PARIENTE_LVL_4_1_WALKING_DIR + "1.png", GENERAL_SIZE
+    PARIENTE_LVL_4_1_WALKING_DIR + "walking_1.png", GENERAL_SIZE
 )
 
 PARIENTE_LVL_4_1_WALKING_2 = create_image(
-    PARIENTE_LVL_4_1_WALKING_DIR + "2.png", GENERAL_SIZE
+    PARIENTE_LVL_4_1_WALKING_DIR + "walking_2.png", GENERAL_SIZE
 )
 
 PARIENTE_LVL_4_1_WALKING_3 = create_image(
-    PARIENTE_LVL_4_1_WALKING_DIR + "3.png", GENERAL_SIZE
+    PARIENTE_LVL_4_1_WALKING_DIR + "walking_3.png", GENERAL_SIZE
 )
 
 # == Level 2
@@ -230,11 +230,11 @@ PARIENTE_LVL_4_2_DUCK = create_image(
 
 # Down
 PARIENTE_LVL_4_2_DOWN_1 = create_image(
-    PARIENTE_LVL_4_2_DOWN_DIR + "1.png", BIG_SIZE
+    PARIENTE_LVL_4_2_DOWN_DIR + "down_1.png", BIG_SIZE
 )
 
 PARIENTE_LVL_4_2_DOWN_2 = create_image(
-    PARIENTE_LVL_4_2_DOWN_DIR + "2.png", BIG_SIZE
+    PARIENTE_LVL_4_2_DOWN_DIR + "down_2.png", BIG_SIZE
 )
 
 # Jump
@@ -244,13 +244,13 @@ PARIENTE_LVL_4_2_JUMP = create_image(
 
 # Walking
 PARIENTE_LVL_4_2_WALKING_1 = create_image(
-    PARIENTE_LVL_4_2_WALKING_DIR + "1.png", BIG_SIZE
+    PARIENTE_LVL_4_2_WALKING_DIR + "walking_1.png", BIG_SIZE
 )
 
 PARIENTE_LVL_4_2_WALKING_2 = create_image(
-    PARIENTE_LVL_4_2_WALKING_DIR + "2.png", BIG_SIZE
+    PARIENTE_LVL_4_2_WALKING_DIR + "walking_2.png", BIG_SIZE
 )
 
 PARIENTE_LVL_4_2_WALKING_3 = create_image(
-    PARIENTE_LVL_4_2_WALKING_DIR + "3.png", BIG_SIZE
+    PARIENTE_LVL_4_2_WALKING_DIR + "walking_3.png", BIG_SIZE
 )
