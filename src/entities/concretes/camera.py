@@ -1,22 +1,34 @@
-# camera.py
 from typing import Any
 
 
 class Camera:
     def __init__(
-        self, width: int, height: int, viewport_width: int, viewport_height: int
+        self,
+        width: int,
+        height: int,
+        viewport_width: int,
+        viewport_height: int,
+        threshold: int,
     ) -> None:
         self.width = width
         self.height = height
         self.viewport_width = viewport_width
         self.viewport_height = viewport_height
+        self.threshold = threshold
         self.x_offset = 0
         self.y_offset = 0
+        self.last_x_offset = 0
 
     def update(self, target: Any) -> None:
-        self.x_offset = (
-            -target.rect.x + self.viewport_width // 2 - target.width // 2
-        )
+        hero_center_x = target.rect.x + target.width // 2
+
+        if hero_center_x > self.threshold:
+            self.x_offset = -hero_center_x + self.threshold
+
+            if self.x_offset > self.last_x_offset:
+                self.x_offset = self.last_x_offset
+
+        self.last_x_offset = self.x_offset
         self.y_offset = 0
 
         self.x_offset = min(

@@ -1,3 +1,4 @@
+from .camera import Camera
 from .elements import (
     Block,
     Bush,
@@ -10,8 +11,6 @@ from .elements import (
     Pipe,
 )
 from .hero import Hero
-from .camera import Camera
-
 
 __all__ = [
     "Bush",
