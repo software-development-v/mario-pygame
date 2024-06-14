@@ -334,6 +334,11 @@
             "position": [1400, 700],
             "type": "PIPE",
             "subtype": "PIPE_HEAD"
+        },
+        {
+            "position": [500, 700],
+            "type": "COIN",
+            "subtype": "DEFAULT_COIN"
         }
     ],
     "power_ups": []
