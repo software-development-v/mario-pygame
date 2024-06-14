@@ -1,5 +1,7 @@
 from src.level import ILevelManager
+from src.utils.camera import Camera
 from src.utils.colors import WHITE_COLOR
+from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from src.utils.text import get_format_number, get_message
 
 from ...abstractions import Render
@@ -8,6 +10,7 @@ from ...abstractions import Render
 class LevelSceneRender(Render):
     def __init__(self, level_manager: ILevelManager) -> None:
         self.level_manager = level_manager
+        self.camera = Camera(SCREEN_WIDTH, SCREEN_HEIGHT, 800, 600, 800)
         super().__init__()
 
     def render(self) -> None:
@@ -26,5 +29,7 @@ class LevelSceneRender(Render):
         obstacle_manager = self.level_manager.get_obstacle_manager()
         hero = self.level_manager.get_hero()
 
-        obstacle_manager.draw(self._screen)
-        hero.draw(self._screen)
+        self.camera.update(hero)
+
+        obstacle_manager.draw(self._screen, self.camera)
+        hero.draw(self._screen, self.camera)
