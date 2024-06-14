@@ -10,6 +10,8 @@ from .elements import (
     Pipe,
 )
 from .hero import Hero
+from .camera import Camera
+
 
 __all__ = [
     "Bush",
@@ -22,4 +24,5 @@ __all__ = [
     "MisteryBox",
     "Pipe",
     "Hero",
+    "Camera",
 ]

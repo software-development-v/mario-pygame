@@ -1,7 +1,5 @@
 from typing import Dict, List
-
 from pygame import Surface, time, transform
-
 from src.enums import GameEvent, HeroLevel, HeroState
 from src.utils.classes import Position
 from src.utils.constants import (
@@ -13,7 +11,6 @@ from src.utils.constants import (
     MAX_GRAVITY,
     SCREEN_HEIGHT,
 )
-
 from ..abstractions import Element
 from ..interfaces import IDrawable
 
@@ -53,7 +50,6 @@ class Hero(IDrawable):
             self.hero_state = HeroState.JUMP
             self.jumping = True
             self.running = False
-
         elif (
             (game_events[GameEvent.LEFT] or game_events[GameEvent.RIGHT])
             and not self.jumping
@@ -62,7 +58,6 @@ class Hero(IDrawable):
             self.index = INIT_IMAGE_INDEX
             self.hero_state = HeroState.RUN
             self.running = True
-
         elif not self.running and not self.jumping:
             self.index = INIT_IMAGE_INDEX
             self.hero_state = HeroState.IDLE
@@ -76,11 +71,9 @@ class Hero(IDrawable):
         if game_events[GameEvent.RIGHT]:
             self.face_right = True
             dx = HERO_SPEED
-
         elif game_events[GameEvent.LEFT]:
             dx = -HERO_SPEED
             self.face_right = False
-
         else:
             self.running = False
 
@@ -121,7 +114,6 @@ class Hero(IDrawable):
             if self.vel_y < 0:
                 dy = obstacle.get_rect().bottom - self.rect.top
                 self.vel_y = 0
-
             elif self.vel_y >= 0:
                 dy = obstacle.get_rect().top - self.rect.bottom
                 self.vel_y = 0
@@ -135,9 +127,7 @@ class Hero(IDrawable):
         self, obstacles: List[Element], dx: int, dy: int
     ) -> tuple[int, int]:
         dx = self.__handle_x_collisions(obstacles, dx)
-
         dy = self.__handle_y_collisions(obstacles, dy)
-
         return dx, dy
 
     def __check_dead(self) -> None:
@@ -161,14 +151,9 @@ class Hero(IDrawable):
         obstacles: List[Element],
     ) -> None:
         self.__handle_hero_states(game_events)
-
         dx, dy = self.__handle_hero_movement(game_events)
-
         dx, dy = self.__handle_collisions(obstacles, dx, dy)
-
         self.rect.x += dx
         self.rect.y += dy
-
         self.__check_dead()
-
         self.__update_image()

@@ -1,3 +1,4 @@
+from src.entities.concretes.camera import Camera
 from src.level import ILevelManager
 from src.utils.colors import WHITE_COLOR
 from src.utils.text import get_format_number, get_message
@@ -8,6 +9,7 @@ from ...abstractions import Render
 class LevelSceneRender(Render):
     def __init__(self, level_manager: ILevelManager) -> None:
         self.level_manager = level_manager
+        self.camera = Camera(1600, 1200, 800, 600)
         super().__init__()
 
     def render(self) -> None:
@@ -26,5 +28,9 @@ class LevelSceneRender(Render):
         obstacle_manager = self.level_manager.get_obstacle_manager()
         hero = self.level_manager.get_hero()
 
-        obstacle_manager.draw(self._screen)
-        hero.draw(self._screen)
+        self.camera.update(hero)
+
+        for obstacle in obstacle_manager.get_obstacles():
+            self._screen.blit(obstacle.image, self.camera.apply(obstacle))
+
+        self._screen.blit(hero.image, self.camera.apply(hero))
