@@ -1,4 +1,4 @@
-from src.entities.concretes.camera import Camera
+from src.utils.camera import Camera
 from src.level import ILevelManager
 from src.utils.colors import WHITE_COLOR
 from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH
@@ -31,7 +31,5 @@ class LevelSceneRender(Render):
 
         self.camera.update(hero)
 
-        for obstacle in obstacle_manager.get_obstacles():
-            self._screen.blit(obstacle.image, self.camera.apply(obstacle))
-
-        self._screen.blit(hero.image, self.camera.apply(hero))
+        obstacle_manager.draw(self._screen, self.camera)
+        hero.draw(self._screen, self.camera)

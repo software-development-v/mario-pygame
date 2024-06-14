@@ -1,4 +1,3 @@
-from .camera import Camera
 from .elements import (
     Block,
     Bush,
@@ -23,5 +22,4 @@ __all__ = [
     "MisteryBox",
     "Pipe",
     "Hero",
-    "Camera",
 ]

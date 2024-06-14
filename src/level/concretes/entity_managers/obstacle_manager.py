@@ -3,6 +3,7 @@ from typing import List
 from pygame import Surface
 
 from src.entities import Element, IDrawable, IUpdatable
+from src.utils.camera import Camera
 
 
 class ObstacleManager(IDrawable, IUpdatable):
@@ -12,9 +13,9 @@ class ObstacleManager(IDrawable, IUpdatable):
     def get_obstacles(self) -> List[Element]:
         return self.obstacles
 
-    def draw(self, screen: Surface) -> None:
+    def draw(self, screen: Surface, camera: Camera) -> None:
         for obstacle in self.obstacles:
-            obstacle.draw(screen)
+            screen.blit(obstacle.image, camera.apply(obstacle))
 
     def update(self) -> None:
         for obstacle in self.obstacles:

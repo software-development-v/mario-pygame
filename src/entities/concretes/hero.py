@@ -2,6 +2,7 @@ from typing import Dict, List
 
 from pygame import Surface, time, transform
 
+from src.utils.camera import Camera
 from src.enums import GameEvent, HeroLevel, HeroState
 from src.utils.classes import Position
 from src.utils.constants import (
@@ -40,11 +41,11 @@ class Hero(IDrawable):
         self.running = False
         self.last_update = time.get_ticks()
 
-    def draw(self, screen: Surface) -> None:
+    def draw(self, screen: Surface, camera: Camera) -> None:
         if not self.face_right:
             self.image = transform.flip(self.image, True, False)
 
-        screen.blit(self.image, self.rect)
+        screen.blit(self.image, camera.apply(self))
 
     def __handle_hero_states(self, game_events: Dict[GameEvent, bool]):
         if game_events[GameEvent.UP] and not self.jumping:

@@ -2,6 +2,7 @@ from typing import List
 
 from pygame import Rect, Surface, time
 
+from src.utils.camera import Camera
 from src.utils.classes import Position
 from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX
 
@@ -29,8 +30,8 @@ class Element(IEntity):
     def get_rect(self) -> Rect:
         return self.rect
 
-    def draw(self, screen: Surface) -> None:
-        screen.blit(self.image, self.rect)
+    def draw(self, screen: Surface, camera: Camera) -> None:
+        screen.blit(self.image, camera.apply(self.rect))
 
     def update(self) -> None:
         current_time = time.get_ticks()
