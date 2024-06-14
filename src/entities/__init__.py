@@ -10,6 +10,7 @@ from .concretes import (
     MisteryBox,
     Mountain,
     Pipe,
+    Tree
 )
 from .factories import ElementFactory
 from .interfaces import IEntity
@@ -20,6 +21,7 @@ __all__ = [
     "Bush",
     "Cloud",
     "Mountain",
+    "Tree",
     "Block",
     "Castle",
     "Coin",

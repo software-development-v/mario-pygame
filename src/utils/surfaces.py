@@ -4,25 +4,37 @@ from pygame import Surface
 
 from src.enums import ElementSubType, ElementType
 from src.utils.assets import (
+    BIG_BUSH,
+    MEDIUM_BUSH,
+    SMALL_BUSH,
     BIG_CLOUD,
-    BIG_PIPE,
     MEDIUM_CLOUD,
-    MEDIUM_PIPE,
-    OVERWORLD_BLOCK,
     SMALL_CLOUD,
-    SMALL_PIPE,
+    BIG_MOUNTAIN,
+    MEDIUM_MOUNTAIN,
+    SMALL_MOUNTAIN,
+    BIG_TREE,
+    MEDIUM_TREE,
+    SMALL_TREE,
+    OVERWORLD_BLOCK,
+    WALL_BLOCK,
+    MYSTERY_BLOCK,
+    PIPE_HEAD,
+    PIPE_BODY
 )
 
 elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
     ElementType.BLOCK: {
         ElementSubType.OVERWORLD_BLOCK: [OVERWORLD_BLOCK],
+        ElementSubType.WALL_BLOCK: [WALL_BLOCK],
         ElementSubType.UNDERGROUND_BLOCK: [],
     },
-    ElementType.MISTERY_BOX: {ElementSubType.DEFAULT_MISTERY_BOX: []},
+    ElementType.MISTERY_BOX: {
+        ElementSubType.DEFAULT_MISTERY_BOX: [MYSTERY_BLOCK]
+    },
     ElementType.PIPE: {
-        ElementSubType.SMALL_PIPE: [SMALL_PIPE],
-        ElementSubType.MEDIUM_PIPE: [MEDIUM_PIPE],
-        ElementSubType.BIG_PIPE: [BIG_PIPE],
+        ElementSubType.PIPE_HEAD: [PIPE_HEAD],
+        ElementSubType.PIPE_BODY: [PIPE_BODY],
     },
     ElementType.CLOUD: {
         ElementSubType.SMALL_CLOUD: [SMALL_CLOUD],
@@ -30,12 +42,21 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.BIG_CLOUD: [BIG_CLOUD],
     },
     ElementType.BUSH: {
-        ElementSubType.SMALL_BUSH: [],
-        ElementSubType.MEDIUM_BUSH: [],
-        ElementSubType.BIG_BUSH: [],
+        ElementSubType.SMALL_BUSH: [SMALL_BUSH],
+        ElementSubType.MEDIUM_BUSH: [MEDIUM_BUSH],
+        ElementSubType.BIG_BUSH: [BIG_BUSH],
+    },
+    ElementType.MOUNTAIN: {
+        ElementSubType.SMALL_MOUNTAIN: [SMALL_MOUNTAIN],
+        ElementSubType.MEDIUM_MOUNTAIN: [MEDIUM_MOUNTAIN],
+        ElementSubType.BIG_MOUNTAIN: [BIG_MOUNTAIN],
+    },
+    ElementType.TREE: {
+        ElementSubType.SMALL_TREE: [SMALL_TREE],
+        ElementSubType.MEDIUM_TREE: [MEDIUM_TREE],
+        ElementSubType.BIG_TREE: [BIG_TREE],
     },
     ElementType.CASTLE: {ElementSubType.DEFAULT_CASTLE: []},
     ElementType.FLAG: {ElementSubType.DEFAULT_FLAG: []},
-    ElementType.MOUNTAIN: {ElementSubType.DEFAULT_MOUNTAIN: []},
     ElementType.COIN: {ElementSubType.DEFAULT_COIN: []},
 }

@@ -1,12 +1,35 @@
-from .non_touchable import BIG_CLOUD, MEDIUM_CLOUD, SMALL_CLOUD
-from .touchable import BIG_PIPE, MEDIUM_PIPE, OVERWORLD_BLOCK, SMALL_PIPE
+from .non_touchable import (
+    BIG_BUSH,
+    MEDIUM_BUSH,
+    SMALL_BUSH,
+    BIG_CLOUD,
+    MEDIUM_CLOUD,
+    SMALL_CLOUD,
+    BIG_MOUNTAIN,
+    MEDIUM_MOUNTAIN,
+    SMALL_MOUNTAIN,
+    BIG_TREE,
+    MEDIUM_TREE,
+    SMALL_TREE
+    )
+from .touchable import PIPE_HEAD, PIPE_BODY, OVERWORLD_BLOCK, WALL_BLOCK, MYSTERY_BLOCK
 
 __all__ = [
+    "BIG_BUSH",
+    "MEDIUM_BUSH",
+    "SMALL_BUSH",
     "BIG_CLOUD",
     "MEDIUM_CLOUD",
     "SMALL_CLOUD",
-    "SMALL_PIPE",
-    "MEDIUM_PIPE",
-    "BIG_PIPE",
+    "BIG_MOUNTAIN",
+    "MEDIUM_MOUNTAIN",
+    "SMALL_MOUNTAIN",
+    "BIG_TREE",
+    "MEDIUM_TREE",
+    "SMALL_TREE",
+    "PIPE_HEAD",
+    "PIPE_BODY",
     "OVERWORLD_BLOCK",
+    "WALL_BLOCK",
+    "MYSTERY_BLOCK"
 ]

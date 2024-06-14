@@ -5,13 +5,14 @@ from src.utils.surfaces import elements
 from ....abstractions import Element
 
 
-class Pipe(Element):
+class Tree(Element):
     def __init__(
         self,
         position: Position,
-        element_sub_type: ElementSubType = ElementSubType.PIPE_HEAD,
+        element_sub_type: ElementSubType = ElementSubType.SMALL_TREE,
     ) -> None:
         super().__init__(
             position,
-            elements[ElementType.PIPE][element_sub_type],
+            elements[ElementType.TREE][element_sub_type],
+            is_touchable=False,
         )

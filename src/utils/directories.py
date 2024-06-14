@@ -19,7 +19,6 @@ FINAL_CINEMATIC_DIR = CINEMATICS_DIR + "final_cinematic/"
 
 # == Elements ==
 ELEMENTS_DIR = ASSETS_DIR + "elements/"
-
 TOUCHABLE_ELEMENTS_DIR = ELEMENTS_DIR + "touchable/"
 BLOCK_DIR = TOUCHABLE_ELEMENTS_DIR + "block/"
 PIPE_DIR = TOUCHABLE_ELEMENTS_DIR + "pipe/"
@@ -32,10 +31,18 @@ SPRITES_DIR = ASSETS_DIR + "sprites/"
 
 # == Sprites dirs ==
 BLOCKS_DIR = SPRITES_DIR + "blocks/"
+BACKGROUND_DIR = SPRITES_DIR + "background/"
 ENEMIES_DIR = SPRITES_DIR + "enemies/"
 ICONS_DIR = SPRITES_DIR + "icons/"
 PLAYERS_DIR = SPRITES_DIR + "players/"
 POWER_UPS_DIR = SPRITES_DIR + "power_ups/"
+
+# == Background ==
+# == Background name ==
+BUSH_BACKGROUND_DIR = BACKGROUND_DIR + "bush/"
+CLOUD_BACKGROUND_DIR = BACKGROUND_DIR + "cloud/"
+MOUNTAIN_BACKGROUND_DIR = BACKGROUND_DIR + "mountain/"
+TREE_BACKGROUND_DIR = BACKGROUND_DIR + "tree/"
 
 # == Icons ==
 # == icons name ==
@@ -47,7 +54,7 @@ PASTEL_ICON_DIR = ICONS_DIR + "pastel/"
 BRICK_DIR = BLOCKS_DIR + "brick/"
 BROKE_BLOCK_DIR = BLOCKS_DIR + "broke_block/"
 COIN_DIR = BLOCKS_DIR + "coin/"
-MASTERY_BLOCK_DIR = BLOCKS_DIR + "mastery_block/"
+MYSTERY_BLOCK_DIR = BLOCKS_DIR + "mystery_block/"
 PIPES_DIR = BLOCKS_DIR + "pipe/"
 WALL_DIR = BLOCKS_DIR + "wall/"
 
