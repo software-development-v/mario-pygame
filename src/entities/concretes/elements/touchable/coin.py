@@ -14,4 +14,5 @@ class Coin(InteractiveElement):
         super().__init__(
             position,
             elements[ElementType.COIN][element_sub_type],
+            100
         )

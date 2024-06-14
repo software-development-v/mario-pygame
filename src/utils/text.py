@@ -37,5 +37,5 @@ def get_message(
     return text, text_rect
 
 
-def get_format_number(number: int, width: int) -> str:
+def get_format_number(number: int, width: int=3) -> str:
     return f"{number:0{width}d}"

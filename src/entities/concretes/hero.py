@@ -2,6 +2,7 @@ from typing import Dict, List
 
 from pygame import Surface, time, transform
 
+from ..abstractions import InteractiveElement
 from src.enums import GameEvent, HeroLevel, HeroState
 from src.utils.camera import Camera
 from src.utils.classes import Position
@@ -100,6 +101,8 @@ class Hero(IDrawable):
             ):
                 continue
 
+            if isinstance(obstacle, InteractiveElement):
+                obstacle.notify_observers()
             dx = 0
             break
 

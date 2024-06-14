@@ -338,7 +338,7 @@
         {
             "position": [500, 700],
             "type": "COIN",
-            "subtype": "DEFAULT_COIN"
+            "subtype": "COIN"
         }
     ],
     "power_ups": []

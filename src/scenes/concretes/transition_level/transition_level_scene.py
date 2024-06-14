@@ -2,8 +2,10 @@ from typing import Callable, Dict
 
 from src.data import GameData
 from src.entities import Hero
+from src.entities.abstractions.interactive_element import InteractiveElement
 from src.enums import HeroType, Level, SceneAction, World
-from src.level import ILevelManager, LevelManager, ObstacleManager
+from src.enums.collected_type import CollectedType
+from src.level import ILevelManager, LevelManager, ObstacleManager, ScoreObserver
 
 from ...abstractions import Scene
 from .transition_level_scene_render import TransitionLevelSceneRender
@@ -37,6 +39,11 @@ class TransitionLevelScene(Scene):
         game_data = GameData()
 
         level_data = game_data.get_level_data(world, level)
+        score_manager = ScoreObserver()
+
+        for element in level_data.get_elements():
+            if isinstance(element, InteractiveElement):
+                element.add_observer(CollectedType.COLLECTED_SCORE,score_manager)
 
         return LevelManager(
             Hero(
@@ -48,4 +55,5 @@ class TransitionLevelScene(Scene):
             level,
             level_data.get_background(),
             level_data.get_time(),
+            score_manager
         )

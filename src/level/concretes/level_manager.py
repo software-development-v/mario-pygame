@@ -1,6 +1,7 @@
 from pygame import Surface
 
 from src.entities import Hero
+from src.entities import IElementObserver
 from src.enums import Level, World
 
 from ..interfaces import ILevelManager
@@ -16,6 +17,7 @@ class LevelManager(ILevelManager):
         level: Level,
         background: Surface,
         time: int,
+        score_observer: IElementObserver,
     ) -> None:
         self.__hero = hero
         self.__obstacle_manager = obstacle_manager
@@ -25,6 +27,7 @@ class LevelManager(ILevelManager):
         self.__start_time = time
         self.__current_time = time
         self.__start_tick: int
+        self.__score_observer = score_observer
 
     def get_hero(self) -> Hero:
         return self.__hero
@@ -55,3 +58,6 @@ class LevelManager(ILevelManager):
 
     def set_start_tick(self, tick: int) -> None:
         self.__start_tick = tick
+
+    def get_score(self) -> int:
+        return self.__score_observer.get_value()
