@@ -9,7 +9,7 @@ class Coin(Element):
     def __init__(
         self,
         position: Position,
-        element_sub_type: ElementSubType = ElementSubType.DEFAULT_COIN,
+        element_sub_type: ElementSubType = ElementSubType.COIN,
     ) -> None:
         super().__init__(
             position,

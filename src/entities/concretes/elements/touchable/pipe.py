@@ -9,7 +9,7 @@ class Pipe(Element):
     def __init__(
         self,
         position: Position,
-        element_sub_type: ElementSubType = ElementSubType.SMALL_PIPE,
+        element_sub_type: ElementSubType = ElementSubType.PIPE_HEAD,
     ) -> None:
         super().__init__(
             position,

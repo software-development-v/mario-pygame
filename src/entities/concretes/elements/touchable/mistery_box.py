@@ -9,7 +9,7 @@ class MisteryBox(Element):
     def __init__(
         self,
         position: Position,
-        element_sub_type: ElementSubType = ElementSubType.DEFAULT_MISTERY_BOX,
+        element_sub_type: ElementSubType = ElementSubType.MASTERY_BLOCK,
     ) -> None:
         super().__init__(
             position,
