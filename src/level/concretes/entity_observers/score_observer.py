@@ -6,7 +6,7 @@ class ScoreObserver(IElementObserver):
         self.__score = score
 
     def update(self, value: int) -> None:
-        if(self.__score <= SCORE_LIMIT):
+        if(self.__score < SCORE_LIMIT):
             self.__score += value
 
     def get_value(self) -> int:
