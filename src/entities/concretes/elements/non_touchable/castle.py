@@ -14,4 +14,5 @@ class Castle(Element):
         super().__init__(
             position,
             elements[ElementType.CASTLE][element_sub_type],
+            is_touchable=False,
         )

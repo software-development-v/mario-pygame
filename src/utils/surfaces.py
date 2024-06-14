@@ -25,7 +25,7 @@ from src.utils.assets import (
     FLAG_STAND,
     FLAG_PIPE,
     FLAG_WIN,
-    FLAG_SUPPORT_3
+    FLAG_SUPPORT_2
 )
 
 elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
@@ -68,7 +68,7 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.FLAG_PIPE: [FLAG_PIPE],
         ElementSubType.FLAG_WIN: [FLAG_WIN],
         ElementSubType.FLAG_STAND: [FLAG_STAND],
-        ElementSubType.FLAG_SUPPORT: [FLAG_SUPPORT_3],
+        ElementSubType.FLAG_SUPPORT: [FLAG_SUPPORT_2],
     },
     ElementType.COIN: {ElementSubType.DEFAULT_COIN: []},
 }

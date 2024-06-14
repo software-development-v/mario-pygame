@@ -9,7 +9,7 @@ class Flag(Element):
     def __init__(
         self,
         position: Position,
-        element_sub_type: ElementSubType = ElementSubType.DEFAULT_FLAG,
+        element_sub_type: ElementSubType = ElementSubType.FLAG_PIPE,
     ) -> None:
         super().__init__(
             position,

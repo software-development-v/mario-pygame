@@ -1,5 +1,5 @@
-from .non_touchable import Bush, Cloud, Mountain, Tree
-from .touchable import Block, Castle, Coin, Flag, MisteryBox, Pipe
+from .non_touchable import Bush, Cloud, Mountain, Tree, Castle
+from .touchable import Block, Coin, Flag, MisteryBox, Pipe
 
 __all__ = [
     "Bush",
