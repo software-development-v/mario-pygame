@@ -20,7 +20,12 @@ from src.utils.assets import (
     WALL_BLOCK,
     MYSTERY_BLOCK,
     PIPE_HEAD,
-    PIPE_BODY
+    PIPE_BODY,
+    CASTLE,
+    FLAG_STAND,
+    FLAG_PIPE,
+    FLAG_WIN,
+    FLAG_SUPPORT_3
 )
 
 elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
@@ -56,7 +61,17 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.MEDIUM_TREE: [MEDIUM_TREE],
         ElementSubType.BIG_TREE: [BIG_TREE],
     },
-    ElementType.CASTLE: {ElementSubType.DEFAULT_CASTLE: []},
-    ElementType.FLAG: {ElementSubType.DEFAULT_FLAG: []},
+    ElementType.CASTLE: {
+        ElementSubType.DEFAULT_CASTLE: [CASTLE]
+    },
+    ElementType.FLAG: {
+        ElementSubType.FLAG_PIPE: [FLAG_PIPE],
+        ElementSubType.FLAG_WIN: [FLAG_WIN],
+        ElementSubType.FLAG_STAND: [FLAG_STAND],
+        ElementSubType.FLAG_SUPPORT: [FLAG_SUPPORT_3],
+    },
     ElementType.COIN: {ElementSubType.DEFAULT_COIN: []},
 }
+
+
+

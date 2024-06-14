@@ -10,9 +10,22 @@ from .non_touchable import (
     SMALL_MOUNTAIN,
     BIG_TREE,
     MEDIUM_TREE,
-    SMALL_TREE
+    SMALL_TREE,
+    CASTLE
     )
-from .touchable import PIPE_HEAD, PIPE_BODY, OVERWORLD_BLOCK, WALL_BLOCK, MYSTERY_BLOCK
+from .touchable import (
+    PIPE_HEAD,
+    PIPE_BODY,
+    OVERWORLD_BLOCK,
+    WALL_BLOCK,
+    MYSTERY_BLOCK,
+    FLAG_STAND,
+    FLAG_PIPE,
+    FLAG_WIN,
+    FLAG_SUPPORT_1,
+    FLAG_SUPPORT_2,
+    FLAG_SUPPORT_3,
+    )
 
 __all__ = [
     "BIG_BUSH",
@@ -27,9 +40,16 @@ __all__ = [
     "BIG_TREE",
     "MEDIUM_TREE",
     "SMALL_TREE",
+    "CASTLE",
     "PIPE_HEAD",
     "PIPE_BODY",
     "OVERWORLD_BLOCK",
     "WALL_BLOCK",
-    "MYSTERY_BLOCK"
+    "MYSTERY_BLOCK",
+    "FLAG_STAND",
+    "FLAG_PIPE",
+    "FLAG_WIN",
+    "FLAG_SUPPORT_1",
+    "FLAG_SUPPORT_2",
+    "FLAG_SUPPORT_3"
 ]

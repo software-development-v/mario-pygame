@@ -17,6 +17,13 @@ from .elements import (
     MYSTERY_BLOCK,
     PIPE_HEAD,
     PIPE_BODY,
+    CASTLE,
+    FLAG_STAND,
+    FLAG_PIPE,
+    FLAG_WIN,
+    FLAG_SUPPORT_1,
+    FLAG_SUPPORT_2,
+    FLAG_SUPPORT_3
 )
 from .fonts import GAME_FONT
 from .logos import ICON
@@ -310,6 +317,13 @@ __all__ = [
     "SMALL_TREE",
     "PIPE_HEAD",
     "PIPE_BODY",
+    "CASTLE",
+    "FLAG_STAND",
+    "FLAG_PIPE",
+    "FLAG_WIN",
+    "FLAG_SUPPORT_1",
+    "FLAG_SUPPORT_2",
+    "FLAG_SUPPORT_3",
     "OVERWORLD_BLOCK",
     "WALL_BLOCK",
     "MYSTERY_BLOCK",

@@ -31,11 +31,20 @@ SPRITES_DIR = ASSETS_DIR + "sprites/"
 
 # == Sprites dirs ==
 BLOCKS_DIR = SPRITES_DIR + "blocks/"
+CASTLE_DIR = SPRITES_DIR + "castle/"
+FLAG_DIR = SPRITES_DIR + "flag/"
 BACKGROUND_DIR = SPRITES_DIR + "background/"
 ENEMIES_DIR = SPRITES_DIR + "enemies/"
 ICONS_DIR = SPRITES_DIR + "icons/"
 PLAYERS_DIR = SPRITES_DIR + "players/"
 POWER_UPS_DIR = SPRITES_DIR + "power_ups/"
+
+# == Flag ==
+# == Flag name ==
+FLAG_STAND_DIR = FLAG_DIR + "stand/"
+FLAG_PIPE_DIR = FLAG_DIR + "pipe/"
+FLAG_WIN_DIR = FLAG_DIR + "win/"
+FLAG_SUPPORT_DIR = FLAG_DIR + "support/"
 
 # == Background ==
 # == Background name ==
