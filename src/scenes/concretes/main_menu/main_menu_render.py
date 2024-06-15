@@ -1,20 +1,19 @@
-from typing import Callable, Dict, List, Tuple
+from typing import List, Tuple
 import pygame
 from src.utils.classes.button import Button
-from src.enums import SceneAction
 from src.utils.colors import BLACK_COLOR, ORANGE_COLOR
 from src.utils.assets.fonts import GAME_FONT
 from src.utils.assets.backgrounds.menu import MENU_BACKGROUND
 
-from ...interfaces import IRender, IScene
+from ...abstractions import Render
 
 
-class ModeSelectionSceneRender(IRender):
+class MainMenuRender(Render):
     def __init__(self) -> None:
         super().__init__()
         self.menu_options_left = ["Quit"]
         self.menu_options_center = ["Start Game", "Saved Game"]
-        self.menu_options_right = ["Options"]
+        self.menu_options_right = ["Settinqs"]
         self.selected_option = 0
         self.selected_section = 1
 
@@ -53,7 +52,7 @@ class ModeSelectionSceneRender(IRender):
             self.buttons_center.append(button)
         self.button_options = Button(
             self.menu_options_right[0],
-            pygame.font.Font(GAME_FONT, 30),
+            pygame.font.Font(GAME_FONT, 25),
             (1400, 140),
             ORANGE_COLOR,
             BLACK_COLOR,
@@ -61,8 +60,6 @@ class ModeSelectionSceneRender(IRender):
 
     def render(
         self,
-        set_next_scene: Callable[[IScene], None],
-        dispatcher: Dict[SceneAction, Callable[[], None]],
     ) -> None:
         self._screen.blit(self.background_image, (0, 0))
         self.button_quit.render(self._screen, self.selected_section == 0)
@@ -110,6 +107,10 @@ class ModeSelectionSceneRender(IRender):
                     return True
 
         return False
+
+    def set_selected_section(self, section: int):
+        self.selected_section = section
+        self.selected_option = 0
 
     def switch_section(self, direction: int):
         if direction == -1:
