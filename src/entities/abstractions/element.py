@@ -1,7 +1,8 @@
 from typing import List
 
-from pygame import Surface, time
+from pygame import Rect, Surface, time
 
+from src.utils.camera import Camera
 from src.utils.classes import Position
 from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX
 
@@ -16,15 +17,21 @@ class Element(IEntity):
         is_touchable: bool = True,
     ) -> None:
         self.position = position
-        self.images: List[Surface] = images
+        self.surfaces: List[Surface] = images
         self.current_image_index = INIT_IMAGE_INDEX
         self.last_update = time.get_ticks()
         self.animation_interval = ANIMATION_INTERVAL
         self.is_touchable = is_touchable
+        self.image = self.surfaces[self.current_image_index]
+        self.rect = self.image.get_rect()
+        self.rect.x = position.x
+        self.rect.y = position.y
 
-    def draw(self, screen: Surface) -> None:
-        element_surface = self.images[self.current_image_index]
-        screen.blit(element_surface, self.position.to_tuple())
+    def get_rect(self) -> Rect:
+        return self.rect
+
+    def draw(self, screen: Surface, camera: Camera) -> None:
+        screen.blit(self.image, camera.apply(self.rect))
 
     def update(self) -> None:
         current_time = time.get_ticks()
@@ -32,5 +39,5 @@ class Element(IEntity):
         if current_time - self.last_update > self.animation_interval:
             self.last_update = current_time
             self.current_image_index = ++self.current_image_index % len(
-                self.images
+                self.surfaces
             )

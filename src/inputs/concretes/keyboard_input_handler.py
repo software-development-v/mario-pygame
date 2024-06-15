@@ -21,7 +21,7 @@ class KeyboardInputHandler(IInputHandler):
             KeyboardInput.KEY_SPACE.value: GameEvent.JUMP,
             KeyboardInput.KEY_SHIFT.value: GameEvent.RUN,
             KeyboardInput.KEY_R.value: GameEvent.ATTACK,
-            KeyboardInput.KEY_P.value: GameEvent.PAUSE,
+            KeyboardInput.KEY_ESCAPE.value: GameEvent.PAUSE,
         }
 
     def handle(

@@ -1,3 +1,3 @@
-from .mode_selection import ModeSelectionScene
+from .main_menu import MainMenuScene
 
-__all__ = ["ModeSelectionScene"]
+__all__ = ["MainMenuScene"]

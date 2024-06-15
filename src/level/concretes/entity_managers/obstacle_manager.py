@@ -2,19 +2,21 @@ from typing import List
 
 from pygame import Surface
 
-from src.entities import IEntity
+from src.entities import Element, IDrawable, IUpdatable
+from src.utils.camera import Camera
 
-from ...abstractions import Manager
 
+class ObstacleManager(IDrawable, IUpdatable):
+    def __init__(self, obstacles: List[Element]) -> None:
+        self.obstacles = obstacles
 
-class ObstacleManager(Manager):
-    def __init__(self, entities: List[IEntity]) -> None:
-        super().__init__(entities)
+    def get_obstacles(self) -> List[Element]:
+        return self.obstacles
 
-    def draw(self, screen: Surface) -> None:
-        for element in self.entities:
-            element.draw(screen)
+    def draw(self, screen: Surface, camera: Camera) -> None:
+        for obstacle in self.obstacles:
+            screen.blit(obstacle.image, camera.apply(obstacle))
 
     def update(self) -> None:
-        for element in self.entities:
-            element.update()
+        for obstacle in self.obstacles:
+            obstacle.update()

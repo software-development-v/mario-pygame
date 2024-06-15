@@ -2,10 +2,10 @@ from src.enums import ElementSubType, ElementType
 from src.utils.classes import Position
 from src.utils.surfaces import elements
 
-from ....abstractions import Element
+from ....abstractions import InteractiveElement
 
 
-class Flag(Element):
+class Flag(InteractiveElement):
     def __init__(
         self,
         position: Position,
