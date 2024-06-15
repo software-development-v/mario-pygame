@@ -1,3 +1,4 @@
+from .backgrounds.menu import MENU_BACKGROUND
 from .cumpa import (
     CUMPA_LVL_1,
     CUMPA_LVL_1_BRAKE,
@@ -139,6 +140,8 @@ from .pariente import (
     PARIENTE_LVL_4_2_WALKING_2,
     PARIENTE_LVL_4_2_WALKING_3,
 )
+from .elements import BUTTON
+
 
 __all__ = [
     # CUMPA
@@ -279,4 +282,6 @@ __all__ = [
     "PARIENTE_LVL_4_2_WALKING_1",
     "PARIENTE_LVL_4_2_WALKING_2",
     "PARIENTE_LVL_4_2_WALKING_3",
+    "BUTTON",
+    "MENU_BACKGROUND",
 ]

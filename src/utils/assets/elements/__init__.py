@@ -14,6 +14,7 @@ from .non_touchable import (
     SMALL_TREE,
 )
 from .touchable import (
+    BUTTON,
     COIN_1,
     COIN_2,
     COIN_3,
@@ -70,4 +71,5 @@ __all__ = [
     "COIN_2",
     "COIN_3",
     "COIN_4",
+    "BUTTON",
 ]
