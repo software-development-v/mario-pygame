@@ -1,19 +1,10 @@
-from typing import Callable, Dict
-
-from src.enums import SceneAction
-
-from ...abstractions import Scene
+from ...abstractions import InteractScene
 from .mode_selection_render import ModeSelectionSceneRender
 from .mode_selection_tick import ModeSelectionSceneTick
 
 
-class ModeSelectionScene(Scene):
-    def __init__(
-        self,
-        dispatcher: Dict[SceneAction, Callable[..., None]],
-    ):
-        super().__init__(
-            ModeSelectionSceneRender(),
-            ModeSelectionSceneTick(dispatcher),
-            dispatcher,
-        )
+class ModeSelectionScene(InteractScene):
+    def __init__(self):
+        render = ModeSelectionSceneRender()
+        tick = ModeSelectionSceneTick(render)
+        super().__init__(render, tick)

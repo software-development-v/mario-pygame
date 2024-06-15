@@ -16,6 +16,7 @@ from .touchable import (
     COIN_4,
     MASTERY_BLOCK_1,
     MASTERY_BLOCK_2,
+    BUTTON,
 )
 
 __all__ = [
@@ -38,4 +39,5 @@ __all__ = [
     "COIN_4",
     "MASTERY_BLOCK_1",
     "MASTERY_BLOCK_2",
+    "BUTTON",
 ]

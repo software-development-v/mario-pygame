@@ -14,7 +14,7 @@ from .pipe import (
     PIPE_BODY_STYLE_4,
     PIPE_HEAD,
 )
-
+from .button import BUTTON
 from .coin import COIN_1, COIN_2, COIN_3, COIN_4
 
 __all__ = [
@@ -34,4 +34,5 @@ __all__ = [
     "COIN_2",
     "COIN_3",
     "COIN_4",
+    "BUTTON",
 ]
