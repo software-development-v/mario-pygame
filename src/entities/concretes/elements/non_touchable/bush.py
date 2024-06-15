@@ -15,4 +15,5 @@ class Bush(Element):
             position,
             elements[ElementType.BUSH][element_sub_type],
             is_touchable=False,
+            type_element = ElementType.BUSH
         )

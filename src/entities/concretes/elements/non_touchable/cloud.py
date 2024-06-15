@@ -15,4 +15,5 @@ class Cloud(Element):
             position,
             elements[ElementType.CLOUD][element_sub_type],
             is_touchable=False,
+            type_element = ElementType.CLOUD
         )

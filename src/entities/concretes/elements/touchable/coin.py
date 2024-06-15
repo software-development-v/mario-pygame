@@ -16,3 +16,4 @@ class Coin(InteractiveElement):
             elements[ElementType.COIN][element_sub_type],
             100
         )
+        self.type_element = ElementType.COIN

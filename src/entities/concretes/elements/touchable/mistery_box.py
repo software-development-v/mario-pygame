@@ -15,3 +15,4 @@ class MisteryBox(InteractiveElement):
             position,
             elements[ElementType.MISTERY_BOX][element_sub_type],
         )
+        self.type_element = ElementType.MISTERY_BOX

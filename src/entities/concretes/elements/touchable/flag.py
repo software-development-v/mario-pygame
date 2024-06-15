@@ -15,3 +15,4 @@ class Flag(InteractiveElement):
             position,
             elements[ElementType.FLAG][element_sub_type],
         )
+        self.type_element = ElementType.FLAG

@@ -331,14 +331,24 @@
             "subtype": "OVERWORLD_BLOCK"
         },
         {
-            "position": [1400, 700],
+            "position": [1400, 600],
             "type": "PIPE",
             "subtype": "PIPE_HEAD"
         },
         {
-            "position": [500, 700],
+            "position": [1300, 600],
             "type": "COIN",
             "subtype": "COIN"
+        },
+        {
+            "position": [400, 600],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BRICK"
+        },
+        {
+            "position": [460, 600],
+            "type": "MISTERY_BOX",
+            "subtype": "MASTERY_BLOCK"
         }
     ],
     "power_ups": []

@@ -2,6 +2,7 @@ from typing import List
 
 from pygame import Rect, Surface, time
 
+from src.enums.element_type import ElementType
 from src.utils.camera import Camera
 from src.utils.classes import Position
 from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX
@@ -15,6 +16,7 @@ class Element(IEntity):
         position: Position,
         images: List[Surface],
         is_touchable: bool = True,
+        type_element: ElementType = ElementType.BLOCK
     ) -> None:
         self.position = position
         self.surfaces: List[Surface] = images
@@ -26,6 +28,7 @@ class Element(IEntity):
         self.rect = self.image.get_rect()
         self.rect.x = position.x
         self.rect.y = position.y
+        self.type_element = type_element
 
     def get_rect(self) -> Rect:
         return self.rect

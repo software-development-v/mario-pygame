@@ -1,5 +1,6 @@
 from typing import List, Dict
 from pygame import Surface
+
 from ..interfaces import IObservableElement
 from ..interfaces import IElementObserver
 from src.enums.collected_type import CollectedType
@@ -13,14 +14,15 @@ class InteractiveElement(Element, IObservableElement):
         self,
         position: Position,
         images: List[Surface],
-        value: int = 0
+        value: int = 0,
     ) -> None:
         super().__init__(
             position,
-            images
+            images,
         )
         self.value = value
         self.observers: Dict[CollectedType, IElementObserver] = {}
+
 
     def add_observer(self, key: CollectedType, observer: IElementObserver) -> None:
         self.observers[key] = observer

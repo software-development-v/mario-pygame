@@ -2,6 +2,8 @@ from typing import Dict, List
 
 from pygame import Surface, time, transform
 
+from src.enums.element_type import ElementType
+
 from ..abstractions import InteractiveElement
 from src.enums import GameEvent, HeroLevel, HeroState
 from src.utils.camera import Camera
@@ -27,7 +29,7 @@ class Hero(IDrawable):
         position: Position,
     ) -> None:
         self.surfaces = surfaces
-        self.hero_level = HeroLevel.NORMAL
+        self.hero_level = HeroLevel.BORRACHO_SMALL
         self.hero_state = HeroState.IDLE
         self.index = INIT_IMAGE_INDEX
         self.image = self.surfaces[self.hero_level][self.hero_state][self.index]
@@ -121,6 +123,13 @@ class Hero(IDrawable):
             if self.vel_y < 0:
                 dy = obstacle.get_rect().bottom - self.rect.top
                 self.vel_y = 0
+                if (
+                    obstacle.type_element == ElementType.BLOCK
+                    or obstacle.type_element == ElementType.MISTERY_BOX
+                ):
+                    print(obstacle.type_element)
+                    print(self.hero_level)
+
             elif self.vel_y >= 0:
                 dy = obstacle.get_rect().top - self.rect.bottom
                 self.vel_y = 0

@@ -15,3 +15,4 @@ class Castle(InteractiveElement):
             position,
             elements[ElementType.CASTLE][element_sub_type],
         )
+        self.type_element = ElementType.CASTLE

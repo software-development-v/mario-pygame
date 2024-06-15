@@ -15,3 +15,4 @@ class Pipe(InteractiveElement):
             position,
             elements[ElementType.PIPE][element_sub_type],
         )
+        self.type_element = ElementType.PIPE

@@ -15,3 +15,4 @@ class Block(InteractiveElement):
             position,
             elements[ElementType.BLOCK][element_sub_type],
         )
+        self.type_element = ElementType.BLOCK

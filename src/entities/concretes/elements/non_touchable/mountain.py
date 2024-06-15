@@ -15,4 +15,5 @@ class Mountain(Element):
             position,
             elements[ElementType.MOUNTAIN][element_sub_type],
             is_touchable=False,
+            type_element = ElementType.MOUNTAIN
         )
