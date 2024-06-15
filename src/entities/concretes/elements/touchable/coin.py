@@ -2,10 +2,10 @@ from src.enums import ElementSubType, ElementType
 from src.utils.classes import Position
 from src.utils.surfaces import elements
 
-from ....abstractions import Element
+from ....abstractions import InteractiveElement
 
 
-class Coin(Element):
+class Coin(InteractiveElement):
     def __init__(
         self,
         position: Position,
@@ -14,4 +14,5 @@ class Coin(Element):
         super().__init__(
             position,
             elements[ElementType.COIN][element_sub_type],
+            100
         )
