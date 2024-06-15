@@ -1,10 +1,10 @@
-from .concretes import ModeSelectionScene
+from .concretes import MainMenuScene
 from .interfaces import IScene, ISceneManager
 from .scene_manager import SceneManager
 
 __all__ = [
     "IScene",
-    "ModeSelectionScene",
+    "MainMenuScene",
     "ISceneManager",
     "SceneManager",
 ]

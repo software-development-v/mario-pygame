@@ -2,20 +2,24 @@ from typing import Callable, Dict, Tuple
 import pygame
 from src.enums import GameEvent, SceneAction, HeroType, Level, World
 
-from ...interfaces import IScene, ITick
+from ...abstractions import Tick
 from ..transition_level import TransitionLevelScene
-from .mode_selection_render import ModeSelectionSceneRender
+from .main_menu_render import MainMenuRender
 
 
-class ModeSelectionSceneTick(ITick):
-    def __init__(self, render: "ModeSelectionSceneRender") -> None:
+class MainMenuTick(Tick):
+    def __init__(
+        self,
+        render: "MainMenuRender",
+        dispatcher: Dict[SceneAction, Callable[..., None]],
+    ) -> None:
+        self._dispatcher = dispatcher
+        super().__init__(dispatcher)
         self.render = render
 
     def tick(
         self,
         game_events: Dict[GameEvent, bool],
-        set_next_scene: Callable[[IScene], None],
-        dispatcher: Dict[SceneAction, Callable[[], None]],
     ) -> None:
         selected_option = self.render.get_selected_option()
         mouse_pos: Tuple[int, int] = pygame.mouse.get_pos()
@@ -32,16 +36,12 @@ class ModeSelectionSceneTick(ITick):
         elif game_events.get(GameEvent.RIGHT):
             self.render.switch_section(1)
         elif game_events.get(GameEvent.JUMP):
-            self.select_option(set_next_scene, dispatcher)
+            self.select_option(self._dispatcher)
 
         if self.render.handle_mouse_event(mouse_pos) and mouse_click[0]:
-            self.select_option(set_next_scene, dispatcher)
+            self.select_option(self._dispatcher)
 
-    def select_option(
-        self,
-        set_next_scene: Callable[[IScene], None],
-        dispatcher: Dict[SceneAction, Callable[[], None]],
-    ):
+    def select_option(self, dispatcher: Dict[SceneAction, Callable[[], None]]):
         selected_option = self.render.get_selected_option()
         selected_section = self.render.selected_section
 
@@ -56,7 +56,9 @@ class ModeSelectionSceneTick(ITick):
             pygame.quit()
             exit()
         else:
-            set_next_scene(
-                TransitionLevelScene(HeroType.CUMPA, World.ONE, Level.FIRST)
+            self._dispatcher[SceneAction.SET_NEXT_SCENE](
+                TransitionLevelScene(
+                    HeroType.CUMPA, World.ONE, Level.FIRST, self._dispatcher
+                )
             )
-            dispatcher[SceneAction.END]()
+            self._dispatcher[SceneAction.END]()

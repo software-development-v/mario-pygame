@@ -18,9 +18,11 @@ from .elements import (
     COIN_3,
     COIN_4,
     MASTERY_BLOCK_1,
-    MASTERY_BLOCK_2
+    MASTERY_BLOCK_2,
+    BUTTON,
 )
 from .fonts import GAME_FONT
+from .backgrounds.menu import MENU_BACKGROUND
 from .logos import ICON
 from .players.cumpa import (
     CUMPA_LVL_1,
@@ -327,4 +329,6 @@ __all__ = [
     "PARIENTE_LVL_4_2_WALKING_1",
     "PARIENTE_LVL_4_2_WALKING_2",
     "PARIENTE_LVL_4_2_WALKING_3",
+    "BUTTON",
+    "MENU_BACKGROUND",
 ]
