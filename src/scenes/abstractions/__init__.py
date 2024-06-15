@@ -1,5 +1,6 @@
 from .cinematic import CinematicScene
-from .interact import InteractScene
+from .render import Render
 from .scene import Scene
+from .tick import Tick
 
-__all__ = ["Scene", "CinematicScene", "InteractScene"]
+__all__ = ["Scene", "CinematicScene", "Render", "Tick"]

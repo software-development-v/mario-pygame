@@ -10,6 +10,7 @@ from .keyboard_input import KeyboardInput
 from .level import Level
 from .scene_action import SceneAction
 from .world import World
+from .collected_type import CollectedType
 
 __all__ = [
     "GameEvent",
@@ -24,4 +25,5 @@ __all__ = [
     "ElementSubType",
     "BackgroundType",
     "SceneAction",
+    "CollectedType",
 ]

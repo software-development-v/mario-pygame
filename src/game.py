@@ -19,4 +19,3 @@ class Game:
             self.__scene_manager.display_current_scene(
                 self.__events_manager.get_events()
             )
-            self.__events_manager.reset_events()

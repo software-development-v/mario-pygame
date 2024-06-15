@@ -1,10 +1,12 @@
 from abc import ABC, abstractmethod
 
+from pygame import Rect
+
 from .i_drawable import IDrawable
+from .i_updatable import IUpdatable
 
 
-class IEntity(IDrawable, ABC):
-
+class IEntity(IDrawable, IUpdatable, ABC):
     @abstractmethod
-    def update(self) -> None:
+    def get_rect(self) -> Rect:
         pass

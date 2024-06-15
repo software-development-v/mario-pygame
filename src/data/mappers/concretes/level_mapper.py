@@ -1,7 +1,7 @@
 from json import load
 from typing import Any, Dict, List
 
-from src.entities import ElementFactory, IEntity
+from src.entities import Element, ElementFactory, IEntity
 from src.enums import BackgroundType, ElementSubType, ElementType, Level, World
 from src.utils.classes import Position
 from src.utils.colors import BLACK_COLOR
@@ -65,8 +65,8 @@ class LevelMapper(ILevelMapper):
     def _map_player_start_position(self, data: Dict[str, Any]) -> Position:
         return Position(data["x"], data["y"])
 
-    def _map_elements(self, elements: list[Dict[str, Any]]) -> List[IEntity]:
-        mappedElements: List[IEntity] = []
+    def _map_elements(self, elements: list[Dict[str, Any]]) -> List[Element]:
+        mappedElements: List[Element] = []
 
         for element in elements:
             position = Position(element["position"][0], element["position"][1])
