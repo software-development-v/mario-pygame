@@ -10,4 +10,5 @@ class ElementType(Enum):
     CASTLE = "CASTLE"
     FLAG = "FLAG"
     MOUNTAIN = "MOUNTAIN"
+    TREE = "TREE"
     COIN = "COIN"

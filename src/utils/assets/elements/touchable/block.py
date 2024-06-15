@@ -1,30 +1,20 @@
-from src.utils.assets.create_images import create_image
+from pygame import image, transform
+
 from src.utils.constants import GENERAL_SIZE
-from src.utils.directories import (
-    BLOCK_DIR,
-    BRICK_DIR,
-    BROKE_BRICK_DIR,
-    MASTERY_BLOCK_DIR,
-    PIECES_DIR,
-    WALL_DIR,
+from src.utils.directories import BRICK_DIR, WALL_DIR, MYSTERY_BLOCK_DIR
+
+OVERWORLD_BLOCK = transform.scale(
+    image.load(BRICK_DIR + "overworld.png"), GENERAL_SIZE
 )
 
-OVERWORLD_BLOCK = create_image(BLOCK_DIR + "overworld-block.png", GENERAL_SIZE)
-
-OVERWORLD_BRICK = create_image(BRICK_DIR + "overworld.png", GENERAL_SIZE)
-
-OVERWORLD_BROKE_BRICK = create_image(
-    BROKE_BRICK_DIR + "brick.png", GENERAL_SIZE
+WALL_BLOCK = transform.scale(
+    image.load(WALL_DIR + "wall.png"), GENERAL_SIZE
 )
 
-OVERWORLD_BROKE_PIECE_LEFT = create_image(
-    PIECES_DIR + "left_piece.png", GENERAL_SIZE
-)
-OVERWORLD_BROKE_PIECE_RIGHT = create_image(
-    PIECES_DIR + "right_piece.png", GENERAL_SIZE
+MYSTERY_BLOCK_1 = transform.scale(
+    image.load(MYSTERY_BLOCK_DIR + "mistery_block_1.png"), GENERAL_SIZE
 )
 
-MASTERY_BLOCK_1 = create_image(MASTERY_BLOCK_DIR + "mastery_block_1.png", GENERAL_SIZE)
-MASTERY_BLOCK_2 = create_image(MASTERY_BLOCK_DIR + "mastery_block_2.png", GENERAL_SIZE)
-
-WALL = create_image(WALL_DIR + "wall.png", GENERAL_SIZE)
+MYSTERY_BLOCK_2 = transform.scale(
+    image.load(MYSTERY_BLOCK_DIR + "mistery_block_2.png"), GENERAL_SIZE
+)

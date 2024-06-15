@@ -1,11 +1,13 @@
 from pygame import image, transform
 
-from src.utils.directories import CLOUD_DIR
+from src.utils.directories import CLOUD_BACKGROUND_DIR
 
-BIG_CLOUD = transform.scale(image.load(CLOUD_DIR + "big-cloud.png"), (150, 100))
+BIG_CLOUD = transform.scale(
+    image.load(CLOUD_BACKGROUND_DIR + "big_cloud.png"), (300, 150)
+)
 MEDIUM_CLOUD = transform.scale(
-    image.load(CLOUD_DIR + "medium-cloud.png"), (125, 75)
+    image.load(CLOUD_BACKGROUND_DIR + "medium_cloud.png"), (250, 110)
 )
 SMALL_CLOUD = transform.scale(
-    image.load(CLOUD_DIR + "small-cloud.png"), (100, 50)
+    image.load(CLOUD_BACKGROUND_DIR + "small_cloud.png"), (150, 70)
 )
