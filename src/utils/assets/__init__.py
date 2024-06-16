@@ -179,6 +179,20 @@ from .players.pariente import (
     PARIENTE_LVL_4_2_WALKING_2,
     PARIENTE_LVL_4_2_WALKING_3,
 )
+from .power_ups import (
+    ALCOHOL_CAIMAN,
+    BUNUELO,
+    COCA_PLANT_1,
+    COCA_PLANT_2,
+    PASTEL,
+    PIJCHU_BALL_1,
+    PIJCHU_BALL_2,
+    PIJCHU_BALL_3,
+    PIJCHU_BALL_4,
+    PIJCHU_BALL_BOOM_1,
+    PIJCHU_BALL_BOOM_2,
+    PIJCHU_BALL_BOOM_3,
+)
 
 __all__ = [
     "GAME_FONT",
@@ -358,4 +372,16 @@ __all__ = [
     "PARIENTE_LVL_4_2_WALKING_3",
     "BUTTON",
     "MENU_BACKGROUND",
+    "COCA_PLANT_1",
+    "COCA_PLANT_2",
+    "PIJCHU_BALL_1",
+    "PIJCHU_BALL_2",
+    "PIJCHU_BALL_3",
+    "PIJCHU_BALL_4",
+    "PIJCHU_BALL_BOOM_1",
+    "PIJCHU_BALL_BOOM_2",
+    "PIJCHU_BALL_BOOM_3",
+    "PASTEL",
+    "BUNUELO",
+    "ALCOHOL_CAIMAN",
 ]
