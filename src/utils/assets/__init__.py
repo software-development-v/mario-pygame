@@ -36,6 +36,20 @@ from .elements import (
     SMALL_TREE,
     WALL_BLOCK,
 )
+from .enemies.evoomba import (
+    EVOOMBA_DEFAULT,
+    EVOOMBA_DIED,
+    EVOOMBA_WALKING_1,
+    EVOOMBA_WALKING_2,
+)
+from .enemies.valvoopa import (
+    VALVOOPA_COMING_OUT_1,
+    VALVOOPA_COMING_OUT_2,
+    VALVOOPA_DEFAULT,
+    VALVOOPA_INSIDE,
+    VALVOOPA_WALKING_1,
+    VALVOOPA_WALKING_2,
+)
 from .fonts import GAME_FONT
 from .logos import ICON
 from .players.cumpa import (
@@ -384,4 +398,15 @@ __all__ = [
     "PASTEL",
     "BUNUELO",
     "ALCOHOL_CAIMAN",
+    # ENEMIES
+    "EVOOMBA_DEFAULT",
+    "EVOOMBA_DIED",
+    "EVOOMBA_WALKING_1",
+    "EVOOMBA_WALKING_2",
+    "VALVOOPA_DEFAULT",
+    "VALVOOPA_INSIDE",
+    "VALVOOPA_COMING_OUT_1",
+    "VALVOOPA_COMING_OUT_2",
+    "VALVOOPA_WALKING_1",
+    "VALVOOPA_WALKING_2",
 ]
