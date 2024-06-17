@@ -12,7 +12,7 @@ from ..concretes import (
     MisteryBox,
     Mountain,
     Pipe,
-    Tree
+    Tree,
 )
 
 

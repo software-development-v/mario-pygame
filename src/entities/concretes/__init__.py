@@ -7,8 +7,8 @@ from .elements import (
     Flag,
     MisteryBox,
     Mountain,
-    Tree,
     Pipe,
+    Tree,
 )
 from .hero import Hero
 

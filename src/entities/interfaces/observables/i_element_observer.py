@@ -1,9 +1,10 @@
-from abc import ABC , abstractmethod
+from abc import ABC, abstractmethod
+
 
 class IElementObserver(ABC):
 
     @abstractmethod
-    def update(self , value:int):
+    def update(self, value: int):
         pass
 
     @abstractmethod

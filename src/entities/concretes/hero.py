@@ -2,13 +2,11 @@ from typing import Dict, List
 
 from pygame import Surface, time, transform
 
-from ..abstractions import InteractiveElement
 from src.enums import GameEvent, HeroLevel, HeroState
 from src.utils.camera import Camera
 from src.utils.classes import Position
 from src.utils.constants import (
     ANIMATION_INTERVAL,
-    COLLISION_WIDTH_SCALE,
     DEAD_FALL_THRESHOLD,
     HERO_SPEED,
     INIT_IMAGE_INDEX,
@@ -17,7 +15,7 @@ from src.utils.constants import (
     SCREEN_HEIGHT,
 )
 
-from ..abstractions import Element
+from ..abstractions import Element, InteractiveElement
 from ..interfaces import IDrawable
 
 
@@ -28,14 +26,14 @@ class Hero(IDrawable):
         position: Position,
     ) -> None:
         self.surfaces = surfaces
-        self.hero_level = HeroLevel.COCA
+        self.hero_level = HeroLevel.NORMAL
         self.hero_state = HeroState.IDLE
         self.index = INIT_IMAGE_INDEX
         self.image = self.surfaces[self.hero_level][self.hero_state][self.index]
         self.rect = self.image.get_rect()
         self.rect.x = position.x
         self.rect.y = position.y
-        self.rect.width = self.rect.width * COLLISION_WIDTH_SCALE
+        self.rect.width = self.rect.width
         self.width = self.rect.width
         self.height = self.rect.height
         self.vel_y = 0

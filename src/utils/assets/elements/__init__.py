@@ -1,40 +1,40 @@
 from .non_touchable import (
     BIG_BUSH,
-    MEDIUM_BUSH,
-    SMALL_BUSH,
     BIG_CLOUD,
-    MEDIUM_CLOUD,
-    SMALL_CLOUD,
     BIG_MOUNTAIN,
-    MEDIUM_MOUNTAIN,
-    SMALL_MOUNTAIN,
     BIG_TREE,
+    CASTLE,
+    MEDIUM_BUSH,
+    MEDIUM_CLOUD,
+    MEDIUM_MOUNTAIN,
     MEDIUM_TREE,
+    SMALL_BUSH,
+    SMALL_CLOUD,
+    SMALL_MOUNTAIN,
     SMALL_TREE,
-    CASTLE
-    )
+)
 from .touchable import (
-    PIPE_HEAD,
+    COIN_1,
+    COIN_2,
+    COIN_3,
+    COIN_4,
+    FLAG_PIPE,
+    FLAG_STAND,
+    FLAG_SUPPORT_1,
+    FLAG_SUPPORT_2,
+    FLAG_SUPPORT_3,
+    FLAG_WIN,
+    MYSTERY_BLOCK_1,
+    MYSTERY_BLOCK_2,
+    OVERWORLD_BLOCK,
+    OVERWORLD_TERRAIN_BLOCK,
     PIPE_BODY_STYLE_1,
     PIPE_BODY_STYLE_2,
     PIPE_BODY_STYLE_3,
     PIPE_BODY_STYLE_4,
-    OVERWORLD_BLOCK,
-    OVERWORLD_TERRAIN_BLOCK,
+    PIPE_HEAD,
     WALL_BLOCK,
-    MYSTERY_BLOCK_1,
-    MYSTERY_BLOCK_2,
-    FLAG_STAND,
-    FLAG_PIPE,
-    FLAG_WIN,
-    FLAG_SUPPORT_1,
-    FLAG_SUPPORT_2,
-    FLAG_SUPPORT_3,
-    COIN_1,
-    COIN_2,
-    COIN_3,
-    COIN_4
-    )
+)
 
 __all__ = [
     "OVERWORLD_TERRAIN_BLOCK",
@@ -69,5 +69,5 @@ __all__ = [
     "COIN_1",
     "COIN_2",
     "COIN_3",
-    "COIN_4"
+    "COIN_4",
 ]

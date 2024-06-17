@@ -12,7 +12,5 @@ class Coin(InteractiveElement):
         element_sub_type: ElementSubType = ElementSubType.COIN,
     ) -> None:
         super().__init__(
-            position,
-            elements[ElementType.COIN][element_sub_type],
-            100
+            position, elements[ElementType.COIN][element_sub_type], 100
         )

@@ -52,3 +52,7 @@ class ILevelManager(ABC):
     @abstractmethod
     def get_score(self) -> int:
         pass
+
+    @abstractmethod
+    def get_screen_width(self) -> int:
+        pass

@@ -62,5 +62,6 @@ class TransitionLevelScene(Scene):
             level,
             level_data.get_background(),
             level_data.get_time(),
+            level_data.get_screen_width(),
             score_manager,
         )

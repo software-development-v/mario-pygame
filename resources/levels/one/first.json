@@ -10,7 +10,7 @@
     "background_music": "LEVEL_01",
     "start_player_position": {
         "x": 150,
-        "y": 820
+        "y": 500
     },
     "enemies": [],
     "elements": [
@@ -86,75 +86,72 @@
 
         { "position": [6050, 400], "type": "TREE", "subtype": "BIG_TREE" },
 
-        { "position": [800, 450],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
+        { "position": [800, 450], "type": "MISTERY_BOX", "subtype": "DEFAULT_MISTERY_BOX" },
+
+        {
+            "position": [1050, 450],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [1150, 450],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [1100, 240],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
         },
 
         {
-          "position": [1050, 450],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
-        },
-        {
-          "position": [1150, 450],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
-        },
-        {
-          "position": [1100, 240],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
+            "position": [3900, 450],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
         },
 
         {
-          "position": [3900, 450],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
+            "position": [4700, 250],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
         },
 
         {
-          "position": [4700, 250],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
+            "position": [5300, 450],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [5450, 450],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [5600, 450],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [5450, 250],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
         },
 
         {
-          "position": [5300, 450],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
+            "position": [6450, 250],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
         },
         {
-          "position": [5450, 450],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
-        },
-        {
-          "position": [5600, 450],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
-        },
-        {
-          "position": [5450, 250],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
+            "position": [6500, 250],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
         },
 
         {
-          "position": [6450, 250],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
-        },
-        {
-          "position": [6500, 250],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
-        },
-
-        {
-          "position": [8500, 450],
-          "type": "MISTERY_BOX",
-          "subtype": "DEFAULT_MISTERY_BOX"
+            "position": [8500, 450],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
         },
 
         { "position": [10100, 450], "type": "CASTLE", "subtype": "DEFAULT_CASTLE" },
@@ -176,7 +173,7 @@
         { "position": [0, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
         { "position": [-50, 0], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
         { "position": [0, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [-50, 50], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK"},
+        { "position": [-50, 50], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
         { "position": [50, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
         { "position": [50, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
         { "position": [200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },

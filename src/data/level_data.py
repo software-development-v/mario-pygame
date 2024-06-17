@@ -16,7 +16,7 @@ class LevelData(ILevelData):
         world: World,
         level: Level,
         time: int,
-        map_width : int,
+        map_width: int,
         background: IBackground,
         background_music: str,
         player_init_position: Position,
@@ -42,7 +42,7 @@ class LevelData(ILevelData):
     def get_level(self) -> Level:
         return self.__level
 
-    def map_width(self) -> int:
+    def get_screen_width(self) -> int:
         return self.__map_width
 
     def get_time(self) -> int:

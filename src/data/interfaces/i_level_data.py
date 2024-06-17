@@ -22,7 +22,7 @@ class ILevelData(ABC):
         pass
 
     @abstractmethod
-    def map_width(self) -> int:
+    def get_screen_width(self) -> int:
         pass
 
     @abstractmethod
