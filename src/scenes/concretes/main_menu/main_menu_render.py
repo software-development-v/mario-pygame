@@ -10,7 +10,11 @@ from ...abstractions import Render
 class MainMenuRender(Render):
     def __init__(self) -> None:
         super().__init__()
-        self.menu_options: List[str] = ["Start Game", "Quit"]
+        self.menu_options: List[str] = [
+            "1 Player Game",
+            "2 Players Game",
+            "Quit",
+        ]
         self.selected_option: int = 0
 
         screen_width: int = self._screen.get_width()
@@ -19,14 +23,23 @@ class MainMenuRender(Render):
         self.background_image: pygame.Surface = MENU_BACKGROUND
 
         self.option_positions: List[Tuple[int, int]] = [
-            (screen_width // 2, (screen_height // 2) - 65),
+            (screen_width // 2, (screen_height // 2) - 130),
+            (screen_width // 2, (screen_height // 2) - 50),
             (200, 140),
         ]
 
         self.option_fonts: List[pygame.font.Font] = [
-            pygame.font.Font(GAME_FONT, 70),
+            pygame.font.Font(GAME_FONT, 45),
+            pygame.font.Font(GAME_FONT, 45),
             pygame.font.Font(GAME_FONT, 40),
         ]
+
+        self.top_text_font: pygame.font.Font = pygame.font.Font(GAME_FONT, 30)
+        self.top_text_position: Tuple[int, int] = (
+            screen_width // 2,
+            (screen_height // 2) + 70,
+        )
+        self.top_score: int = 0
 
     def render(self) -> None:
         self._screen.blit(self.background_image, (0, 0))
@@ -38,6 +51,14 @@ class MainMenuRender(Render):
             text = font.render(option, True, color)
             text_rect = text.get_rect(center=self.option_positions[index])
             self._screen.blit(text, text_rect)
+
+        top_text = f"Top: {self.top_score:06}"
+        top_text_surface = self.top_text_font.render(
+            top_text, True, WHITE_COLOR
+        )
+        top_text_rect = top_text_surface.get_rect(center=self.top_text_position)
+        self._screen.blit(top_text_surface, top_text_rect)
+
         pygame.display.flip()
 
     def get_selected_option(self) -> int:

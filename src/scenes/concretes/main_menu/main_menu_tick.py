@@ -1,7 +1,6 @@
 from typing import Callable, Dict, Tuple
 import pygame
 from src.enums import GameEvent, SceneAction, HeroType, Level, World
-
 from ...abstractions import Tick
 from ..transition_level import TransitionLevelScene
 from .main_menu_render import MainMenuRender
@@ -13,38 +12,56 @@ class MainMenuTick(Tick):
         render: MainMenuRender,
         dispatcher: Dict[SceneAction, Callable[..., None]],
     ) -> None:
-        self._dispatcher = dispatcher
         super().__init__(dispatcher)
         self.render = render
         self.last_switch_time = pygame.time.get_ticks()
         self.switch_delay = 100
+        self.event_handlers = {
+            GameEvent.UP: lambda: self.handle_option_change(-1),
+            GameEvent.DOWN: lambda: self.handle_option_change(1),
+            GameEvent.LEFT: self.handle_left_right,
+            GameEvent.RIGHT: self.handle_left_right,
+            GameEvent.JUMP: self.handle_jump,
+        }
 
     def tick(
         self,
         game_events: Dict[GameEvent, bool],
     ) -> None:
-        selected_option = self.render.get_selected_option()
+        current_time = pygame.time.get_ticks()
+
+        if current_time - self.last_switch_time > self.switch_delay:
+            for event, handler in self.event_handlers.items():
+                if game_events.get(event):
+                    handler()
+                    self.last_switch_time = current_time
+                    break
+
         mouse_pos: Tuple[int, int] = pygame.mouse.get_pos()
         mouse_click = pygame.mouse.get_pressed()
 
-        current_time = pygame.time.get_ticks()
-        if current_time - self.last_switch_time > self.switch_delay:
-            if game_events.get(GameEvent.UP) or game_events.get(GameEvent.LEFT):
-                self.render.set_selected_option(selected_option - 1)
-                self.last_switch_time = current_time
-            elif game_events.get(GameEvent.DOWN) or game_events.get(
-                GameEvent.RIGHT
-            ):
-                self.render.set_selected_option(selected_option + 1)
-                self.last_switch_time = current_time
-            elif game_events.get(GameEvent.JUMP):
-                self.select_option(self._dispatcher)
-                self.last_switch_time = current_time
+        if mouse_click[0] and self.render.handle_mouse_event(mouse_pos):
+            self.select_option(self._dispatcher)
+            self.last_switch_time = current_time
 
-        if mouse_click[0]:
-            if self.render.handle_mouse_event(mouse_pos):
-                self.select_option(self._dispatcher)
-                self.last_switch_time = current_time
+        if pygame.mouse.get_focused():
+            self.render.handle_mouse_event(mouse_pos)
+            self.render.render()
+
+    def handle_option_change(self, direction: int) -> None:
+        selected_option = self.render.get_selected_option()
+        new_option = (selected_option + direction) % 3
+        self.render.set_selected_option(new_option)
+
+    def handle_left_right(self) -> None:
+        selected_option = self.render.get_selected_option()
+        if selected_option == 2:
+            self.render.set_selected_option(0)
+        else:
+            self.render.set_selected_option(2)
+
+    def handle_jump(self) -> None:
+        self.select_option(self._dispatcher)
 
     def select_option(self, dispatcher: Dict[SceneAction, Callable[[], None]]):
         selected_option = self.render.get_selected_option()
