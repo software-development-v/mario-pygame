@@ -23,8 +23,8 @@ class LevelMetricsRenderer:
         x_base = 300
         spacing = (self.STATUS_BAR_WIDTH - x_base * 2) // 3
 
-        self.set_message_box(f"SCORE\n{format_score}", x_base, 35)
-        self.set_message_box(f"TIME\n {format_time}", x_base + (3 * spacing), 35)
+        self.set_message_box(f"SCORE\n{format_score}", x_base, 15)
+        self.set_message_box(f"TIME\n {format_time}", x_base + (3 * spacing), 15)
 
     def set_message_box(self, text: str, x: int, y: int) -> None:
         message, message_rect = get_message(

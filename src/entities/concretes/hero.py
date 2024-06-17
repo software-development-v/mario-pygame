@@ -28,7 +28,7 @@ class Hero(IDrawable):
         position: Position,
     ) -> None:
         self.surfaces = surfaces
-        self.hero_level = HeroLevel.NORMAL
+        self.hero_level = HeroLevel.COCA
         self.hero_state = HeroState.IDLE
         self.index = INIT_IMAGE_INDEX
         self.image = self.surfaces[self.hero_level][self.hero_state][self.index]

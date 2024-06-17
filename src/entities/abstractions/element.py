@@ -31,7 +31,7 @@ class Element(IEntity):
         return self.rect
 
     def draw(self, screen: Surface, camera: Camera) -> None:
-        screen.blit(self.image, camera.apply(self.rect))
+        screen.blit(self.image, camera.apply(self))
 
     def update(self) -> None:
         current_time = time.get_ticks()

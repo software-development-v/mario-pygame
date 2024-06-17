@@ -61,6 +61,7 @@ COIN_DIR = BLOCKS_DIR + "coin/"
 MYSTERY_BLOCK_DIR = BLOCKS_DIR + "mistery_block/"
 PIPES_DIR = BLOCKS_DIR + "pipe/"
 WALL_DIR = BLOCKS_DIR + "wall/"
+TERRAIN_DIR = BLOCKS_DIR + "terrain/"
 
 # == broke block ==
 BROKE_BRICK_DIR = BROKE_BLOCK_DIR + "broke_brick/"

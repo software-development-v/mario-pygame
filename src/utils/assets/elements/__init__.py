@@ -20,6 +20,7 @@ from .touchable import (
     PIPE_BODY_STYLE_3,
     PIPE_BODY_STYLE_4,
     OVERWORLD_BLOCK,
+    OVERWORLD_TERRAIN_BLOCK,
     WALL_BLOCK,
     MYSTERY_BLOCK_1,
     MYSTERY_BLOCK_2,
@@ -36,6 +37,7 @@ from .touchable import (
     )
 
 __all__ = [
+    "OVERWORLD_TERRAIN_BLOCK",
     "BIG_BUSH",
     "MEDIUM_BUSH",
     "SMALL_BUSH",

@@ -17,6 +17,7 @@ from src.utils.assets import (
     MEDIUM_TREE,
     SMALL_TREE,
     OVERWORLD_BLOCK,
+    OVERWORLD_TERRAIN_BLOCK,
     WALL_BLOCK,
     MYSTERY_BLOCK_1,
     MYSTERY_BLOCK_2,
@@ -42,6 +43,7 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
     ElementType.BLOCK: {
         ElementSubType.OVERWORLD_BLOCK: [OVERWORLD_BLOCK],
         ElementSubType.WALL_BLOCK: [WALL_BLOCK],
+        ElementSubType.OVERWORLD_TERRAIN_BLOCK:[OVERWORLD_TERRAIN_BLOCK]
     },
     ElementType.MISTERY_BOX: {
         ElementSubType.DEFAULT_MISTERY_BOX: [

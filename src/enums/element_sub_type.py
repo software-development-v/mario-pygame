@@ -6,6 +6,7 @@ class ElementSubType(Enum):
     # == BLOCK ==
     OVERWORLD_BLOCK = "OVERWORLD_BLOCK"
     WALL_BLOCK= "WALL_BLOCK"
+    OVERWORLD_TERRAIN_BLOCK="OVERWORLD_TERRAIN_BLOCK"
 
     # == COIN ==
     COIN = "COIN"

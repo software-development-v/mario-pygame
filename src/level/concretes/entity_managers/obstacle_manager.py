@@ -15,7 +15,7 @@ class ObstacleManager(IDrawable, IUpdatable):
 
     def draw(self, screen: Surface, camera: Camera) -> None:
         for obstacle in self.obstacles:
-            screen.blit(obstacle.image, camera.apply(obstacle))
+            obstacle.draw(screen, camera)
 
     def update(self) -> None:
         for obstacle in self.obstacles:

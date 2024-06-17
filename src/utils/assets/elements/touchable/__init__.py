@@ -1,4 +1,4 @@
-from .block import OVERWORLD_BLOCK, WALL_BLOCK, MYSTERY_BLOCK_1, MYSTERY_BLOCK_2
+from .block import OVERWORLD_BLOCK, WALL_BLOCK, MYSTERY_BLOCK_1, MYSTERY_BLOCK_2, OVERWORLD_TERRAIN_BLOCK
 from .coin import COIN_1, COIN_2, COIN_3, COIN_4
 from .pipe import (
     PIPE_HEAD,
@@ -17,6 +17,7 @@ from .flag import (
 )
 
 __all__ = [
+    "OVERWORLD_TERRAIN_BLOCK",
     "OVERWORLD_BLOCK",
     "WALL_BLOCK",
     "MYSTERY_BLOCK_1",
