@@ -741,7 +741,9 @@
         { "position": [9400, 300], "type": "BLOCK", "subtype": "WALL_BLOCK" },
         { "position": [9450, 300], "type": "BLOCK", "subtype": "WALL_BLOCK" },
         { "position": [9400, 250], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 250], "type": "BLOCK", "subtype": "WALL_BLOCK" }
+        { "position": [9450, 250], "type": "BLOCK", "subtype": "WALL_BLOCK" },
+
+        { "position": [450, 500], "type": "COIN", "subtype": "COIN" }
     ],
     "power_ups": []
 }
