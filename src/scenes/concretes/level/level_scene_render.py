@@ -1,14 +1,22 @@
 from src.level import ILevelManager
 from .level_metrics_renderer import LevelMetricsRenderer
 from src.utils.camera import Camera
-from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH
+from src.utils.constants import SCREEN_HEIGHT
 from ...abstractions import Render
+from src.data import GameData
 
 
 class LevelSceneRender(Render):
     def __init__(self, level_manager: ILevelManager) -> None:
         self.level_manager = level_manager
-        self.camera = Camera(SCREEN_WIDTH, SCREEN_HEIGHT, 800, 600, 800)
+        self.game_data = GameData()
+        self.camera = Camera(
+            self.game_data.level_mapper.get_map_width(self.level_manager.get_world(), self.level_manager.get_level()),
+            SCREEN_HEIGHT,
+            800,
+            600,
+            800
+        )
         super().__init__()
         self.level_metrics_renderer = LevelMetricsRenderer(self._screen)
 

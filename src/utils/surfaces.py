@@ -21,7 +21,10 @@ from src.utils.assets import (
     MYSTERY_BLOCK_1,
     MYSTERY_BLOCK_2,
     PIPE_HEAD,
-    PIPE_BODY,
+    PIPE_BODY_STYLE_1,
+    PIPE_BODY_STYLE_2,
+    PIPE_BODY_STYLE_3,
+    PIPE_BODY_STYLE_4,
     CASTLE,
     FLAG_STAND,
     FLAG_PIPE,
@@ -41,11 +44,17 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.WALL_BLOCK: [WALL_BLOCK],
     },
     ElementType.MISTERY_BOX: {
-        ElementSubType.DEFAULT_MISTERY_BOX: [MYSTERY_BLOCK_1, MYSTERY_BLOCK_2]
+        ElementSubType.DEFAULT_MISTERY_BOX: [
+            MYSTERY_BLOCK_1,
+            MYSTERY_BLOCK_2
+            ]
     },
     ElementType.PIPE: {
         ElementSubType.PIPE_HEAD: [PIPE_HEAD],
-        ElementSubType.PIPE_BODY: [PIPE_BODY],
+        ElementSubType.PIPE_BODY_STYLE_1: [PIPE_BODY_STYLE_1],
+        ElementSubType.PIPE_BODY_STYLE_2: [PIPE_BODY_STYLE_2],
+        ElementSubType.PIPE_BODY_STYLE_3: [PIPE_BODY_STYLE_3],
+        ElementSubType.PIPE_BODY_STYLE_4: [PIPE_BODY_STYLE_4],
     },
     ElementType.CLOUD: {
         ElementSubType.SMALL_CLOUD: [SMALL_CLOUD],
@@ -74,9 +83,16 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.FLAG_PIPE: [FLAG_PIPE],
         ElementSubType.FLAG_WIN: [FLAG_WIN],
         ElementSubType.FLAG_STAND: [FLAG_STAND],
-        ElementSubType.FLAG_SUPPORT: [FLAG_SUPPORT_1, FLAG_SUPPORT_2, FLAG_SUPPORT_3],
+        ElementSubType.FLAG_SUPPORT_1: [FLAG_SUPPORT_1],
+        ElementSubType.FLAG_SUPPORT_2: [FLAG_SUPPORT_2],
+        ElementSubType.FLAG_SUPPORT_3: [FLAG_SUPPORT_3],
     },
     ElementType.COIN: {
-        ElementSubType.COIN: [COIN_1, COIN_2, COIN_3, COIN_4],
+        ElementSubType.COIN: [
+            COIN_1,
+            COIN_2,
+            COIN_3,
+            COIN_4
+            ],
         },
 }

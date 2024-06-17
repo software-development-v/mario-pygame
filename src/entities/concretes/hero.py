@@ -8,6 +8,7 @@ from src.utils.camera import Camera
 from src.utils.classes import Position
 from src.utils.constants import (
     ANIMATION_INTERVAL,
+    COLLISION_WIDTH_SCALE,
     DEAD_FALL_THRESHOLD,
     HERO_SPEED,
     INIT_IMAGE_INDEX,
@@ -34,6 +35,7 @@ class Hero(IDrawable):
         self.rect = self.image.get_rect()
         self.rect.x = position.x
         self.rect.y = position.y
+        self.rect.width = self.rect.width * COLLISION_WIDTH_SCALE
         self.width = self.rect.width
         self.height = self.rect.height
         self.vel_y = 0

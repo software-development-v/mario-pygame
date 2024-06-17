@@ -15,7 +15,10 @@ from .non_touchable import (
     )
 from .touchable import (
     PIPE_HEAD,
-    PIPE_BODY,
+    PIPE_BODY_STYLE_1,
+    PIPE_BODY_STYLE_2,
+    PIPE_BODY_STYLE_3,
+    PIPE_BODY_STYLE_4,
     OVERWORLD_BLOCK,
     WALL_BLOCK,
     MYSTERY_BLOCK_1,
@@ -47,7 +50,10 @@ __all__ = [
     "SMALL_TREE",
     "CASTLE",
     "PIPE_HEAD",
-    "PIPE_BODY",
+    "PIPE_BODY_STYLE_1",
+    "PIPE_BODY_STYLE_2",
+    "PIPE_BODY_STYLE_3",
+    "PIPE_BODY_STYLE_4",
     "OVERWORLD_BLOCK",
     "WALL_BLOCK",
     "MYSTERY_BLOCK_1",

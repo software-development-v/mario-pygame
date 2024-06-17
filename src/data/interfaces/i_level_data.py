@@ -22,6 +22,10 @@ class ILevelData(ABC):
         pass
 
     @abstractmethod
+    def map_width(self) -> int:
+        pass
+
+    @abstractmethod
     def get_background(self) -> Surface:
         pass
 
