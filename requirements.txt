@@ -1,2 +1,3 @@
-pygame-ce
-opencv-python
+pygame-ce==2.5.0
+numpy==1.26.4
+opencv-python==4.10.0.82

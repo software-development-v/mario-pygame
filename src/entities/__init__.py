@@ -10,9 +10,16 @@ from .concretes import (
     MisteryBox,
     Mountain,
     Pipe,
+    Tree,
 )
 from .factories import ElementFactory
-from .interfaces import IDrawable, IEntity, IUpdatable,IObservableElement, IElementObserver
+from .interfaces import (
+    IDrawable,
+    IElementObserver,
+    IEntity,
+    IObservableElement,
+    IUpdatable,
+)
 
 __all__ = [
     "IEntity",
@@ -22,6 +29,7 @@ __all__ = [
     "Bush",
     "Cloud",
     "Mountain",
+    "Tree",
     "Block",
     "Castle",
     "Coin",
