@@ -50,15 +50,12 @@ class MainMenuTick(Tick):
 
     def handle_option_change(self, direction: int) -> None:
         selected_option = self.render.get_selected_option()
-        new_option = (selected_option + direction) % 3
+        new_option = (selected_option + direction) % 2
         self.render.set_selected_option(new_option)
 
     def handle_left_right(self) -> None:
         selected_option = self.render.get_selected_option()
-        if selected_option == 2:
-            self.render.set_selected_option(0)
-        else:
-            self.render.set_selected_option(2)
+        self.render.set_selected_option(1 if selected_option == 0 else 0)
 
     def handle_jump(self) -> None:
         self.select_option(self._dispatcher)

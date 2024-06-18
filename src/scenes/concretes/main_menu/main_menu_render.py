@@ -11,8 +11,7 @@ class MainMenuRender(Render):
     def __init__(self) -> None:
         super().__init__()
         self.menu_options: List[str] = [
-            "1 Player Game",
-            "2 Players Game",
+            "Start Game",
             "Quit",
         ]
         self.selected_option: int = 0
@@ -23,21 +22,19 @@ class MainMenuRender(Render):
         self.background_image: pygame.Surface = MENU_BACKGROUND
 
         self.option_positions: List[Tuple[int, int]] = [
-            (screen_width // 2, (screen_height // 2) - 130),
-            (screen_width // 2, (screen_height // 2) - 50),
+            (screen_width // 2, (screen_height // 2) - 75),
             (200, 140),
         ]
 
         self.option_fonts: List[pygame.font.Font] = [
-            pygame.font.Font(GAME_FONT, 45),
-            pygame.font.Font(GAME_FONT, 45),
+            pygame.font.Font(GAME_FONT, 70),
             pygame.font.Font(GAME_FONT, 40),
         ]
 
-        self.top_text_font: pygame.font.Font = pygame.font.Font(GAME_FONT, 30)
+        self.top_text_font: pygame.font.Font = pygame.font.Font(GAME_FONT, 20)
         self.top_text_position: Tuple[int, int] = (
-            screen_width // 2,
-            (screen_height // 2) + 70,
+            screen_width - 200,
+            140,
         )
         self.top_score: int = 0
 
