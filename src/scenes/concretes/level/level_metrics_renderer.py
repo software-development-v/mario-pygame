@@ -1,5 +1,5 @@
 
-from pygame import Rect, Surface, transform
+from pygame import Surface, transform
 
 from src.utils.assets.elements.touchable.coin import COIN_1
 from src.utils.colors import WHITE_COLOR
