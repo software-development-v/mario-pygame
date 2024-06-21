@@ -51,7 +51,6 @@ class TransitionLevelScene(Scene):
                 element.add_observer(
                     CollectedType.COLLECTED_SCORE, score_manager
                 )
-
         return LevelManager(
             Hero(
                 game_data.get_hero_data(hero),
@@ -64,4 +63,5 @@ class TransitionLevelScene(Scene):
             level_data.get_time(),
             level_data.get_screen_width(),
             score_manager,
+
         )

@@ -1,11 +1,10 @@
 from pygame import Surface
-
 from src.entities import Hero, IElementObserver
 from src.enums import Level, World
-
+from src.utils.camera import Camera
+from src.level.concretes.camera_controller import camera
 from ..interfaces import ILevelManager
 from .entity_managers import ObstacleManager
-
 
 class LevelManager(ILevelManager):
     def __init__(
@@ -26,9 +25,10 @@ class LevelManager(ILevelManager):
         self.__background = background
         self.__start_time = time
         self.__current_time = time
-        self.__start_tick: int
+        self.__start_tick = 0
         self.__level_screen_width = level_screen_width
         self.__score_observer = score_observer
+        self.__camera = camera
 
     def get_hero(self) -> Hero:
         return self.__hero
@@ -65,3 +65,6 @@ class LevelManager(ILevelManager):
 
     def get_screen_width(self) -> int:
         return self.__level_screen_width
+
+    def get_camera(self) -> Camera:
+        return self.__camera

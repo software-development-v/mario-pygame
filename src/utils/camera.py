@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class Camera:
     def __init__(
         self,
@@ -31,9 +30,14 @@ class Camera:
         self.last_x_offset = self.x_offset
         self.y_offset = 0
 
-        self.x_offset = min(
-            0, max(self.viewport_width - self.width, self.x_offset)
-        )
+        self.x_offset = min(0, max(self.viewport_width - self.width, self.x_offset))
+
 
     def apply(self, entity: Any) -> Any:
         return entity.rect.move(self.x_offset, self.y_offset)
+
+    def get_x_offset(self) -> int:
+        return self.x_offset
+
+    def get_left_edge(self) -> int:
+        return -self.x_offset

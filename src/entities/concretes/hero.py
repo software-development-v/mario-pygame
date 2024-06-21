@@ -68,7 +68,7 @@ class Hero(IDrawable):
             self.hero_state = HeroState.IDLE
 
     def __handle_hero_movement(
-        self, game_events: Dict[GameEvent, bool]
+        self, game_events: Dict[GameEvent, bool], camera: Camera
     ) -> tuple[int, int]:
         dx = 0
         dy = 0
@@ -77,10 +77,9 @@ class Hero(IDrawable):
             self.face_right = True
             dx = HERO_SPEED
         elif game_events[GameEvent.LEFT]:
-            dx = -HERO_SPEED
-            self.face_right = False
-        else:
-            self.running = False
+            if self.rect.x > camera.get_left_edge():
+                dx = -HERO_SPEED
+                self.face_right = False
 
         dy += self.vel_y
 
@@ -156,9 +155,10 @@ class Hero(IDrawable):
         self,
         game_events: Dict[GameEvent, bool],
         obstacles: List[Element],
+        camera: Camera,
     ) -> None:
         self.__handle_hero_states(game_events)
-        dx, dy = self.__handle_hero_movement(game_events)
+        dx, dy = self.__handle_hero_movement(game_events, camera)
         dx, dy = self.__handle_collisions(obstacles, dx, dy)
         self.rect.x += dx
         self.rect.y += dy

@@ -4,6 +4,7 @@ from pygame import Surface
 
 from src.entities import Hero
 from src.enums import Level, World
+from src.utils.camera import Camera
 
 from ..concretes.entity_managers import ObstacleManager
 
@@ -55,4 +56,8 @@ class ILevelManager(ABC):
 
     @abstractmethod
     def get_screen_width(self) -> int:
+        pass
+
+    @abstractmethod
+    def get_camera(self) -> Camera:
         pass
