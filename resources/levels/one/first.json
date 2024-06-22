@@ -5,7 +5,7 @@
     "map_width": 12220,
     "background": {
         "type": "COLOR",
-        "resource": [37, 150, 190]
+        "resource": [50, 203, 234]
     },
     "background_music": "LEVEL_01",
     "start_player_position": {
