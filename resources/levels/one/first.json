@@ -67,13 +67,13 @@
         { "position": [6650, 100], "type": "CLOUD", "subtype": "BIG_CLOUD" },
         { "position": [1300, 100], "type": "CLOUD", "subtype": "BIG_CLOUD" },
 
-        { "position": [700, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [2050, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [3000, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [4450, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [5350, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [8300, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [10500, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [700, 510], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [2050, 510], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [3000, 510], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [4450, 510], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [5350, 510], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [8300, 510], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [10500, 510], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
 
         { "position": [0, 460], "type": "MOUNTAIN", "subtype": "MEDIUM_MOUNTAIN" },
 
@@ -82,7 +82,7 @@
         { "position": [4100, 515], "type": "TREE", "subtype": "SMALL_TREE" },
         { "position": [5150, 515], "type": "TREE", "subtype": "SMALL_TREE" },
 
-        { "position": [1550, 520], "type": "TREE", "subtype": "MEDIUM_TREE" },
+        { "position": [1550, 480], "type": "TREE", "subtype": "MEDIUM_TREE" },
 
         { "position": [6050, 430], "type": "TREE", "subtype": "BIG_TREE" },
 
