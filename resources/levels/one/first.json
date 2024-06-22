@@ -27,17 +27,17 @@
         { "position": [2300, 600], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_3" },
         { "position": [2850, 600], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_4" },
 
-        { "position": [5550, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [3200, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [3650, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [1200, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [7950, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [6900, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [10700, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
+        { "position": [5550, 600], "type": "BUSH", "subtype": "SMALL_BUSH" },
+        { "position": [3200, 600], "type": "BUSH", "subtype": "SMALL_BUSH" },
+        { "position": [3650, 600], "type": "BUSH", "subtype": "SMALL_BUSH" },
+        { "position": [1200, 600], "type": "BUSH", "subtype": "SMALL_BUSH" },
+        { "position": [7950, 600], "type": "BUSH", "subtype": "SMALL_BUSH" },
+        { "position": [6900, 600], "type": "BUSH", "subtype": "SMALL_BUSH" },
+        { "position": [10700, 600], "type": "BUSH", "subtype": "SMALL_BUSH" },
 
-        { "position": [500, 550], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
-        { "position": [4850, 550], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
-        { "position": [2500, 550], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
+        { "position": [500, 590], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
+        { "position": [4850, 590], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
+        { "position": [2500, 590], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
 
         { "position": [850, 150], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
         { "position": [300, 100], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
@@ -67,24 +67,24 @@
         { "position": [6650, 100], "type": "CLOUD", "subtype": "BIG_CLOUD" },
         { "position": [1300, 100], "type": "CLOUD", "subtype": "BIG_CLOUD" },
 
-        { "position": [700, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [2050, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [3000, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [4450, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [5350, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [8300, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [10500, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [700, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [2050, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [3000, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [4450, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [5350, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [8300, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
+        { "position": [10500, 495], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
 
-        { "position": [0, 450], "type": "MOUNTAIN", "subtype": "MEDIUM_MOUNTAIN" },
+        { "position": [0, 460], "type": "MOUNTAIN", "subtype": "MEDIUM_MOUNTAIN" },
 
-        { "position": [7200, 400], "type": "MOUNTAIN", "subtype": "BIG_MOUNTAIN" },
+        { "position": [7200, 420], "type": "MOUNTAIN", "subtype": "BIG_MOUNTAIN" },
 
-        { "position": [4100, 500], "type": "TREE", "subtype": "SMALL_TREE" },
-        { "position": [5150, 500], "type": "TREE", "subtype": "SMALL_TREE" },
+        { "position": [4100, 515], "type": "TREE", "subtype": "SMALL_TREE" },
+        { "position": [5150, 515], "type": "TREE", "subtype": "SMALL_TREE" },
 
-        { "position": [1550, 450], "type": "TREE", "subtype": "MEDIUM_TREE" },
+        { "position": [1550, 520], "type": "TREE", "subtype": "MEDIUM_TREE" },
 
-        { "position": [6050, 400], "type": "TREE", "subtype": "BIG_TREE" },
+        { "position": [6050, 430], "type": "TREE", "subtype": "BIG_TREE" },
 
         { "position": [800, 450], "type": "MISTERY_BOX", "subtype": "DEFAULT_MISTERY_BOX" },
 
