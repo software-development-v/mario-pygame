@@ -23,8 +23,8 @@ class LevelSceneRender(Render):
         hero.draw(self._screen, camera)
 
         self.level_metrics_renderer.render(
+            self.level_manager.get_hero_type().value,
             self.level_manager.get_current_time(),
             self.level_manager.get_score(),
-            0,
             0,
         )

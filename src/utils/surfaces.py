@@ -16,13 +16,13 @@ from src.utils.assets import (
     FLAG_PIPE,
     FLAG_SUPPORT,
     FLAG_WIN,
+    MASTERY_BLOCK_1,
+    MASTERY_BLOCK_2,
+    MASTERY_BLOCK_3,
     MEDIUM_BUSH,
     MEDIUM_CLOUD,
     MEDIUM_MOUNTAIN,
     MEDIUM_TREE,
-    MASTERY_BLOCK_1,
-    MASTERY_BLOCK_2,
-    MASTERY_BLOCK_3,
     OVERWORLD_BLOCK,
     OVERWORLD_TERRAIN_BLOCK,
     PIPE_BODY_STYLE_1,
@@ -30,8 +30,8 @@ from src.utils.assets import (
     PIPE_BODY_STYLE_3,
     PIPE_BODY_STYLE_4,
     PIPE_BODY_STYLE_5,
-    PIPE_HEAD_SMALL,
     PIPE_HEAD_BIG,
+    PIPE_HEAD_SMALL,
     SMALL_BUSH,
     SMALL_CLOUD,
     SMALL_MOUNTAIN,
@@ -46,7 +46,11 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.OVERWORLD_TERRAIN_BLOCK: [OVERWORLD_TERRAIN_BLOCK],
     },
     ElementType.MISTERY_BOX: {
-        ElementSubType.DEFAULT_MISTERY_BOX: [MASTERY_BLOCK_1, MASTERY_BLOCK_2, MASTERY_BLOCK_3]
+        ElementSubType.DEFAULT_MISTERY_BOX: [
+            MASTERY_BLOCK_1,
+            MASTERY_BLOCK_2,
+            MASTERY_BLOCK_3,
+        ]
     },
     ElementType.PIPE: {
         ElementSubType.PIPE_HEAD_SMALL: [PIPE_HEAD_SMALL],

@@ -1,20 +1,32 @@
-from pygame import Surface
+from pygame import Surface, transform
 
+from src.utils.assets.elements.touchable.coin import COIN_1
 from src.utils.colors import WHITE_COLOR
+from src.utils.constants import SCREEN_WIDTH
 from src.utils.text import get_format_number, get_message
 
 
 class LevelMetricsRenderer:
-    STATUS_BAR_WIDTH = 1600
-
     def __init__(self, surf: Surface) -> None:
         self.surf = surf
+        self.status_bar_y_pos = 20
+        self.icons_size = 30
 
-    def render(self, time: int, score: int, coins: int, world: int) -> None:
+    def render(
+        self,
+        name: str,
+        time: int,
+        score: int,
+        coins: int,
+        world: int = 1,
+        level: int = 1,
+    ) -> None:
+        self.character_name = name
         self.time = time
         self.score = score
         self.coins = coins
         self.world = world
+        self.level = level
         self.set_status_bar()
 
     def set_status_bar(self) -> None:
@@ -22,11 +34,33 @@ class LevelMetricsRenderer:
         format_score = get_format_number(self.score, 6)
 
         x_base = 300
-        spacing = (self.STATUS_BAR_WIDTH - x_base * 2) // 3
+        spacing = (SCREEN_WIDTH - x_base * 2) // 3
 
-        self.set_message_box(f"SCORE\n{format_score}", x_base, 15)
         self.set_message_box(
-            f"TIME\n {format_time}", x_base + (3 * spacing), 15
+            f"{self.character_name}\n{format_score}",
+            x_base,
+            self.status_bar_y_pos,
+        )
+        self.set_message_box(
+            f"\nx{self.coins}", x_base + (1 * spacing), self.status_bar_y_pos
+        )
+        self.set_message_box(
+            f"WORLD\n {self.world}-{self.level}",
+            x_base + (2 * spacing),
+            self.status_bar_y_pos,
+        )
+        self.set_message_box(
+            f"TIME\n {format_time}",
+            x_base + (3 * spacing),
+            self.status_bar_y_pos,
+        )
+
+        self.surf.blit(
+            transform.scale(COIN_1, (self.icons_size, self.icons_size)),
+            (
+                x_base + (1 * spacing) - self.icons_size * 2.3,
+                self.status_bar_y_pos + self.icons_size,
+            ),
         )
 
     def set_message_box(self, text: str, x: int, y: int) -> None:

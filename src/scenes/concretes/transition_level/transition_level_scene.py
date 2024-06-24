@@ -70,6 +70,7 @@ class TransitionLevelScene(Scene):
                 game_data.get_hero_data(hero),
                 level_data.get_player_init_position(),
             ),
+            hero,
             ObstacleManager(level_data.get_elements()),
             world,
             level,
