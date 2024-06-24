@@ -42,6 +42,8 @@ class Hero(IDrawable):
         self.last_update = time.get_ticks()
 
     def draw(self, screen: Surface, camera: Camera) -> None:
+        self.__update_image()
+
         if not self.face_right:
             self.image = transform.flip(self.image, True, False)
 
@@ -169,4 +171,3 @@ class Hero(IDrawable):
         self.rect.x += dx
         self.rect.y += dy
         self.__check_dead()
-        self.__update_image()
