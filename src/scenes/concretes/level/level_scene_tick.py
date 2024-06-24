@@ -32,10 +32,11 @@ class LevelSceneTick(Tick):
 
         obstacle_manager = self.level_manager.get_obstacle_manager()
         hero = self.level_manager.get_hero()
+        camera = self.level_manager.get_camera()
 
         obstacle_manager.update()
 
-        hero.update(game_events, obstacle_manager.get_obstacles())
+        hero.update(game_events, obstacle_manager.get_obstacles(), camera)
 
         if hero.hero_state == HeroState.DEAD:
             self._dispatcher[SceneAction.SET_NEXT_SCENE](

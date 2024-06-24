@@ -3,7 +3,7 @@ from typing import List
 from pygame import Surface
 
 from src.entities import Element, IDrawable, IUpdatable
-from src.utils.camera import Camera
+from src.utils import Camera
 
 
 class ObstacleManager(IDrawable, IUpdatable):

@@ -3,7 +3,8 @@ from abc import ABC, abstractmethod
 from pygame import Surface
 
 from src.entities import Hero
-from src.enums import Level, World
+from src.enums import HeroType, Level, World
+from src.utils import Camera
 
 from ..concretes.entity_managers import ObstacleManager
 
@@ -11,6 +12,10 @@ from ..concretes.entity_managers import ObstacleManager
 class ILevelManager(ABC):
     @abstractmethod
     def get_hero(self) -> Hero:
+        pass
+
+    @abstractmethod
+    def get_hero_type(self) -> HeroType:
         pass
 
     @abstractmethod
@@ -55,4 +60,8 @@ class ILevelManager(ABC):
 
     @abstractmethod
     def get_screen_width(self) -> int:
+        pass
+
+    @abstractmethod
+    def get_camera(self) -> Camera:
         pass

@@ -6,7 +6,7 @@ from src.enums import GameEvent, SceneAction
 from src.utils.assets import ICON
 from src.utils.constants import FPS, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
 
-from .concretes import ModeSelectionScene
+from .concretes import MainMenuScene
 from .interfaces import IScene, ISceneManager
 
 
@@ -23,7 +23,7 @@ class SceneManager(ISceneManager):
         self.__is_paused: bool = False
 
     def get_initial_scene(self) -> IScene:
-        return ModeSelectionScene(
+        return MainMenuScene(
             {
                 SceneAction.PAUSE: self.pause_scene,
                 SceneAction.CONTINUE: self.continue_scene,
