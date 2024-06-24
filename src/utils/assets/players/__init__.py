@@ -140,7 +140,6 @@ from .pariente import (
     PARIENTE_LVL_4_2_WALKING_3,
 )
 
-
 __all__ = [
     # CUMPA
     "CUMPA_LVL_1",

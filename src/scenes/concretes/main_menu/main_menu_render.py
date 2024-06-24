@@ -1,8 +1,10 @@
 from typing import List, Tuple
+
 import pygame
-from src.utils.colors import ORANGE_COLOR, WHITE_COLOR
-from src.utils.assets.fonts import GAME_FONT
+
 from src.utils.assets.backgrounds.menu import MENU_BACKGROUND
+from src.utils.assets.fonts import GAME_FONT
+from src.utils.colors import ORANGE_COLOR, WHITE_COLOR
 
 from ...abstractions import Render
 

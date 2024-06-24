@@ -1,6 +1,9 @@
 from typing import Callable, Dict, Tuple
+
 import pygame
-from src.enums import GameEvent, SceneAction, HeroType, Level, World
+
+from src.enums import GameEvent, HeroType, Level, SceneAction, World
+
 from ...abstractions import Tick
 from ..transition_level import TransitionLevelScene
 from .main_menu_render import MainMenuRender

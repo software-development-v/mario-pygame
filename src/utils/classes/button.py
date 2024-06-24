@@ -1,5 +1,7 @@
 from typing import Tuple
+
 import pygame
+
 from src.utils.assets.elements.touchable import BUTTON
 
 
