@@ -116,11 +116,15 @@ VALVOOPA_WALKING_BACK_DIR = VALVOOPA_WALKING_DIR + BACK_DIR
 ALCOHOL_CAIMAN_DIR = POWER_UPS_DIR + "alcohol_caiman/"
 COCA_PLANT_DIR = POWER_UPS_DIR + "coca_plant/"
 PASTEL_DIR = POWER_UPS_DIR + "pastel/"
-PIJCHU_BALL_DIR = POWER_UPS_DIR + "pijchu_ball/"
+BUNUELO_DIR = POWER_UPS_DIR + "bunuelo/"
+
+# == coca power up ==
+PIJCHU_BALL_DIR = COCA_PLANT_DIR + "pijchu_ball/"
+PLANT_DIR = COCA_PLANT_DIR + "plant/"
 
 # == pijchu ball ==
-PIJCHU_BALL_PHASE_1_DIR = PIJCHU_BALL_DIR + "phase_1/"
-PIJCHU_BALL_PHASE_2_DIR = PIJCHU_BALL_DIR + "phase_2/"
+PIJCHU_BALL_BOOM_DIR = PIJCHU_BALL_DIR + "boom/"
+PIJCHU_BALL_COCA_BALL_DIR = PIJCHU_BALL_DIR + "coca_ball/"
 
 # == Players ==
 # == players names ==

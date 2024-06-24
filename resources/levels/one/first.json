@@ -14,12 +14,12 @@
     },
     "enemies": [],
     "elements": [
-        { "position": [1400, 550], "type": "PIPE", "subtype": "PIPE_HEAD_SMALL" },
-        { "position": [1900, 500], "type": "PIPE", "subtype": "PIPE_HEAD_SMALL" },
-        { "position": [2300, 450], "type": "PIPE", "subtype": "PIPE_HEAD_SMALL" },
-        { "position": [2850, 450], "type": "PIPE", "subtype": "PIPE_HEAD_SMALL" },
-        { "position": [8150, 550], "type": "PIPE", "subtype": "PIPE_HEAD_SMALL" },
-        { "position": [8950, 550], "type": "PIPE", "subtype": "PIPE_HEAD_SMALL" },
+        { "position": [1400, 550], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
+        { "position": [1900, 500], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
+        { "position": [2300, 450], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
+        { "position": [2850, 450], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
+        { "position": [8150, 550], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
+        { "position": [8950, 550], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
 
         { "position": [1900, 600], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_1" },
         { "position": [2300, 550], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_2" },
@@ -166,9 +166,9 @@
         { "position": [9900, 200], "type": "FLAG", "subtype": "FLAG_PIPE" },
         { "position": [9900, 150], "type": "FLAG", "subtype": "FLAG_PIPE" },
 
-        { "position": [9800, 150], "type": "FLAG", "subtype": "FLAG_WIN" },
+        { "position": [9900, 150], "type": "FLAG", "subtype": "FLAG_WIN" },
 
-        { "position": [9900, 600], "type": "FLAG", "subtype": "FLAG_SUPPORT" },
+        { "position": [9856, 600], "type": "FLAG", "subtype": "FLAG_SUPPORT" },
 
         { "position": [0, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
         { "position": [-50, 0], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
