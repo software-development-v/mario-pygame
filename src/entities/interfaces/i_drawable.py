@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from pygame import Surface
 
-from src.utils.camera import Camera
+from src.utils import Camera
 
 
 class IDrawable(ABC):

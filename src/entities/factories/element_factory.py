@@ -1,5 +1,5 @@
 from src.enums import ElementSubType, ElementType
-from src.utils.classes import Position
+from src.utils import Position
 
 from ..abstractions import Element
 from ..concretes import (
