@@ -6,6 +6,7 @@ from .block import (
     OVERWORLD_TERRAIN_BLOCK,
     WALL_BLOCK,
 )
+from .button import BUTTON
 from .coin import COIN_1, COIN_2, COIN_3, COIN_4
 from .flag import FLAG_PIPE, FLAG_SUPPORT, FLAG_WIN
 from .pipe import (
@@ -39,4 +40,5 @@ __all__ = [
     "COIN_2",
     "COIN_3",
     "COIN_4",
+    "BUTTON",
 ]

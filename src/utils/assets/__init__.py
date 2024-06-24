@@ -1,9 +1,11 @@
+from .backgrounds.menu import MENU_BACKGROUND
 from .cinematics import FINAL_CINEMATIC_AUDIO, FINAL_CINEMATIC_VIDEO
 from .elements import (
     BIG_BUSH,
     BIG_CLOUD,
     BIG_MOUNTAIN,
     BIG_TREE,
+    BUTTON,
     CASTLE,
     COIN_1,
     COIN_2,
@@ -354,4 +356,6 @@ __all__ = [
     "PARIENTE_LVL_4_2_WALKING_1",
     "PARIENTE_LVL_4_2_WALKING_2",
     "PARIENTE_LVL_4_2_WALKING_3",
+    "BUTTON",
+    "MENU_BACKGROUND",
 ]
