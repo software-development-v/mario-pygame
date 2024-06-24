@@ -4,7 +4,7 @@ from pygame import Surface
 
 from src.entities import Hero
 from src.enums import Level, World
-from src.utils.camera import Camera
+from src.utils import Camera
 
 from ..concretes.entity_managers import ObstacleManager
 

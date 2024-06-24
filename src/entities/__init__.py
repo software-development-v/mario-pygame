@@ -1,4 +1,4 @@
-from .abstractions import Element
+from .abstractions import Element, InteractiveElement
 from .concretes import (
     Block,
     Bush,
@@ -26,6 +26,7 @@ __all__ = [
     "IDrawable",
     "IUpdatable",
     "Element",
+    "InteractiveElement",
     "Bush",
     "Cloud",
     "Mountain",

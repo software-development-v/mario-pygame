@@ -1,15 +1,20 @@
 from typing import Callable, Dict
 
 from src.data import GameData
-from src.entities import Hero
-from src.entities.abstractions.interactive_element import InteractiveElement
-from src.enums import HeroType, Level, SceneAction, World
-from src.enums.collected_type import CollectedType
+from src.entities import Hero, InteractiveElement
+from src.enums import CollectedType, HeroType, Level, SceneAction, World
 from src.level import (
     ILevelManager,
     LevelManager,
     ObstacleManager,
     ScoreObserver,
+)
+from src.utils import Camera
+from src.utils.constants import (
+    SCREEN_CAMERA_THRESHOLD,
+    SCREEN_HEIGHT,
+    SCREEN_VIEW_PLAY_HEIGHT,
+    SCREEN_VIEW_PLAY_WIDTH,
 )
 
 from ...abstractions import Scene
@@ -51,6 +56,15 @@ class TransitionLevelScene(Scene):
                 element.add_observer(
                     CollectedType.COLLECTED_SCORE, score_manager
                 )
+
+        camera = Camera(
+            level_data.get_screen_width(),
+            SCREEN_HEIGHT,
+            SCREEN_VIEW_PLAY_WIDTH,
+            SCREEN_CAMERA_THRESHOLD,
+            SCREEN_VIEW_PLAY_HEIGHT,
+        )
+
         return LevelManager(
             Hero(
                 game_data.get_hero_data(hero),
@@ -63,5 +77,5 @@ class TransitionLevelScene(Scene):
             level_data.get_time(),
             level_data.get_screen_width(),
             score_manager,
-
+            camera,
         )

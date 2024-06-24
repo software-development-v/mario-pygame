@@ -2,8 +2,8 @@ from typing import Dict, List
 
 from pygame import Surface
 
-from src.enums.collected_type import CollectedType
-from src.utils.classes.position import Position
+from src.enums import CollectedType
+from src.utils import Position
 
 from ..interfaces import IElementObserver, IObservableElement
 from .element import Element

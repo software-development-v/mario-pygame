@@ -3,8 +3,7 @@ from typing import Dict, List
 from pygame import Surface, time, transform
 
 from src.enums import GameEvent, HeroLevel, HeroState
-from src.utils.camera import Camera
-from src.utils.classes import Position
+from src.utils import Camera, Position
 from src.utils.constants import (
     ANIMATION_INTERVAL,
     DEAD_FALL_THRESHOLD,
@@ -76,10 +75,13 @@ class Hero(IDrawable):
         if game_events[GameEvent.RIGHT]:
             self.face_right = True
             dx = HERO_SPEED
-        elif game_events[GameEvent.LEFT]:
-            if self.rect.x > camera.get_left_edge():
-                dx = -HERO_SPEED
-                self.face_right = False
+        elif (
+            game_events[GameEvent.LEFT] and self.rect.x > camera.get_left_edge()
+        ):
+            self.face_right = False
+            dx = -HERO_SPEED
+        else:
+            self.running = False
 
         dy += self.vel_y
 
@@ -102,6 +104,7 @@ class Hero(IDrawable):
 
             if isinstance(obstacle, InteractiveElement):
                 obstacle.notify_observers()
+
             dx = 0
             break
 
@@ -124,6 +127,9 @@ class Hero(IDrawable):
                 dy = obstacle.get_rect().top - self.rect.bottom
                 self.vel_y = 0
                 self.jumping = False
+
+            if isinstance(obstacle, InteractiveElement):
+                obstacle.notify_observers()
 
             break
 

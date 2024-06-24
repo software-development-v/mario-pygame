@@ -1,10 +1,14 @@
 from typing import Callable, Dict
+
 from pygame import time
+
 from src.enums import GameEvent, HeroState, SceneAction
 from src.level import ILevelManager
 from src.utils.constants import TO_SECONDS
+
 from ...abstractions import Tick
 from ..final_cinematic import FinalCinematicScene
+
 
 class LevelSceneTick(Tick):
     def __init__(
