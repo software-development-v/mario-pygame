@@ -1,6 +1,6 @@
 from typing import Callable, Dict
 
-from src.enums.scene_action import SceneAction
+from src.enums import SceneAction
 from src.utils import FINAL_CINEMATIC_AUDIO, FINAL_CINEMATIC_VIDEO
 
 from ...abstractions import CinematicScene
