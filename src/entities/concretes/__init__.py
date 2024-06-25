@@ -8,6 +8,7 @@ from .elements import (
     MisteryBox,
     Mountain,
     Pipe,
+    Tree,
 )
 from .hero import Hero
 
@@ -15,6 +16,7 @@ __all__ = [
     "Bush",
     "Cloud",
     "Mountain",
+    "Tree",
     "Block",
     "Castle",
     "Coin",

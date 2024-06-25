@@ -3,9 +3,7 @@ from typing import List
 from pygame import Rect, Surface, time
 
 from src.enums.element_type import ElementType
-from src.utils.camera import Camera
-from src.utils.classes import Position
-from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX
+from src.utils import ANIMATION_INTERVAL, INIT_IMAGE_INDEX, Camera, Position
 
 from ..interfaces import IEntity
 
@@ -20,11 +18,10 @@ class Element(IEntity):
     ) -> None:
         self.position = position
         self.surfaces: List[Surface] = images
-        self.current_image_index = INIT_IMAGE_INDEX
+        self.index = INIT_IMAGE_INDEX
         self.last_update = time.get_ticks()
-        self.animation_interval = ANIMATION_INTERVAL
         self.is_touchable = is_touchable
-        self.image = self.surfaces[self.current_image_index]
+        self.image = self.surfaces[self.index]
         self.rect = self.image.get_rect()
         self.rect.x = position.x
         self.rect.y = position.y
@@ -34,13 +31,15 @@ class Element(IEntity):
         return self.rect
 
     def draw(self, screen: Surface, camera: Camera) -> None:
-        screen.blit(self.image, camera.apply(self.rect))
+        screen.blit(self.image, camera.apply(self))
 
     def update(self) -> None:
         current_time = time.get_ticks()
 
-        if current_time - self.last_update > self.animation_interval:
+        if current_time - self.last_update > ANIMATION_INTERVAL:
+            self.index = self.index + 1
             self.last_update = current_time
-            self.current_image_index = ++self.current_image_index % len(
-                self.surfaces
-            )
+            if self.index >= len(self.surfaces):
+                self.index = INIT_IMAGE_INDEX
+
+        self.image = self.surfaces[self.index]

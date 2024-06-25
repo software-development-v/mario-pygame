@@ -1,8 +1,8 @@
 from pygame import Surface
 
-from src.entities import Hero
-from src.entities import IElementObserver
-from src.enums import Level, World
+from src.entities import Hero, IElementObserver
+from src.enums import HeroType, Level, World
+from src.utils import Camera
 
 from ..interfaces import ILevelManager
 from .entity_managers import ObstacleManager
@@ -12,25 +12,34 @@ class LevelManager(ILevelManager):
     def __init__(
         self,
         hero: Hero,
+        hero_type: HeroType,
         obstacle_manager: ObstacleManager,
         world: World,
         level: Level,
         background: Surface,
         time: int,
+        level_screen_width: int,
         score_observer: IElementObserver,
+        camera: Camera,
     ) -> None:
         self.__hero = hero
+        self.__hero_type = hero_type
         self.__obstacle_manager = obstacle_manager
         self.__world = world
         self.__level = level
         self.__background = background
         self.__start_time = time
         self.__current_time = time
-        self.__start_tick: int
+        self.__start_tick = 0
+        self.__level_screen_width = level_screen_width
         self.__score_observer = score_observer
+        self.__camera = camera
 
     def get_hero(self) -> Hero:
         return self.__hero
+
+    def get_hero_type(self) -> HeroType:
+        return self.__hero_type
 
     def get_obstacle_manager(self) -> ObstacleManager:
         return self.__obstacle_manager
@@ -61,3 +70,9 @@ class LevelManager(ILevelManager):
 
     def get_score(self) -> int:
         return self.__score_observer.get_value()
+
+    def get_screen_width(self) -> int:
+        return self.__level_screen_width
+
+    def get_camera(self) -> Camera:
+        return self.__camera

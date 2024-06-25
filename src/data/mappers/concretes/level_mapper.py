@@ -3,9 +3,7 @@ from typing import Any, Dict, List
 
 from src.entities import Element, ElementFactory, IEntity
 from src.enums import BackgroundType, ElementSubType, ElementType, Level, World
-from src.utils.classes import Position
-from src.utils.colors import BLACK_COLOR
-from src.utils.directories import LEVELS_DIR
+from src.utils import BLACK_COLOR, LEVELS_DIR, SCALE, Position
 
 from ...background import BackgroundColor, IBackground
 from ...interfaces import ILevelData
@@ -23,6 +21,7 @@ class LevelMapper(ILevelMapper):
         data = self.read_file_level(world, level)
 
         validate_level_data(data)
+        adjust_positions(data["elements"], SCALE)
 
         background = self._map_background(data["background"])
         position = self._map_player_start_position(
@@ -36,6 +35,7 @@ class LevelMapper(ILevelMapper):
             world,
             level,
             data["time"],
+            data["map_width"],
             background,
             data["background_music"],
             position,
@@ -65,7 +65,7 @@ class LevelMapper(ILevelMapper):
     def _map_player_start_position(self, data: Dict[str, Any]) -> Position:
         return Position(data["x"], data["y"])
 
-    def _map_elements(self, elements: list[Dict[str, Any]]) -> List[Element]:
+    def _map_elements(self, elements: List[Dict[str, Any]]) -> List[Element]:
         mappedElements: List[Element] = []
 
         for element in elements:
@@ -80,8 +80,14 @@ class LevelMapper(ILevelMapper):
 
         return mappedElements
 
-    def _map_enemies(self, _enemies: list[Dict[str, Any]]) -> List[IEntity]:
+    def _map_enemies(self, _enemies: List[Dict[str, Any]]) -> List[IEntity]:
         return []
 
-    def _map_power_ups(self, _power_ups: list[Dict[str, Any]]) -> List[IEntity]:
+    def _map_power_ups(self, _power_ups: List[Dict[str, Any]]) -> List[IEntity]:
         return []
+
+
+def adjust_positions(elementos: List[Dict[str, Any]], scale: float):
+    for elemento in elementos:
+        elemento["position"][0] = int(elemento["position"][0] * scale)
+        elemento["position"][1] = int(elemento["position"][1] * scale)

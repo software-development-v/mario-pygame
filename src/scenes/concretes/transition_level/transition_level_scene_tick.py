@@ -4,7 +4,7 @@ from pygame import time
 
 from src.enums import GameEvent, SceneAction
 from src.level import ILevelManager
-from src.utils.constants import TRANSITION_DURATION
+from src.utils import TRANSITION_DURATION
 
 from ...abstractions import Tick
 from ..level import LevelScene

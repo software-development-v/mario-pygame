@@ -1,5 +1,5 @@
 from src.enums import ElementSubType, ElementType
-from src.utils.classes import Position
+from src.utils import Position
 
 from ..abstractions import Element
 from ..concretes import (
@@ -12,6 +12,7 @@ from ..concretes import (
     MisteryBox,
     Mountain,
     Pipe,
+    Tree,
 )
 
 
@@ -25,6 +26,7 @@ class ElementFactory:
             ElementType.CASTLE: Castle,
             ElementType.COIN: Coin,
             ElementType.FLAG: Flag,
+            ElementType.TREE: Tree,
             ElementType.MISTERY_BOX: MisteryBox,
             ElementType.PIPE: Pipe,
         }

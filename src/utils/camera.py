@@ -37,3 +37,6 @@ class Camera:
 
     def apply(self, entity: Any) -> Any:
         return entity.rect.move(self.x_offset, self.y_offset)
+
+    def get_left_edge(self) -> int:
+        return -self.x_offset

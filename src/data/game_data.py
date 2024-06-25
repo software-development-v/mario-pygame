@@ -3,8 +3,7 @@ from typing import Dict, List
 from pygame import Surface
 
 from src.enums import HeroLevel, HeroState, HeroType, Level, World
-from src.utils import Singleton
-from src.utils.assets import (
+from src.utils import (
     CUMPA_LVL_1,
     CUMPA_LVL_1_BRAKE,
     CUMPA_LVL_1_DIED,
@@ -140,6 +139,7 @@ from src.utils.assets import (
     PARIENTE_LVL_4_2_WALKING_1,
     PARIENTE_LVL_4_2_WALKING_2,
     PARIENTE_LVL_4_2_WALKING_3,
+    Singleton,
 )
 
 from .interfaces import IGameData, ILevelData

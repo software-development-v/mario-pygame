@@ -1,4 +1,4 @@
-from .abstractions import Element
+from .abstractions import Element, InteractiveElement
 from .concretes import (
     Block,
     Bush,
@@ -10,18 +10,27 @@ from .concretes import (
     MisteryBox,
     Mountain,
     Pipe,
+    Tree,
 )
 from .factories import ElementFactory
-from .interfaces import IDrawable, IEntity, IUpdatable,IObservableElement, IElementObserver
+from .interfaces import (
+    IDrawable,
+    IElementObserver,
+    IEntity,
+    IObservableElement,
+    IUpdatable,
+)
 
 __all__ = [
     "IEntity",
     "IDrawable",
     "IUpdatable",
     "Element",
+    "InteractiveElement",
     "Bush",
     "Cloud",
     "Mountain",
+    "Tree",
     "Block",
     "Castle",
     "Coin",
