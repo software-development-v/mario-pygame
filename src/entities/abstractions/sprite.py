@@ -11,18 +11,32 @@ from ..interfaces import IAnimate, IDrawable
 
 class Sprite(PygameSprite, IDrawable, IAnimate, ABC):
     def __init__(
-        self, position: Position, animation_interval: int = ANIMATION_INTERVAL
+        self,
+        position: Position,
+        animation_interval: int = ANIMATION_INTERVAL,
+        x_rect_percent: float = 1,
+        y_rect_percent: float = 1,
     ):
         super().__init__()
-        self.__index = INIT_IMAGE_INDEX
-        self.__face_right = True
-        self.__last_update = time.get_ticks()
-        self.__animation_interval = animation_interval
-        self.__rect = self.__get_image().get_rect()
-        self.__rect.x = position.x
-        self.__rect.y = position.y
-        self.__width = self.__rect.width
-        self.__height = self.__rect.height
+        self.__index: int = INIT_IMAGE_INDEX
+        self.__face_right: float = True
+        self.__last_update: int = time.get_ticks()
+        self.__animation_interval: int = animation_interval
+
+        self.__image_rect: Rect = self.__get_image().get_rect(
+            topleft=position.to_tuple()
+        )
+
+        self.__width = self.__image_rect.width * x_rect_percent
+        self.__height = self.__image_rect.height * y_rect_percent
+
+        self.__rect = Rect(
+            self.__image_rect.x + (self.__image_rect.width - self.__width) / 2,
+            self.__image_rect.y
+            + (self.__image_rect.height - self.__height) / 2,
+            self.__width,
+            self.__height,
+        )
 
     @abstractmethod
     def _get_surfaces(self) -> List[Surface]:
@@ -31,23 +45,17 @@ class Sprite(PygameSprite, IDrawable, IAnimate, ABC):
     def get_rect(self) -> Rect:
         return self.__rect
 
-    def get_x_rect(self) -> int:
-        return self.__rect.x
+    def add_x_rect(self, x: float) -> None:
+        self.__image_rect.x += x
+        self.__rect.x = (
+            self.__image_rect.x + (self.__image_rect.width - self.__width) / 2
+        )
 
-    def get_y_rect(self) -> int:
-        return self.__rect.y
-
-    def set_x_rect(self, x: int) -> None:
-        self.__rect.x = x
-
-    def set_y_rect(self, y: int) -> None:
-        self.__rect.y = y
-
-    def get_width(self) -> int:
-        return self.__width
-
-    def get_height(self) -> int:
-        return self.__height
+    def add_y_rect(self, y: float) -> None:
+        self.__image_rect.y += y
+        self.__rect.y = (
+            self.__image_rect.y + (self.__image_rect.height - self.__height) / 2
+        )
 
     def set_face_right(self, face_right: bool) -> None:
         self.__face_right = face_right
@@ -60,8 +68,43 @@ class Sprite(PygameSprite, IDrawable, IAnimate, ABC):
 
         return image
 
-    def draw(self, screen: Surface, camera: Camera) -> None:
-        screen.blit(self.__get_image(), camera.apply(self.__rect))
+    def __check_change_image(
+        self, image: Surface, x_rect_percent: float, y_rect_percent: float
+    ) -> None:
+        if (
+            self.__image_rect.width == image.width
+            and self.__image_rect.height == image.height
+        ):
+            return
+
+        x, y = self.__image_rect.x, self.__image_rect.y
+
+        self.__image_rect: Rect = image.get_rect()
+        self.__image_rect.x = x
+        self.__image_rect.y = y
+
+        self.__width = self.__image_rect.width * x_rect_percent
+        self.__height = self.__image_rect.height * y_rect_percent
+
+        self.__rect = Rect(
+            self.__image_rect.x + (self.__image_rect.width - self.__width) / 2,
+            self.__image_rect.y
+            + (self.__image_rect.height - self.__height) / 2,
+            self.__width,
+            self.__height,
+        )
+
+    def draw(
+        self,
+        screen: Surface,
+        camera: Camera,
+        x_rect_percent: float = 1,
+        y_rect_percent: float = 1,
+    ) -> None:
+        image = self.__get_image()
+        self.__check_change_image(image, x_rect_percent, y_rect_percent)
+
+        screen.blit(image, camera.apply(self.__image_rect))
 
     def animate(self) -> None:
         surfaces = self._get_surfaces()
