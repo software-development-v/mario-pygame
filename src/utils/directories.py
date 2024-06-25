@@ -82,7 +82,7 @@ DIED_DIR = "died/"
 JUMP_DIR = "jump/"
 BRAKE_DIR = "brake/"
 DUCK_DIR = "duck/"
-COMING_OUT_DIR = "coming_out"
+COMING_OUT_DIR = "coming_out/"
 INSIDE_DIR = "inside/"
 
 # == POSITION ==
