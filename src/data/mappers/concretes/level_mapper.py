@@ -45,7 +45,7 @@ class LevelMapper(ILevelMapper):
         )
 
     def read_file_level(self, world: World, level: Level) -> Dict[str, Any]:
-        path = f"{LEVELS_DIR}/{world.value}/{level.value}.json"
+        path = f"{LEVELS_DIR}/world_{world.value}/level_{level.value}.json"
 
         try:
             with open(path) as file:

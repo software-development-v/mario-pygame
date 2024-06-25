@@ -5,9 +5,6 @@ from pygame import mouse, quit, time
 from src.enums import GameEvent, SceneAction
 
 from ...abstractions import Tick
-from ..character_selection_menu.character_selection_scene import (
-    CharacterSelectionScene,
-)
 from .main_menu_render import MainMenuRender
 
 
@@ -73,6 +70,7 @@ class MainMenuTick(Tick):
             quit()
             exit()
         else:
+            from ..transition_level import TransitionLevelScene
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
                 CharacterSelectionScene(self._dispatcher)
             )

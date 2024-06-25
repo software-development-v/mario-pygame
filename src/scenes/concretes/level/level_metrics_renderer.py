@@ -33,7 +33,10 @@ class LevelMetricsRenderer:
         self.set_status_bar()
 
     def set_status_bar(self) -> None:
-        format_time = get_format_number(self.time)
+        format_time= ""
+        if self.time >= 0:
+              format_time = get_format_number(self.time)
+
         format_score = get_format_number(self.score, 6)
 
         x_base = 300

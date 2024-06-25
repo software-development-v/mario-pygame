@@ -24,14 +24,17 @@ class TransitionLevelSceneTick(Tick):
         self,
         game_events: Dict[GameEvent, bool],
     ) -> None:
-        pass
+
         current_time = time.get_ticks()
 
         if (
             game_events[GameEvent.PAUSE]
             or current_time - self.__start_time >= TRANSITION_DURATION
         ):
-            self._dispatcher[SceneAction.SET_NEXT_SCENE](
-                LevelScene(self.__level_manager, self._dispatcher)
-            )
+            if self.__level_manager.get_lifes() != 0:
+                self._dispatcher[SceneAction.SET_NEXT_SCENE](
+                    LevelScene(self.__level_manager, self._dispatcher)
+                )
+            
+
             self._dispatcher[SceneAction.END]()

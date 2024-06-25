@@ -1,4 +1,4 @@
-from typing import Callable, Dict
+from typing import Callable, Dict, Optional
 
 from src.data import GameData
 from src.entities import Hero, InteractiveElement
@@ -29,16 +29,29 @@ class TransitionLevelScene(Scene):
         world: World,
         level: Level,
         dispatcher: Dict[SceneAction, Callable[..., None]],
+        level_manager :Optional[ILevelManager] = None
     ) -> None:
+        self.game_data = GameData()
         self.__level_manager: ILevelManager = self.setup_level(
-            hero, world, level
+                hero, world, level
         )
+        if level_manager is not None:
+            self.__level_manager.configure_level(
+                level_manager.get_hero(),
+                level_manager.get_hero_type(),
+                level_manager.get_current_time(),
+                level_manager.get_score(),
+                level_manager.get_lifes(),0
+            )
+
+
 
         super().__init__(
-            TransitionLevelSceneRender(self.__level_manager),
+            TransitionLevelSceneRender(self.__level_manager,self.game_data),
             TransitionLevelSceneTick(self.__level_manager, dispatcher),
             dispatcher,
         )
+
 
     def setup_level(
         self,
@@ -46,9 +59,8 @@ class TransitionLevelScene(Scene):
         world: World,
         level: Level,
     ) -> ILevelManager:
-        game_data = GameData()
 
-        level_data = game_data.get_level_data(world, level)
+        level_data = self.game_data.get_level_data(world, level)
         score_manager = ScoreObserver()
 
         for element in level_data.get_elements():
@@ -67,7 +79,7 @@ class TransitionLevelScene(Scene):
 
         return LevelManager(
             Hero(
-                game_data.get_hero_data(hero),
+                self.game_data.get_hero_data(hero),
                 level_data.get_player_init_position(),
             ),
             hero,
