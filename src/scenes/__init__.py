@@ -6,5 +6,5 @@ __all__ = [
     "IScene",
     "MainMenuScene",
     "ISceneManager",
-    "SceneManager",
+    "SceneManager"
 ]

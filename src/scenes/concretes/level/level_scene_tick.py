@@ -4,7 +4,8 @@ from pygame import time
 
 from src.enums import GameEvent, HeroState, SceneAction
 from src.level import ILevelManager
-from src.utils import TO_SECONDS
+
+from src.utils.constants import TO_SECONDS
 
 from ...abstractions import Tick
 
@@ -46,10 +47,14 @@ class LevelSceneTick(Tick):
                 TransitionLevelScene,
             )
 
+        if (
+            hero.hero_state == HeroState.DEAD
+            or self.level_manager.get_current_time() <= 0
+        ):
             hero.hero_state = HeroState.IDLE
-            hero.rect.x = 100
-            hero.rect.y = 200
             self.level_manager.set_lifes(self.level_manager.get_lifes() - 1)
+            from ..transition_level import TransitionLevelScene
+
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
                 TransitionLevelScene(
                     self.level_manager.get_hero_type(),

@@ -35,13 +35,15 @@ class TransitionLevelScene(Scene):
         self.__level_manager: ILevelManager = self.setup_level(
                 hero, world, level
         )
+
         if level_manager is not None:
             self.__level_manager.configure_level(
                 level_manager.get_hero(),
                 level_manager.get_hero_type(),
                 level_manager.get_current_time(),
                 level_manager.get_score(),
-                level_manager.get_lifes(),0
+                level_manager.get_lifes(),
+                level_manager.get_coins(),
             )
 
 
