@@ -1,6 +1,6 @@
-from src.utils.assets.create_images import create_image
-from src.utils.constants import BIG_SIZE, PIPE_HEAD_SIZE
-from src.utils.directories import PIPE_BODY_DIR, PIPE_HEAD_DIR
+from ....constants import BIG_SIZE, PIPE_HEAD_SIZE
+from ....directories import PIPE_BODY_DIR, PIPE_HEAD_DIR
+from ...create_images import create_image
 
 PIPE_HEAD_SMALL = create_image(PIPE_HEAD_DIR + "head_small.png", PIPE_HEAD_SIZE)
 

@@ -9,12 +9,12 @@ from src.level import (
     ObstacleManager,
     ScoreObserver,
 )
-from src.utils import Camera
-from src.utils.constants import (
+from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
     SCREEN_HEIGHT,
     SCREEN_VIEW_PLAY_HEIGHT,
     SCREEN_VIEW_PLAY_WIDTH,
+    Camera,
 )
 
 from ...abstractions import Scene

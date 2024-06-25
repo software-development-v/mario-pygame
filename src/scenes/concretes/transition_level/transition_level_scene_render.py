@@ -1,6 +1,5 @@
 from src.level import ILevelManager
-from src.utils.colors import BLACK_COLOR, WHITE_COLOR
-from src.utils.text import get_centered_message
+from src.utils import BLACK_COLOR, WHITE_COLOR, get_centered_message
 
 from ...abstractions import Render
 

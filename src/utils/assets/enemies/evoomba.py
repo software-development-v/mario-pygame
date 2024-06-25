@@ -1,10 +1,10 @@
-from src.utils.assets.create_images import create_image
-from src.utils.constants import GENERAL_SIZE
-from src.utils.directories import (
+from ...constants import GENERAL_SIZE
+from ...directories import (
     EVOOMBA_DEFAULT_DIR,
     EVOOMBA_DIED_DIR,
     EVOOMBA_WALKING_DIR,
 )
+from ..create_images import create_image
 
 EVOOMBA_DEFAULT = create_image(
     EVOOMBA_DEFAULT_DIR + "default.png", GENERAL_SIZE

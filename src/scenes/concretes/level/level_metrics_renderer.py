@@ -1,9 +1,12 @@
 from pygame import Surface, transform
 
-from src.utils.assets.elements.touchable.coin import COIN_1
-from src.utils.colors import WHITE_COLOR
-from src.utils.constants import SCREEN_WIDTH
-from src.utils.text import get_format_number, get_message
+from src.utils import (
+    COIN_1,
+    SCREEN_WIDTH,
+    WHITE_COLOR,
+    get_format_number,
+    get_message,
+)
 
 
 class LevelMetricsRenderer:

@@ -3,8 +3,7 @@ from typing import Dict, Optional
 from pygame import display, time
 
 from src.enums import GameEvent, SceneAction
-from src.utils.assets import ICON
-from src.utils.constants import FPS, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
+from src.utils import FPS, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE
 
 from .concretes import MainMenuScene
 from .interfaces import IScene, ISceneManager

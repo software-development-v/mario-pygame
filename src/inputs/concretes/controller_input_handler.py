@@ -11,7 +11,7 @@ from pygame import (
 )
 
 from src.enums import ControllerInput, GameEvent
-from src.utils.constants import (
+from src.utils import (
     DEFAULT_HORIZONTAL_AXIS_VALUE,
     DEFAULT_MIN_SENSIBILITY,
     DEFAULT_R_TWO_SENSIBILITY,

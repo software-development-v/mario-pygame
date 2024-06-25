@@ -1,11 +1,11 @@
-from src.utils.assets.create_images import create_image
-from src.utils.constants import GENERAL_SIZE, VALVOOPA_SIZE
-from src.utils.directories import (
+from ...constants import GENERAL_SIZE, VALVOOPA_SIZE
+from ...directories import (
     VALVOOPA_COMING_OUT_DIR,
     VALVOOPA_DEFAULT_DIR,
     VALVOOPA_INSIDE_DIR,
     VALVOOPA_WALKING_DIR,
 )
+from ..create_images import create_image
 
 VALVOOPA_DEFAULT = create_image(
     VALVOOPA_DEFAULT_DIR + "default.png", VALVOOPA_SIZE

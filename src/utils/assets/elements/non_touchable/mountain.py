@@ -1,11 +1,11 @@
 from pygame import image, transform
 
-from src.utils.constants import (
+from ....constants import (
     BIG_MOUNTAIN_SIZE,
     MEDIUM_MOUNTAIN_SIZE,
     SMALL_MOUNTAIN_SIZE,
 )
-from src.utils.directories import MOUNTAIN_BACKGROUND_DIR
+from ....directories import MOUNTAIN_BACKGROUND_DIR
 
 BIG_MOUNTAIN = transform.scale(
     image.load(MOUNTAIN_BACKGROUND_DIR + "big_mountain.png"),
