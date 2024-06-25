@@ -21,6 +21,7 @@ class LevelManager(ILevelManager):
         level_screen_width: int,
         score_observer: IElementObserver,
         camera: Camera,
+        lifes :int = 3
     ) -> None:
         self.__hero = hero
         self.__hero_type = hero_type
@@ -34,7 +35,7 @@ class LevelManager(ILevelManager):
         self.__level_screen_width = level_screen_width
         self.__score_observer = score_observer
         self.__camera = camera
-
+        self.__lifes = lifes
     def get_hero(self) -> Hero:
         return self.__hero
 
@@ -76,3 +77,26 @@ class LevelManager(ILevelManager):
 
     def get_camera(self) -> Camera:
         return self.__camera
+
+    def get_lifes(self) -> int:
+        return self.__lifes
+
+    def set_lifes(self, lifes: int) -> None:
+        self.__lifes = lifes
+
+
+    def configure_level(
+        self,
+        hero: Hero,
+        hero_type: HeroType,
+        time: int,
+        score: int,
+        lifes: int,
+        coins: int,
+    ) -> None:
+        self.__hero = hero
+        self.__hero_type = hero_type
+        self.__start_tick = time
+        self.__current_time = time
+        self.__score_observer.update(score)
+        self.__lifes = lifes

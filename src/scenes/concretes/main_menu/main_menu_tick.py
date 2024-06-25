@@ -5,7 +5,6 @@ import pygame
 from src.enums import GameEvent, HeroType, Level, SceneAction, World
 
 from ...abstractions import Tick
-from ..transition_level import TransitionLevelScene
 from .main_menu_render import MainMenuRender
 
 
@@ -71,6 +70,7 @@ class MainMenuTick(Tick):
             pygame.quit()
             exit()
         else:
+            from ..transition_level import TransitionLevelScene
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
                 TransitionLevelScene(
                     HeroType.CUMPA, World.ONE, Level.FIRST, self._dispatcher
