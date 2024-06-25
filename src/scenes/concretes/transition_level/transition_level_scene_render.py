@@ -1,8 +1,10 @@
+from typing import Tuple
+from pygame import Rect, Surface
 from src.data.game_data import GameData
 from src.enums.hero_level import HeroLevel
 from src.enums.hero_state import HeroState
 from src.level import ILevelManager
-from src.scenes.concretes.level.level_metrics_renderer import LevelMetricsRenderer
+from ..level.level_metrics_renderer import LevelMetricsRenderer
 from src.utils.colors import BLACK_COLOR, WHITE_COLOR
 from src.utils.text import get_centered_message
 
@@ -38,7 +40,7 @@ class TransitionLevelSceneRender(Render):
 
         if self.time>0:
             self.time -= 1
-            message , message_rect  = get_centered_message("TIME OUT",text_color=WHITE_COLOR)
+            message , message_rect  = self.render_text("TIME OUT")
             self._screen.blit(message, (message_rect.x,message_rect.y))
         else :
             self.__level_manager.set_current_time(self.__level_manager.get_start_time())
@@ -50,16 +52,21 @@ class TransitionLevelSceneRender(Render):
         world = self.__level_manager.get_world().value
         level = self.__level_manager.get_level().value
         if self.__level_manager.get_lifes() == 0:
-            message , message_rect  = get_centered_message("GAME OVER",text_color=WHITE_COLOR)
+            message , message_rect  = self.render_text("GAME OVER")
             self._screen.blit(message, (message_rect.x,message_rect.y))
 
         else:
 
-            message , message_rect  = get_centered_message(f"WORLD {world}-{level}",text_color=WHITE_COLOR)
-            lifes,lifes_rect = get_centered_message(f"X {self.__level_manager.get_lifes()}",text_color=WHITE_COLOR)
+            message , message_rect  = self.render_text(f"WORLD {world}-{level}")
+            lifes,lifes_rect = self.render_text(f"X {self.__level_manager.get_lifes()}")
             self._screen.blit(message, (message_rect.x,message_rect.y-200))
             self._screen.blit(lifes, (lifes_rect.x+40,lifes_rect.y))
 
             hero = self.game.heroes_data[self.__level_manager.get_hero_type()][HeroLevel.NORMAL][HeroState.IDLE][0]
 
             self._screen.blit(hero, (lifes_rect.x-40,lifes_rect.y-20))
+
+
+
+    def render_text(self, message: str) -> Tuple[Surface,Rect]:
+        return get_centered_message(message,text_color=WHITE_COLOR,size=30)

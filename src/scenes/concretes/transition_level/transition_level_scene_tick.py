@@ -35,6 +35,6 @@ class TransitionLevelSceneTick(Tick):
                 self._dispatcher[SceneAction.SET_NEXT_SCENE](
                     LevelScene(self.__level_manager, self._dispatcher)
                 )
-            
+
 
             self._dispatcher[SceneAction.END]()

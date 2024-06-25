@@ -84,6 +84,10 @@ class LevelManager(ILevelManager):
     def set_lifes(self, lifes: int) -> None:
         self.__lifes = lifes
 
+    def get_coins(self) -> int:
+        return 0
+
+
 
     def configure_level(
         self,
@@ -100,3 +104,4 @@ class LevelManager(ILevelManager):
         self.__current_time = time
         self.__score_observer.update(score)
         self.__lifes = lifes
+        #self.__coins = coins
