@@ -16,10 +16,11 @@ class LevelSceneRender(Render):
 
         hero = self.level_manager.get_hero()
         camera = self.level_manager.get_camera()
-        camera.update(hero)
+        camera.update(hero.get_x_rect(), hero.get_width())
 
-        obstacle_manager = self.level_manager.get_obstacle_manager()
-        obstacle_manager.draw(self._screen, camera)
+        obstacles_manager = self.level_manager.get_obstacles_manager()
+        obstacles_manager.draw(self._screen, camera)
+
         hero.draw(self._screen, camera)
 
         self.level_metrics_renderer.render(

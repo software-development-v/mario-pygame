@@ -1,4 +1,4 @@
-from typing import Any
+from pygame import Rect
 
 
 class Camera:
@@ -19,8 +19,8 @@ class Camera:
         self.y_offset = 0
         self.last_x_offset = 0
 
-    def update(self, target: Any) -> None:
-        hero_center_x = target.rect.x + target.width // 2
+    def update(self, x_rect: int, width: int) -> None:
+        hero_center_x = x_rect + width // 2
 
         if hero_center_x > self.threshold:
             self.x_offset = -hero_center_x + self.threshold
@@ -35,8 +35,8 @@ class Camera:
             0, max(self.viewport_width - self.width, self.x_offset)
         )
 
-    def apply(self, entity: Any) -> Any:
-        return entity.rect.move(self.x_offset, self.y_offset)
+    def apply(self, rect: Rect) -> Rect:
+        return rect.move(self.x_offset, self.y_offset)
 
     def get_left_edge(self) -> int:
         return -self.x_offset
