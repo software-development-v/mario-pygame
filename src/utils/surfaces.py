@@ -46,7 +46,6 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.OVERWORLD_TERRAIN_BLOCK: [OVERWORLD_TERRAIN_BLOCK],
     },
     ElementType.MISTERY_BOX: {
-
         ElementSubType.DEFAULT_MISTERY_BOX: [
             MASTERY_BLOCK_1,
             MASTERY_BLOCK_2,
