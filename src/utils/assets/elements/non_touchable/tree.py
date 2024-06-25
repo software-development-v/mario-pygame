@@ -1,7 +1,7 @@
 from pygame import image, transform
 
-from src.utils.constants import BIG_TREE_SIZE, MEDIUM_TREE_SIZE, SMALL_TREE_SIZE
-from src.utils.directories import TREE_BACKGROUND_DIR
+from ....constants import BIG_TREE_SIZE, MEDIUM_TREE_SIZE, SMALL_TREE_SIZE
+from ....directories import TREE_BACKGROUND_DIR
 
 BIG_TREE = transform.scale(
     image.load(TREE_BACKGROUND_DIR + "big_tree.png"),

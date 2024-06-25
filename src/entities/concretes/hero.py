@@ -3,8 +3,7 @@ from typing import Dict, List
 from pygame import Surface, time, transform
 
 from src.enums import GameEvent, HeroLevel, HeroState
-from src.utils import Camera, Position
-from src.utils.constants import (
+from src.utils import (
     ANIMATION_INTERVAL,
     DEAD_FALL_THRESHOLD,
     HERO_SPEED,
@@ -12,6 +11,8 @@ from src.utils.constants import (
     JUMP_VELOCITY,
     MAX_GRAVITY,
     SCREEN_HEIGHT,
+    Camera,
+    Position,
 )
 
 from ..abstractions import Element, InteractiveElement

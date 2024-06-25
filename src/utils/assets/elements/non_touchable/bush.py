@@ -1,7 +1,7 @@
 from pygame import image, transform
 
-from src.utils.constants import BUSH_HEIGHT, BUSH_WIDTH_FACTOR
-from src.utils.directories import BUSH_BACKGROUND_DIR
+from ....constants import BUSH_HEIGHT, BUSH_WIDTH_FACTOR
+from ....directories import BUSH_BACKGROUND_DIR
 
 BIG_BUSH = transform.scale(
     image.load(BUSH_BACKGROUND_DIR + "big_bush.png"),

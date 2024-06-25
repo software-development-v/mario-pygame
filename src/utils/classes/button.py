@@ -1,15 +1,15 @@
 from typing import Tuple
 
-import pygame
+from pygame import Surface, font, transform
 
-from src.utils.assets.elements.touchable import BUTTON
+from ..assets import BUTTON
 
 
 class Button:
     def __init__(
         self,
         text: str,
-        font: pygame.font.Font,
+        font: font.Font,
         position: Tuple[int, int],
         selected_color: Tuple[int, int, int],
         normal_color: Tuple[int, int, int],
@@ -26,12 +26,12 @@ class Button:
 
     def update_image(self):
         text_rect = self.text_surface.get_rect(center=self.rect.center)
-        self.image = pygame.transform.scale(
+        self.image = transform.scale(
             self.image, (text_rect.width + 30, text_rect.height + 20)
         )
         self.rect = self.image.get_rect(center=self.position)
 
-    def render(self, screen: pygame.Surface, is_selected: bool) -> None:
+    def render(self, screen: Surface, is_selected: bool) -> None:
         color = self.selected_color if is_selected else self.normal_color
         self.text_surface = self.font.render(self.text, True, color)
         screen.blit(self.image, self.rect)

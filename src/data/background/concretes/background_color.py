@@ -2,7 +2,7 @@ from typing import Tuple
 
 from pygame import Surface
 
-from src.utils.constants import SCREEN_HEIGHT, SCREEN_WIDTH
+from src.utils import SCREEN_HEIGHT, SCREEN_WIDTH
 
 from ..interfaces import IBackground
 
