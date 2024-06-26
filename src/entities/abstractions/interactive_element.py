@@ -10,13 +10,22 @@ from .element import Element
 
 
 class InteractiveElement(Element, IObservableElement):
-
     def __init__(
-        self, position: Position, images: List[Surface], value: int = 0
+        self,
+        position: Position,
+        images: List[Surface],
+        value: int = 0,
+        x_rect_percent: float = 1,
+        y_rect_percent: float = 1,
     ) -> None:
-        super().__init__(position, images)
         self.value = value
         self.observers: Dict[CollectedType, IElementObserver] = {}
+        super().__init__(
+            position,
+            images,
+            x_rect_percent=x_rect_percent,
+            y_rect_percent=y_rect_percent,
+        )
 
     def add_observer(
         self, key: CollectedType, observer: IElementObserver

@@ -1,4 +1,12 @@
+from pygame import Rect
+
+from src.enums import HeroLevel
 from src.level import ILevelManager
+from src.utils import (
+    HERO_BIG_RECT_X_PERCENT,
+    HERO_NORMAL_RECT_X_PERCENT,
+    HERO_RECT_Y_PERCENT,
+)
 
 from ...abstractions import Render
 from .level_metrics_renderer import LevelMetricsRenderer
@@ -16,12 +24,23 @@ class LevelSceneRender(Render):
 
         hero = self.level_manager.get_hero()
         camera = self.level_manager.get_camera()
-        camera.update(hero.get_x_rect(), hero.get_width())
+
+        hero_rect: Rect = hero.get_rect()
+        camera.update(hero_rect.x, hero_rect.width)
 
         obstacles_manager = self.level_manager.get_obstacles_manager()
         obstacles_manager.draw(self._screen, camera)
 
-        hero.draw(self._screen, camera)
+        hero_x_rect_percent = (
+            hero.get_hero_level() == HeroLevel.NORMAL
+            and HERO_NORMAL_RECT_X_PERCENT
+            or HERO_BIG_RECT_X_PERCENT
+        )
+        hero_y_rect_percent = HERO_RECT_Y_PERCENT
+
+        hero.draw(
+            self._screen, camera, hero_x_rect_percent, hero_y_rect_percent
+        )
 
         self.level_metrics_renderer.render(
             self.level_manager.get_hero_type().value,
