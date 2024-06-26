@@ -2,8 +2,7 @@ from pygame import Surface
 
 from src.entities import Hero, IElementObserver
 from src.enums import HeroType, Level, World
-from src.utils import Camera
-from src.utils import PLAYER_LIVES
+from src.utils import PLAYER_LIVES, Camera
 
 from ..interfaces import ILevelManager
 from .sprites_managers import ObstaclesManager

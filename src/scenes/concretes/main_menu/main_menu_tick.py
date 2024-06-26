@@ -1,10 +1,11 @@
-from typing import Callable, Dict, Tuple
+from typing import Callable, Dict
 
-from pygame import mouse, quit, time
+from pygame import quit, time
 
 from src.enums import GameEvent, SceneAction
 
 from ...abstractions import Tick
+from ..character_selection_menu import CharacterSelectionScene
 from .main_menu_render import MainMenuRender
 
 
@@ -39,17 +40,6 @@ class MainMenuTick(Tick):
                     self.last_switch_time = current_time
                     break
 
-        mouse_pos: Tuple[int, int] = mouse.get_pos()
-        mouse_click = mouse.get_pressed()
-
-        if mouse_click[0] and self.render.handle_mouse_event(mouse_pos):
-            self.select_option()
-            self.last_switch_time = current_time
-
-        if mouse.get_focused():
-            self.render.handle_mouse_event(mouse_pos)
-            self.render.render()
-
     def handle_option_change(self, direction: int) -> None:
         selected_option = self.render.get_selected_option()
         new_option = (selected_option + direction) % 2
@@ -70,7 +60,6 @@ class MainMenuTick(Tick):
             quit()
             exit()
         else:
-            from ..transition_level import TransitionLevelScene
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
                 CharacterSelectionScene(self._dispatcher)
             )

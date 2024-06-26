@@ -1,16 +1,19 @@
 from src.data.game_data import GameData
 from src.level import ILevelManager
-from .states import LevelState, LevelStatusState, TimeoutState, GameOverState
-from ..level.level_metrics_renderer import LevelMetricsRenderer
 from src.utils.colors import BLACK_COLOR
+
 from ...abstractions import Render
+from ..level.level_metrics_renderer import LevelMetricsRenderer
+from .states import GameOverState, LevelState, LevelStatusState, TimeoutState
 
 
 class TransitionLevelSceneRender(Render):
     def __init__(self, level_manager: ILevelManager, game: GameData) -> None:
         self.__level_manager = level_manager
         self.game = game
+
         super().__init__()
+
         self.level_metrics_renderer = LevelMetricsRenderer(self._screen)
         self.state: LevelState = LevelStatusState(
             level_manager, game, self.change_state
@@ -18,10 +21,9 @@ class TransitionLevelSceneRender(Render):
         self.state_initialized = False
 
     def render(self) -> None:
-
         self.ensure_state_initialized()
-
         self._screen.fill(BLACK_COLOR)
+
         self.level_metrics_renderer.render(
             self.__level_manager.get_hero_type().value,
             -1,
@@ -30,20 +32,22 @@ class TransitionLevelSceneRender(Render):
             self.__level_manager.get_world().value,
             self.__level_manager.get_level().value,
         )
+
         self.state.render(self._screen)
 
     def change_state(self, state: LevelState) -> None:
         self.state = state
 
     def ensure_state_initialized(self) -> None:
-        if not self.state_initialized:
-            self.state_initialized = True
-            if self.__level_manager.get_current_time() <= 0:
-                self.state = TimeoutState(
-                    self.__level_manager, self.game, self.change_state
-                )
+        if self.state_initialized:
+            return
 
-            elif self.__level_manager.get_lives() == 0:
-                self.state = GameOverState(
-                    self.__level_manager, self.game, self.change_state
-                )
+        self.state_initialized = True
+        if self.__level_manager.get_current_time() <= 0:
+            self.state = TimeoutState(
+                self.__level_manager, self.game, self.change_state
+            )
+        elif self.__level_manager.get_lives() == 0:
+            self.state = GameOverState(
+                self.__level_manager, self.game, self.change_state
+            )
