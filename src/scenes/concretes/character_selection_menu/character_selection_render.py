@@ -1,7 +1,9 @@
 # En un archivo nuevo, por ejemplo, character_selection_render.py
 
 from typing import List, Tuple
+
 from pygame import Rect, Surface, display, font
+
 from src.enums import HeroType
 from src.utils import GAME_FONT, MENU_BACKGROUND, ORANGE_COLOR, WHITE_COLOR
 
