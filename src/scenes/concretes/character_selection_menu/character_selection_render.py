@@ -1,5 +1,3 @@
-# En un archivo nuevo, por ejemplo, character_selection_render.py
-
 from typing import List, Tuple
 
 from pygame import Rect, Surface, display, font
@@ -25,24 +23,18 @@ class CharacterSelectionRender(Render):
 
         self.background_image: Surface = MENU_BACKGROUND
 
+        # Alinear horizontalmente en diferentes posiciones del eje X
         self.character_positions: List[Tuple[int, int]] = [
-            (screen_width // 2, (screen_height // 2) - 75),
-            (200, 140),
-            (200, 200),
+            (screen_width // 4, screen_height // 2),  # Costado izquierdo
+            (screen_width // 2, screen_height // 2),  # Centro
+            (3 * screen_width // 4, screen_height // 2),  # Costado derecho
         ]
 
         self.character_fonts: List[font.Font] = [
-            font.Font(GAME_FONT, 50),
-            font.Font(GAME_FONT, 40),
-            font.Font(GAME_FONT, 40),
+            font.Font(GAME_FONT, 30),
+            font.Font(GAME_FONT, 30),
+            font.Font(GAME_FONT, 30),
         ]
-
-        self.top_text_font: font.Font = font.Font(GAME_FONT, 20)
-        self.top_text_position: Tuple[int, int] = (
-            screen_width - 200,
-            140,
-        )
-        self.top_score: int = 0
 
     def render(self) -> None:
         self._screen.blit(self.background_image, (0, 0))
@@ -56,13 +48,6 @@ class CharacterSelectionRender(Render):
             text = font.render(character, True, color)
             text_rect = text.get_rect(center=self.character_positions[index])
             self._screen.blit(text, text_rect)
-
-        top_text = f"Top: {self.top_score:06}"
-        top_text_surface = self.top_text_font.render(
-            top_text, True, WHITE_COLOR
-        )
-        top_text_rect = top_text_surface.get_rect(center=self.top_text_position)
-        self._screen.blit(top_text_surface, top_text_rect)
 
         display.flip()
 

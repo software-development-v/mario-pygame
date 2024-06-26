@@ -1,5 +1,3 @@
-# En un archivo nuevo, por ejemplo, character_selection_scene.py
-
 from typing import Callable, Dict
 
 from src.enums import SceneAction
