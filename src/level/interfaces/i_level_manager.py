@@ -65,3 +65,27 @@ class ILevelManager(ABC):
     @abstractmethod
     def get_camera(self) -> Camera:
         pass
+
+    @abstractmethod
+    def get_lives(self) -> int:
+        pass
+
+    @abstractmethod
+    def set_lives(self, lives: int) -> None:
+        pass
+
+    @abstractmethod
+    def get_coins(self) -> int:
+        pass
+
+    @abstractmethod
+    def configure_level(
+        self,
+        hero: Hero,
+        hero_type: HeroType,
+        time: int,
+        score: int,
+        lives: int,
+        coins: int,
+    ) -> None:
+        pass

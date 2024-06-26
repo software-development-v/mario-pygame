@@ -75,10 +75,3 @@ class CharacterSelectionRender(Render):
             text_rect = text.get_rect(center=position)
             character_rects.append(text_rect)
         return character_rects
-
-    def handle_mouse_event(self, mouse_pos: Tuple[int, int]) -> bool:
-        for index, rect in enumerate(self.get_character_rects()):
-            if rect.collidepoint(mouse_pos):
-                self.selected_character = index
-                return True
-        return False

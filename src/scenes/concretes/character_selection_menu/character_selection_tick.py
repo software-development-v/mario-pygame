@@ -1,6 +1,6 @@
-from typing import Callable, Dict, Tuple
+from typing import Callable, Dict
 
-from pygame import mouse, time
+from pygame import time
 
 from src.enums import GameEvent, HeroType, Level, SceneAction, World
 
@@ -37,17 +37,6 @@ class CharacterSelectionTick(Tick):
                     handler()
                     self.last_switch_time = current_time
                     break
-
-        mouse_pos: Tuple[int, int] = mouse.get_pos()
-        mouse_click = mouse.get_pressed()
-
-        if mouse_click[0] and self.render.handle_mouse_event(mouse_pos):
-            self.select_character()
-            self.last_switch_time = current_time
-
-        if mouse.get_focused():
-            self.render.handle_mouse_event(mouse_pos)
-            self.render.render()
 
     def handle_character_change(self, direction: int) -> None:
         selected_character = self.render.get_selected_character()
