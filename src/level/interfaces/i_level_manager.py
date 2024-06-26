@@ -67,11 +67,11 @@ class ILevelManager(ABC):
         pass
 
     @abstractmethod
-    def get_lifes(self) -> int:
+    def get_lives(self) -> int:
         pass
 
     @abstractmethod
-    def set_lifes(self, lifes: int) -> None:
+    def set_lives(self, lives: int) -> None:
         pass
 
     @abstractmethod
@@ -85,7 +85,7 @@ class ILevelManager(ABC):
         hero_type: HeroType,
         time: int,
         score: int,
-        lifes: int,
+        lives: int,
         coins: int,
     ) -> None:
         pass

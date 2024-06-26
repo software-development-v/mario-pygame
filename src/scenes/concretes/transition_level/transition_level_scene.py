@@ -29,11 +29,11 @@ class TransitionLevelScene(Scene):
         world: World,
         level: Level,
         dispatcher: Dict[SceneAction, Callable[..., None]],
-        level_manager :Optional[ILevelManager] = None
+        level_manager: Optional[ILevelManager] = None,
     ) -> None:
         self.game_data = GameData()
         self.__level_manager: ILevelManager = self.setup_level(
-                hero, world, level
+            hero, world, level
         )
 
         if level_manager is not None:
@@ -42,18 +42,15 @@ class TransitionLevelScene(Scene):
                 level_manager.get_hero_type(),
                 level_manager.get_current_time(),
                 level_manager.get_score(),
-                level_manager.get_lifes(),
+                level_manager.get_lives(),
                 level_manager.get_coins(),
             )
 
-
-
         super().__init__(
-            TransitionLevelSceneRender(self.__level_manager,self.game_data),
+            TransitionLevelSceneRender(self.__level_manager, self.game_data),
             TransitionLevelSceneTick(self.__level_manager, dispatcher),
             dispatcher,
         )
-
 
     def setup_level(
         self,

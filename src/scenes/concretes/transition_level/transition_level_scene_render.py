@@ -43,7 +43,7 @@ class TransitionLevelSceneRender(Render):
                     self.__level_manager, self.game, self.change_state
                 )
 
-            elif self.__level_manager.get_lifes() == 0:
+            elif self.__level_manager.get_lives() == 0:
                 self.state = GameOverState(
                     self.__level_manager, self.game, self.change_state
                 )
