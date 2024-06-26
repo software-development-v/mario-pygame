@@ -1,13 +1,15 @@
 from typing import Dict, List
 
-from pygame import Surface, time, transform
+from pygame import Rect, Surface
 
 from src.enums import GameEvent, HeroLevel, HeroState
 from src.utils import (
-    ANIMATION_INTERVAL,
     DEAD_FALL_THRESHOLD,
+    HERO_BIG_RECT_X_PERCENT,
+    HERO_NORMAL_RECT_X_PERCENT,
+    HERO_RECT_Y_PERCENT,
     HERO_SPEED,
-    INIT_IMAGE_INDEX,
+    INIT_VEL_Y,
     JUMP_VELOCITY,
     MAX_GRAVITY,
     SCREEN_HEIGHT,
@@ -15,121 +17,130 @@ from src.utils import (
     Position,
 )
 
-from ..abstractions import Element, InteractiveElement
-from ..interfaces import IDrawable
+from ..abstractions import Element, InteractiveElement, Sprite
 
 
-class Hero(IDrawable):
+class Hero(Sprite):
     def __init__(
         self,
         surfaces: Dict[HeroLevel, Dict[HeroState, List[Surface]]],
         position: Position,
     ) -> None:
-        self.surfaces = surfaces
-        self.hero_level = HeroLevel.NORMAL
-        self.hero_state = HeroState.IDLE
-        self.index = INIT_IMAGE_INDEX
-        self.image = self.surfaces[self.hero_level][self.hero_state][self.index]
-        self.rect = self.image.get_rect()
-        self.rect.x = position.x
-        self.rect.y = position.y
-        self.rect.width = self.rect.width
-        self.width = self.rect.width
-        self.height = self.rect.height
-        self.vel_y = 0
-        self.face_right = True
-        self.jumping = False
-        self.running = False
-        self.last_update = time.get_ticks()
+        self.__surfaces = surfaces
+        self.__hero_level = HeroLevel.NORMAL
+        self.__hero_state = HeroState.IDLE
+        self.__vel_y = INIT_VEL_Y
+        self.__jumping = True
+        self.__running = False
+        super().__init__(
+            position,
+            y_rect_percent=HERO_RECT_Y_PERCENT,
+            x_rect_percent=self.__hero_level == HeroLevel.NORMAL
+            and HERO_NORMAL_RECT_X_PERCENT
+            or HERO_BIG_RECT_X_PERCENT,
+        )
 
-    def draw(self, screen: Surface, camera: Camera) -> None:
-        self.__update_image()
-
-        if not self.face_right:
-            self.image = transform.flip(self.image, True, False)
-
-        screen.blit(self.image, camera.apply(self))
+    def _get_surfaces(self) -> List[Surface]:
+        return self.__surfaces[self.__hero_level][self.__hero_state]
 
     def __handle_hero_states(self, game_events: Dict[GameEvent, bool]):
-        if game_events[GameEvent.UP] and not self.jumping:
-            self.vel_y = -JUMP_VELOCITY
-            self.index = INIT_IMAGE_INDEX
-            self.hero_state = HeroState.JUMP
-            self.jumping = True
-            self.running = False
+        if game_events[GameEvent.UP] and not self.__jumping:
+            self.__vel_y = -JUMP_VELOCITY
+            self.__hero_state = HeroState.JUMP
+            self.__jumping = True
+            self.__running = False
         elif (
             (game_events[GameEvent.LEFT] or game_events[GameEvent.RIGHT])
-            and not self.jumping
-            and not self.running
+            and not self.__jumping
+            and not self.__running
         ):
-            self.index = INIT_IMAGE_INDEX
-            self.hero_state = HeroState.RUN
-            self.running = True
-        elif not self.running and not self.jumping:
-            self.index = INIT_IMAGE_INDEX
-            self.hero_state = HeroState.IDLE
+            self.__hero_state = HeroState.RUN
+            self.__running = True
+        elif not self.__running and not self.__jumping:
+            self.__hero_state = HeroState.IDLE
 
     def __handle_hero_movement(
-        self, game_events: Dict[GameEvent, bool], camera: Camera
-    ) -> tuple[int, int]:
-        dx = 0
-        dy = 0
+        self,
+        hero_rect: Rect,
+        game_events: Dict[GameEvent, bool],
+        camera: Camera,
+    ) -> tuple[float, float]:
+        dx: float = 0.0
+        dy: float = 0.0
 
         if game_events[GameEvent.RIGHT]:
-            self.face_right = True
             dx = HERO_SPEED
+            self.set_face_right(True)
         elif (
-            game_events[GameEvent.LEFT] and self.rect.x > camera.get_left_edge()
+            game_events[GameEvent.LEFT] and hero_rect.x > camera.get_left_edge()
         ):
-            self.face_right = False
             dx = -HERO_SPEED
+            self.set_face_right(False)
         else:
-            self.running = False
+            self.__running = False
 
-        dy += self.vel_y
+        dy += self.__vel_y
 
-        self.vel_y += 1
+        self.__vel_y += 1
 
-        if self.vel_y > MAX_GRAVITY:
-            self.vel_y = MAX_GRAVITY
+        if self.__vel_y > MAX_GRAVITY:
+            self.__vel_y = MAX_GRAVITY
 
         return dx, dy
 
-    def __handle_x_collisions(self, obstacles: List[Element], dx: int) -> int:
+    def __handle_x_collisions(
+        self, hero_rect: Rect, obstacles: List[Element], dx: float
+    ) -> float:
+        if dx == 0:
+            return dx
+
         for obstacle in obstacles:
-            if not obstacle.is_touchable:
+            if not obstacle.get_is_touchable():
                 continue
 
-            if not obstacle.get_rect().colliderect(
-                self.rect.x + dx, self.rect.y, self.width, self.height
+            obstacle_rect: Rect = obstacle.get_rect()
+
+            if not obstacle_rect.colliderect(
+                hero_rect.x + dx, hero_rect.y, hero_rect.width, hero_rect.height
             ):
                 continue
 
             if isinstance(obstacle, InteractiveElement):
                 obstacle.notify_observers()
 
-            dx = 0
+            if dx > 0:
+                dx = obstacle_rect.left - hero_rect.right
+            elif dx < 0:
+                dx = obstacle_rect.right - hero_rect.left
+
             break
 
         return dx
 
-    def __handle_y_collisions(self, obstacles: List[Element], dy: int) -> int:
+    def __handle_y_collisions(
+        self, hero_rect: Rect, obstacles: List[Element], dy: float
+    ) -> float:
+        if dy == 0:
+            return dy
+
         for obstacle in obstacles:
-            if not obstacle.is_touchable:
+            if not obstacle.get_is_touchable():
                 continue
 
-            if not obstacle.get_rect().colliderect(
-                self.rect.x, self.rect.y + dy, self.width, self.height
+            obstacle_rect: Rect = obstacle.get_rect()
+
+            if not obstacle_rect.colliderect(
+                hero_rect.x, hero_rect.y + dy, hero_rect.width, hero_rect.height
             ):
                 continue
 
-            if self.vel_y < 0:
-                dy = obstacle.get_rect().bottom - self.rect.top
-                self.vel_y = 0
-            elif self.vel_y >= 0:
-                dy = obstacle.get_rect().top - self.rect.bottom
-                self.vel_y = 0
-                self.jumping = False
+            if self.__vel_y < 0:
+                dy = obstacle_rect.bottom - hero_rect.top
+                self.__vel_y = 0
+            elif self.__vel_y >= 0:
+                dy = obstacle_rect.top - hero_rect.bottom
+                self.__vel_y = 0
+                self.__jumping = False
 
             if isinstance(obstacle, InteractiveElement):
                 obstacle.notify_observers()
@@ -139,26 +150,21 @@ class Hero(IDrawable):
         return dy
 
     def __handle_collisions(
-        self, obstacles: List[Element], dx: int, dy: int
-    ) -> tuple[int, int]:
-        dx = self.__handle_x_collisions(obstacles, dx)
-        dy = self.__handle_y_collisions(obstacles, dy)
+        self, hero_rect: Rect, obstacles: List[Element], dx: float, dy: float
+    ) -> tuple[float, float]:
+        dx = self.__handle_x_collisions(hero_rect, obstacles, dx)
+        dy = self.__handle_y_collisions(hero_rect, obstacles, dy)
         return dx, dy
 
     def __check_dead(self) -> None:
-        if self.rect.top > SCREEN_HEIGHT + DEAD_FALL_THRESHOLD:
-            self.index = INIT_IMAGE_INDEX
-            self.hero_state = HeroState.DEAD
+        if self.get_rect().top > SCREEN_HEIGHT + DEAD_FALL_THRESHOLD:
+            self.__hero_state = HeroState.DEAD
 
-    def __update_image(self) -> None:
-        images = self.surfaces[self.hero_level][self.hero_state]
-        current_time = time.get_ticks()
+    def get_hero_level(self) -> HeroLevel:
+        return self.__hero_level
 
-        if current_time - self.last_update > ANIMATION_INTERVAL:
-            self.last_update = current_time
-            self.index = (self.index + 1) % len(images)
-
-        self.image = images[self.index]
+    def get_hero_state(self) -> HeroState:
+        return self.__hero_state
 
     def update(
         self,
@@ -166,9 +172,11 @@ class Hero(IDrawable):
         obstacles: List[Element],
         camera: Camera,
     ) -> None:
+        hero_rect: Rect = self.get_rect()
+
         self.__handle_hero_states(game_events)
-        dx, dy = self.__handle_hero_movement(game_events, camera)
-        dx, dy = self.__handle_collisions(obstacles, dx, dy)
-        self.rect.x += dx
-        self.rect.y += dy
+        dx, dy = self.__handle_hero_movement(hero_rect, game_events, camera)
+        dx, dy = self.__handle_collisions(hero_rect, obstacles, dx, dy)
+        self.add_x_rect(dx)
+        self.add_y_rect(dy)
         self.__check_dead()

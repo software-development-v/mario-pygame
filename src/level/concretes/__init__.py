@@ -1,5 +1,5 @@
-from .entity_managers import ObstacleManager
 from .entity_observers import ScoreObserver
-from .level_manager import LevelManager
+from .level_manager import ILevelManager, LevelManager
+from .sprites_managers import ObstaclesManager
 
-__all__ = ["ObstacleManager", "LevelManager", "ScoreObserver"]
+__all__ = ["ObstaclesManager", "LevelManager", "ScoreObserver", "ILevelManager"]
