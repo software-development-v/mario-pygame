@@ -77,10 +77,3 @@ class MainMenuTick(Tick):
                 CharacterSelectionScene(self._dispatcher)
             )
             self._dispatcher[SceneAction.END]()
-
-            # self._dispatcher[SceneAction.SET_NEXT_SCENE](
-            #     TransitionLevelScene(
-            #         HeroType.CUMPA, World.ONE, Level.FIRST, self._dispatcher
-            #     )
-            # )
-            # self._dispatcher[SceneAction.END]()

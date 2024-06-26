@@ -1,5 +1,3 @@
-# character_selection_tick.py
-
 from typing import Callable, Dict, Tuple
 
 from pygame import mouse, time
@@ -22,8 +20,8 @@ class CharacterSelectionTick(Tick):
         self.last_switch_time = time.get_ticks()
         self.switch_delay = 100
         self.event_handlers = {
-            GameEvent.UP: lambda: self.handle_character_change(-1),
-            GameEvent.DOWN: lambda: self.handle_character_change(1),
+            GameEvent.LEFT: lambda: self.handle_character_change(-1),
+            GameEvent.RIGHT: lambda: self.handle_character_change(1),
             GameEvent.JUMP: self.select_character,
         }
 
@@ -68,17 +66,14 @@ class CharacterSelectionTick(Tick):
             HeroType.CUMPA.value: HeroType.CUMPA,
         }
 
-        # Obtener el tipo de héroe seleccionado
         selected_hero_type = hero_type_map.get(
             character_selected, HeroType.CUMPA
         )
 
-        # Configurar la siguiente escena con el tipo de héroe seleccionado
         self._dispatcher[SceneAction.SET_NEXT_SCENE](
             TransitionLevelScene(
                 selected_hero_type, World.ONE, Level.FIRST, self._dispatcher
             )
         )
 
-        # Finalizar la escena actual
         self._dispatcher[SceneAction.END]()
