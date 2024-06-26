@@ -4,6 +4,7 @@ from pygame import time
 
 from src.enums import GameEvent, SceneAction
 from src.level import ILevelManager
+from src.scenes.concretes.final_cinematic.final_cinematic_scene import FinalCinematicScene
 from src.utils import TRANSITION_DURATION
 
 from ...abstractions import Tick
@@ -35,6 +36,8 @@ class TransitionLevelSceneTick(Tick):
                 self._dispatcher[SceneAction.SET_NEXT_SCENE](
                     LevelScene(self.__level_manager, self._dispatcher)
                 )
-
-
+            else:
+                self._dispatcher[SceneAction.SET_NEXT_SCENE](
+                    FinalCinematicScene(self._dispatcher)
+                )
             self._dispatcher[SceneAction.END]()
