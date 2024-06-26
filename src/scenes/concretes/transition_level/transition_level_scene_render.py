@@ -8,6 +8,7 @@ from ..level.level_metrics_renderer import LevelMetricsRenderer
 from src.utils.colors import BLACK_COLOR, WHITE_COLOR
 from src.utils.text import get_centered_message
 
+
 from ...abstractions import Render
 
 

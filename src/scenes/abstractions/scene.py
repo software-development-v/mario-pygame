@@ -4,7 +4,7 @@ from typing import Callable, Dict
 from pygame import display
 
 from src.enums import GameEvent, SceneAction
-from src.utils.constants import FPS
+from src.utils import FPS
 
 from ..interfaces import IScene
 from .render import Render

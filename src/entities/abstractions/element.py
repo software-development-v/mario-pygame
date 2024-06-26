@@ -2,8 +2,7 @@ from typing import List
 
 from pygame import Rect, Surface, time
 
-from src.utils import Camera, Position
-from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX
+from src.utils import ANIMATION_INTERVAL, INIT_IMAGE_INDEX, Camera, Position
 
 from ..interfaces import IEntity
 

@@ -5,7 +5,8 @@
     "map_width": 12220,
     "background": {
         "type": "COLOR",
-        "resource": [37, 150, 190]
+
+        "resource": [50, 203, 234]
     },
     "background_music": "LEVEL_01",
     "start_player_position": {
@@ -14,733 +15,5199 @@
     },
     "enemies": [],
     "elements": [
-        { "position": [1400, 550], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
-        { "position": [1900, 500], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
-        { "position": [2300, 450], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
-        { "position": [2850, 450], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
-        { "position": [8150, 550], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
-        { "position": [8950, 550], "type": "PIPE", "subtype": "PIPE_HEAD_BIG" },
-
-        { "position": [1900, 600], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_1" },
-        { "position": [2300, 550], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_2" },
-        { "position": [2850, 550], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_2" },
-        { "position": [2300, 600], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_3" },
-        { "position": [2850, 600], "type": "PIPE", "subtype": "PIPE_BODY_STYLE_4" },
-
-        { "position": [5550, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [3200, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [3650, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [1200, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [7950, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [6900, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-        { "position": [10700, 550], "type": "BUSH", "subtype": "SMALL_BUSH" },
-
-        { "position": [500, 550], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
-        { "position": [4850, 550], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
-        { "position": [2500, 550], "type": "BUSH", "subtype": "MEDIUM_BUSH" },
-
-        { "position": [850, 150], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [300, 100], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [3250, 100], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [2750, 150], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [4350, 100], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [5100, 200], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [5050, 200], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [5050, 150], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [5000, 200], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [6100, 100], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [7400, 150], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [7500, 150], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [7450, 100], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [7950, 200], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [8850, 200], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [8950, 200], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [8900, 150], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [9250, 100], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-        { "position": [9300, 100], "type": "CLOUD", "subtype": "SMALL_CLOUD" },
-
-        { "position": [1900, 100], "type": "CLOUD", "subtype": "MEDIUM_CLOUD" },
-        { "position": [3700, 150], "type": "CLOUD", "subtype": "MEDIUM_CLOUD" },
-        { "position": [5550, 100], "type": "CLOUD", "subtype": "MEDIUM_CLOUD" },
-        { "position": [8450, 100], "type": "CLOUD", "subtype": "MEDIUM_CLOUD" },
-
-        { "position": [6650, 100], "type": "CLOUD", "subtype": "BIG_CLOUD" },
-        { "position": [1300, 100], "type": "CLOUD", "subtype": "BIG_CLOUD" },
-
-        { "position": [700, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [2050, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [3000, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [4450, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [5350, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [8300, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-        { "position": [10500, 550], "type": "MOUNTAIN", "subtype": "SMALL_MOUNTAIN" },
-
-        { "position": [0, 450], "type": "MOUNTAIN", "subtype": "MEDIUM_MOUNTAIN" },
-
-        { "position": [7200, 400], "type": "MOUNTAIN", "subtype": "BIG_MOUNTAIN" },
-
-        { "position": [4100, 500], "type": "TREE", "subtype": "SMALL_TREE" },
-        { "position": [5150, 500], "type": "TREE", "subtype": "SMALL_TREE" },
-
-        { "position": [1550, 450], "type": "TREE", "subtype": "MEDIUM_TREE" },
-
-        { "position": [6050, 400], "type": "TREE", "subtype": "BIG_TREE" },
-
-        { "position": [800, 450], "type": "MISTERY_BOX", "subtype": "DEFAULT_MISTERY_BOX" },
-
         {
-            "position": [1050, 450],
+            "position": [
+                1400,
+                550
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_HEAD_BIG"
+        },
+        {
+            "position": [
+                8150,
+                550
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_HEAD_BIG"
+        },
+        {
+            "position": [
+                8950,
+                550
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_HEAD_BIG"
+        },
+        {
+            "position": [
+                5550,
+                600
+            ],
+            "type": "BUSH",
+            "subtype": "SMALL_BUSH"
+        },
+        {
+            "position": [
+                3200,
+                600
+            ],
+            "type": "BUSH",
+            "subtype": "SMALL_BUSH"
+        },
+        {
+            "position": [
+                3650,
+                600
+            ],
+            "type": "BUSH",
+            "subtype": "SMALL_BUSH"
+        },
+        {
+            "position": [
+                1200,
+                600
+            ],
+            "type": "BUSH",
+            "subtype": "SMALL_BUSH"
+        },
+        {
+            "position": [
+                7950,
+                600
+            ],
+            "type": "BUSH",
+            "subtype": "SMALL_BUSH"
+        },
+        {
+            "position": [
+                6900,
+                600
+            ],
+            "type": "BUSH",
+            "subtype": "SMALL_BUSH"
+        },
+        {
+            "position": [
+                10700,
+                600
+            ],
+            "type": "BUSH",
+            "subtype": "SMALL_BUSH"
+        },
+        {
+            "position": [
+                500,
+                590
+            ],
+            "type": "BUSH",
+            "subtype": "MEDIUM_BUSH"
+        },
+        {
+            "position": [
+                4850,
+                590
+            ],
+            "type": "BUSH",
+            "subtype": "MEDIUM_BUSH"
+        },
+        {
+            "position": [
+                2500,
+                590
+            ],
+            "type": "BUSH",
+            "subtype": "MEDIUM_BUSH"
+        },
+        {
+            "position": [
+                850,
+                150
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                300,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                3250,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                2750,
+                150
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                4350,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                5100,
+                200
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                5050,
+                200
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                5050,
+                150
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                5000,
+                200
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                6100,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                7400,
+                150
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                7500,
+                150
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                7450,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                7950,
+                200
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                8850,
+                200
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                8950,
+                200
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                8900,
+                150
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                9250,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                9300,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "SMALL_CLOUD"
+        },
+        {
+            "position": [
+                1900,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "MEDIUM_CLOUD"
+        },
+        {
+            "position": [
+                3700,
+                150
+            ],
+            "type": "CLOUD",
+            "subtype": "MEDIUM_CLOUD"
+        },
+        {
+            "position": [
+                5550,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "MEDIUM_CLOUD"
+        },
+        {
+            "position": [
+                8450,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "MEDIUM_CLOUD"
+        },
+        {
+            "position": [
+                6650,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "BIG_CLOUD"
+        },
+        {
+            "position": [
+                1300,
+                100
+            ],
+            "type": "CLOUD",
+            "subtype": "BIG_CLOUD"
+        },
+        {
+            "position": [
+                700,
+                510
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "SMALL_MOUNTAIN"
+        },
+        {
+            "position": [
+                2050,
+                510
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "SMALL_MOUNTAIN"
+        },
+        {
+            "position": [
+                3000,
+                510
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "SMALL_MOUNTAIN"
+        },
+        {
+            "position": [
+                4450,
+                510
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "SMALL_MOUNTAIN"
+        },
+        {
+            "position": [
+                5350,
+                510
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "SMALL_MOUNTAIN"
+        },
+        {
+            "position": [
+                8300,
+                510
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "SMALL_MOUNTAIN"
+        },
+        {
+            "position": [
+                10500,
+                510
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "SMALL_MOUNTAIN"
+        },
+        {
+            "position": [
+                0,
+                460
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "MEDIUM_MOUNTAIN"
+        },
+        {
+            "position": [
+                7200,
+                420
+            ],
+            "type": "MOUNTAIN",
+            "subtype": "BIG_MOUNTAIN"
+        },
+        {
+            "position": [
+                4100,
+                515
+            ],
+            "type": "TREE",
+            "subtype": "SMALL_TREE"
+        },
+        {
+            "position": [
+                5150,
+                515
+            ],
+            "type": "TREE",
+            "subtype": "SMALL_TREE"
+        },
+        {
+            "position": [
+                1550,
+                480
+            ],
+            "type": "TREE",
+            "subtype": "MEDIUM_TREE"
+        },
+        {
+            "position": [
+                6050,
+                430
+            ],
+            "type": "TREE",
+            "subtype": "BIG_TREE"
+        },
+        {
+            "position": [
+                800,
+                450
+            ],
+
             "type": "MISTERY_BOX",
             "subtype": "DEFAULT_MISTERY_BOX"
         },
         {
-            "position": [1150, 450],
+            "position": [
+                1050,
+                450
+            ],
             "type": "MISTERY_BOX",
             "subtype": "DEFAULT_MISTERY_BOX"
         },
         {
-            "position": [1100, 240],
-            "type": "MISTERY_BOX",
-            "subtype": "DEFAULT_MISTERY_BOX"
-        },
-
-        {
-            "position": [3900, 450],
-            "type": "MISTERY_BOX",
-            "subtype": "DEFAULT_MISTERY_BOX"
-        },
-
-        {
-            "position": [4700, 250],
-            "type": "MISTERY_BOX",
-            "subtype": "DEFAULT_MISTERY_BOX"
-        },
-
-        {
-            "position": [5300, 450],
+            "position": [
+                1150,
+                450
+            ],
             "type": "MISTERY_BOX",
             "subtype": "DEFAULT_MISTERY_BOX"
         },
         {
-            "position": [5450, 450],
+            "position": [
+                3900,
+                450
+            ],
             "type": "MISTERY_BOX",
             "subtype": "DEFAULT_MISTERY_BOX"
         },
         {
-            "position": [5600, 450],
+            "position": [
+                4700,
+                250
+            ],
             "type": "MISTERY_BOX",
             "subtype": "DEFAULT_MISTERY_BOX"
         },
         {
-            "position": [5450, 250],
-            "type": "MISTERY_BOX",
-            "subtype": "DEFAULT_MISTERY_BOX"
-        },
-
-        {
-            "position": [6450, 250],
+            "position": [
+                5300,
+                450
+            ],
             "type": "MISTERY_BOX",
             "subtype": "DEFAULT_MISTERY_BOX"
         },
         {
-            "position": [6500, 250],
+            "position": [
+                5450,
+                450
+            ],
             "type": "MISTERY_BOX",
             "subtype": "DEFAULT_MISTERY_BOX"
         },
-
         {
-            "position": [8500, 450],
+            "position": [
+                5600,
+                450
+            ],
             "type": "MISTERY_BOX",
             "subtype": "DEFAULT_MISTERY_BOX"
         },
-
-        { "position": [10100, 450], "type": "CASTLE", "subtype": "DEFAULT_CASTLE" },
-
-        { "position": [9900, 550], "type": "FLAG", "subtype": "FLAG_PIPE" },
-        { "position": [9900, 500], "type": "FLAG", "subtype": "FLAG_PIPE" },
-        { "position": [9900, 450], "type": "FLAG", "subtype": "FLAG_PIPE" },
-        { "position": [9900, 400], "type": "FLAG", "subtype": "FLAG_PIPE" },
-        { "position": [9900, 300], "type": "FLAG", "subtype": "FLAG_PIPE" },
-        { "position": [9900, 350], "type": "FLAG", "subtype": "FLAG_PIPE" },
-        { "position": [9900, 250], "type": "FLAG", "subtype": "FLAG_PIPE" },
-        { "position": [9900, 200], "type": "FLAG", "subtype": "FLAG_PIPE" },
-        { "position": [9900, 150], "type": "FLAG", "subtype": "FLAG_PIPE" },
-
-        { "position": [9900, 150], "type": "FLAG", "subtype": "FLAG_WIN" },
-
-        { "position": [9856, 600], "type": "FLAG", "subtype": "FLAG_SUPPORT" },
-
-        { "position": [0, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [-50, 0], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [0, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [-50, 50], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [50, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [50, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [-50, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [-50, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [-50, 600], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 100], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 150], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 200], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 300], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 350], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 400], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 500], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [-50, 550], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10850, 0], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [1100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1100, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [1200, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [1000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1000, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [1400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [1800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [2950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4100, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4150, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4200, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4250, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4300, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4350, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [3600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4050, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [3550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [3850, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [3950, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4000, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4550, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4600, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4650, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [4650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5000, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [5050, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [5200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5900, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [5950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [5950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6050, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [6100, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [6150, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [6350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6400, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [6450, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [6500, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [6550, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [6850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [6950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [7600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8400, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [8450, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [8550, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [8400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [8950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9900, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9950, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9900, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [9950, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [4700, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 50], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10750, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10750, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10800, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10850, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10850, 600], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 550], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 500], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 450], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 400], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 350], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 300], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 250], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 200], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 150], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10850, 100], "type": "BLOCK", "subtype": "OVERWORLD_BLOCK" },
-        { "position": [10800, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10850, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10050, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10250, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10350, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10000, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10100, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10150, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10200, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10300, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10400, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10450, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10500, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10550, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10600, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10650, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10700, 650], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10700, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10650, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10600, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10550, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10500, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10450, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10400, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10350, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10300, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10250, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10200, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10150, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10100, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10050, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-        { "position": [10000, 700], "type": "BLOCK", "subtype": "OVERWORLD_TERRAIN_BLOCK" },
-
-        { "position": [6700, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6750, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6800, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6850, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6750, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6800, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6850, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6800, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6850, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [6850, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7000, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7000, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7000, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7000, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7050, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7050, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7050, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7100, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7100, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7150, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7400, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7450, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7500, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7550, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7450, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7500, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7550, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7600, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7600, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7600, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7600, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7550, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7550, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7500, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7750, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7750, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7750, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7750, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7800, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7800, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7800, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7850, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7850, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [7900, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9050, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9100, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9150, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9200, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9250, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9300, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9350, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9400, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 600], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9100, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9150, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9200, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9250, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9300, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9350, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9400, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 550], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9150, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9200, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9250, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9350, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9400, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9300, 500], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9200, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9250, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9300, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9400, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9350, 450], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9250, 400], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9300, 400], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9400, 400], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 400], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9350, 400], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9300, 350], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9350, 350], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9400, 350], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 350], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9350, 300], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9400, 300], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 300], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9400, 250], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-        { "position": [9450, 250], "type": "BLOCK", "subtype": "WALL_BLOCK" },
-
-        { "position": [450, 500], "type": "COIN", "subtype": "COIN" }
+        {
+            "position": [
+                5450,
+                250
+            ],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [
+                6450,
+                250
+            ],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [
+                6500,
+                250
+            ],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [
+                8500,
+                450
+            ],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [
+                10100,
+                450
+            ],
+            "type": "CASTLE",
+            "subtype": "DEFAULT_CASTLE"
+        },
+        {
+            "position": [
+                9894.5,
+                550
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9894.5,
+                500
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9894.5,
+                450
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9894.5,
+                400
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9894.5,
+                300
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9894.5,
+                350
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9894.5,
+                250
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9894.5,
+                200
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9894.5,
+                150
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_WIN"
+        },
+        {
+            "position": [
+                9850.0,
+                600
+            ],
+            "type": "FLAG",
+            "subtype": "FLAG_SUPPORT"
+        },
+        {
+            "position": [
+                0,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                0
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                0,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                50
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                50,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                50,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                100
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                150
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                200
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                300
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                350
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                400
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                -50,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                0
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                1100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1100,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                1200,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                1000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1000,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                1400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                1800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                2950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4100,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4150,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4200,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4250,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4300,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4350,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                3600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4050,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                3550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                3850,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                3950,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4000,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4550,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4600,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4650,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                4650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5000,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                5050,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                5200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5900,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                5950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                5950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6050,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                6100,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                6150,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                6350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6400,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                6450,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                6500,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                6550,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                6850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                7600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8400,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                8450,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                8550,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                8400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                8950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9900,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9950,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9900,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                9950,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                4700,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                50
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10750,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10750,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10800,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                400
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                350
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                300
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                200
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                150
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                100
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_BLOCK"
+        },
+        {
+            "position": [
+                10800,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10850,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10050,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10250,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10350,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10000,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10100,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10150,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10200,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10300,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10400,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10450,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10500,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10550,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10600,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10650,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10700,
+                650
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10700,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10650,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10600,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10550,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10500,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10450,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10400,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10350,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10300,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10250,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10200,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10150,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10100,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10050,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                10000,
+                700
+            ],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
+        },
+        {
+            "position": [
+                6700,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6750,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6800,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6850,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6750,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6800,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6850,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6800,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6850,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                6850,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7000,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7000,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7000,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7000,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7050,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7050,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7050,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7100,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7100,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7150,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7400,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7450,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7500,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7550,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7450,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7500,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7550,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7600,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7600,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7600,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7600,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7550,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7550,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7500,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7750,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7750,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7750,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7750,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7800,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7800,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7800,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7850,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7850,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                7900,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9050,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9100,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9150,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9200,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9250,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9300,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                600
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9100,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9150,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9200,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9250,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9300,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                550
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9150,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9200,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9250,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9300,
+                500
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9200,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9250,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9300,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                450
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9250,
+                400
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9300,
+                400
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                400
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                400
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                400
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9300,
+                350
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                350
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                350
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                350
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9350,
+                300
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                300
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                300
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9400,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                9450,
+                250
+            ],
+            "type": "BLOCK",
+            "subtype": "WALL_BLOCK"
+        },
+        {
+            "position": [
+                1900,
+                500
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_HEAD_SMALL"
+        },
+        {
+            "position": [
+                1900,
+                550
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_BODY_STYLE_5"
+        },
+        {
+            "position": [
+                1100,
+                250
+            ],
+            "type": "MISTERY_BOX",
+            "subtype": "DEFAULT_MISTERY_BOX"
+        },
+        {
+            "position": [
+                2300,
+                550
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_BODY_STYLE_3"
+        },
+        {
+            "position": [
+                2300,
+                450
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_HEAD_BIG"
+        },
+        {
+            "position": [
+                2850,
+                550
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_BODY_STYLE_2"
+        },
+        {
+            "position": [
+                2850,
+                450
+            ],
+            "type": "PIPE",
+            "subtype": "PIPE_HEAD_BIG"
+        }
     ],
     "power_ups": []
 }

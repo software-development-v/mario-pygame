@@ -1,11 +1,6 @@
-from src.utils.assets.create_images import create_image
-from src.utils.constants import GENERAL_SIZE
-from src.utils.directories import (
-    BRICK_DIR,
-    MASTERY_BLOCK_DIR,
-    TERRAIN_DIR,
-    WALL_DIR,
-)
+from ....constants import GENERAL_SIZE
+from ....directories import BRICK_DIR, MASTERY_BLOCK_DIR, TERRAIN_DIR, WALL_DIR
+from ...create_images import create_image
 
 OVERWORLD_BLOCK = create_image(BRICK_DIR + "overworld.png", GENERAL_SIZE)
 

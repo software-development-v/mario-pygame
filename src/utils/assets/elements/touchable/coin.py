@@ -1,6 +1,6 @@
-from src.utils.assets.create_images import create_image
-from src.utils.constants import COIN_SIZE
-from src.utils.directories import COIN_DIR
+from ....constants import COIN_SIZE
+from ....directories import COIN_DIR
+from ...create_images import create_image
 
 COIN_1 = create_image(COIN_DIR + "coin_1.png", COIN_SIZE)
 

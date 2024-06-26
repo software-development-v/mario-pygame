@@ -4,9 +4,7 @@ from pygame import time
 
 from src.enums import GameEvent, HeroState, SceneAction
 from src.level import ILevelManager
-
-from src.utils.constants import TO_SECONDS
-
+from src.utils import TO_SECONDS
 from ...abstractions import Tick
 
 class LevelSceneTick(Tick):
