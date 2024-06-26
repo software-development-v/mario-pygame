@@ -2,10 +2,12 @@ from typing import Callable, Dict, Tuple
 
 from pygame import mouse, quit, time
 
-from src.enums import GameEvent, HeroType, Level, SceneAction, World
+from src.enums import GameEvent, SceneAction
 
 from ...abstractions import Tick
-from ..transition_level import TransitionLevelScene
+from ..character_selection_menu.character_selection_scene import (
+    CharacterSelectionScene,
+)
 from .main_menu_render import MainMenuRender
 
 
@@ -72,8 +74,6 @@ class MainMenuTick(Tick):
             exit()
         else:
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
-                TransitionLevelScene(
-                    HeroType.CUMPA, World.ONE, Level.FIRST, self._dispatcher
-                )
+                CharacterSelectionScene(self._dispatcher)
             )
             self._dispatcher[SceneAction.END]()

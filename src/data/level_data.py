@@ -2,7 +2,7 @@ from typing import List
 
 from pygame import Surface
 
-from src.entities import Element, IEntity
+from src.entities import Element, Sprite
 from src.enums import Level, World
 from src.utils import Position
 
@@ -20,9 +20,9 @@ class LevelData(ILevelData):
         background: IBackground,
         background_music: str,
         player_init_position: Position,
-        enemies: List[IEntity],
+        enemies: List[Sprite],
         elements: List[Element],
-        power_ups: List[IEntity],
+        power_ups: List[Sprite],
     ) -> None:
 
         self.__world: World = world
@@ -32,9 +32,9 @@ class LevelData(ILevelData):
         self.__background: IBackground = background
         self.__background_music: str = background_music
         self.__player_init_position: Position = player_init_position
-        self.__enemies: List[IEntity] = enemies
+        self.__enemies: List[Sprite] = enemies
         self.__elements: List[Element] = elements
-        self.__power_ups: List[IEntity] = power_ups
+        self.__power_ups: List[Sprite] = power_ups
 
     def get_world(self) -> World:
         return self.__world
@@ -57,11 +57,11 @@ class LevelData(ILevelData):
     def get_player_init_position(self) -> Position:
         return self.__player_init_position
 
-    def get_enemies(self) -> List[IEntity]:
+    def get_enemies(self) -> List[Sprite]:
         return self.__enemies
 
     def get_elements(self) -> List[Element]:
         return self.__elements
 
-    def get_power_ups(self) -> List[IEntity]:
+    def get_power_ups(self) -> List[Sprite]:
         return self.__power_ups

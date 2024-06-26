@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
 
-class IUpdatable(ABC):
+class IAnimate(ABC):
 
     @abstractmethod
-    def update(self) -> None:
+    def animate(self) -> None:
         pass
