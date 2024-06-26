@@ -14,3 +14,7 @@ class Flag(InteractiveElement):
             position,
             elements[ElementType.FLAG][element_sub_type],
         )
+
+
+    def notify_observers(self) -> None:
+        print("flag")

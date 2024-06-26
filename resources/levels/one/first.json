@@ -598,6 +598,14 @@
                 150
             ],
             "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [
+                9900.0,
+                150
+            ],
+            "type": "FLAG",
             "subtype": "FLAG_WIN"
         },
         {
