@@ -1,4 +1,4 @@
-from .backgrounds.menu import MENU_BACKGROUND
+from .backgrounds.menu import CHARACTER_SELECTION_MENU, MENU_BACKGROUND
 from .cinematics import FINAL_CINEMATIC_AUDIO, FINAL_CINEMATIC_VIDEO
 from .elements import (
     BIG_BUSH,
@@ -397,6 +397,7 @@ __all__ = [
     "VALVOOPA_WALKING_2",
     "BUTTON",
     "MENU_BACKGROUND",
+    "CHARACTER_SELECTION_MENU",
     "COCA_PLANT_1",
     "COCA_PLANT_2",
     "PIJCHU_BALL_1",
