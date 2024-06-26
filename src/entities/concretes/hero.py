@@ -32,6 +32,7 @@ class Hero(Sprite):
         self.__vel_y = INIT_VEL_Y
         self.__jumping = True
         self.__running = False
+        self.__win = False
         super().__init__(
             position,
             y_rect_percent=HERO_RECT_Y_PERCENT,
@@ -106,7 +107,7 @@ class Hero(Sprite):
                 continue
 
             if isinstance(obstacle, InteractiveElement):
-                obstacle.notify_observers()
+                obstacle.notify_observers(self)
 
             if dx > 0:
                 dx = obstacle_rect.left - hero_rect.right
@@ -143,7 +144,7 @@ class Hero(Sprite):
                 self.__jumping = False
 
             if isinstance(obstacle, InteractiveElement):
-                obstacle.notify_observers()
+                obstacle.notify_observers(self)
 
             break
 
@@ -166,12 +167,20 @@ class Hero(Sprite):
     def get_hero_state(self) -> HeroState:
         return self.__hero_state
 
+    def hero_win(self) -> None:
+        self.__win = True
+        self.__hero_state = HeroState.DOWN
+
     def update(
         self,
         game_events: Dict[GameEvent, bool],
         obstacles: List[Element],
         camera: Camera,
     ) -> None:
+
+        if self.__win:
+            return
+
         hero_rect: Rect = self.get_rect()
 
         self.__handle_hero_states(game_events)

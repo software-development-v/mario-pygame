@@ -1,3 +1,5 @@
+from src.entities.abstractions.sprite import Sprite
+from src.entities.concretes.hero import Hero
 from src.enums import ElementSubType, ElementType
 from src.utils import Position, elements
 
@@ -18,6 +20,15 @@ class Flag(InteractiveElement):
             ),
         )
 
+    def verify_x_player_position(self, hero: Hero):
+        if hero.get_rect().x is self.get_rect().x:
+            print("b")
 
-    def notify_observers(self) -> None:
-        print("flag")
+    def notify_observers(self, sprite: Sprite) -> None:
+        print("a")
+        print("X:", sprite.get_rect().x, self.get_rect().x)
+        print("Y:", sprite.get_rect().y, self.get_rect().y)
+        if isinstance(sprite, Hero):
+            if sprite.get_rect().x == 11811:
+                sprite.hero_win()
+                self.verify_x_player_position(sprite)
