@@ -61,9 +61,9 @@ class CharacterSelectionTick(Tick):
         character_selected = self.render.character_options[selected_character]
 
         hero_type_map = {
-            HeroType.PARIENTE.value: HeroType.PARIENTE,
-            HeroType.HIJITA.value: HeroType.HIJITA,
             HeroType.CUMPA.value: HeroType.CUMPA,
+            HeroType.HIJITA.value: HeroType.HIJITA,
+            HeroType.PARIENTE.value: HeroType.PARIENTE,
         }
 
         selected_hero_type = hero_type_map.get(

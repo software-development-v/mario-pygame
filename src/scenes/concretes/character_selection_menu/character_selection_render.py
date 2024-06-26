@@ -3,7 +3,12 @@ from typing import List, Tuple
 from pygame import Rect, Surface, display, font
 
 from src.enums import HeroType
-from src.utils import GAME_FONT, MENU_BACKGROUND, ORANGE_COLOR, WHITE_COLOR
+from src.utils import (
+    CHARACTER_SELECTION_MENU,
+    GAME_FONT,
+    ORANGE_COLOR,
+    WHITE_COLOR,
+)
 
 from ...abstractions import Render
 
@@ -12,22 +17,27 @@ class CharacterSelectionRender(Render):
     def __init__(self) -> None:
         super().__init__()
         self.character_options: List[str] = [
-            HeroType.PARIENTE.value,
-            HeroType.HIJITA.value,
             HeroType.CUMPA.value,
+            HeroType.HIJITA.value,
+            HeroType.PARIENTE.value,
         ]
         self.selected_character: int = 0
 
         screen_width: int = self._screen.get_width()
         screen_height: int = self._screen.get_height()
 
-        self.background_image: Surface = MENU_BACKGROUND
+        self.background_image: Surface = CHARACTER_SELECTION_MENU
 
-        # Alinear horizontalmente en diferentes posiciones del eje X
         self.character_positions: List[Tuple[int, int]] = [
-            (screen_width // 4, screen_height // 2),  # Costado izquierdo
-            (screen_width // 2, screen_height // 2),  # Centro
-            (3 * screen_width // 4, screen_height // 2),  # Costado derecho
+            (
+                screen_width // 5 + 20,
+                screen_height // 2 + 100,
+            ),
+            (screen_width // 2, screen_height // 2 + 100),
+            (
+                5 * screen_width // 6 - 60,
+                screen_height // 2 + 100,
+            ),
         ]
 
         self.character_fonts: List[font.Font] = [
