@@ -8,6 +8,7 @@ from src.utils import TO_SECONDS
 
 from ...abstractions import Tick
 
+
 class LevelSceneTick(Tick):
     def __init__(
         self,
@@ -37,10 +38,14 @@ class LevelSceneTick(Tick):
         hero.update(game_events, obstacles_manager.get_sprites(), camera)
         hero.animate()
 
-        if hero.get_hero_state() == HeroState.DEAD or self.level_manager.get_current_time() <= 0:
+        if (
+            hero.get_hero_state() == HeroState.DEAD
+            or self.level_manager.get_current_time() <= 0
+        ):
 
-            self.level_manager.set_lifes(self.level_manager.get_lifes() - 1)
+            self.level_manager.set_lives(self.level_manager.get_lives() - 1)
             from ..transition_level import TransitionLevelScene
+
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
                 TransitionLevelScene(
                     self.level_manager.get_hero_type(),

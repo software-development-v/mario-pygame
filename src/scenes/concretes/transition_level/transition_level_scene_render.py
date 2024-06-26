@@ -1,18 +1,20 @@
 from src.data.game_data import GameData
 from src.level import ILevelManager
-from .states import LevelState, LevelStatusState, TimeoutState,GameOverState
+from .states import LevelState, LevelStatusState, TimeoutState, GameOverState
 from ..level.level_metrics_renderer import LevelMetricsRenderer
 from src.utils.colors import BLACK_COLOR
 from ...abstractions import Render
 
 
 class TransitionLevelSceneRender(Render):
-    def __init__(self, level_manager: ILevelManager, game:GameData) -> None:
+    def __init__(self, level_manager: ILevelManager, game: GameData) -> None:
         self.__level_manager = level_manager
         self.game = game
         super().__init__()
         self.level_metrics_renderer = LevelMetricsRenderer(self._screen)
-        self.state: LevelState = LevelStatusState(level_manager, game, self.change_state)
+        self.state: LevelState = LevelStatusState(
+            level_manager, game, self.change_state
+        )
         self.state_initialized = False
 
     def render(self) -> None:
@@ -30,17 +32,18 @@ class TransitionLevelSceneRender(Render):
         )
         self.state.render(self._screen)
 
-
     def change_state(self, state: LevelState) -> None:
         self.state = state
-
-
 
     def ensure_state_initialized(self) -> None:
         if not self.state_initialized:
             self.state_initialized = True
             if self.__level_manager.get_current_time() <= 0:
-                self.state = TimeoutState(self.__level_manager, self.game, self.change_state)
+                self.state = TimeoutState(
+                    self.__level_manager, self.game, self.change_state
+                )
 
-            elif self.__level_manager.get_lifes() == 0:
-                self.state = GameOverState(self.__level_manager, self.game, self.change_state)
+            elif self.__level_manager.get_lives() == 0:
+                self.state = GameOverState(
+                    self.__level_manager, self.game, self.change_state
+                )
