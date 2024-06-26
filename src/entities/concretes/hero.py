@@ -44,7 +44,7 @@ class Hero(Sprite):
         return self.__surfaces[self.__hero_level][self.__hero_state]
 
     def __handle_hero_states(self, game_events: Dict[GameEvent, bool]):
-        if game_events[GameEvent.JUMP] and not self.__jumping:
+        if game_events[GameEvent.UP] and not self.__jumping:
             self.__vel_y = -JUMP_VELOCITY
             self.__hero_state = HeroState.JUMP
             self.__jumping = True
