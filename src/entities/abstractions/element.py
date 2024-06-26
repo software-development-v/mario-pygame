@@ -14,10 +14,16 @@ class Element(Sprite, ABC):
         position: Position,
         images: List[Surface],
         is_touchable: bool = True,
+        x_rect_percent: float = 1,
+        y_rect_percent: float = 1,
     ) -> None:
         self.__surfaces: List[Surface] = images
         self.__is_touchable = is_touchable
-        super().__init__(position)
+        super().__init__(
+            position,
+            x_rect_percent=x_rect_percent,
+            y_rect_percent=y_rect_percent,
+        )
 
     def _get_surfaces(self) -> List[Surface]:
         return self.__surfaces

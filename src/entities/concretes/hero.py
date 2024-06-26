@@ -5,6 +5,7 @@ from pygame import Rect, Surface
 from src.enums import GameEvent, HeroLevel, HeroState
 from src.utils import (
     DEAD_FALL_THRESHOLD,
+    HERO_BIG_RECT_X_PERCENT,
     HERO_NORMAL_RECT_X_PERCENT,
     HERO_RECT_Y_PERCENT,
     HERO_SPEED,
@@ -34,7 +35,9 @@ class Hero(Sprite):
         super().__init__(
             position,
             y_rect_percent=HERO_RECT_Y_PERCENT,
-            x_rect_percent=HERO_NORMAL_RECT_X_PERCENT,
+            x_rect_percent=self.__hero_level == HeroLevel.NORMAL
+            and HERO_NORMAL_RECT_X_PERCENT
+            or HERO_BIG_RECT_X_PERCENT,
         )
 
     def _get_surfaces(self) -> List[Surface]:
