@@ -1,43 +1,32 @@
+from abc import ABC
 from typing import List
 
-from pygame import Rect, Surface, time
+from pygame import Surface
 
-from src.utils import Camera, Position
-from src.utils.constants import ANIMATION_INTERVAL, INIT_IMAGE_INDEX
+from src.utils import Position
 
-from ..interfaces import IEntity
+from .sprite import Sprite
 
 
-class Element(IEntity):
+class Element(Sprite, ABC):
     def __init__(
         self,
         position: Position,
         images: List[Surface],
         is_touchable: bool = True,
+        x_rect_percent: float = 1,
+        y_rect_percent: float = 1,
     ) -> None:
-        self.position = position
-        self.surfaces: List[Surface] = images
-        self.index = INIT_IMAGE_INDEX
-        self.last_update = time.get_ticks()
-        self.is_touchable = is_touchable
-        self.image = self.surfaces[self.index]
-        self.rect = self.image.get_rect()
-        self.rect.x = position.x
-        self.rect.y = position.y
+        self.__surfaces: List[Surface] = images
+        self.__is_touchable = is_touchable
+        super().__init__(
+            position,
+            x_rect_percent=x_rect_percent,
+            y_rect_percent=y_rect_percent,
+        )
 
-    def get_rect(self) -> Rect:
-        return self.rect
+    def _get_surfaces(self) -> List[Surface]:
+        return self.__surfaces
 
-    def draw(self, screen: Surface, camera: Camera) -> None:
-        screen.blit(self.image, camera.apply(self))
-
-    def update(self) -> None:
-        current_time = time.get_ticks()
-
-        if current_time - self.last_update > ANIMATION_INTERVAL:
-            self.index = self.index + 1
-            self.last_update = current_time
-            if self.index >= len(self.surfaces):
-                self.index = INIT_IMAGE_INDEX
-
-        self.image = self.surfaces[self.index]
+    def get_is_touchable(self) -> bool:
+        return self.__is_touchable

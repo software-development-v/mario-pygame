@@ -1,6 +1,5 @@
 from src.enums import ElementSubType, ElementType
-from src.utils.classes import Position
-from src.utils.surfaces import elements
+from src.utils import Position, elements
 
 from ....abstractions import InteractiveElement
 

@@ -1,6 +1,5 @@
 from src.enums import ElementSubType, ElementType
-from src.utils.classes import Position
-from src.utils.surfaces import elements
+from src.utils import Position, elements
 
 from ....abstractions import InteractiveElement
 
@@ -14,4 +13,7 @@ class Flag(InteractiveElement):
         super().__init__(
             position,
             elements[ElementType.FLAG][element_sub_type],
+            x_rect_percent=(
+                0.11 if element_sub_type == ElementSubType.FLAG_SUPPORT else 1
+            ),
         )

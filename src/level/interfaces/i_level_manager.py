@@ -6,7 +6,7 @@ from src.entities import Hero
 from src.enums import HeroType, Level, World
 from src.utils import Camera
 
-from ..concretes.entity_managers import ObstacleManager
+from ..concretes.sprites_managers import ObstaclesManager
 
 
 class ILevelManager(ABC):
@@ -19,7 +19,7 @@ class ILevelManager(ABC):
         pass
 
     @abstractmethod
-    def get_obstacle_manager(self) -> ObstacleManager:
+    def get_obstacles_manager(self) -> ObstaclesManager:
         pass
 
     @abstractmethod

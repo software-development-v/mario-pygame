@@ -1,10 +1,8 @@
 from typing import List, Tuple
 
-import pygame
+from pygame import Rect, Surface, display, font
 
-from src.utils.assets.backgrounds.menu import MENU_BACKGROUND
-from src.utils.assets.fonts import GAME_FONT
-from src.utils.colors import ORANGE_COLOR, WHITE_COLOR
+from src.utils import GAME_FONT, MENU_BACKGROUND, ORANGE_COLOR, WHITE_COLOR
 
 from ...abstractions import Render
 
@@ -21,19 +19,19 @@ class MainMenuRender(Render):
         screen_width: int = self._screen.get_width()
         screen_height: int = self._screen.get_height()
 
-        self.background_image: pygame.Surface = MENU_BACKGROUND
+        self.background_image: Surface = MENU_BACKGROUND
 
         self.option_positions: List[Tuple[int, int]] = [
             (screen_width // 2, (screen_height // 2) - 75),
             (200, 140),
         ]
 
-        self.option_fonts: List[pygame.font.Font] = [
-            pygame.font.Font(GAME_FONT, 70),
-            pygame.font.Font(GAME_FONT, 40),
+        self.option_fonts: List[font.Font] = [
+            font.Font(GAME_FONT, 70),
+            font.Font(GAME_FONT, 40),
         ]
 
-        self.top_text_font: pygame.font.Font = pygame.font.Font(GAME_FONT, 20)
+        self.top_text_font: font.Font = font.Font(GAME_FONT, 20)
         self.top_text_position: Tuple[int, int] = (
             screen_width - 200,
             140,
@@ -58,7 +56,7 @@ class MainMenuRender(Render):
         top_text_rect = top_text_surface.get_rect(center=self.top_text_position)
         self._screen.blit(top_text_surface, top_text_rect)
 
-        pygame.display.flip()
+        display.flip()
 
     def get_selected_option(self) -> int:
         return self.selected_option
@@ -66,8 +64,8 @@ class MainMenuRender(Render):
     def set_selected_option(self, option: int):
         self.selected_option = option % len(self.menu_options)
 
-    def get_option_rects(self) -> List[pygame.Rect]:
-        option_rects: List[pygame.Rect] = []
+    def get_option_rects(self) -> List[Rect]:
+        option_rects: List[Rect] = []
         for index, position in enumerate(self.option_positions):
             font = self.option_fonts[index]
             text = font.render(self.menu_options[index], True, (0, 0, 0))

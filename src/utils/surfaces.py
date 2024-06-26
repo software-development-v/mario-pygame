@@ -3,7 +3,8 @@ from typing import Dict, List
 from pygame import Surface
 
 from src.enums import ElementSubType, ElementType
-from src.utils.assets import (
+
+from .assets import (
     BIG_BUSH,
     BIG_CLOUD,
     BIG_MOUNTAIN,

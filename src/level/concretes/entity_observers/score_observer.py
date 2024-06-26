@@ -1,5 +1,5 @@
 from src.entities import IElementObserver
-from src.utils.constants import SCORE_LIMIT
+from src.utils import SCORE_LIMIT
 
 
 class ScoreObserver(IElementObserver):

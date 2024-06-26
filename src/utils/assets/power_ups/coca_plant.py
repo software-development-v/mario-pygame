@@ -1,10 +1,10 @@
-from src.utils.assets.create_images import create_image
-from src.utils.constants import GENERAL_SIZE, SMALL_SIZE
-from src.utils.directories import (
+from ...constants import GENERAL_SIZE, SMALL_SIZE
+from ...directories import (
     PIJCHU_BALL_BOOM_DIR,
     PIJCHU_BALL_COCA_BALL_DIR,
     PLANT_DIR,
 )
+from ..create_images import create_image
 
 COCA_PLANT_1 = create_image(PLANT_DIR + "plant_1.png", GENERAL_SIZE)
 COCA_PLANT_2 = create_image(PLANT_DIR + "plant_2.png", GENERAL_SIZE)

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.enums.collected_type import CollectedType
+from src.enums import CollectedType
 
 from .i_element_observer import IElementObserver
 

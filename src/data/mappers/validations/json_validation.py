@@ -85,9 +85,14 @@ def validate_element(element: Dict[str, Any]):
         raise ValueError(
             "Invalid 'position' field: must be a list with 2 elements"
         )
-    validate_field_type(
-        element["position"][0], int, "position[0]", positive=False
-    )
+    if element["type"] == "FLAG":
+        validate_field_type(
+            element["position"][0], float, "position[0]", positive=False
+        )
+    else:
+        validate_field_type(
+            element["position"][0], int, "position[0]", positive=False
+        )
     validate_field_type(
         element["position"][1], int, "position[1]", positive=False
     )

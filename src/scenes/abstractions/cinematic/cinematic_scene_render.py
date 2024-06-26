@@ -4,7 +4,7 @@ import cv2 as cv
 from cv2.typing import MatLike
 from pygame import image
 
-from src.utils.constants import BGR_FORMAT, SCREEN_SIZE, VIDEO_SCREEN_POSITION
+from src.utils import BGR_FORMAT, SCREEN_SIZE, VIDEO_SCREEN_POSITION
 
 from ..render import Render
 

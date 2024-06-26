@@ -1,4 +1,4 @@
-from src.utils.directories import FINAL_CINEMATIC_DIR
+from ...directories import FINAL_CINEMATIC_DIR
 
 FINAL_CINEMATIC_VIDEO = FINAL_CINEMATIC_DIR + "video.mp4"
 FINAL_CINEMATIC_AUDIO = FINAL_CINEMATIC_DIR + "audio.mp3"

@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import Dict, List
 
 from pygame import (
     JOYAXISMOTION,
@@ -11,7 +11,7 @@ from pygame import (
 )
 
 from src.enums import ControllerInput, GameEvent
-from src.utils.constants import (
+from src.utils import (
     DEFAULT_HORIZONTAL_AXIS_VALUE,
     DEFAULT_MIN_SENSIBILITY,
     DEFAULT_R_TWO_SENSIBILITY,
@@ -48,7 +48,7 @@ class ControllerInputHandler(IInputHandler):
             ControllerInput.R_TWO.value: DEFAULT_R_TWO_VALUE,
         }
 
-    def check_button_in_keys(self, button: Any) -> bool:
+    def check_button_in_keys(self, button: int) -> bool:
         return (
             button in self.control_input
             and button != ControllerInput.R_TWO

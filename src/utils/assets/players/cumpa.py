@@ -1,5 +1,5 @@
-from src.utils.constants import BIG_SIZE, GENERAL_SIZE
-from src.utils.directories import (
+from ...constants import BIG_SIZE, GENERAL_SIZE
+from ...directories import (
     CUMPA_LVL_1_BRAKE_DIR,
     CUMPA_LVL_1_DEFAULT_DIR,
     CUMPA_LVL_1_DIED_DIR,
@@ -31,7 +31,6 @@ from src.utils.directories import (
     CUMPA_LVL_4_2_JUMP_DIR,
     CUMPA_LVL_4_2_WALKING_DIR,
 )
-
 from ..create_images import create_image
 
 # ==== LEVEL 1 ====

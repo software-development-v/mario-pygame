@@ -4,8 +4,7 @@ from pygame import time
 
 from src.enums import GameEvent, HeroState, SceneAction
 from src.level import ILevelManager
-
-from src.utils.constants import TO_SECONDS
+from src.utils import TO_SECONDS
 
 from ...abstractions import Tick
 
@@ -29,16 +28,17 @@ class LevelSceneTick(Tick):
 
         self.level_manager.set_current_time(start_time - seconds_elapsed)
 
-        obstacle_manager = self.level_manager.get_obstacle_manager()
+        obstacles_manager = self.level_manager.get_obstacles_manager()
         hero = self.level_manager.get_hero()
         camera = self.level_manager.get_camera()
 
-        obstacle_manager.update()
+        obstacles_manager.animate()
 
-        hero.update(game_events, obstacle_manager.get_obstacles(), camera)
+        hero.update(game_events, obstacles_manager.get_sprites(), camera)
+        hero.animate()
 
-        if hero.hero_state == HeroState.DEAD or self.level_manager.get_current_time() <= 0:
-            hero.hero_state = HeroState.IDLE
+        if hero.get_hero_state() == HeroState.DEAD or self.level_manager.get_current_time() <= 0:
+
             self.level_manager.set_lifes(self.level_manager.get_lifes() - 1)
             from ..transition_level import TransitionLevelScene
             self._dispatcher[SceneAction.SET_NEXT_SCENE](

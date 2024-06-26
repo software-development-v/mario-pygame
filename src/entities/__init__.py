@@ -1,4 +1,4 @@
-from .abstractions import Element, InteractiveElement
+from .abstractions import Element, InteractiveElement, Sprite
 from .concretes import (
     Block,
     Bush,
@@ -14,17 +14,16 @@ from .concretes import (
 )
 from .factories import ElementFactory
 from .interfaces import (
+    IAnimate,
     IDrawable,
     IElementObserver,
-    IEntity,
     IObservableElement,
-    IUpdatable,
 )
 
 __all__ = [
-    "IEntity",
+    "IAnimate",
     "IDrawable",
-    "IUpdatable",
+    "Sprite",
     "Element",
     "InteractiveElement",
     "Bush",

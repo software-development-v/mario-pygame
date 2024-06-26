@@ -1,12 +1,9 @@
 from json import load
 from typing import Any, Dict, List
 
-from src.entities import Element, ElementFactory, IEntity
+from src.entities import Element, ElementFactory, Sprite
 from src.enums import BackgroundType, ElementSubType, ElementType, Level, World
-from src.utils.classes import Position
-from src.utils.colors import BLACK_COLOR
-from src.utils.constants import SCALE
-from src.utils.directories import LEVELS_DIR
+from src.utils import BLACK_COLOR, LEVELS_DIR, SCALE, Position
 
 from ...background import BackgroundColor, IBackground
 from ...interfaces import ILevelData
@@ -83,10 +80,10 @@ class LevelMapper(ILevelMapper):
 
         return mappedElements
 
-    def _map_enemies(self, _enemies: List[Dict[str, Any]]) -> List[IEntity]:
+    def _map_enemies(self, _enemies: List[Dict[str, Any]]) -> List[Sprite]:
         return []
 
-    def _map_power_ups(self, _power_ups: List[Dict[str, Any]]) -> List[IEntity]:
+    def _map_power_ups(self, _power_ups: List[Dict[str, Any]]) -> List[Sprite]:
         return []
 
 

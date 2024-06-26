@@ -6,15 +6,15 @@ from src.enums import CollectedType, HeroType, Level, SceneAction, World
 from src.level import (
     ILevelManager,
     LevelManager,
-    ObstacleManager,
+    ObstaclesManager,
     ScoreObserver,
 )
-from src.utils import Camera
-from src.utils.constants import (
+from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
     SCREEN_HEIGHT,
     SCREEN_VIEW_PLAY_HEIGHT,
     SCREEN_VIEW_PLAY_WIDTH,
+    Camera,
 )
 
 from ...abstractions import Scene
@@ -85,7 +85,7 @@ class TransitionLevelScene(Scene):
                 level_data.get_player_init_position(),
             ),
             hero,
-            ObstacleManager(level_data.get_elements()),
+            ObstaclesManager(level_data.get_elements()),
             world,
             level,
             level_data.get_background(),
