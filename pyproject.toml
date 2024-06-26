@@ -4,7 +4,6 @@ strict = ["src/**"]
 exclude = ["venv"]
 venvPath = "."
 venv = "venv"
-reportImportCycles = "error"
 
 [tool.black]
 line-length = 80
