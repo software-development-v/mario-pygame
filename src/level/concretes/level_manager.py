@@ -98,11 +98,9 @@ class LevelManager(ILevelManager):
         lifes: int,
         coins: int,
     ) -> None:
-        self.__hero.hero_state = hero.hero_state
-        self.__hero.hero_level = hero.hero_level
+        self.__hero.set_hero_level(hero.get_hero_level())
         self.__hero_type = hero_type
         self.__start_tick = time
         self.__current_time = time
         self.__score_observer.update(score)
         self.__lifes = lifes
-        #self.__coins = coins

@@ -3,7 +3,6 @@ from pygame import Surface, transform
 from src.utils import (
     COIN_1,
     SCREEN_WIDTH,
-    WHITE_COLOR,
     get_format_number,
     get_message,
 )
@@ -71,7 +70,7 @@ class LevelMetricsRenderer:
 
     def set_message_box(self, text: str, x: int, y: int) -> None:
         message, message_rect = get_message(
-            text, x, y, text_color=WHITE_COLOR, size=30
+            text, x, y
         )
 
         message_rect.bottom = y + message_rect.height

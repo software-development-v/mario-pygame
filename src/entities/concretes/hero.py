@@ -166,6 +166,9 @@ class Hero(Sprite):
     def get_hero_state(self) -> HeroState:
         return self.__hero_state
 
+    def set_hero_level(self, level:HeroLevel)-> None:
+        self.__hero_level = level
+
     def update(
         self,
         game_events: Dict[GameEvent, bool],
