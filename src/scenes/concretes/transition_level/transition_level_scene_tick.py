@@ -3,14 +3,11 @@ from typing import Callable, Dict
 from pygame import time
 
 from src.enums import GameEvent, SceneAction
-from src.level import ILevelManager
-from src.level.concretes.entity_observers.score_observer import ScoreObserver
-from src.scenes.concretes.final_cinematic.final_cinematic_scene import (
-    FinalCinematicScene,
-)
+from src.level import ILevelManager, ScoreObserver
 from src.utils import TRANSITION_DURATION
 
 from ...abstractions import Tick
+from ..final_cinematic import FinalCinematicScene
 from ..level import LevelScene
 
 
