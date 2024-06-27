@@ -28,8 +28,8 @@ class LevelSceneRender(Render):
         hero_rect: Rect = hero.get_rect()
         camera.update(hero_rect.x, hero_rect.width)
 
-        obstacles_manager = self.__level_manager.get_obstacles_manager()
-        obstacles_manager.draw(self._screen, camera)
+        obstacle_manager = self.__level_manager.get_obstacles_manager()
+        obstacle_manager.draw(self._screen, camera)
 
         hero_x_rect_percent = (
             hero.get_hero_level() == HeroLevel.NORMAL
@@ -41,7 +41,6 @@ class LevelSceneRender(Render):
         hero.draw(
             self._screen, camera, hero_x_rect_percent, hero_y_rect_percent
         )
-
         self.__level_metrics_renderer.render(
             self.__level_manager.get_hero_type().value,
             self.__level_manager.get_current_time(),

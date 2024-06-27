@@ -12,6 +12,10 @@ ASSETS_DIR = "assets/"
 # == Fonts ==
 FONTS_DIR = ASSETS_DIR + "fonts/"
 
+# == Sounds ==
+SOUNDS_DIR = ASSETS_DIR + "sounds/"
+HERO_SOUNDS_DIR = SOUNDS_DIR + "hero/"
+
 # == Logos ==
 LOGOS_DIR = ASSETS_DIR + "logo/"
 
