@@ -2,7 +2,7 @@ from typing import Dict, List
 
 from pygame import Surface
 
-from src.entities.abstractions.sprite import Sprite
+from src.entities.interfaces.i_sprite import ISprite
 from src.enums import CollectedType
 from src.utils import Position
 
@@ -37,6 +37,6 @@ class InteractiveElement(Element, IObservableElement):
         if key in self.observers:
             del self.observers[key]
 
-    def notify_observers(self, sprite: Sprite) -> None:
+    def notify_observers(self, hero: ISprite) -> None:
         if CollectedType.COLLECTED_SCORE in self.observers:
             self.observers[CollectedType.COLLECTED_SCORE].update(self.value)

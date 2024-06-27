@@ -12,5 +12,6 @@ class HeroActionRun(IHeroActionStrategy):
                 HeroAction.JUMPING: False,
                 HeroAction.RUNNING: True,
                 HeroAction.IDLE: False,
+                HeroAction.WIN: False,
             }
         )
