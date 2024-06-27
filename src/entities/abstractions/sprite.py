@@ -6,10 +6,10 @@ from pygame.sprite import Sprite as PygameSprite
 
 from src.utils import ANIMATION_INTERVAL, INIT_IMAGE_INDEX, Camera, Position
 
-from ..interfaces import IAnimate, IDrawable
+from ..interfaces import ISprite
 
 
-class Sprite(PygameSprite, IDrawable, IAnimate, ABC):
+class Sprite(PygameSprite, ISprite, ABC):
     def __init__(
         self,
         position: Position,

@@ -2,7 +2,7 @@ from pygame import Surface
 
 from src.entities import Hero, IElementObserver
 from src.enums import HeroType, Level, World
-from src.utils import Camera
+from src.utils import PLAYER_LIVES, Camera
 
 from ..interfaces import ILevelManager
 from .sprites_managers import ObstaclesManager
@@ -21,6 +21,7 @@ class LevelManager(ILevelManager):
         level_screen_width: int,
         score_observer: IElementObserver,
         camera: Camera,
+        lives: int = PLAYER_LIVES,
     ) -> None:
         self.__hero = hero
         self.__hero_type = hero_type
@@ -34,6 +35,7 @@ class LevelManager(ILevelManager):
         self.__level_screen_width = level_screen_width
         self.__score_observer = score_observer
         self.__camera = camera
+        self.__lives = lives
 
     def get_hero(self) -> Hero:
         return self.__hero
@@ -76,3 +78,28 @@ class LevelManager(ILevelManager):
 
     def get_camera(self) -> Camera:
         return self.__camera
+
+    def get_lives(self) -> int:
+        return self.__lives
+
+    def set_lives(self, lives: int) -> None:
+        self.__lives = lives
+
+    def get_coins(self) -> int:
+        return 0
+
+    def configure_level(
+        self,
+        hero: Hero,
+        hero_type: HeroType,
+        time: int,
+        score: int,
+        lives: int,
+        coins: int,
+    ) -> None:
+        self.__hero.set_hero_level(hero.get_hero_level())
+        self.__hero_type = hero_type
+        self.__start_tick = time
+        self.__current_time = time
+        self.__score_observer.update(score)
+        self.__lives = lives

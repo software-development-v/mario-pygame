@@ -1,4 +1,4 @@
-from pygame import init, mixer
+from pygame import init, mixer, mouse
 
 from .inputs import EventManager, IEventManager
 from .scenes import ISceneManager, SceneManager
@@ -7,6 +7,7 @@ from .scenes import ISceneManager, SceneManager
 class Game:
     def __init__(self) -> None:
         init()
+        mouse.set_visible(False)
         mixer.init()
 
         self.__running = True

@@ -2,7 +2,7 @@ from enum import Enum
 
 
 class Level(Enum):
-    FIRST = "first"
-    SECOND = "second"
-    THIRD = "third"
-    FOURTH = "fourth"
+    FIRST = 1
+    SECOND = 2
+    THIRD = 3
+    FOURTH = 4

@@ -72,10 +72,3 @@ class MainMenuRender(Render):
             text_rect = text.get_rect(center=position)
             option_rects.append(text_rect)
         return option_rects
-
-    def handle_mouse_event(self, mouse_pos: Tuple[int, int]) -> bool:
-        for index, rect in enumerate(self.get_option_rects()):
-            if rect.collidepoint(mouse_pos):
-                self.selected_option = index
-                return True
-        return False
