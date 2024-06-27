@@ -51,7 +51,7 @@ class MainMenuRender(Render):
             text_rect = text.get_rect(center=self.option_positions[index])
             self._screen.blit(text, text_rect)
 
-        top_text = f"Top- {self.top_score:06}"
+        top_text = f"Top - {self.top_score:06}"
         top_text_surface = self.top_text_font.render(
             top_text, True, WHITE_COLOR
         )
