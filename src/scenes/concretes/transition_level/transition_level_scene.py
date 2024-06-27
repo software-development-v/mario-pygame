@@ -64,7 +64,6 @@ class TransitionLevelScene(Scene):
 
         level_data = self.game_data.get_level_data(world, level)
 
-        self.score_manager.update(500)
         for element in level_data.get_elements():
             if isinstance(element, InteractiveElement):
                 element.add_observer(
