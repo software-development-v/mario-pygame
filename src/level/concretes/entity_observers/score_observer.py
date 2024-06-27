@@ -10,6 +10,8 @@ class ScoreObserver(IElementObserver):
     def update(self, value: int) -> None:
         if self.__score < SCORE_LIMIT:
             self.__score += value
+
+    def update_high_score(self) -> None:
         if self.__score > self.__high_score:
             self.__high_score = self.__score
             write_high_score(self.__high_score)
