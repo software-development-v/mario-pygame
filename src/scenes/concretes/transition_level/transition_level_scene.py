@@ -32,6 +32,7 @@ class TransitionLevelScene(Scene):
         level_manager: Optional[ILevelManager] = None,
     ) -> None:
         self.game_data = GameData()
+        self.score_manager = ScoreObserver()
         self.__level_manager: ILevelManager = self.setup_level(
             hero, world, level
         )
@@ -48,7 +49,9 @@ class TransitionLevelScene(Scene):
 
         super().__init__(
             TransitionLevelSceneRender(self.__level_manager, self.game_data),
-            TransitionLevelSceneTick(self.__level_manager, dispatcher),
+            TransitionLevelSceneTick(
+                self.__level_manager, dispatcher, self.score_manager
+            ),
             dispatcher,
         )
 
@@ -60,12 +63,11 @@ class TransitionLevelScene(Scene):
     ) -> ILevelManager:
 
         level_data = self.game_data.get_level_data(world, level)
-        score_manager = ScoreObserver()
 
         for element in level_data.get_elements():
             if isinstance(element, InteractiveElement):
                 element.add_observer(
-                    CollectedType.COLLECTED_SCORE, score_manager
+                    CollectedType.COLLECTED_SCORE, self.score_manager
                 )
 
         camera = Camera(
@@ -88,6 +90,6 @@ class TransitionLevelScene(Scene):
             level_data.get_background(),
             level_data.get_time(),
             level_data.get_screen_width(),
-            score_manager,
+            self.score_manager,
             camera,
         )

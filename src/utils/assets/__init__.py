@@ -207,10 +207,12 @@ from .power_ups import (
     PIJCHU_BALL_BOOM_2,
     PIJCHU_BALL_BOOM_3,
 )
+from .resources import HIGH_LEVEL_SCORE_FILE
 from .sounds import JUMP_SOUND
 
 __all__ = [
     "JUMP_SOUND",
+    "HIGH_LEVEL_SCORE_FILE",
     "GAME_FONT",
     "ICON",
     "FINAL_CINEMATIC_VIDEO",
