@@ -1,4 +1,4 @@
-from .backgrounds.menu import CHARACTER_SELECTION_MENU, MENU_BACKGROUND
+from .backgrounds import CHARACTER_SELECTION_MENU, MENU_BACKGROUND
 from .cinematics import FINAL_CINEMATIC_AUDIO, FINAL_CINEMATIC_VIDEO
 from .elements import (
     BIG_BUSH,
@@ -36,13 +36,11 @@ from .elements import (
     SMALL_TREE,
     WALL_BLOCK,
 )
-from .enemies.evoomba import (
+from .enemies import (
     EVOOMBA_DEFAULT,
     EVOOMBA_DIED,
     EVOOMBA_WALKING_1,
     EVOOMBA_WALKING_2,
-)
-from .enemies.valvoopa import (
     VALVOOPA_COMING_OUT_1,
     VALVOOPA_COMING_OUT_2,
     VALVOOPA_DEFAULT,
@@ -52,7 +50,7 @@ from .enemies.valvoopa import (
 )
 from .fonts import GAME_FONT
 from .logos import ICON
-from .players.cumpa import (
+from .players import (
     CUMPA_LVL_1,
     CUMPA_LVL_1_BRAKE,
     CUMPA_LVL_1_DIED,
@@ -98,8 +96,6 @@ from .players.cumpa import (
     CUMPA_LVL_4_2_WALKING_1,
     CUMPA_LVL_4_2_WALKING_2,
     CUMPA_LVL_4_2_WALKING_3,
-)
-from .players.hijita import (
     HIJITA_LVL_1,
     HIJITA_LVL_1_BRAKE,
     HIJITA_LVL_1_DIED,
@@ -145,8 +141,6 @@ from .players.hijita import (
     HIJITA_LVL_4_2_WALKING_1,
     HIJITA_LVL_4_2_WALKING_2,
     HIJITA_LVL_4_2_WALKING_3,
-)
-from .players.pariente import (
     PARIENTE_LVL_1,
     PARIENTE_LVL_1_BRAKE,
     PARIENTE_LVL_1_DIED,
