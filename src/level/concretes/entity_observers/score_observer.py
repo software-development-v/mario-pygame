@@ -1,6 +1,5 @@
 from src.entities import IElementObserver
-from src.utils import SCORE_LIMIT
-from src.utils.high_score_manager import read_high_score, write_high_score
+from src.utils import SCORE_LIMIT, read_high_score, write_high_score
 
 
 class ScoreObserver(IElementObserver):
