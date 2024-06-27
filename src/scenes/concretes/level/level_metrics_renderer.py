@@ -1,11 +1,6 @@
 from pygame import Surface, transform
 
-from src.utils import (
-    COIN_1,
-    SCREEN_WIDTH,
-    get_format_number,
-    get_message,
-)
+from src.utils import COIN_1, SCREEN_WIDTH, get_format_number, get_message
 
 
 class LevelMetricsRenderer:
@@ -32,9 +27,9 @@ class LevelMetricsRenderer:
         self.set_status_bar()
 
     def set_status_bar(self) -> None:
-        format_time= ""
+        format_time = ""
         if self.time >= 0:
-              format_time = get_format_number(self.time)
+            format_time = get_format_number(self.time)
 
         format_score = get_format_number(self.score, 6)
 
@@ -69,9 +64,7 @@ class LevelMetricsRenderer:
         )
 
     def set_message_box(self, text: str, x: int, y: int) -> None:
-        message, message_rect = get_message(
-            text, x, y
-        )
+        message, message_rect = get_message(text, x, y)
 
         message_rect.bottom = y + message_rect.height
 
