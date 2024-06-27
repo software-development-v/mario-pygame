@@ -4,6 +4,8 @@ RESOURCES_DIR = "resources/"
 # == Levels ==
 LEVELS_DIR = RESOURCES_DIR + "levels"
 
+DATA_DIR = RESOURCES_DIR + "data/"
+
 # === Assets ===
 ASSETS_DIR = "assets/"
 

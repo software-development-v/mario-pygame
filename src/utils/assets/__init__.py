@@ -1,3 +1,7 @@
+from src.utils.assets.resources.data.high_level_score import (
+    HIGH_LEVEL_SCORE_FILE,
+)
+
 from .backgrounds.menu import CHARACTER_SELECTION_MENU, MENU_BACKGROUND
 from .cinematics import FINAL_CINEMATIC_AUDIO, FINAL_CINEMATIC_VIDEO
 from .elements import (
@@ -207,8 +211,10 @@ from .power_ups import (
     PIJCHU_BALL_BOOM_2,
     PIJCHU_BALL_BOOM_3,
 )
+from .resources import HIGH_LEVEL_SCORE_FILE
 
 __all__ = [
+    "HIGH_LEVEL_SCORE_FILE",
     "GAME_FONT",
     "ICON",
     "FINAL_CINEMATIC_VIDEO",
