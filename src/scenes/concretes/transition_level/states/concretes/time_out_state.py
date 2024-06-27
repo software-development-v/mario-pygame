@@ -1,12 +1,14 @@
 from collections.abc import Callable
+
 from pygame import Surface
 
+from src.data import GameData
+from src.level import ILevelManager
+from src.utils import get_centered_message
+
+from ..abstracts import LevelState
 from .game_over_state import GameOverState
 from .level_status_state import LevelStatusState
-from ..abstracts import LevelState
-from src.level import ILevelManager
-from src.data import GameData
-from src.utils import get_centered_message
 
 
 class TimeoutState(LevelState):

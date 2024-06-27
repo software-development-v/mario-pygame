@@ -1,8 +1,9 @@
-from src.enums import HeroLevel
-from src.enums import HeroState
-from ..abstracts import LevelState
 from pygame import Surface
+
+from src.enums import HeroLevel, HeroState
 from src.utils import get_centered_message
+
+from ..abstracts import LevelState
 
 
 class LevelStatusState(LevelState):

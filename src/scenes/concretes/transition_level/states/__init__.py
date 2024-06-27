@@ -1,7 +1,4 @@
-from .concretes import LevelStatusState,GameOverState,TimeoutState
 from .abstracts import LevelState
-__all__ = [
-    "TimeoutState",
-    "LevelStatusState",
-    "GameOverState",
-    "LevelState"]
+from .concretes import GameOverState, LevelStatusState, TimeoutState
+
+__all__ = ["TimeoutState", "LevelStatusState", "GameOverState", "LevelState"]
