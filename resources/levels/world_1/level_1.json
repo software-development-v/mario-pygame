@@ -5207,6 +5207,30 @@
             ],
             "type": "PIPE",
             "subtype": "PIPE_HEAD_BIG"
+        },
+        {
+            "position":[
+                4150,
+                200
+            ],
+            "type":"COIN",
+            "subtype":"COIN"
+        },
+        {
+            "position":[
+                4200,
+                200
+            ],
+            "type":"COIN",
+            "subtype":"COIN"
+        },
+        {
+            "position":[
+                4250,
+                200
+            ],
+            "type":"COIN",
+            "subtype":"COIN"
         }
     ],
     "power_ups": []

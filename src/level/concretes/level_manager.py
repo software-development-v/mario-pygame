@@ -20,6 +20,7 @@ class LevelManager(ILevelManager):
         time: int,
         level_screen_width: int,
         score_observer: IElementObserver,
+        coin_observer: IElementObserver,
         camera: Camera,
         lives: int = PLAYER_LIVES,
     ) -> None:
@@ -34,6 +35,7 @@ class LevelManager(ILevelManager):
         self.__start_tick = 0
         self.__level_screen_width = level_screen_width
         self.__score_observer = score_observer
+        self.__coin_observer = coin_observer
         self.__camera = camera
         self.__lives = lives
 
@@ -86,7 +88,10 @@ class LevelManager(ILevelManager):
         self.__lives = lives
 
     def get_coins(self) -> int:
-        return 0
+        return self.__coin_observer.get_value()
+
+    def add_coins(self,value :int) -> None:
+        self.__coin_observer.update(value)
 
     def configure_level(
         self,
@@ -103,3 +108,4 @@ class LevelManager(ILevelManager):
         self.__current_time = time
         self.__score_observer.update(score)
         self.__lives = lives
+        self.__coin_observer.update(coins)

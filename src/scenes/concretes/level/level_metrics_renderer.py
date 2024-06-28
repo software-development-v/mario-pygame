@@ -32,6 +32,7 @@ class LevelMetricsRenderer:
             format_time = get_format_number(self.time)
 
         format_score = get_format_number(self.score, 6)
+        format_coin = get_format_number(self.coins,2)
 
         x_base = 300
         spacing = (SCREEN_WIDTH - x_base * 2) // 3
@@ -42,7 +43,7 @@ class LevelMetricsRenderer:
             self.status_bar_y_pos,
         )
         self.set_message_box(
-            f"\nx{self.coins}", x_base + (1 * spacing), self.status_bar_y_pos
+            f"\nx{format_coin}", x_base + (1 * spacing), self.status_bar_y_pos
         )
         self.set_message_box(
             f"WORLD\n {self.world}-{self.level}",
@@ -58,7 +59,7 @@ class LevelMetricsRenderer:
         self.surf.blit(
             transform.scale(COIN_1, (self.icons_size, self.icons_size)),
             (
-                x_base + (1 * spacing) - self.icons_size * 2.3,
+                x_base + (1 * spacing) - self.icons_size * 2.6,
                 self.status_bar_y_pos + self.icons_size,
             ),
         )

@@ -79,6 +79,10 @@ class ILevelManager(ABC):
         pass
 
     @abstractmethod
+    def add_coins(self,value :int) -> None:
+        pass
+
+    @abstractmethod
     def configure_level(
         self,
         hero: Hero,

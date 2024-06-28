@@ -1,5 +1,5 @@
 from .abstractions import SpritesManager
-from .concretes import LevelManager, ObstaclesManager, ScoreObserver
+from .concretes import LevelManager, ObstaclesManager, ScoreObserver,CoinObserver
 from .interfaces import ILevelManager
 
 __all__ = [
@@ -8,4 +8,5 @@ __all__ = [
     "ILevelManager",
     "ScoreObserver",
     "SpritesManager",
+    "CoinObserver"
 ]
