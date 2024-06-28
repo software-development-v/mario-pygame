@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from pygame import Surface
 
@@ -37,6 +37,6 @@ class InteractiveElement(Element, IObservableElement):
         if key in self.observers:
             del self.observers[key]
 
-    def notify_observers(self, hero: ISprite) -> None:
+    def notify_observers(self, sprite: Optional[ISprite] = None) -> None:
         if CollectedType.COLLECTED_SCORE in self.observers:
             self.observers[CollectedType.COLLECTED_SCORE].update(self.value)

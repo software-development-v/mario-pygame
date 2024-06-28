@@ -53,6 +53,7 @@ class Hero(Sprite, IHero):
         self.__movement_handler: IMovementHandler = MovementHandler(self)
         self.__collisions_handler: ICollisionsHandler = CollisionsHandler(self)
         self.__damage_handler: IDamageHandler = DamageHandler(self)
+        self.__collided_win: bool = False
 
         super().__init__(
             position,
@@ -95,6 +96,12 @@ class Hero(Sprite, IHero):
 
     def set_action(self, action: HeroAction, value: bool) -> None:
         self.__actions[action] = value
+
+    def get_collided_win(self) -> bool:
+        return self.__collided_win
+
+    def set_collided_win(self, value: bool) -> None:
+        self.__collided_win = value
 
     def hero_down(self) -> None:
         if (
