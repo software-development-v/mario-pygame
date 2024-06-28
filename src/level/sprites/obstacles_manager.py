@@ -2,7 +2,7 @@ from typing import List
 
 from src.entities import Element
 
-from ...abstractions import SpritesManager
+from ..abstractions import SpritesManager
 
 
 class ObstaclesManager(SpritesManager[Element]):

@@ -32,7 +32,7 @@ class LevelMetricsRenderer:
             format_time = get_format_number(self.time)
 
         format_score = get_format_number(self.score, 6)
-        format_coin = get_format_number(self.coins,2)
+        format_coin = get_format_number(self.coins, 2)
 
         x_base = 300
         spacing = (SCREEN_WIDTH - x_base * 2) // 3

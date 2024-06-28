@@ -1,5 +1,4 @@
-from src.enums import ElementSubType, ElementType
-from src.enums import CollectedType
+from src.enums import CollectedType, ElementSubType, ElementType
 from src.utils import Position, elements
 
 from ....abstractions import InteractiveElement

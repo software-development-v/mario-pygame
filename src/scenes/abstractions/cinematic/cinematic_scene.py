@@ -1,7 +1,7 @@
 from abc import ABC
 from typing import Callable, Dict, Optional
 
-import cv2 as cv
+from cv2 import CAP_PROP_FPS, VideoCapture
 from pygame import mixer
 
 from src.enums import SceneAction
@@ -20,8 +20,8 @@ class CinematicScene(Scene, ABC):
         dispatcher: Dict[SceneAction, Callable[..., None]],
         next_scene: Optional[IScene] = None,
     ):
-        capture = cv.VideoCapture(video_path)
-        frame_rate = capture.get(cv.CAP_PROP_FPS)
+        capture = VideoCapture(video_path)
+        frame_rate = capture.get(CAP_PROP_FPS)
 
         self.__success, image = capture.read()
         self.__audio = mixer.Sound(audio_path)
