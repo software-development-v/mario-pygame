@@ -9,7 +9,7 @@ from ...background import BackgroundColor, IBackground
 from ...interfaces import ILevelData
 from ...level_data import LevelData
 from ..interfaces import ILevelMapper
-from ..validations.json_validation import validate_level_data
+from ..validations import validate_level_data
 
 
 class LevelMapper(ILevelMapper):

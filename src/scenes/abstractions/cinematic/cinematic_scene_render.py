@@ -1,6 +1,6 @@
 from typing import Callable
 
-import cv2 as cv
+from cv2 import VideoCapture, resize
 from cv2.typing import MatLike
 from pygame import image
 
@@ -12,7 +12,7 @@ from ..render import Render
 class CinematicSceneRender(Render):
     def __init__(
         self,
-        capture: cv.VideoCapture,
+        capture: VideoCapture,
         set_success: Callable[[bool], None],
         image: MatLike,
     ) -> None:
@@ -22,7 +22,7 @@ class CinematicSceneRender(Render):
         super().__init__()
 
     def render(self) -> None:
-        resized_img = cv.resize(self.__image, SCREEN_SIZE)
+        resized_img = resize(self.__image, SCREEN_SIZE)
 
         self._screen.blit(
             image.frombuffer(resized_img.tobytes(), SCREEN_SIZE, BGR_FORMAT),

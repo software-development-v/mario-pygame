@@ -5,6 +5,7 @@ from .classes import Position, Singleton, Size
 from .colors import *
 from .constants import *
 from .directories import *
+from .high_score_manager import *
 from .surfaces import *
 from .text import *
 

@@ -45,7 +45,7 @@ class LevelSceneRender(Render):
             self.__level_manager.get_hero_type().value,
             self.__level_manager.get_current_time(),
             self.__level_manager.get_score(),
-            0,
+            self.__level_manager.get_coins(),
             self.__level_manager.get_world().value,
             self.__level_manager.get_level().value,
         )

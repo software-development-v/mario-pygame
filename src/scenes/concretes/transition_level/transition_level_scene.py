@@ -1,9 +1,10 @@
 from typing import Callable, Dict, Optional
 
 from src.data import GameData
-from src.entities import Hero, InteractiveElement
+from src.entities import Coin, Hero, InteractiveElement
 from src.enums import CollectedType, HeroType, Level, SceneAction, World
 from src.level import (
+    CoinObserver,
     ILevelManager,
     LevelManager,
     ObstaclesManager,
@@ -31,7 +32,9 @@ class TransitionLevelScene(Scene):
         dispatcher: Dict[SceneAction, Callable[..., None]],
         level_manager: Optional[ILevelManager] = None,
     ) -> None:
-        self.game_data = GameData()
+        self.__game_data = GameData()
+        self.__score_manager = ScoreObserver()
+        self.__coin_manager = CoinObserver()
         self.__level_manager: ILevelManager = self.setup_level(
             hero, world, level
         )
@@ -47,8 +50,10 @@ class TransitionLevelScene(Scene):
             )
 
         super().__init__(
-            TransitionLevelSceneRender(self.__level_manager, self.game_data),
-            TransitionLevelSceneTick(self.__level_manager, dispatcher),
+            TransitionLevelSceneRender(self.__level_manager, self.__game_data),
+            TransitionLevelSceneTick(
+                self.__level_manager, dispatcher, self.__score_manager
+            ),
             dispatcher,
         )
 
@@ -59,14 +64,17 @@ class TransitionLevelScene(Scene):
         level: Level,
     ) -> ILevelManager:
 
-        level_data = self.game_data.get_level_data(world, level)
-        score_manager = ScoreObserver()
+        level_data = self.__game_data.get_level_data(world, level)
 
         for element in level_data.get_elements():
             if isinstance(element, InteractiveElement):
                 element.add_observer(
-                    CollectedType.COLLECTED_SCORE, score_manager
+                    CollectedType.COLLECTED_SCORE, self.__score_manager
                 )
+                if isinstance(element, Coin):
+                    element.add_observer(
+                        CollectedType.COLLECTED_COIN, self.__coin_manager
+                    )
 
         camera = Camera(
             level_data.get_screen_width(),
@@ -78,7 +86,7 @@ class TransitionLevelScene(Scene):
 
         return LevelManager(
             Hero(
-                self.game_data.get_hero_data(hero),
+                self.__game_data.get_hero_data(hero),
                 level_data.get_player_init_position(),
             ),
             hero,
@@ -88,6 +96,7 @@ class TransitionLevelScene(Scene):
             level_data.get_background(),
             level_data.get_time(),
             level_data.get_screen_width(),
-            score_manager,
+            self.__score_manager,
+            self.__coin_manager,
             camera,
         )

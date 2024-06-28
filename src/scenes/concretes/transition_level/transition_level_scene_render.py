@@ -1,9 +1,9 @@
-from src.data.game_data import GameData
+from src.data import GameData
 from src.level import ILevelManager
-from src.utils.colors import BLACK_COLOR
+from src.utils import BLACK_COLOR
 
 from ...abstractions import Render
-from ..level.level_metrics_renderer import LevelMetricsRenderer
+from ..level import LevelMetricsRenderer
 from .states import GameOverState, LevelState, LevelStatusState, TimeoutState
 
 

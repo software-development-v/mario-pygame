@@ -19,3 +19,6 @@ out/
 
 # Node
 node_modules/
+
+# Data
+resources/data/data_high_score.json
