@@ -23,7 +23,7 @@ class Flag(InteractiveElement):
         )
 
     def verify_x_player_position(self, hero: IHero):
-        if not hero.get_rect().x == 11811:
+        if hero.get_rect().x != 11811:
             hero.add_x_rect(-hero.get_rect().x)
             hero.add_x_rect(11811 + 30)
 

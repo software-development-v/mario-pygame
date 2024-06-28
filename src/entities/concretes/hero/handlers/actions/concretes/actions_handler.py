@@ -36,11 +36,6 @@ class ActionsHandler(IActionsHandler):
             hero_action_strategy = HeroActionRun()
         elif (
             hero_actions[HeroAction.WIN]
-            and (
-                hero_actions[HeroAction.RUNNING]
-                or hero_actions[HeroAction.JUMPING]
-                or hero_actions[HeroAction.IDLE]
-            )
         ):
             hero_action_strategy = HeroActionWin()
         elif (
