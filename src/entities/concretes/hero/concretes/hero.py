@@ -118,8 +118,12 @@ class Hero(Sprite, IHero):
             )
             and self.get_rect().y < 650
         ):
-            self.set_vel_y(self.get_vel_y() + 0.5)
+            self.set_vel_y(self.get_vel_y() + 0.4)
             self.add_y_rect(5)
+        elif self.get_rect().x == 11834:
+            self.add_x_rect(60)
+            self.set_face_right(False)
+            self.set_action(HeroAction.WIN, False)
 
     def update(
         self,

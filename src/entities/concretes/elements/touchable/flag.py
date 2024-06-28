@@ -43,10 +43,10 @@ class Flag(InteractiveElement):
         else:
             return 5000
 
-    def verify_x_player_position(self, hero: IHero):
-        if hero.get_rect().x != 11811:
-            hero.add_x_rect(-hero.get_rect().x)
-            hero.add_x_rect(11811 + 30)
+    def verify_player_position(self, hero: IHero):
+        if hero.get_rect().x > 11834:
+            difference_position = hero.get_rect().x - 11834
+            hero.add_x_rect(-difference_position)
 
         if hero.get_rect().y < self.get_rect().y:
             hero.add_y_rect(-hero.get_rect().y)
@@ -54,7 +54,8 @@ class Flag(InteractiveElement):
 
     def notify_observers(self, sprite: Optional[ISprite] = None) -> None:
         if isinstance(sprite, Hero) and not sprite.get_collided_win():
-                sprite.set_action(HeroAction.WIN, True)
-                self.verify_x_player_position(sprite)
-                self.observers[CollectedType.COLLECTED_SCORE].update(self.__points)
-                sprite.set_collided_win(True)
+            sprite.set_action(HeroAction.WIN, True)
+            self.verify_player_position(sprite)
+            self.observers[CollectedType.COLLECTED_SCORE].update(self.__points)
+            sprite.set_collided_win(True)
+            sprite.set_face_right(True)

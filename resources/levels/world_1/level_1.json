@@ -1,7 +1,7 @@
 {
     "level": "FIRST",
     "world": "ONE",
-    "time": 14,
+    "time": 400,
     "map_width": 12220,
     "background": {
         "type": "COLOR",
