@@ -5,7 +5,7 @@ from pygame import time
 from src.enums import GameEvent, HeroState, SceneAction
 from src.level import ILevelManager
 from src.utils import TO_SECONDS
-from src.utils.constants import COIN_LIMIT
+from src.utils import COIN_LIMIT
 
 from ...abstractions import Tick
 
