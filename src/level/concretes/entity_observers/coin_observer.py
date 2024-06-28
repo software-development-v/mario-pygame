@@ -7,7 +7,7 @@ class CoinObserver(IElementObserver):
         self.__value = value
 
     def update(self, value: int=0) -> None:
-        if self.__value <= COIN_LIMIT+1:
+        if self.__value <= COIN_LIMIT:
             self.__value +=value
         else:
             self.__value = 0
