@@ -20,7 +20,7 @@ class Flag(InteractiveElement):
             position,
             elements[ElementType.FLAG][element_sub_type],
             x_rect_percent=(
-                0.11 if element_sub_type == ElementSubType.FLAG_SUPPORT else 1
+                0.145 if element_sub_type == ElementSubType.FLAG_SUPPORT else 1
             ),
         )
         self.__points = self.__get_points()

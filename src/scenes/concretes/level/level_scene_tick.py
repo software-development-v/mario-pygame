@@ -27,7 +27,8 @@ class LevelSceneTick(Tick):
 
         seconds_elapsed = (time.get_ticks() - start_tick) // TO_SECONDS
 
-        self.level_manager.set_current_time(start_time - seconds_elapsed)
+        if not self.level_manager.is_win():
+            self.level_manager.set_current_time(start_time - seconds_elapsed)
 
         obstacles_manager = self.level_manager.get_obstacles_manager()
         hero = self.level_manager.get_hero()
@@ -60,3 +61,5 @@ class LevelSceneTick(Tick):
                 )
             )
             self._dispatcher[SceneAction.END]()
+        elif hero.get_hero_state() == HeroState.DOWN:
+            self.level_manager.win()

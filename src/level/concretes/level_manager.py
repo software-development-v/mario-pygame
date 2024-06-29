@@ -38,6 +38,7 @@ class LevelManager(ILevelManager):
         self.__coin_observer = coin_observer
         self.__camera = camera
         self.__lives = lives
+        self.__win: bool = False
 
     def get_hero(self) -> Hero:
         return self.__hero
@@ -92,6 +93,12 @@ class LevelManager(ILevelManager):
 
     def add_coins(self, value: int) -> None:
         self.__coin_observer.update(value)
+
+    def is_win(self) -> bool:
+        return self.__win
+
+    def win(self) -> None:
+        self.__win = True
 
     def configure_level(
         self,

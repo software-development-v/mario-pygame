@@ -83,6 +83,14 @@ class ILevelManager(ABC):
         pass
 
     @abstractmethod
+    def is_win(self) -> bool:
+        pass
+
+    @abstractmethod
+    def win(self) -> None:
+        pass
+
+    @abstractmethod
     def configure_level(
         self,
         hero: Hero,
