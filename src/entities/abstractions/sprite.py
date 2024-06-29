@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Optional
 
 from pygame import Rect, Surface, time, transform
 from pygame.sprite import Sprite as PygameSprite
@@ -22,6 +22,7 @@ class Sprite(PygameSprite, ISprite, ABC):
         self.__face_right: float = True
         self.__last_update: int = time.get_ticks()
         self.__animation_interval: int = animation_interval
+        self.__disposed = False
 
         self.__image_rect: Rect = self.__get_image().get_rect(
             topleft=position.to_tuple()
@@ -97,14 +98,17 @@ class Sprite(PygameSprite, ISprite, ABC):
     def draw(
         self,
         screen: Surface,
-        camera: Camera,
+        camera: Optional[Camera]=None,
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
     ) -> None:
         image = self.__get_image()
         self.__check_change_image(image, x_rect_percent, y_rect_percent)
+        rect = self.__rect.topleft
+        if camera is not None:
+            rect = camera.apply(self.__rect)
 
-        screen.blit(image, camera.apply(self.__image_rect))
+        screen.blit(image, rect)
 
     def animate(self) -> None:
         surfaces = self._get_surfaces()
@@ -116,3 +120,9 @@ class Sprite(PygameSprite, ISprite, ABC):
 
         if self.__index >= len(surfaces):
             self.__index = INIT_IMAGE_INDEX
+
+    def dispose(self) -> None:
+        self.__disposed = True
+
+    def is_disposed(self) -> bool:
+        return self.__disposed

@@ -1,6 +1,8 @@
-from pygame import Surface, transform
+from pygame import Surface
 
-from src.utils import COIN_1, SCREEN_WIDTH, get_format_number, get_message
+from src.entities.concretes.elements.touchable.coin import Coin
+from src.utils import SCREEN_WIDTH, get_format_number, get_message
+from src.utils.classes.position import Position
 
 
 class LevelMetricsRenderer:
@@ -8,6 +10,14 @@ class LevelMetricsRenderer:
         self.surf = surf
         self.status_bar_y_pos = 20
         self.icons_size = 30
+        self.x_base = 300
+        self.spacing = (SCREEN_WIDTH - self.x_base * 2) // 3
+        self.coin = Coin(
+            Position(
+                int(self.x_base + (1 * self.spacing) - self.icons_size * 2.6),
+                self.status_bar_y_pos + self.icons_size,
+            )
+        )
 
     def render(
         self,
@@ -18,51 +28,38 @@ class LevelMetricsRenderer:
         world: int = 1,
         level: int = 1,
     ) -> None:
-        self.character_name = name
-        self.time = time
-        self.score = score
-        self.coins = coins
-        self.world = world
-        self.level = level
-        self.set_status_bar()
-
-    def set_status_bar(self) -> None:
         format_time = ""
-        if self.time >= 0:
-            format_time = get_format_number(self.time)
+        if time >= 0:
+            format_time = get_format_number(time)
 
-        format_score = get_format_number(self.score, 6)
-        format_coin = get_format_number(self.coins,2)
-
-        x_base = 300
-        spacing = (SCREEN_WIDTH - x_base * 2) // 3
+        format_score = get_format_number(score, 6)
+        format_coin = get_format_number(coins, 2)
 
         self.set_message_box(
-            f"{self.character_name}\n{format_score}",
-            x_base,
+            f"{name}\n{format_score}",
+            self.x_base,
             self.status_bar_y_pos,
         )
         self.set_message_box(
-            f"\nx{format_coin}", x_base + (1 * spacing), self.status_bar_y_pos
+            f"\nx{format_coin}",
+            self.x_base + (1 * self.spacing),
+            self.status_bar_y_pos,
         )
         self.set_message_box(
-            f"WORLD\n {self.world}-{self.level}",
-            x_base + (2 * spacing),
+            f"WORLD\n {world}-{level}",
+            self.x_base + (2 * self.spacing),
             self.status_bar_y_pos,
         )
         self.set_message_box(
             f"TIME\n {format_time}",
-            x_base + (3 * spacing),
+            self.x_base + (3 * self.spacing),
             self.status_bar_y_pos,
         )
 
-        self.surf.blit(
-            transform.scale(COIN_1, (self.icons_size, self.icons_size)),
-            (
-                x_base + (1 * spacing) - self.icons_size * 2.6,
-                self.status_bar_y_pos + self.icons_size,
-            ),
-        )
+        self.coin.animate()
+        self.coin.draw(self.surf)
+
+
 
     def set_message_box(self, text: str, x: int, y: int) -> None:
         message, message_rect = get_message(text, x, y)
