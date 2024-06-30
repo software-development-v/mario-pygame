@@ -7,6 +7,7 @@ from src.level import (
     ILevelManager,
     LevelManager,
     ObstaclesManager
+
 )
 from src.utils import (
     SCREEN_CAMERA_THRESHOLD,

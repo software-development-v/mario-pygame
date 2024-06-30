@@ -5,7 +5,6 @@ from pygame import time
 from src.enums import GameEvent, HeroState, SceneAction
 from src.level import ILevelManager
 from src.utils import TO_SECONDS
-from src.utils import COIN_LIMIT
 
 from ...abstractions import Tick
 
@@ -38,10 +37,6 @@ class LevelSceneTick(Tick):
 
         hero.update(game_events, obstacles_manager.get_sprites(), camera)
         hero.animate()
-
-        if self.level_manager.get_coins() == COIN_LIMIT+1:
-            self.level_manager.set_lives(self.level_manager.get_lives() + 1)
-
 
         if (
             hero.get_hero_state() == HeroState.DEAD

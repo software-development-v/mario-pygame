@@ -48,6 +48,7 @@ class LevelMetricsRenderer:
                 f"WORLD\n {world}-{level}",
                 f"TIME\n {format_time}",
             ],
+
         )
         self.__coin.draw(surf)
 

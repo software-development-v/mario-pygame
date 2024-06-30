@@ -2,10 +2,10 @@ from pygame import Surface
 
 from src.entities import Hero
 from src.enums import HeroType, Level, World
-from src.utils import PLAYER_LIVES, Camera
+from src.utils import HERO_LIVES, Camera
 
 from ..interfaces import ILevelManager
-from .sprites_managers import ObstaclesManager
+from ..sprites import ObstaclesManager
 
 
 class LevelManager(ILevelManager):
@@ -20,7 +20,7 @@ class LevelManager(ILevelManager):
         time: int,
         level_screen_width: int,
         camera: Camera,
-        lives: int = PLAYER_LIVES,
+        lives: int = HERO_LIVES,
     ) -> None:
         self.__hero = hero
         self.__hero_type = hero_type

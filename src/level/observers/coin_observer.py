@@ -1,5 +1,5 @@
 from src.entities import IElementObserver
-from ...interfaces.i_level_manager import ILevelManager
+from ..interfaces.i_level_manager import ILevelManager
 from src.utils import COIN_LIMIT
 
 from pygame import mixer
@@ -19,6 +19,5 @@ class CoinObserver(IElementObserver[int]):
             coins = 0
 
         self.__level_manager.set_coins(coins)
-
 
 
