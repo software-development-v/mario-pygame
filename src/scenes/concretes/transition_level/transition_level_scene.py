@@ -1,14 +1,12 @@
 from typing import Callable, Dict, Optional
 
 from src.data import GameData
-from src.entities import Hero, InteractiveElement, Coin
-from src.enums import CollectedType, HeroType, Level, SceneAction, World
+from src.entities import Hero
+from src.enums import HeroType, Level, SceneAction, World
 from src.level import (
     ILevelManager,
     LevelManager,
-    ObstaclesManager,
-    ScoreObserver,
-    CoinObserver,
+    ObstaclesManager
 )
 from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
@@ -33,27 +31,17 @@ class TransitionLevelScene(Scene):
         level_manager: Optional[ILevelManager] = None,
     ) -> None:
         self.__game_data = GameData()
-        self.__score_manager = ScoreObserver()
-        self.__coin_manager = CoinObserver()
         self.__level_manager: ILevelManager = self.setup_level(
             hero, world, level
         )
 
         if level_manager is not None:
-            self.__level_manager.configure_level(
-                level_manager.get_hero(),
-                level_manager.get_hero_type(),
-                level_manager.get_current_time(),
-                level_manager.get_score(),
-                level_manager.get_lives(),
-                level_manager.get_coins(),
-            )
+            self.configure_next_level(level_manager)
 
         super().__init__(
             TransitionLevelSceneRender(self.__level_manager, self.__game_data),
             TransitionLevelSceneTick(
-                self.__level_manager, dispatcher, self.__score_manager
-            ),
+                self.__level_manager, dispatcher),
             dispatcher,
         )
 
@@ -65,16 +53,6 @@ class TransitionLevelScene(Scene):
     ) -> ILevelManager:
 
         level_data = self.__game_data.get_level_data(world, level)
-
-        for element in level_data.get_elements():
-            if isinstance(element, InteractiveElement):
-                element.add_observer(
-                    CollectedType.COLLECTED_SCORE, self.__score_manager
-                )
-                if isinstance(element, Coin):
-                    element.add_observer(
-                        CollectedType.COLLECTED_COIN, self.__coin_manager
-                    )
 
         camera = Camera(
             level_data.get_screen_width(),
@@ -96,7 +74,16 @@ class TransitionLevelScene(Scene):
             level_data.get_background(),
             level_data.get_time(),
             level_data.get_screen_width(),
-            self.__score_manager,
-            self.__coin_manager,
             camera,
         )
+
+
+    def configure_next_level(self, level_manager: ILevelManager) -> None:
+        self.__level_manager.configure_level(
+                        level_manager.get_hero(),
+                        level_manager.get_hero_type(),
+                        level_manager.get_current_time(),
+                        level_manager.get_score(),
+                        level_manager.get_lives(),
+                        level_manager.get_coins(),
+                    )

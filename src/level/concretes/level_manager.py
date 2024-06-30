@@ -1,6 +1,6 @@
 from pygame import Surface
 
-from src.entities import Hero, IElementObserver
+from src.entities import Hero
 from src.enums import HeroType, Level, World
 from src.utils import PLAYER_LIVES, Camera
 
@@ -19,8 +19,6 @@ class LevelManager(ILevelManager):
         background: Surface,
         time: int,
         level_screen_width: int,
-        score_observer: IElementObserver,
-        coin_observer: IElementObserver,
         camera: Camera,
         lives: int = PLAYER_LIVES,
     ) -> None:
@@ -34,10 +32,10 @@ class LevelManager(ILevelManager):
         self.__current_time = time
         self.__start_tick = 0
         self.__level_screen_width = level_screen_width
-        self.__score_observer = score_observer
-        self.__coin_observer = coin_observer
         self.__camera = camera
         self.__lives = lives
+        self.__coins = 0
+        self.__score = 0
 
     def get_hero(self) -> Hero:
         return self.__hero
@@ -73,7 +71,7 @@ class LevelManager(ILevelManager):
         self.__start_tick = tick
 
     def get_score(self) -> int:
-        return self.__score_observer.get_value()
+        return self.__score
 
     def get_screen_width(self) -> int:
         return self.__level_screen_width
@@ -88,10 +86,14 @@ class LevelManager(ILevelManager):
         self.__lives = lives
 
     def get_coins(self) -> int:
-        return self.__coin_observer.get_value()
+        return self.__coins
 
-    def add_coins(self,value :int) -> None:
-        self.__coin_observer.update(value)
+    def set_coins(self, value :int) -> None:
+        self.__coins = value
+
+    def set_score(self, value : int) -> None:
+        self.__score = value
+
 
     def configure_level(
         self,
@@ -106,6 +108,6 @@ class LevelManager(ILevelManager):
         self.__hero_type = hero_type
         self.__start_tick = time
         self.__current_time = time
-        self.__score_observer.update(score)
+        self.__score = score
         self.__lives = lives
-        self.__coin_observer.update(coins)
+        self.__coins = coins

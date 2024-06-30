@@ -40,7 +40,6 @@ class LevelSceneTick(Tick):
         hero.animate()
 
         if self.level_manager.get_coins() == COIN_LIMIT+1:
-            self.level_manager.add_coins(1)
             self.level_manager.set_lives(self.level_manager.get_lives() + 1)
 
 
