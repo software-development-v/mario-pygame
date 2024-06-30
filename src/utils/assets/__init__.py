@@ -204,6 +204,8 @@ from .power_ups import (
 from .resources import HIGH_LEVEL_SCORE_FILE
 from .sounds import JUMP_SOUND,COLLECTED_COIN_SOUND
 
+from .animations import COIN_ICON_1, COIN_ICON_2, COIN_ICON_3
+
 __all__ = [
     "JUMP_SOUND",
     "COLLECTED_COIN_SOUND",
@@ -409,4 +411,8 @@ __all__ = [
     "PASTEL",
     "BUNUELO",
     "ALCOHOL_CAIMAN",
+    # Animations
+    "COIN_ICON_1",
+    "COIN_ICON_2",
+    "COIN_ICON_3",
 ]

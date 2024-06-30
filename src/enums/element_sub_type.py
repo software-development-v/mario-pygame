@@ -51,3 +51,6 @@ class ElementSubType(Enum):
 
     # == CASTLE ==
     DEFAULT_CASTLE = "DEFAULT_CASTLE"
+
+    # == Animations ==
+    COIN_ICON = "COIN_ICON"

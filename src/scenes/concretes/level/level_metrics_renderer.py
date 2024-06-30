@@ -1,17 +1,18 @@
 from pygame import Surface
 
-from src.entities.concretes.elements.touchable.coin import Coin
+from src.entities import CoinIcon
 from src.utils import SCREEN_WIDTH, get_format_number, get_message
 from src.utils.classes.position import Position
+from src.utils.constants import METRICS_BAR_POS_Y, SMALL_SIZE, METRICS_BAR_POS_X
 
 
 class LevelMetricsRenderer:
     def __init__(self) -> None:
-        self.__status_bar_y_pos = 20
-        self.__icons_size = 30
-        self.__x_base = 300
+        self.__status_bar_y_pos = METRICS_BAR_POS_Y
+        self.__icons_size = SMALL_SIZE[0]
+        self.__x_base = METRICS_BAR_POS_X
         self.__spacing = (SCREEN_WIDTH - self.__x_base * 2) // 3
-        self.__coin = Coin(
+        self.__coin = CoinIcon(
             Position(
                 int(
                     self.__x_base
@@ -48,8 +49,6 @@ class LevelMetricsRenderer:
                 f"TIME\n {format_time}",
             ],
         )
-
-        self.__coin.animate()
         self.__coin.draw(surf)
 
     def __render_messages(self, surf: Surface, messages: list[str]) -> None:

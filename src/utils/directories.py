@@ -56,6 +56,7 @@ FLAG_PIPE_DIR = FLAG_DIR + "pipe/"
 FLAG_WIN_DIR = FLAG_DIR + "win/"
 FLAG_SUPPORT_DIR = FLAG_DIR + "support/"
 
+
 # == Background ==
 # == Background name ==
 BUSH_BACKGROUND_DIR = BACKGROUND_DIR + "bush/"
@@ -81,7 +82,13 @@ PIECES_DIR = BROKE_BLOCK_DIR + "pieces/"
 PIPE_HEAD_DIR = PIPES_DIR + "head/"
 PIPE_BODY_DIR = PIPES_DIR + "body/"
 
-# == Actiosns ==
+# == Animations ==
+ANIMATIONS_DIR = SPRITES_DIR + "animations/"
+
+# == Animations dirs ==
+COIN_ICON_DIR = ANIMATIONS_DIR + "coin_icon/"
+
+# == Actions ==
 DEFAULT_DIR = "default/"
 WALKING_DIR = "walking/"
 DOWN_DIR = "down/"

@@ -13,10 +13,12 @@ class CoinObserver(IElementObserver[int]):
     def notify(self, value: int) -> None:
         self.sound.play()
         coins = self.__level_manager.get_coins()
-        if coins <= COIN_LIMIT:
-            self.__level_manager.set_coins(coins+value)
-        else:
+        coins = coins + value
+        if coins > COIN_LIMIT:
             self.__level_manager.set_lives(self.__level_manager.get_lives()+1)
-            self.__level_manager.set_coins(0)
+            coins = 0
+
+        self.__level_manager.set_coins(coins)
+
 
 

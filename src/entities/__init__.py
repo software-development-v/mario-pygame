@@ -11,6 +11,7 @@ from .concretes import (
     Mountain,
     Pipe,
     Tree,
+    CoinIcon
 )
 from .factories import ElementFactory
 from .interfaces import (
@@ -40,4 +41,5 @@ __all__ = [
     "ElementFactory",
     "IObservableElement",
     "IElementObserver",
+    "CoinIcon"
 ]
