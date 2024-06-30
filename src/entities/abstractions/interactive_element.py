@@ -19,7 +19,7 @@ class InteractiveElement(Element, IObservableElement):
         y_rect_percent: float = 1,
     ) -> None:
         self.__value = value
-        self.__observers: Dict[CollectedType, IElementObserver[object]] = {}
+        self.__observers: Dict[CollectedType, IElementObserver[int]] = {}
         super().__init__(
             position,
             images,
@@ -28,7 +28,7 @@ class InteractiveElement(Element, IObservableElement):
         )
 
     def add_observer(
-        self, key: CollectedType, observer: IElementObserver[object]
+        self, key: CollectedType, observer: IElementObserver[int]
     ) -> None:
         self.__observers[key] = observer
 
