@@ -1,7 +1,10 @@
 from abc import ABC, abstractmethod
+from typing import Generic, TypeVar
 
-class IElementObserver(ABC):
+T = TypeVar('T')
+
+class IElementObserver(Generic[T],ABC):
 
     @abstractmethod
-    def notify(self, value: object):
+    def notify(self, value: T):
         pass

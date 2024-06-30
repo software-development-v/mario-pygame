@@ -5,15 +5,12 @@ from src.utils import COIN_LIMIT
 from pygame import mixer
 from src.utils import COLLECTED_COIN_SOUND
 
-class CoinObserver(IElementObserver):
+class CoinObserver(IElementObserver[int]):
     def __init__(self, level_manager:ILevelManager) -> None:
         self.__level_manager = level_manager
         self.sound = mixer.Sound(COLLECTED_COIN_SOUND)
 
-    def notify(self, value: object) -> None:
-        if not isinstance(value, int):
-            return
-        
+    def notify(self, value: int) -> None:
         self.sound.play()
         coins = self.__level_manager.get_coins()
         if coins <= COIN_LIMIT:
