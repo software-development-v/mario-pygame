@@ -87,7 +87,7 @@ class LevelMapper(ILevelMapper):
         return []
 
 
-def adjust_positions(elementos: List[Dict[str, Any]], scale: float):
-    for elemento in elementos:
-        elemento["position"][0] = int(elemento["position"][0] * scale)
-        elemento["position"][1] = int(elemento["position"][1] * scale)
+def adjust_positions(elements: List[Dict[str, Any]], scale: float):
+    for element in elements:
+        element["position"][0] = int(element["position"][0] * scale)
+        element["position"][1] = int(element["position"][1] * scale)

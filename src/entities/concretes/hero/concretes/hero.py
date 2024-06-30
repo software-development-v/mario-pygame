@@ -2,7 +2,13 @@ from typing import Dict, List
 
 from pygame import Rect, Surface
 
-from src.enums import GameEvent, HeroAction, HeroLevel, HeroState
+from src.enums import (
+    GameEvent,
+    HeroAction,
+    HeroLevel,
+    HeroState,
+)
+
 from src.utils import (
     HERO_ANIMATION_INTERVAL,
     HERO_BIG_RECT_X_PERCENT,
@@ -41,11 +47,13 @@ class Hero(Sprite, IHero):
             HeroAction.JUMPING: True,
             HeroAction.RUNNING: False,
             HeroAction.IDLE: False,
+            HeroAction.WIN: False,
         }
         self.__actions_handler: IActionsHandler = ActionsHandler(self)
         self.__movement_handler: IMovementHandler = MovementHandler(self)
         self.__collisions_handler: ICollisionsHandler = CollisionsHandler(self)
         self.__damage_handler: IDamageHandler = DamageHandler(self)
+        self.__collided_win: bool = False
 
         super().__init__(
             position,
@@ -89,6 +97,34 @@ class Hero(Sprite, IHero):
     def set_action(self, action: HeroAction, value: bool) -> None:
         self.__actions[action] = value
 
+    def get_collided_win(self) -> bool:
+        return self.__collided_win
+
+    def set_collided_win(self, value: bool) -> None:
+        self.__collided_win = value
+
+    def hero_down(self) -> None:
+        if (
+            (
+                self.get_hero_level() is HeroLevel.NORMAL
+                or self.get_hero_level() is HeroLevel.BORRACHO_SMALL
+            )
+            and self.get_rect().y < 710
+        ) or (
+            (
+                self.get_hero_level() is HeroLevel.BIG
+                or self.get_hero_level() is HeroLevel.COCA
+                or self.get_hero_level() is HeroLevel.BORRACHO_BIG
+            )
+            and self.get_rect().y < 650
+        ):
+            self.set_vel_y(self.get_vel_y() + 0.4)
+            self.add_y_rect(5)
+        elif self.get_rect().x == 11834:
+            self.add_x_rect(60)
+            self.set_face_right(False)
+            self.set_action(HeroAction.WIN, False)
+
     def update(
         self,
         game_events: Dict[GameEvent, bool],
@@ -96,6 +132,10 @@ class Hero(Sprite, IHero):
         camera: Camera,
     ) -> None:
         self.__actions_handler.handle_hero_actions(game_events)
+
+        if self.get_actions()[HeroAction.WIN]:
+            self.hero_down()
+            return
 
         hero_rect: Rect = self.get_rect()
         dx, dy = self.__movement_handler.handle_hero_movements(

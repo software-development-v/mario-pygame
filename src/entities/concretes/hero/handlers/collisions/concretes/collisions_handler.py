@@ -31,7 +31,7 @@ class CollisionsHandler(ICollisionsHandler):
                 continue
 
             if isinstance(obstacle, InteractiveElement):
-                obstacle.notify_observers()
+                obstacle.notify_observers(self.hero)
 
             if dx > 0:
                 dx = obstacle_rect.left - hero_rect.right
@@ -71,7 +71,7 @@ class CollisionsHandler(ICollisionsHandler):
                 self.hero.set_action(HeroAction.JUMPING, False)
 
             if isinstance(obstacle, InteractiveElement):
-                obstacle.notify_observers()
+                obstacle.notify_observers(self.hero)
 
             break
 
