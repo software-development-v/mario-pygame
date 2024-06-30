@@ -8,7 +8,7 @@ from .i_element_observer import IElementObserver
 class IObservableElement(ABC):
 
     @abstractmethod
-    def add_observer(self, key: CollectedType, observer: IElementObserver):
+    def add_observer(self, key: CollectedType, observer: IElementObserver[int]):
         pass
 
     @abstractmethod
