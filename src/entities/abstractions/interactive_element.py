@@ -9,7 +9,7 @@ from ..interfaces import IElementObserver, IObservableElement
 from .element import Element
 
 
-class InteractiveElement(Element, IObservableElement):
+class InteractiveElement(Element, IObservableElement[int]):
     def __init__(
         self,
         position: Position,
