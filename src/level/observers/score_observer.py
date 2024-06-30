@@ -1,6 +1,6 @@
 from src.entities import IElementObserver
 from src.utils import SCORE_LIMIT
-from ...interfaces.i_level_manager import ILevelManager
+from ..interfaces.i_level_manager import ILevelManager
 
 class ScoreObserver(IElementObserver[int]):
     def __init__(self, level_manager: ILevelManager) -> None:
