@@ -32,6 +32,7 @@ class LevelMetricsRenderer:
         coins: int,
         world: int,
         level: int,
+        static: bool = False,
     ) -> None:
 
         format_time = ""
@@ -48,8 +49,10 @@ class LevelMetricsRenderer:
                 f"WORLD\n {world}-{level}",
                 f"TIME\n {format_time}",
             ],
-
         )
+        if not static:
+             self.__coin.animate()
+
         self.__coin.draw(surf)
 
     def __render_messages(self, surf: Surface, messages: list[str]) -> None:

@@ -32,6 +32,7 @@ class TransitionLevelSceneRender(Render):
             self.__level_manager.get_coins(),
             self.__level_manager.get_world().value,
             self.__level_manager.get_level().value,
+            True
         )
 
         self.state.render(self._screen)
