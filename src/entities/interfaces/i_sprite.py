@@ -20,5 +20,9 @@ class ISprite(IDrawable, IAnimate, ABC):
         pass
 
     @abstractmethod
+    def get_face_right(self) -> bool:
+        pass
+
+    @abstractmethod
     def set_face_right(self, face_right: bool) -> None:
         pass

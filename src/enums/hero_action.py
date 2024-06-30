@@ -5,3 +5,4 @@ class HeroAction(Enum):
     JUMPING = "JUMPING"
     RUNNING = "RUNNING"
     IDLE = "IDLE"
+    WIN = "WIN"

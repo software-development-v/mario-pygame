@@ -28,12 +28,16 @@ class InteractiveElement(Element, IObservableElement[int]):
             images,
             x_rect_percent=x_rect_percent,
             y_rect_percent=y_rect_percent,
+            is_touchable=True,
         )
 
     def add_observer(
         self, key: CollectedType, observer: IElementObserver[int]
     ) -> None:
         self.observers[key] = observer
+
+    def get_observer(self) -> Dict[CollectedType, IElementObserver[int]]:
+        return self.observers
 
     def add_animation_oberver(
         self,

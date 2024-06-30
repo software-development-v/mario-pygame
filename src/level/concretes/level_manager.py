@@ -38,6 +38,7 @@ class LevelManager(ILevelManager):
         self.__lives = lives
         self.__coins = 0
         self.__score = 0
+        self.__win: bool = False
 
     def get_hero(self) -> Hero:
         return self.__hero
@@ -98,6 +99,12 @@ class LevelManager(ILevelManager):
 
     def set_score(self, value: int) -> None:
         self.__score = value
+
+    def is_win(self) -> bool:
+        return self.__win
+
+    def win(self) -> None:
+        self.__win = True
 
     def configure_level(
         self,
