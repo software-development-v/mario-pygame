@@ -19,7 +19,7 @@ class Sprite(PygameSprite, ISprite, ABC):
     ):
         super().__init__()
         self.__index: int = INIT_IMAGE_INDEX
-        self.__face_right: float = True
+        self.__face_right: bool = True
         self.__last_update: int = time.get_ticks()
         self.__animation_interval: int = animation_interval
 
@@ -56,6 +56,9 @@ class Sprite(PygameSprite, ISprite, ABC):
         self.__rect.y = (
             self.__image_rect.y + (self.__image_rect.height - self.__height) / 2
         )
+
+    def get_face_right(self) -> bool:
+        return self.__face_right
 
     def set_face_right(self, face_right: bool) -> None:
         self.__face_right = face_right

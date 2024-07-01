@@ -18,6 +18,7 @@ from src.utils import (
     Camera,
     Position,
 )
+from src.utils.constants import FLAG_POSITION
 
 from ....abstractions import Element, Sprite
 from ..handlers import (
@@ -34,6 +35,10 @@ from ..interfaces import IHero
 
 
 class Hero(Sprite, IHero):
+
+    LIMIT_BIG = 650
+    LIMIT_SMALL = 710
+
     def __init__(
         self,
         surfaces: Dict[HeroLevel, Dict[HeroState, List[Surface]]],
@@ -109,18 +114,18 @@ class Hero(Sprite, IHero):
                 self.get_hero_level() is HeroLevel.NORMAL
                 or self.get_hero_level() is HeroLevel.BORRACHO_SMALL
             )
-            and self.get_rect().y < 710
+            and self.get_rect().y < self.LIMIT_SMALL
         ) or (
             (
                 self.get_hero_level() is HeroLevel.BIG
                 or self.get_hero_level() is HeroLevel.COCA
                 or self.get_hero_level() is HeroLevel.BORRACHO_BIG
             )
-            and self.get_rect().y < 650
+            and self.get_rect().y < self.LIMIT_BIG
         ):
             self.set_vel_y(self.get_vel_y() + 0.4)
             self.add_y_rect(5)
-        elif self.get_rect().x == 11834:
+        elif self.get_rect().x == FLAG_POSITION:
             self.add_x_rect(60)
             self.set_face_right(False)
             self.set_action(HeroAction.WIN, False)
