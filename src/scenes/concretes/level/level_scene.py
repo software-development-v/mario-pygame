@@ -4,7 +4,12 @@ from pygame import time
 
 from src.entities import Coin, InteractiveElement
 from src.enums import CollectedType, SceneAction
-from src.level import CoinObserver, ILevelManager, ScoreObserver
+from src.level import (
+    AnimationManager,
+    CoinObserver,
+    ILevelManager,
+    ScoreObserver,
+)
 
 from ...abstractions import Scene
 from .level_scene_render import LevelSceneRender
@@ -17,12 +22,13 @@ class LevelScene(Scene):
         level_manager: ILevelManager,
         dispatcher: Dict[SceneAction, Callable[..., None]],
     ):
+        self.__animation_manager = AnimationManager()
         level_manager.set_start_tick(time.get_ticks())
         self.__configure_observers(level_manager)
 
         super().__init__(
-            LevelSceneRender(level_manager),
-            LevelSceneTick(level_manager, dispatcher),
+            LevelSceneRender(level_manager, self.__animation_manager),
+            LevelSceneTick(level_manager, dispatcher, self.__animation_manager),
             dispatcher,
         )
 
@@ -35,6 +41,7 @@ class LevelScene(Scene):
                 element.add_observer(
                     CollectedType.COLLECTED_SCORE, score_observer
                 )
+                element.add_animation_oberver(self.__animation_manager)
                 if isinstance(element, Coin):
                     element.add_observer(
                         CollectedType.COLLECTED_COIN, coin_observer

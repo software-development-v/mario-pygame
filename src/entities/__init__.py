@@ -1,11 +1,14 @@
-from .abstractions import Element, InteractiveElement, Sprite
+from .abstractions import Animation, Element, InteractiveElement, Sprite
 from .concretes import (
+    AnimationCompose,
     Block,
     Bush,
     Castle,
     Cloud,
     Coin,
     CoinIcon,
+    CollectedCoin,
+    CollectedScore,
     Flag,
     Hero,
     MisteryBox,
@@ -42,4 +45,8 @@ __all__ = [
     "IObservableElement",
     "IElementObserver",
     "CoinIcon",
+    "CollectedCoin",
+    "CollectedScore",
+    "Animation",
+    "AnimationCompose",
 ]
