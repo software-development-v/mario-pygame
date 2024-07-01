@@ -12,6 +12,7 @@ from .keyboard_input import KeyboardInput
 from .level import Level
 from .scene_action import SceneAction
 from .world import World
+from .animation_type import AnimationType
 
 __all__ = [
     "GameEvent",
@@ -28,4 +29,5 @@ __all__ = [
     "SceneAction",
     "CollectedType",
     "HeroAction",
+    "AnimationType",
 ]

@@ -1,8 +1,8 @@
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 from pygame import Surface
 
-from src.enums import CollectedType
+from src.enums import CollectedType, AnimationType
 from src.utils import Position
 
 from ..interfaces import IElementObserver, IObservableElement
@@ -19,7 +19,10 @@ class InteractiveElement(Element, IObservableElement[int]):
         y_rect_percent: float = 1,
     ) -> None:
         self.__value = value
-        self.__observers: Dict[CollectedType, IElementObserver[int]] = {}
+        self.observers: Dict[CollectedType, IElementObserver[int]] = {}
+        self.animation_oberservers: IElementObserver[
+            Tuple["InteractiveElement", List[AnimationType]]
+        ]
         super().__init__(
             position,
             images,
@@ -30,15 +33,23 @@ class InteractiveElement(Element, IObservableElement[int]):
     def add_observer(
         self, key: CollectedType, observer: IElementObserver[int]
     ) -> None:
-        self.__observers[key] = observer
+        self.observers[key] = observer
+
+    def add_animation_oberver(
+        self, observer: IElementObserver[Tuple["InteractiveElement", List[AnimationType]]]
+    ) -> None:
+        self.animation_oberservers = observer
 
     def remove_observer(self, key: CollectedType) -> None:
-        if key in self.__observers:
-            del self.__observers[key]
+        if key in self.observers:
+            del self.observers[key]
 
     def notify_observers(self) -> None:
-        if CollectedType.COLLECTED_COIN in self.__observers:
-            self.__observers[CollectedType.COLLECTED_COIN].notify(1)
+        if CollectedType.COLLECTED_COIN in self.observers:
+            self.observers[CollectedType.COLLECTED_COIN].notify(1)
 
-        if self.__value>0:
-            self.__observers[CollectedType.COLLECTED_SCORE].notify(self.__value)
+        if self.__value > 0:
+            self.observers[CollectedType.COLLECTED_SCORE].notify(self.__value)
+
+    def get_value(self) -> int:
+        return self.__value

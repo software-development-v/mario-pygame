@@ -8,9 +8,12 @@ from .elements import (
     MisteryBox,
     Mountain,
     Pipe,
-    Tree,
-    CoinIcon,
+    Tree
 )
+
+
+
+from .animations import CoinIcon, CollectedCoin, CollectedScore, AnimationCompose
 from .hero import Hero
 
 __all__ = [
@@ -25,6 +28,9 @@ __all__ = [
     "MisteryBox",
     "Pipe",
     "Hero",
-    "CoinIcon"
+    "CoinIcon",
+    "CollectedCoin",
+    "CollectedScore",
+    "AnimationCompose"
 ]
 
