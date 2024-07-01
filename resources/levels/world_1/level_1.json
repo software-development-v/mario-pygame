@@ -379,6 +379,11 @@
         {
             "position": [9894.5, 150],
             "type": "FLAG",
+            "subtype": "FLAG_PIPE"
+        },
+        {
+            "position": [9908.0, 150],
+            "type": "FLAG",
             "subtype": "FLAG_WIN"
         },
         {

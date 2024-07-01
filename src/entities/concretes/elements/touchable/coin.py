@@ -1,3 +1,5 @@
+from typing import Optional
+from src.entities.interfaces.i_sprite import ISprite
 from src.enums import CollectedType, ElementSubType, ElementType
 from src.utils import Position, elements
 
@@ -14,6 +16,6 @@ class Coin(InteractiveElement):
             position, elements[ElementType.COIN][element_sub_type], 100
         )
 
-    def notify_observers(self) -> None:
+    def notify_observers(self, sprite: Optional[ISprite] = None) -> None:
         super().notify_observers()
         self.observers[CollectedType.COLLECTED_COIN].update(1)
