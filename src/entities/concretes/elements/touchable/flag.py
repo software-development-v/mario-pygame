@@ -6,11 +6,28 @@ from src.enums import ElementSubType, ElementType
 from src.enums.collected_type import CollectedType
 from src.enums.hero_action import HeroAction
 from src.utils import Position, elements
+from src.utils.constants import FLAG_POSITION
 
 from ....abstractions import InteractiveElement
 
 
 class Flag(InteractiveElement):
+
+    FIRST_RANGE = [240, 299]
+    SECOND_RANGE = [300, 359]
+    THIRD_RANGE = [360, 419]
+    FOURTH_RANGE = [420, 539]
+    FIFTH_RANGE = [540, 659]
+    FINAL_RANGE = 660
+
+    SCORE_FIRST_RANGE = 2000
+    SCORE_SECOND_RANGE = 1000
+    SCORE_THIRD_RANGE = 800
+    SCORE_FOURTH_RANGE = 400
+    SCORE_FIFTH_RANGE = 200
+    SCORE_FINAL_RANGE = 100
+    SCORE_DEFAULT = 5000
+
     def __init__(
         self,
         position: Position,
@@ -28,24 +45,24 @@ class Flag(InteractiveElement):
     def __get_points(self) -> int:
         y_position = self.get_rect().y
 
-        if 240 <= y_position <= 299:
-            return 2000
-        elif 300 <= y_position <= 359:
-            return 1000
-        elif 360 <= y_position <= 419:
-            return 800
-        elif 420 <= y_position <= 539:
-            return 400
-        elif 540 <= y_position <= 659:
-            return 200
-        elif 660 <= y_position:
-            return 100
+        if self.FIRST_RANGE[0] <= y_position <= self.FIRST_RANGE[1]:
+            return self.SCORE_FIRST_RANGE
+        elif self.SECOND_RANGE[0] <= y_position <= self.SECOND_RANGE[1]:
+            return self.SCORE_SECOND_RANGE
+        elif self.THIRD_RANGE[0] <= y_position <= self.THIRD_RANGE[1]:
+            return self.SCORE_THIRD_RANGE
+        elif self.FOURTH_RANGE[0] <= y_position <= self.FOURTH_RANGE[1]:
+            return self.SCORE_FOURTH_RANGE
+        elif self.FIFTH_RANGE[0] <= y_position <= self.FIFTH_RANGE[1]:
+            return self.SCORE_FIFTH_RANGE
+        elif self.FINAL_RANGE <= y_position:
+            return self.SCORE_FINAL_RANGE
         else:
-            return 5000
+            return self.SCORE_DEFAULT
 
     def verify_player_position(self, hero: IHero):
-        if hero.get_rect().x > 11834:
-            difference_position = hero.get_rect().x - 11834
+        if hero.get_rect().x > FLAG_POSITION:
+            difference_position = hero.get_rect().x - FLAG_POSITION
             hero.add_x_rect(-difference_position)
 
         if hero.get_rect().y < self.get_rect().y:
