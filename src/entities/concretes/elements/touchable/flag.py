@@ -13,20 +13,25 @@ from ....abstractions import InteractiveElement
 
 class Flag(InteractiveElement):
 
-    FIRST_RANGE = [240, 299]
-    SECOND_RANGE = [300, 359]
-    THIRD_RANGE = [360, 419]
-    FOURTH_RANGE = [420, 539]
-    FIFTH_RANGE = [540, 659]
-    FINAL_RANGE = 660
+    RANGES = [
+        (240, 299), # FIRST FLAG POSITION
+        (300, 359), # SECOND FLAG POSITION
+        (360, 419), # THIRD FLAG POSITION
+        (420, 539), # FOURTH FLAG POSITION
+        (540, 659), # FIFTH FLAG POSITION
+        (660, 0), # FINAL FLAG POSITION
+    ]
 
-    SCORE_FIRST_RANGE = 2000
-    SCORE_SECOND_RANGE = 1000
-    SCORE_THIRD_RANGE = 800
-    SCORE_FOURTH_RANGE = 400
-    SCORE_FIFTH_RANGE = 200
-    SCORE_FINAL_RANGE = 100
-    SCORE_DEFAULT = 5000
+    SCORES = [
+        2000,  # SCORE FIRST RANGE
+        1000,  # SCORE SECOND RANGE
+        800,  # SCORE THIRD RANGE
+        400,  # SCORE FOURTH RANGE
+        200,  # SCORE FIFTH RANGE
+        100,  # SCORE FINAL RANGE
+    ]
+
+    DEFAULT_SCORE = 5000
 
     def __init__(
         self,
@@ -45,20 +50,20 @@ class Flag(InteractiveElement):
     def __get_points(self) -> int:
         y_position = self.get_rect().y
 
-        if self.FIRST_RANGE[0] <= y_position <= self.FIRST_RANGE[1]:
-            return self.SCORE_FIRST_RANGE
-        elif self.SECOND_RANGE[0] <= y_position <= self.SECOND_RANGE[1]:
-            return self.SCORE_SECOND_RANGE
-        elif self.THIRD_RANGE[0] <= y_position <= self.THIRD_RANGE[1]:
-            return self.SCORE_THIRD_RANGE
-        elif self.FOURTH_RANGE[0] <= y_position <= self.FOURTH_RANGE[1]:
-            return self.SCORE_FOURTH_RANGE
-        elif self.FIFTH_RANGE[0] <= y_position <= self.FIFTH_RANGE[1]:
-            return self.SCORE_FIFTH_RANGE
-        elif self.FINAL_RANGE <= y_position:
-            return self.SCORE_FINAL_RANGE
+        if self.RANGES[0][0] <= y_position <= self.RANGES[0][1]:
+            return self.SCORES[0]
+        elif self.RANGES[1][0] <= y_position <= self.RANGES[1][1]:
+            return self.SCORES[1]
+        elif self.RANGES[2][0] <= y_position <= self.RANGES[2][1]:
+            return self.SCORES[2]
+        elif self.RANGES[3][0] <= y_position <= self.RANGES[3][1]:
+            return self.SCORES[3]
+        elif self.RANGES[4][0] <= y_position <= self.RANGES[4][1]:
+            return self.SCORES[4]
+        elif self.RANGES[5][0] <= y_position:
+            return self.SCORES[5]
         else:
-            return self.SCORE_DEFAULT
+            return self.DEFAULT_SCORE
 
     def verify_player_position(self, hero: IHero):
         if hero.get_rect().x > FLAG_POSITION:
