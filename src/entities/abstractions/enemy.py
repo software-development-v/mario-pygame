@@ -3,6 +3,7 @@ from typing import Dict, List
 
 from pygame import Rect, Surface, time, transform
 from pygame.sprite import Sprite
+
 from src.entities.interfaces.i_sprite import ISprite
 from src.enums import EnemyState
 from src.utils import ANIMATION_INTERVAL, Camera, Position
