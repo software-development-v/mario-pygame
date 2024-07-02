@@ -1,4 +1,4 @@
-from .abstractions import Element, InteractiveElement, Sprite
+from .abstractions import Element, InteractiveElement, Sprite, Animation
 from .concretes import (
     Block,
     Bush,
@@ -11,6 +11,10 @@ from .concretes import (
     Mountain,
     Pipe,
     Tree,
+    CoinIcon,
+    CollectedCoin,
+    CollectedScore,
+    AnimationCompose
 )
 from .factories import ElementFactory
 from .interfaces import (
@@ -40,4 +44,9 @@ __all__ = [
     "ElementFactory",
     "IObservableElement",
     "IElementObserver",
+    "CoinIcon",
+    "CollectedCoin",
+    "CollectedScore",
+    "Animation",
+    "AnimationCompose"
 ]

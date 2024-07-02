@@ -2,8 +2,9 @@ from typing import List, Tuple
 
 from pygame import Rect, Surface, display, font
 
-from src.level import ScoreObserver
+
 from src.utils import GAME_FONT, MENU_BACKGROUND, ORANGE_COLOR, WHITE_COLOR
+from src.utils import read_high_score
 
 from ...abstractions import Render
 
@@ -37,8 +38,10 @@ class MainMenuRender(Render):
             screen_width - 200,
             140,
         )
-        self.score_observer = ScoreObserver()
-        self.top_score: int = self.score_observer.get_high_score()
+
+        self.top_score: int = read_high_score()
+
+
 
     def render(self) -> None:
         self._screen.blit(self.background_image, (0, 0))
