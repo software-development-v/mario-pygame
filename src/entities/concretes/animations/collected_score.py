@@ -1,6 +1,6 @@
 from pygame import Surface
 from src.utils.camera import Camera
-from src.utils.constants import FONT_MEDIUM_SIZE
+from src.utils.constants import FONT_SIZE
 from src.utils.text import get_centered_message
 from ...abstractions.animation import Animation
 from src.utils import Position
@@ -8,13 +8,14 @@ from src.utils import Position
 
 class CollectedScore(Animation):
     def __init__(self, position: Position, value: int):
-        surface, _ = get_centered_message(str(value), size=FONT_MEDIUM_SIZE)
+        surface, rect = get_centered_message(str(value), size=FONT_SIZE)
         self.__last_camara_left_edge: float = 0
         self.__x_increment: float = 0
+        position.x+=10-(rect.width//2)
         super().__init__(
             [surface],
             transitions=[position, Position(position.x, position.y - 200)],
-            speed=8,
+            speed=6,
         )
 
     def draw(
