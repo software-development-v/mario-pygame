@@ -1,6 +1,6 @@
+from src.utils.constants import GENERAL_HEIGHT
 from ...abstractions.animation import Animation
-from src.enums import ElementSubType
-from src.enums import ElementType
+from src.enums import ElementSubType,ElementType
 from src.utils import Position, elements
 
 
@@ -10,7 +10,7 @@ class CollectedCoin(Animation):
             elements[ElementType.COIN][ElementSubType.COIN],
             transitions=[
                 position,
-                Position(position.x, position.y - 200),
+                Position(position.x, position.y - (GENERAL_HEIGHT*3)),
                 position,
             ],
             animation_interval=20,

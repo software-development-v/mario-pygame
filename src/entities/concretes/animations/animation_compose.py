@@ -2,7 +2,7 @@ from typing import List
 
 from pygame import Surface
 
-from src.utils.camera import Camera
+from src.utils import Camera
 from ...abstractions.animation import Animation
 
 
