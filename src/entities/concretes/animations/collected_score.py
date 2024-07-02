@@ -1,5 +1,5 @@
 from pygame import Surface
-from src.utils import Camera, Position,FONT_SIZE, get_centered_message
+from src.utils import Camera, Position,GENERAL_HEIGHT, get_centered_message, FONT_SIZE
 from ...abstractions.animation import Animation
 
 
@@ -12,7 +12,7 @@ class CollectedScore(Animation):
         position.x+=10-(rect.width//2)
         super().__init__(
             [surface],
-            transitions=[position, Position(position.x, position.y - 200)],
+            transitions=[position, Position(position.x, position.y - (GENERAL_HEIGHT*3))],
             speed=6,
         )
 
