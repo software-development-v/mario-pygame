@@ -1,9 +1,7 @@
 from pygame import Surface
-from src.utils.camera import Camera
-from src.utils.constants import FONT_SIZE
-from src.utils.text import get_centered_message
+from src.utils import Camera, Position,FONT_SIZE, get_centered_message
 from ...abstractions.animation import Animation
-from src.utils import Position
+
 
 
 class CollectedScore(Animation):

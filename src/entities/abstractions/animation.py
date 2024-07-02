@@ -2,8 +2,7 @@ from abc import ABC
 from typing import List
 from pygame import Surface
 
-from src.utils.classes.position import Position
-from src.utils import ANIMATION_INTERVAL
+from src.utils import Position, ANIMATION_INTERVAL
 from .sprite import Sprite
 
 
