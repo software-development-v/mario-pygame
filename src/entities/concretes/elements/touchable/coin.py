@@ -15,6 +15,8 @@ class Coin(InteractiveElement):
         )
 
     def notify_observers(self) -> None:
+        self._set_is_touchable(False)
         super().notify_observers()
         self.dispose()
+
 
