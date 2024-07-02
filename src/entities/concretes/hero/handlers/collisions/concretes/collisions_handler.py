@@ -32,6 +32,8 @@ class CollisionsHandler(ICollisionsHandler):
 
             if isinstance(obstacle, InteractiveElement):
                 obstacle.notify_observers()
+                if not obstacle.get_is_touchable():
+                    continue
 
             if dx > 0:
                 dx = obstacle_rect.left - hero_rect.right
@@ -61,6 +63,11 @@ class CollisionsHandler(ICollisionsHandler):
             ):
                 continue
 
+            if isinstance(obstacle, InteractiveElement):
+                obstacle.notify_observers()
+                if not obstacle.get_is_touchable():
+                    continue
+
             if self.hero.get_vel_y() < 0:
                 dy = obstacle_rect.bottom - hero_rect.top
                 self.hero.set_vel_y(0)
@@ -70,8 +77,6 @@ class CollisionsHandler(ICollisionsHandler):
                 self.hero.set_vel_y(0)
                 self.hero.set_action(HeroAction.JUMPING, False)
 
-            if isinstance(obstacle, InteractiveElement):
-                obstacle.notify_observers()
 
             break
 

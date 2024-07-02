@@ -14,7 +14,7 @@ class TransitionLevelSceneRender(Render):
 
         super().__init__()
 
-        self.level_metrics_renderer = LevelMetricsRenderer(self._screen)
+        self.level_metrics_renderer = LevelMetricsRenderer()
         self.state: LevelState = LevelStatusState(
             level_manager, game, self.change_state
         )
@@ -25,12 +25,14 @@ class TransitionLevelSceneRender(Render):
         self._screen.fill(BLACK_COLOR)
 
         self.level_metrics_renderer.render(
+            self._screen,
             self.__level_manager.get_hero_type().value,
             -1,
             self.__level_manager.get_score(),
             self.__level_manager.get_coins(),
             self.__level_manager.get_world().value,
             self.__level_manager.get_level().value,
+            True
         )
 
         self.state.render(self._screen)

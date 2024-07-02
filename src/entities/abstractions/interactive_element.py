@@ -9,7 +9,7 @@ from ..interfaces import IElementObserver, IObservableElement
 from .element import Element
 
 
-class InteractiveElement(Element, IObservableElement):
+class InteractiveElement(Element, IObservableElement[int]):
     def __init__(
         self,
         position: Position,
@@ -18,8 +18,8 @@ class InteractiveElement(Element, IObservableElement):
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
     ) -> None:
-        self.value = value
-        self.observers: Dict[CollectedType, IElementObserver] = {}
+        self.__value = value
+        self.__observers: Dict[CollectedType, IElementObserver[int]] = {}
         super().__init__(
             position,
             images,
@@ -28,14 +28,17 @@ class InteractiveElement(Element, IObservableElement):
         )
 
     def add_observer(
-        self, key: CollectedType, observer: IElementObserver
+        self, key: CollectedType, observer: IElementObserver[int]
     ) -> None:
-        self.observers[key] = observer
+        self.__observers[key] = observer
 
     def remove_observer(self, key: CollectedType) -> None:
-        if key in self.observers:
-            del self.observers[key]
+        if key in self.__observers:
+            del self.__observers[key]
 
     def notify_observers(self) -> None:
-        if CollectedType.COLLECTED_SCORE in self.observers:
-            self.observers[CollectedType.COLLECTED_SCORE].update(self.value)
+        if CollectedType.COLLECTED_COIN in self.__observers:
+            self.__observers[CollectedType.COLLECTED_COIN].notify(1)
+
+        if self.__value>0:
+            self.__observers[CollectedType.COLLECTED_SCORE].notify(self.__value)

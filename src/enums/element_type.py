@@ -12,3 +12,4 @@ class ElementType(Enum):
     MOUNTAIN = "MOUNTAIN"
     TREE = "TREE"
     COIN = "COIN"
+    COIN_ICON = "COIN_ICON"
