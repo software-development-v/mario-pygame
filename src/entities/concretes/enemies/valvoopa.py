@@ -1,5 +1,4 @@
-from src.enums.enemy_state import EnemyState
-from src.enums.enemy_type import EnemyType
+from src.enums import EnemyState, EnemyType
 from src.utils import Position, enemies
 
 from ...abstractions.enemy import Enemy
