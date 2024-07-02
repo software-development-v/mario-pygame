@@ -6,7 +6,7 @@ from ...abstractions.animation import Animation
 
 class CollectedScore(Animation):
     def __init__(self, position: Position, value: int, height: float=GENERAL_HEIGHT*2):
-        surface, rect = get_centered_message(str(1000), size=FONT_MEDIUM_SIZE)
+        surface, rect = get_centered_message(str(value), size=FONT_MEDIUM_SIZE)
         surface = transform.scale(surface, (rect.width-20, rect.height+10))
         self.__last_camara_left_edge: float = 0
         self.__x_increment: float = 0
