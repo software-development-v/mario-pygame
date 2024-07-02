@@ -5,12 +5,13 @@ from src.utils import Position, elements
 
 
 class CollectedCoin(Animation):
-    def __init__(self, position: Position):
+    def __init__(self, position: Position, height: float=GENERAL_HEIGHT*2):
+        position.y-=GENERAL_HEIGHT
         super().__init__(
             elements[ElementType.COIN][ElementSubType.COIN],
             transitions=[
                 position,
-                Position(position.x, position.y - (GENERAL_HEIGHT*3)),
+                Position(position.x, int(position.y - height)),
                 position,
             ],
             animation_interval=20,
