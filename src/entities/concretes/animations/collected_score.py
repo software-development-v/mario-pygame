@@ -5,12 +5,16 @@ from ...abstractions.animation import Animation
 
 
 class CollectedScore(Animation):
-    def __init__(self, position: Position, value: int, height: float=GENERAL_HEIGHT*2):
+    def __init__(self, position: Position, value: int, height: float=0):
         surface, rect = get_centered_message(str(value), size=FONT_MEDIUM_SIZE)
         surface = transform.scale(surface, (rect.width-20, rect.height+10))
         self.__last_camara_left_edge: float = 0
         self.__x_increment: float = 0
         position.x+=25-(rect.width//2)
+
+        if height==0:
+            height = GENERAL_HEIGHT*(2 if value<500 else 3)
+
         super().__init__(
             [surface],
             transitions=[position, Position(position.x, int(position.y - height))],
