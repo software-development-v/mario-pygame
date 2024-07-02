@@ -104,9 +104,9 @@ class Sprite(PygameSprite, ISprite, ABC):
     ) -> None:
         image = self.__get_image()
         self.__check_change_image(image, x_rect_percent, y_rect_percent)
-        rect = self.__rect.topleft
+        rect = self.__image_rect.topleft
         if camera is not None:
-            rect = camera.apply(self.__rect)
+            rect = camera.apply(self.__image_rect)
 
         screen.blit(image, rect)
 
