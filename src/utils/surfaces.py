@@ -23,6 +23,7 @@ from .assets import (
     FLAG_PIPE,
     FLAG_SUPPORT,
     FLAG_WIN,
+    FLAG_LIMITER,
     MASTERY_BLOCK_1,
     MASTERY_BLOCK_2,
     MASTERY_BLOCK_3,
@@ -100,6 +101,7 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.FLAG_PIPE: [FLAG_PIPE],
         ElementSubType.FLAG_WIN: [FLAG_WIN],
         ElementSubType.FLAG_SUPPORT: [FLAG_SUPPORT],
+        ElementSubType.FLAG_LIMITER: [FLAG_LIMITER]
     },
     ElementType.COIN: {
         ElementSubType.COIN: [COIN_1, COIN_2, COIN_3, COIN_4],

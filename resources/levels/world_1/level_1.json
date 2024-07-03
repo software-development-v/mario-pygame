@@ -473,6 +473,11 @@
             "subtype": "FLAG_WIN"
         },
         {
+            "position": [9887.5, 107],
+            "type": "FLAG",
+            "subtype": "FLAG_LIMITER"
+        },
+        {
             "position": [9850.0, 600],
             "type": "FLAG",
             "subtype": "FLAG_SUPPORT"

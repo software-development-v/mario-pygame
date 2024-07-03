@@ -20,7 +20,7 @@ class InteractiveElement(Element, IObservableElement[int]):
         is_touchable: bool = True,
     ) -> None:
         self.__value = value
-        self.observers: Dict[CollectedType, IElementObserver[int]] = {}
+        self.__observers: Dict[CollectedType, IElementObserver[int]] = {}
         self.animation_oberservers: IElementObserver[
             Tuple["InteractiveElement", List[AnimationType]]
         ]
@@ -35,10 +35,10 @@ class InteractiveElement(Element, IObservableElement[int]):
     def add_observer(
         self, key: CollectedType, observer: IElementObserver[int]
     ) -> None:
-        self.observers[key] = observer
+        self.__observers[key] = observer
 
     def get_observer(self) -> Dict[CollectedType, IElementObserver[int]]:
-        return self.observers
+        return self.__observers
 
     def add_animation_oberver(
         self,
@@ -49,15 +49,15 @@ class InteractiveElement(Element, IObservableElement[int]):
         self.animation_oberservers = observer
 
     def remove_observer(self, key: CollectedType) -> None:
-        if key in self.observers:
-            del self.observers[key]
+        if key in self.__observers:
+            del self.__observers[key]
 
     def notify_observers(self) -> None:
-        if CollectedType.COLLECTED_COIN in self.observers:
-            self.observers[CollectedType.COLLECTED_COIN].notify(1)
+        if CollectedType.COLLECTED_COIN in self.__observers:
+            self.__observers[CollectedType.COLLECTED_COIN].notify(1)
 
         if self.__value > 0:
-            self.observers[CollectedType.COLLECTED_SCORE].notify(self.__value)
+            self.__observers[CollectedType.COLLECTED_SCORE].notify(self.__value)
 
     def get_value(self) -> int:
         return self.__value

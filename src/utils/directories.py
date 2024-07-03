@@ -51,10 +51,10 @@ POWER_UPS_DIR = SPRITES_DIR + "power_ups/"
 
 # == Flag ==
 # == Flag name ==
-FLAG_STAND_DIR = FLAG_DIR + "stand/"
 FLAG_PIPE_DIR = FLAG_DIR + "pipe/"
 FLAG_WIN_DIR = FLAG_DIR + "win/"
 FLAG_SUPPORT_DIR = FLAG_DIR + "support/"
+FLAG_LIMITER_DIR = FLAG_DIR + "limiter/"
 
 
 # == Background ==
