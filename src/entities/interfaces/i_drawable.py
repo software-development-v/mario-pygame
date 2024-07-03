@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Optional
+
 from pygame import Surface
 
 from src.utils import Camera

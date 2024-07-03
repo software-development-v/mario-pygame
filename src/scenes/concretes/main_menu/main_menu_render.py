@@ -2,9 +2,13 @@ from typing import List, Tuple
 
 from pygame import Rect, Surface, display, font
 
-
-from src.utils import GAME_FONT, MENU_BACKGROUND, ORANGE_COLOR, WHITE_COLOR
-from src.utils import read_high_score
+from src.utils import (
+    GAME_FONT,
+    MENU_BACKGROUND,
+    ORANGE_COLOR,
+    WHITE_COLOR,
+    read_high_score,
+)
 
 from ...abstractions import Render
 
@@ -40,8 +44,6 @@ class MainMenuRender(Render):
         )
 
         self.top_score: int = read_high_score()
-
-
 
     def render(self) -> None:
         self._screen.blit(self.background_image, (0, 0))

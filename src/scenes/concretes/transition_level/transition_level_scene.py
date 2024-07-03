@@ -3,12 +3,7 @@ from typing import Callable, Dict, Optional
 from src.data import GameData
 from src.entities import Hero
 from src.enums import HeroType, Level, SceneAction, World
-from src.level import (
-    ILevelManager,
-    LevelManager,
-    ObstaclesManager
-
-)
+from src.level import ILevelManager, LevelManager, ObstaclesManager
 from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
     SCREEN_HEIGHT,
@@ -41,8 +36,7 @@ class TransitionLevelScene(Scene):
 
         super().__init__(
             TransitionLevelSceneRender(self.__level_manager, self.__game_data),
-            TransitionLevelSceneTick(
-                self.__level_manager, dispatcher),
+            TransitionLevelSceneTick(self.__level_manager, dispatcher),
             dispatcher,
         )
 
@@ -78,13 +72,12 @@ class TransitionLevelScene(Scene):
             camera,
         )
 
-
     def configure_next_level(self, level_manager: ILevelManager) -> None:
         self.__level_manager.configure_level(
-                        level_manager.get_hero(),
-                        level_manager.get_hero_type(),
-                        level_manager.get_current_time(),
-                        level_manager.get_score(),
-                        level_manager.get_lives(),
-                        level_manager.get_coins(),
-                    )
+            level_manager.get_hero(),
+            level_manager.get_hero_type(),
+            level_manager.get_current_time(),
+            level_manager.get_score(),
+            level_manager.get_lives(),
+            level_manager.get_coins(),
+        )

@@ -77,7 +77,6 @@ class CollisionsHandler(ICollisionsHandler):
                 self.hero.set_vel_y(0)
                 self.hero.set_action(HeroAction.JUMPING, False)
 
-
             break
 
         if not floor_collide:

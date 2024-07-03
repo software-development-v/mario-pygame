@@ -18,7 +18,6 @@ class LevelSceneRender(Render):
         self.__level_manager = level_manager
         self.__level_metrics_renderer = LevelMetricsRenderer()
 
-
     def render(self) -> None:
         background = self.__level_manager.get_background()
         self._screen.blit(background, (0, 0))
@@ -52,6 +51,3 @@ class LevelSceneRender(Render):
             self.__level_manager.get_world().value,
             self.__level_manager.get_level().value,
         )
-
-
-

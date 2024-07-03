@@ -19,5 +19,6 @@ def write_high_score(high_score: int) -> None:
     with open(HIGH_LEVEL_SCORE_FILE, "w") as file:
         dump({"high_score": high_score}, file)
 
+
 def create_high_score_file():
     makedirs(path.dirname(HIGH_LEVEL_SCORE_FILE), exist_ok=True)

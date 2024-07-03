@@ -1,3 +1,4 @@
+from .animations import COIN_ICON_1, COIN_ICON_2, COIN_ICON_3
 from .backgrounds import CHARACTER_SELECTION_MENU, MENU_BACKGROUND
 from .cinematics import FINAL_CINEMATIC_AUDIO, FINAL_CINEMATIC_VIDEO
 from .elements import (
@@ -202,9 +203,7 @@ from .power_ups import (
     PIJCHU_BALL_BOOM_3,
 )
 from .resources import HIGH_LEVEL_SCORE_FILE
-from .sounds import JUMP_SOUND,COLLECTED_COIN_SOUND
-
-from .animations import COIN_ICON_1, COIN_ICON_2, COIN_ICON_3
+from .sounds import COLLECTED_COIN_SOUND, JUMP_SOUND
 
 __all__ = [
     "JUMP_SOUND",

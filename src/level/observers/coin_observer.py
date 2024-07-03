@@ -1,12 +1,13 @@
-from src.entities import IElementObserver
-from ..interfaces.i_level_manager import ILevelManager
-from src.utils import COIN_LIMIT
-
 from pygame import mixer
-from src.utils import COLLECTED_COIN_SOUND
+
+from src.entities import IElementObserver
+from src.utils import COIN_LIMIT, COLLECTED_COIN_SOUND
+
+from ..interfaces import ILevelManager
+
 
 class CoinObserver(IElementObserver[int]):
-    def __init__(self, level_manager:ILevelManager) -> None:
+    def __init__(self, level_manager: ILevelManager) -> None:
         self.__level_manager = level_manager
         self.sound = mixer.Sound(COLLECTED_COIN_SOUND)
 
@@ -15,9 +16,7 @@ class CoinObserver(IElementObserver[int]):
         coins = self.__level_manager.get_coins()
         coins = coins + value
         if coins > COIN_LIMIT:
-            self.__level_manager.set_lives(self.__level_manager.get_lives()+1)
+            self.__level_manager.set_lives(self.__level_manager.get_lives() + 1)
             coins = 0
 
         self.__level_manager.set_coins(coins)
-
-

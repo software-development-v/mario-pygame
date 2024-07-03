@@ -88,12 +88,11 @@ class LevelManager(ILevelManager):
     def get_coins(self) -> int:
         return self.__coins
 
-    def set_coins(self, value :int) -> None:
+    def set_coins(self, value: int) -> None:
         self.__coins = value
 
-    def set_score(self, value : int) -> None:
+    def set_score(self, value: int) -> None:
         self.__score = value
-
 
     def configure_level(
         self,

@@ -1,7 +1,6 @@
 from pygame import Surface
 
-from src.utils import get_centered_message
-from src.utils.high_score_manager import write_high_score
+from src.utils import get_centered_message, write_high_score
 
 from ..abstracts import LevelState
 

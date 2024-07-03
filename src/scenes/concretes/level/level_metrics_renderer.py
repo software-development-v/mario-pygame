@@ -1,9 +1,15 @@
 from pygame import Surface
 
 from src.entities import CoinIcon
-from src.utils import SCREEN_WIDTH, get_format_number, get_message
-from src.utils.classes.position import Position
-from src.utils.constants import METRICS_BAR_POS_Y, SMALL_SIZE, METRICS_BAR_POS_X
+from src.utils import (
+    METRICS_BAR_POS_X,
+    METRICS_BAR_POS_Y,
+    SCREEN_WIDTH,
+    SMALL_SIZE,
+    Position,
+    get_format_number,
+    get_message,
+)
 
 
 class LevelMetricsRenderer:
@@ -51,7 +57,7 @@ class LevelMetricsRenderer:
             ],
         )
         if not static:
-             self.__coin.animate()
+            self.__coin.animate()
 
         self.__coin.draw(surf)
 

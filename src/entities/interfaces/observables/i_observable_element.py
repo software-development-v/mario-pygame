@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
+from typing import Generic, TypeVar
 
 from src.enums import CollectedType
 
 from .i_element_observer import IElementObserver
-from typing import Generic, TypeVar
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 class IObservableElement(ABC, Generic[T]):

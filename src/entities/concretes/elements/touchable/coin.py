@@ -1,6 +1,6 @@
 from src.enums import ElementSubType, ElementType
-
 from src.utils import Position, elements
+
 from ....abstractions import InteractiveElement
 
 
@@ -18,5 +18,3 @@ class Coin(InteractiveElement):
         self._set_is_touchable(False)
         super().notify_observers()
         self.dispose()
-
-

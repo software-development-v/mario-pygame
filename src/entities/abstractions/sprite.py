@@ -98,7 +98,7 @@ class Sprite(PygameSprite, ISprite, ABC):
     def draw(
         self,
         screen: Surface,
-        camera: Optional[Camera]=None,
+        camera: Optional[Camera] = None,
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
     ) -> None:

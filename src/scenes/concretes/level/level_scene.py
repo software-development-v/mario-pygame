@@ -2,10 +2,10 @@ from typing import Callable, Dict
 
 from pygame import time
 
-from src.entities import InteractiveElement, Coin
-from src.enums import SceneAction, CollectedType
-from src.level import ILevelManager
-from src.level import ScoreObserver, CoinObserver
+from src.entities import Coin, InteractiveElement
+from src.enums import CollectedType, SceneAction
+from src.level import CoinObserver, ILevelManager, ScoreObserver
+
 from ...abstractions import Scene
 from .level_scene_render import LevelSceneRender
 from .level_scene_tick import LevelSceneTick
@@ -26,13 +26,16 @@ class LevelScene(Scene):
             dispatcher,
         )
 
-
-    def __configure_observers(self, level_manager: ILevelManager)-> None:
+    def __configure_observers(self, level_manager: ILevelManager) -> None:
         score_observer = ScoreObserver(level_manager)
         coin_observer = CoinObserver(level_manager)
 
-        for element  in level_manager.get_obstacles_manager().get_sprites():
+        for element in level_manager.get_obstacles_manager().get_sprites():
             if isinstance(element, InteractiveElement):
-                element.add_observer(CollectedType.COLLECTED_SCORE,score_observer)
+                element.add_observer(
+                    CollectedType.COLLECTED_SCORE, score_observer
+                )
                 if isinstance(element, Coin):
-                    element.add_observer(CollectedType.COLLECTED_COIN,coin_observer)
+                    element.add_observer(
+                        CollectedType.COLLECTED_COIN, coin_observer
+                    )

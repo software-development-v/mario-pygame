@@ -4,12 +4,12 @@ from .elements import (
     Castle,
     Cloud,
     Coin,
+    CoinIcon,
     Flag,
     MisteryBox,
     Mountain,
     Pipe,
     Tree,
-    CoinIcon,
 )
 from .hero import Hero
 
@@ -25,6 +25,5 @@ __all__ = [
     "MisteryBox",
     "Pipe",
     "Hero",
-    "CoinIcon"
+    "CoinIcon",
 ]
-

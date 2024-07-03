@@ -40,5 +40,5 @@ class InteractiveElement(Element, IObservableElement[int]):
         if CollectedType.COLLECTED_COIN in self.__observers:
             self.__observers[CollectedType.COLLECTED_COIN].notify(1)
 
-        if self.__value>0:
+        if self.__value > 0:
             self.__observers[CollectedType.COLLECTED_SCORE].notify(self.__value)
