@@ -1,7 +1,7 @@
 # flake8: noqa: F403
 from .assets import *
 from .camera import Camera
-from .classes import Position, Singleton, Size
+from .classes import Position, Singleton, Size, CheckpointManager
 from .colors import *
 from .constants import *
 from .directories import *
@@ -13,5 +13,6 @@ __all__ = [
     "Position",
     "Size",
     "Singleton",
+    "CheckpointManager",
     "Camera",
 ]

@@ -1,8 +1,8 @@
 from typing import Callable, Dict, Optional
 
 from src.data import GameData
-from src.entities import Hero
-from src.enums import HeroType, Level, SceneAction, World
+from src.entities import Coin, Hero, InteractiveElement
+from src.enums import CollectedType, HeroType, Level, SceneAction, World
 from src.level import (
     EnemyManager,
     ILevelManager,
@@ -12,10 +12,12 @@ from src.level import (
 from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
     SCREEN_HEIGHT,
-    SCREEN_VIEW_PLAY_HEIGHT,
-    SCREEN_VIEW_PLAY_WIDTH,
+    SCREEN_VIEW_PLAY_LEFT,
+    SCREEN_VIEW_PLAY_LEFT_WITH_CHECKPOINT,
+    SCREEN_VIEW_PLAY_RIGHT,
     Camera,
 )
+from src.utils.classes import CheckpointManager
 
 from ...abstractions import Scene
 from .transition_level_scene_render import TransitionLevelSceneRender
@@ -54,12 +56,27 @@ class TransitionLevelScene(Scene):
 
         level_data = self.__game_data.get_level_data(world, level)
 
+        for element in level_data.get_elements():
+            if isinstance(element, InteractiveElement):
+                element.add_observer(
+                    CollectedType.COLLECTED_SCORE, self.__score_manager
+                )
+                if isinstance(element, Coin):
+                    element.add_observer(
+                        CollectedType.COLLECTED_COIN, self.__coin_manager
+                    )
+
+        if CheckpointManager.has_checkpoint():
+            self.screen_view_left = SCREEN_VIEW_PLAY_LEFT_WITH_CHECKPOINT
+        else:
+            self.screen_view_left = SCREEN_VIEW_PLAY_LEFT
+
         camera = Camera(
             level_data.get_screen_width(),
             SCREEN_HEIGHT,
-            SCREEN_VIEW_PLAY_WIDTH,
+            SCREEN_VIEW_PLAY_RIGHT,
             SCREEN_CAMERA_THRESHOLD,
-            SCREEN_VIEW_PLAY_HEIGHT,
+            self.screen_view_left,
         )
 
         return LevelManager(
@@ -87,3 +104,6 @@ class TransitionLevelScene(Scene):
             level_manager.get_lives(),
             level_manager.get_coins(),
         )
+
+    def get_level_manager(self) -> ILevelManager:
+        return self.__level_manager

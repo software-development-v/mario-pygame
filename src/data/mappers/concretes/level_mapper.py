@@ -10,7 +10,13 @@ from src.enums import (
     Level,
     World,
 )
-from src.utils import BLACK_COLOR, LEVELS_DIR, SCALE, Position
+from src.utils import (
+    BLACK_COLOR,
+    LEVELS_DIR,
+    SCALE,
+    CheckpointManager,
+    Position,
+)
 
 from ...background import BackgroundColor, IBackground
 from ...interfaces import ILevelData
@@ -33,8 +39,9 @@ class LevelMapper(ILevelMapper):
         adjust_positions(data["enemies"], SCALE)
 
         background = self._map_background(data["background"])
+        has_checkpoint = CheckpointManager.has_checkpoint()
         position = self._map_player_start_position(
-            data["start_player_position"]
+            data["start_player_position"], has_checkpoint
         )
         enemies = self._map_enemies(data["enemies"])
         elements = self._map_elements(data["elements"])
@@ -71,8 +78,13 @@ class LevelMapper(ILevelMapper):
         else:
             return BackgroundColor(BLACK_COLOR)
 
-    def _map_player_start_position(self, data: Dict[str, Any]) -> Position:
-        return Position(data["x"], data["y"])
+    def _map_player_start_position(
+        self, data: Dict[str, Any], has_checkpoint: bool
+    ) -> Position:
+        if has_checkpoint:
+            return Position(data["checkpoint"], data["y"])
+        else:
+            return Position(data["x"], data["y"])
 
     def _map_elements(self, elements: List[Dict[str, Any]]) -> List[Element]:
         mappedElements: List[Element] = []
