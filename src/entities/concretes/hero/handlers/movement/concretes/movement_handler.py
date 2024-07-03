@@ -23,7 +23,6 @@ class MovementHandler(IMovementHandler):
     ) -> Tuple[float, float]:
         dx: float = 0.0
 
-        print(hero_rect.x)
         if game_events[GameEvent.RIGHT]:
             dx = HERO_SPEED
             self.__hero.set_face_right(True)
