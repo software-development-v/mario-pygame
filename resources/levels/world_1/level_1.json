@@ -3260,6 +3260,21 @@
             "position": [2850, 450],
             "type": "PIPE",
             "subtype": "PIPE_HEAD_BIG"
+        },
+        {
+            "position": [400, 600],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
+            "position": [450, 600],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
+            "position": [500, 600],
+            "type": "COIN",
+            "subtype": "COIN"
         }
     ],
     "power_ups": []

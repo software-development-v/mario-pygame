@@ -1,6 +1,5 @@
-from src.enums import ElementSubType, ElementType
+from src.enums import ElementSubType, ElementType, AnimationType
 from src.utils import Position, elements
-
 from ....abstractions import InteractiveElement
 
 
@@ -16,5 +15,6 @@ class Coin(InteractiveElement):
 
     def notify_observers(self) -> None:
         self._set_is_touchable(False)
+        self.animation_oberservers.notify((self,[AnimationType.COLLECTED_COIN,AnimationType.COLLECTED_SCORE]))
         super().notify_observers()
         self.dispose()
