@@ -36,9 +36,9 @@ class LevelManager(ILevelManager):
         self.__level_screen_width = level_screen_width
         self.__camera = camera
         self.__lives = lives
+        self.__win: bool = False
         self.__coins = 0
         self.__score = 0
-        self.__win: bool = False
 
     def get_hero(self) -> Hero:
         return self.__hero
