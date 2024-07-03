@@ -222,19 +222,19 @@
           "subtype": "OVERWORLD_TERRAIN_BLOCK"
         },
         {
-          "position": [1050, 700],
-          "type": "BLOCK",
-          "subtype": "OVERWORLD_TERRAIN_BLOCK"
+            "position": [1050, 700],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
         },
         {
-          "position": [1000, 700],
-          "type": "BLOCK",
-          "subtype": "OVERWORLD_TERRAIN_BLOCK"
+            "position": [1000, 700],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
         },
         {
-          "position": [950, 700],
-          "type": "BLOCK",
-          "subtype": "OVERWORLD_TERRAIN_BLOCK"
+            "position": [950, 700],
+            "type": "BLOCK",
+            "subtype": "OVERWORLD_TERRAIN_BLOCK"
         },
         {
           "position": [900, 700],
