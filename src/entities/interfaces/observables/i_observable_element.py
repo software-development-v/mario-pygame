@@ -1,14 +1,17 @@
 from abc import ABC, abstractmethod
+from typing import Generic, TypeVar
 
 from src.enums import CollectedType
 
 from .i_element_observer import IElementObserver
 
+T = TypeVar("T")
 
-class IObservableElement(ABC):
+
+class IObservableElement(ABC, Generic[T]):
 
     @abstractmethod
-    def add_observer(self, key: CollectedType, observer: IElementObserver):
+    def add_observer(self, key: CollectedType, observer: IElementObserver[T]):
         pass
 
     @abstractmethod

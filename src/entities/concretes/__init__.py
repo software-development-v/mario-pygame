@@ -4,6 +4,7 @@ from .elements import (
     Castle,
     Cloud,
     Coin,
+    CoinIcon,
     Flag,
     MisteryBox,
     Mountain,
@@ -24,4 +25,5 @@ __all__ = [
     "MisteryBox",
     "Pipe",
     "Hero",
+    "CoinIcon",
 ]

@@ -5,6 +5,7 @@ from .concretes import (
     Castle,
     Cloud,
     Coin,
+    CoinIcon,
     Flag,
     Hero,
     MisteryBox,
@@ -40,4 +41,5 @@ __all__ = [
     "ElementFactory",
     "IObservableElement",
     "IElementObserver",
+    "CoinIcon",
 ]

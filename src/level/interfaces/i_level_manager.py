@@ -79,7 +79,11 @@ class ILevelManager(ABC):
         pass
 
     @abstractmethod
-    def add_coins(self, value: int) -> None:
+    def set_coins(self, value: int) -> None:
+        pass
+
+    @abstractmethod
+    def set_score(self, value: int) -> None:
         pass
 
     @abstractmethod

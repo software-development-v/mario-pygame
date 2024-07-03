@@ -30,3 +30,6 @@ class Element(Sprite, ABC):
 
     def get_is_touchable(self) -> bool:
         return self.__is_touchable
+
+    def _set_is_touchable(self, is_touchable: bool) -> None:
+        self.__is_touchable = is_touchable

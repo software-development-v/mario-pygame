@@ -14,6 +14,9 @@ from .assets import (
     COIN_2,
     COIN_3,
     COIN_4,
+    COIN_ICON_1,
+    COIN_ICON_2,
+    COIN_ICON_3,
     FLAG_PIPE,
     FLAG_SUPPORT,
     FLAG_WIN,
@@ -90,5 +93,8 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
     },
     ElementType.COIN: {
         ElementSubType.COIN: [COIN_1, COIN_2, COIN_3, COIN_4],
+    },
+    ElementType.COIN_ICON: {
+        ElementSubType.COIN_ICON: [COIN_ICON_1, COIN_ICON_2, COIN_ICON_3],
     },
 }

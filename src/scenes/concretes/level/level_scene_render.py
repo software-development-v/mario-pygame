@@ -16,7 +16,7 @@ class LevelSceneRender(Render):
     def __init__(self, level_manager: ILevelManager) -> None:
         super().__init__()
         self.__level_manager = level_manager
-        self.__level_metrics_renderer = LevelMetricsRenderer(self._screen)
+        self.__level_metrics_renderer = LevelMetricsRenderer()
 
     def render(self) -> None:
         background = self.__level_manager.get_background()
@@ -41,7 +41,9 @@ class LevelSceneRender(Render):
         hero.draw(
             self._screen, camera, hero_x_rect_percent, hero_y_rect_percent
         )
+
         self.__level_metrics_renderer.render(
+            self._screen,
             self.__level_manager.get_hero_type().value,
             self.__level_manager.get_current_time(),
             self.__level_manager.get_score(),
