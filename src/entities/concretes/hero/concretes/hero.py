@@ -109,23 +109,26 @@ class Hero(Sprite, IHero):
         self.__collided_win = value
 
     def hero_down(self) -> None:
+        y_position = self.get_rect().y
+        x_position = self.get_rect().x
+
         if (
             (
                 self.get_hero_level() is HeroLevel.NORMAL
                 or self.get_hero_level() is HeroLevel.BORRACHO_SMALL
             )
-            and self.get_rect().y < self.LIMIT_SMALL
+            and y_position < self.LIMIT_SMALL
         ) or (
             (
                 self.get_hero_level() is HeroLevel.BIG
                 or self.get_hero_level() is HeroLevel.COCA
                 or self.get_hero_level() is HeroLevel.BORRACHO_BIG
             )
-            and self.get_rect().y < self.LIMIT_BIG
+            and y_position < self.LIMIT_BIG
         ):
             self.set_vel_y(self.get_vel_y() + 0.4)
             self.add_y_rect(5)
-        elif self.get_rect().x == FLAG_POSITION:
+        elif x_position == FLAG_POSITION or x_position == FLAG_POSITION - 2:
             self.add_x_rect(60)
             self.set_face_right(False)
             self.set_action(HeroAction.WIN, False)

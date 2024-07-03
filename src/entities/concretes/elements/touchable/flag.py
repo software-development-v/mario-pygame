@@ -14,12 +14,12 @@ from ....abstractions import InteractiveElement
 class Flag(InteractiveElement):
 
     RANGES = [
-        (240, 299), # FIRST FLAG POSITION
-        (300, 359), # SECOND FLAG POSITION
-        (360, 419), # THIRD FLAG POSITION
-        (420, 539), # FOURTH FLAG POSITION
-        (540, 659), # FIFTH FLAG POSITION
-        (660, 0), # FINAL FLAG POSITION
+        (240, 299),  # FIRST FLAG POSITION
+        (300, 359),  # SECOND FLAG POSITION
+        (360, 419),  # THIRD FLAG POSITION
+        (420, 539),  # FOURTH FLAG POSITION
+        (540, 659),  # FIFTH FLAG POSITION
+        (660, 0),  # FINAL FLAG POSITION
     ]
 
     SCORES = [
@@ -44,8 +44,12 @@ class Flag(InteractiveElement):
             x_rect_percent=(
                 0.145 if element_sub_type == ElementSubType.FLAG_SUPPORT else 1
             ),
+            is_touchable=(
+                False if element_sub_type is ElementSubType.FLAG_WIN else True
+            ),
         )
         self.__points = self.__get_points()
+        self.__element_sub_type = element_sub_type
 
     def __get_points(self) -> int:
         y_position = self.get_rect().y
@@ -65,19 +69,23 @@ class Flag(InteractiveElement):
         else:
             return self.DEFAULT_SCORE
 
-    def verify_player_position(self, hero: IHero):
-        if hero.get_rect().x > FLAG_POSITION:
-            difference_position = hero.get_rect().x - FLAG_POSITION
-            hero.add_x_rect(-difference_position)
+    def __fix_hero_position(self, hero: IHero):
+        if self.__element_sub_type is ElementSubType.FLAG_SUPPORT:
+            hero.add_y_rect(-61)
+        else:
 
-        if hero.get_rect().y < self.get_rect().y:
-            hero.add_y_rect(-hero.get_rect().y)
-            hero.add_y_rect(self.get_rect().y)
+            if hero.get_rect().x > FLAG_POSITION:
+                difference_position = hero.get_rect().x - FLAG_POSITION
+                hero.add_x_rect(-difference_position)
+
+            if hero.get_rect().y < self.get_rect().y:
+                hero.add_y_rect(-hero.get_rect().y)
+                hero.add_y_rect(self.get_rect().y)
 
     def notify_observers(self, sprite: Optional[ISprite] = None) -> None:
         if isinstance(sprite, Hero) and not sprite.get_collided_win():
             sprite.set_action(HeroAction.WIN, True)
-            self.verify_player_position(sprite)
+            self.__fix_hero_position(sprite)
             self.observers[CollectedType.COLLECTED_SCORE].update(self.__points)
             sprite.set_collided_win(True)
             sprite.set_face_right(True)

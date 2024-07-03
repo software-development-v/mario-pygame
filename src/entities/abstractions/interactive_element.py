@@ -17,6 +17,7 @@ class InteractiveElement(Element, IObservableElement[int]):
         value: int = 0,
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
+        is_touchable: bool = True,
     ) -> None:
         self.__value = value
         self.observers: Dict[CollectedType, IElementObserver[int]] = {}
@@ -28,7 +29,7 @@ class InteractiveElement(Element, IObservableElement[int]):
             images,
             x_rect_percent=x_rect_percent,
             y_rect_percent=y_rect_percent,
-            is_touchable=True,
+            is_touchable=is_touchable,
         )
 
     def add_observer(
