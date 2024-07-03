@@ -39,6 +39,7 @@ from .assets import (
     PIPE_BODY_STYLE_5,
     PIPE_HEAD_BIG,
     PIPE_HEAD_SMALL,
+    PIPE_HEAD_HORIZONTAL,
     SMALL_BUSH,
     SMALL_CLOUD,
     SMALL_MOUNTAIN,
@@ -67,6 +68,7 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
     ElementType.PIPE: {
         ElementSubType.PIPE_HEAD_SMALL: [PIPE_HEAD_SMALL],
         ElementSubType.PIPE_HEAD_BIG: [PIPE_HEAD_BIG],
+        ElementSubType.PIPE_HEAD_HORIZONTAL: [PIPE_HEAD_HORIZONTAL],
         ElementSubType.PIPE_BODY_STYLE_1: [PIPE_BODY_STYLE_1],
         ElementSubType.PIPE_BODY_STYLE_2: [PIPE_BODY_STYLE_2],
         ElementSubType.PIPE_BODY_STYLE_3: [PIPE_BODY_STYLE_3],
