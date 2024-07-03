@@ -1,8 +1,10 @@
 from abc import ABC
 from typing import List
+
 from pygame import Surface
 
-from src.utils import Position, ANIMATION_INTERVAL
+from src.utils import ANIMATION_INTERVAL, Position
+
 from .sprite import Sprite
 
 
@@ -35,7 +37,6 @@ class Animation(Sprite, ABC):
         self.__speed: float = speed
         self.__calculate_speed_axes()
 
-
     def _get_surfaces(self) -> List[Surface]:
         return self.__surfaces
 
@@ -46,8 +47,8 @@ class Animation(Sprite, ABC):
         self.__speed_y = self.__speed
         self.__speed_x = 0
 
-        if difference_x>0:
-            self.__speed_x = difference_x/(difference_y/difference_y)
+        if difference_x > 0:
+            self.__speed_x = difference_x / (difference_y / difference_y)
 
     def animate(self) -> None:
         super().animate()

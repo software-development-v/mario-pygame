@@ -1,23 +1,33 @@
 from pygame import Surface, transform
-from src.utils import Camera, Position,GENERAL_HEIGHT, get_centered_message, FONT_MEDIUM_SIZE
-from ...abstractions.animation import Animation
 
+from src.utils import (
+    FONT_MEDIUM_SIZE,
+    GENERAL_HEIGHT,
+    Camera,
+    Position,
+    get_centered_message,
+)
+
+from ...abstractions import Animation
 
 
 class CollectedScore(Animation):
-    def __init__(self, position: Position, value: int, height: float=0):
+    def __init__(self, position: Position, value: int, height: float = 0):
         surface, rect = get_centered_message(str(value), size=FONT_MEDIUM_SIZE)
-        surface = transform.scale(surface, (rect.width-20, rect.height+10))
+        surface = transform.scale(surface, (rect.width - 20, rect.height + 10))
         self.__last_camara_left_edge: float = 0
         self.__x_increment: float = 0
-        position.x+=25-(rect.width//2)
+        position.x += 25 - (rect.width // 2)
 
-        if height==0:
-            height = GENERAL_HEIGHT*(2 if value<500 else 3)
+        if height == 0:
+            height = GENERAL_HEIGHT * (2 if value < 500 else 3)
 
         super().__init__(
             [surface],
-            transitions=[position, Position(position.x, int(position.y - height))],
+            transitions=[
+                position,
+                Position(position.x, int(position.y - height)),
+            ],
             speed=6,
         )
 

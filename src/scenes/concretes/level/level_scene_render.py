@@ -1,7 +1,7 @@
 from pygame import Rect
 
 from src.enums import HeroLevel
-from src.level import ILevelManager, AnimationManager
+from src.level import AnimationManager, ILevelManager
 from src.utils import (
     HERO_BIG_RECT_X_PERCENT,
     HERO_NORMAL_RECT_X_PERCENT,
@@ -13,7 +13,9 @@ from .level_metrics_renderer import LevelMetricsRenderer
 
 
 class LevelSceneRender(Render):
-    def __init__(self, level_manager: ILevelManager, animation_manager: AnimationManager) -> None:
+    def __init__(
+        self, level_manager: ILevelManager, animation_manager: AnimationManager
+    ) -> None:
         super().__init__()
         self.__level_manager = level_manager
         self.__level_metrics_renderer = LevelMetricsRenderer()

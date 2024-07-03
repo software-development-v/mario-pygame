@@ -1,17 +1,16 @@
 from typing import List, Tuple
 
-
 from src.entities import (
-    CollectedCoin,
-    IElementObserver,
-    CollectedScore,
-    InteractiveElement,
     Animation,
     AnimationCompose,
+    CollectedCoin,
+    CollectedScore,
+    IElementObserver,
+    InteractiveElement,
 )
-
 from src.enums import AnimationType
 from src.utils import Position
+
 from ..abstractions.sprites_manager import SpritesManager
 
 

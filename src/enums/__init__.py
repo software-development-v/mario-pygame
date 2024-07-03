@@ -1,3 +1,4 @@
+from .animation_type import AnimationType
 from .background_type import BackgroundType
 from .collected_type import CollectedType
 from .controller_input import ControllerInput
@@ -12,7 +13,6 @@ from .keyboard_input import KeyboardInput
 from .level import Level
 from .scene_action import SceneAction
 from .world import World
-from .animation_type import AnimationType
 
 __all__ = [
     "GameEvent",
