@@ -1,10 +1,15 @@
+from .animations import (
+    AnimationCompose,
+    CoinIcon,
+    CollectedCoin,
+    CollectedScore,
+)
 from .elements import (
     Block,
     Bush,
     Castle,
     Cloud,
     Coin,
-    CoinIcon,
     Flag,
     MisteryBox,
     Mountain,
@@ -26,4 +31,7 @@ __all__ = [
     "Pipe",
     "Hero",
     "CoinIcon",
+    "CollectedCoin",
+    "CollectedScore",
+    "AnimationCompose",
 ]

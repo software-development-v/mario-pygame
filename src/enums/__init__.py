@@ -1,3 +1,4 @@
+from .animation_type import AnimationType
 from .background_type import BackgroundType
 from .collected_type import CollectedType
 from .controller_input import ControllerInput
@@ -28,4 +29,5 @@ __all__ = [
     "SceneAction",
     "CollectedType",
     "HeroAction",
+    "AnimationType",
 ]
