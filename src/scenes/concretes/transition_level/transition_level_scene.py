@@ -10,6 +10,7 @@ from src.level import (
     ObstaclesManager,
     ScoreObserver,
 )
+from src.level.sprites.enemy_manager import EnemyManager
 from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
     SCREEN_HEIGHT,
@@ -91,6 +92,7 @@ class TransitionLevelScene(Scene):
             ),
             hero,
             ObstaclesManager(level_data.get_elements()),
+            EnemyManager(level_data.get_enemies()),
             world,
             level,
             level_data.get_background(),
