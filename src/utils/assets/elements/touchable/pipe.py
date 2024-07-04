@@ -6,7 +6,9 @@ PIPE_HEAD_SMALL = create_image(PIPE_HEAD_DIR + "head_small.png", PIPE_HEAD_SIZE)
 
 PIPE_HEAD_BIG = create_image(PIPE_HEAD_DIR + "head_big.png", BIG_SIZE)
 
-PIPE_HEAD_HORIZONTAL = create_image(PIPE_HEAD_DIR + "head_horizontal.png", PIPE_HEAD_HORIZONTAL_SIZE)
+PIPE_HEAD_HORIZONTAL = create_image(
+    PIPE_HEAD_DIR + "head_horizontal.png", PIPE_HEAD_HORIZONTAL_SIZE
+)
 
 PIPE_BODY_STYLE_1 = create_image(PIPE_BODY_DIR + "style_1.png", BIG_SIZE)
 

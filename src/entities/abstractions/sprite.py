@@ -115,6 +115,9 @@ class Sprite(PygameSprite, ISprite, ABC):
         surfaces = self._get_surfaces()
 
         if len(surfaces) == 1:
+            if self.__index >= len(surfaces):
+                self.__index = INIT_IMAGE_INDEX
+
             return
 
         current_time = time.get_ticks()

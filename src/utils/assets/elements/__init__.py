@@ -33,8 +33,8 @@ from .touchable import (
     PIPE_BODY_STYLE_4,
     PIPE_BODY_STYLE_5,
     PIPE_HEAD_BIG,
-    PIPE_HEAD_SMALL,
     PIPE_HEAD_HORIZONTAL,
+    PIPE_HEAD_SMALL,
     WALL_BLOCK,
 )
 
