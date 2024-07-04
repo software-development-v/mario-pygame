@@ -20,7 +20,7 @@ jobs:
             matrix:
                 os: [ubuntu-latest]
                 node_version: [20.8.1]
-                pnpm_version: [latest]
+                pnpm_version: [9.4.0]
                 python_version: [3.12.3]
             fail-fast: false
 
