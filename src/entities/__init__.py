@@ -1,4 +1,4 @@
-from .abstractions import Element, InteractiveElement, Sprite
+from .abstractions import Element, Enemy, InteractiveElement, Sprite
 from .concretes import (
     Block,
     Bush,
@@ -12,7 +12,7 @@ from .concretes import (
     Pipe,
     Tree,
 )
-from .factories import ElementFactory
+from .factories import ElementFactory, EnemyFactory
 from .interfaces import (
     IAnimate,
     IDrawable,
@@ -22,6 +22,7 @@ from .interfaces import (
 
 __all__ = [
     "IAnimate",
+    "Enemy",
     "IDrawable",
     "Sprite",
     "Element",
@@ -38,6 +39,7 @@ __all__ = [
     "Pipe",
     "Hero",
     "ElementFactory",
+    "EnemyFactory",
     "IObservableElement",
     "IElementObserver",
 ]
