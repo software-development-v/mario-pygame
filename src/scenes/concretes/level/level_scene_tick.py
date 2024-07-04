@@ -1,6 +1,6 @@
 from typing import Callable, Dict
 
-from pygame import time
+from pygame import Rect, time
 
 from src.enums import GameEvent, HeroState, SceneAction
 from src.level import AnimationManager, ILevelManager
@@ -31,14 +31,17 @@ class LevelSceneTick(Tick):
 
         self.__level_manager.set_current_time(start_time - seconds_elapsed)
 
-        obstacles_manager = self.__level_manager.get_obstacles_manager()
         hero = self.__level_manager.get_hero()
         camera = self.__level_manager.get_camera()
 
+        obstacles_manager = self.__level_manager.get_obstacles_manager()
         obstacles_manager.animate()
 
         hero.update(game_events, obstacles_manager.get_sprites(), camera)
         hero.animate()
+
+        hero_rect: Rect = hero.get_rect()
+        camera.update(hero_rect.x, hero_rect.width)
 
         self.__animation_manager.animate()
 
