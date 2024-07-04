@@ -5,7 +5,7 @@ from src.enums import HeroType, Level, World
 from src.utils import HERO_LIVES, Camera
 
 from ..interfaces import ILevelManager
-from ..sprites import ObstaclesManager
+from ..sprites import EnemyManager, ObstaclesManager
 
 
 class LevelManager(ILevelManager):
@@ -14,6 +14,7 @@ class LevelManager(ILevelManager):
         hero: Hero,
         hero_type: HeroType,
         obstacles_manager: ObstaclesManager,
+        enemy_manager: EnemyManager,
         world: World,
         level: Level,
         background: Surface,
@@ -25,6 +26,7 @@ class LevelManager(ILevelManager):
         self.__hero = hero
         self.__hero_type = hero_type
         self.__obstacles_manager = obstacles_manager
+        self.__enemy_manager = enemy_manager
         self.__world = world
         self.__level = level
         self.__background = background
@@ -45,6 +47,9 @@ class LevelManager(ILevelManager):
 
     def get_obstacles_manager(self) -> ObstaclesManager:
         return self.__obstacles_manager
+
+    def get_enemy_manager(self) -> EnemyManager:
+        return self.__enemy_manager
 
     def get_world(self) -> World:
         return self.__world
