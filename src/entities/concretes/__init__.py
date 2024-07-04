@@ -16,6 +16,7 @@ from .elements import (
     Pipe,
     Tree,
 )
+from .enemies import Evoomba, Valvoopa
 from .hero import Hero
 
 __all__ = [
@@ -34,4 +35,6 @@ __all__ = [
     "CollectedCoin",
     "CollectedScore",
     "AnimationCompose",
+    "Evoomba",
+    "Valvoopa",
 ]

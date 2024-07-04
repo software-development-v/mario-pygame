@@ -2,7 +2,7 @@ from typing import Dict, List
 
 from pygame import Surface
 
-from src.enums import ElementSubType, ElementType
+from src.enums import ElementSubType, ElementType, EnemyState, EnemyType
 
 from .assets import (
     BIG_BUSH,
@@ -17,6 +17,9 @@ from .assets import (
     COIN_ICON_1,
     COIN_ICON_2,
     COIN_ICON_3,
+    EVOOMBA_DIED,
+    EVOOMBA_WALKING_1,
+    EVOOMBA_WALKING_2,
     FLAG_PIPE,
     FLAG_SUPPORT,
     FLAG_WIN,
@@ -40,6 +43,11 @@ from .assets import (
     SMALL_CLOUD,
     SMALL_MOUNTAIN,
     SMALL_TREE,
+    VALVOOPA_COMING_OUT_1,
+    VALVOOPA_COMING_OUT_2,
+    VALVOOPA_INSIDE,
+    VALVOOPA_WALKING_1,
+    VALVOOPA_WALKING_2,
     WALL_BLOCK,
 )
 
@@ -96,5 +104,17 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
     },
     ElementType.COIN_ICON: {
         ElementSubType.COIN_ICON: [COIN_ICON_1, COIN_ICON_2, COIN_ICON_3],
+    },
+}
+
+enemies: Dict[EnemyType, Dict[EnemyState, List[Surface]]] = {
+    EnemyType.VALVOOPA: {
+        EnemyState.WALKING: [VALVOOPA_WALKING_1, VALVOOPA_WALKING_2],
+        EnemyState.COMING_OUT: [VALVOOPA_COMING_OUT_1, VALVOOPA_COMING_OUT_2],
+        EnemyState.INSIDE: [VALVOOPA_INSIDE],
+    },
+    EnemyType.EVOOMBA: {
+        EnemyState.WALKING: [EVOOMBA_WALKING_1, EVOOMBA_WALKING_2],
+        EnemyState.DEAD: [EVOOMBA_DIED],
     },
 }

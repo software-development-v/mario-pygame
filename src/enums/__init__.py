@@ -4,6 +4,8 @@ from .collected_type import CollectedType
 from .controller_input import ControllerInput
 from .element_sub_type import ElementSubType
 from .element_type import ElementType
+from .enemy_state import EnemyState
+from .enemy_type import EnemyType
 from .game_event import GameEvent
 from .hero_action import HeroAction
 from .hero_level import HeroLevel
@@ -30,4 +32,6 @@ __all__ = [
     "CollectedType",
     "HeroAction",
     "AnimationType",
+    "EnemyState",
+    "EnemyType",
 ]

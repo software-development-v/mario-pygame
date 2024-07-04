@@ -1,8 +1,15 @@
 from json import load
 from typing import Any, Dict, List
 
-from src.entities import Element, ElementFactory, Sprite
-from src.enums import BackgroundType, ElementSubType, ElementType, Level, World
+from src.entities import Element, ElementFactory, EnemyFactory, Sprite
+from src.enums import (
+    BackgroundType,
+    ElementSubType,
+    ElementType,
+    EnemyType,
+    Level,
+    World,
+)
 from src.utils import BLACK_COLOR, LEVELS_DIR, SCALE, Position
 
 from ...background import BackgroundColor, IBackground
@@ -16,12 +23,14 @@ class LevelMapper(ILevelMapper):
 
     def __init__(self) -> None:
         self.element_factory = ElementFactory()
+        self.enemy_factory = EnemyFactory()
 
     def map_level(self, world: World, level: Level) -> ILevelData:
         data = self.read_file_level(world, level)
 
         validate_level_data(data)
         adjust_positions(data["elements"], SCALE)
+        adjust_positions(data["enemies"], SCALE)
 
         background = self._map_background(data["background"])
         position = self._map_player_start_position(
@@ -80,8 +89,19 @@ class LevelMapper(ILevelMapper):
 
         return mappedElements
 
-    def _map_enemies(self, _enemies: List[Dict[str, Any]]) -> List[Sprite]:
-        return []
+    def _map_enemies(self, enemies: List[Dict[str, Any]]) -> List[Sprite]:
+        mappedEnemies: List[Sprite] = []
+
+        for enemy in enemies:
+            position = Position(enemy["position"][0], enemy["position"][1])
+            mappedEnemies.append(
+                self.enemy_factory.create(
+                    EnemyType(enemy["type"]),
+                    position,
+                )
+            )
+
+        return mappedEnemies
 
     def _map_power_ups(self, _power_ups: List[Dict[str, Any]]) -> List[Sprite]:
         return []

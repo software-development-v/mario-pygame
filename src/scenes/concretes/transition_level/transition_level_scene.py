@@ -3,7 +3,12 @@ from typing import Callable, Dict, Optional
 from src.data import GameData
 from src.entities import Hero
 from src.enums import HeroType, Level, SceneAction, World
-from src.level import ILevelManager, LevelManager, ObstaclesManager
+from src.level import (
+    EnemyManager,
+    ILevelManager,
+    LevelManager,
+    ObstaclesManager,
+)
 from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
     SCREEN_HEIGHT,
@@ -64,6 +69,7 @@ class TransitionLevelScene(Scene):
             ),
             hero,
             ObstaclesManager(level_data.get_elements()),
+            EnemyManager(level_data.get_enemies()),
             world,
             level,
             level_data.get_background(),

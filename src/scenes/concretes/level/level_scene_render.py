@@ -36,6 +36,9 @@ class LevelSceneRender(Render):
 
         self.__animation_manager.draw(self._screen, camera)
 
+        enemy_manager = self.__level_manager.get_enemy_manager()
+        enemy_manager.draw(self._screen, camera)
+
         hero_x_rect_percent = (
             hero.get_hero_level() == HeroLevel.NORMAL
             and HERO_NORMAL_RECT_X_PERCENT
