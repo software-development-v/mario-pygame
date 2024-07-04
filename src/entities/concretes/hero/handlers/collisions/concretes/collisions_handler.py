@@ -76,18 +76,14 @@ class CollisionsHandler(ICollisionsHandler):
                 dy = obstacle_rect.top - hero_rect.bottom
                 self.hero.set_vel_y(0)
                 self.hero.set_action(HeroAction.JUMPING, False)
-
+                if self.hero.get_actions()[HeroAction.RUNNING]:
+                    self.hero.set_hero_state(HeroState.RUN)
+                else:
+                    self.hero.set_hero_state(HeroState.IDLE)
             break
 
         if not floor_collide:
-            self.hero.set_actions(
-                {
-                    HeroAction.JUMPING: True,
-                    HeroAction.RUNNING: False,
-                    HeroAction.IDLE: False,
-                    HeroAction.WIN: False,
-                }
-            )
+            self.hero.set_action(HeroAction.JUMPING, True)
             self.hero.set_hero_state(HeroState.JUMP)
 
         return dy
