@@ -10,8 +10,11 @@
     "background_music": "LEVEL_01",
     "start_player_position": {
         "x": 150,
-        "y": 500,
-        "checkpoint": 4950
+        "y": 500
+    },
+    "check_point": {
+        "x": 4950,
+        "y": 500
     },
     "enemies": [
         {

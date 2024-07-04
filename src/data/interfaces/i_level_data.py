@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Optional
 
 from pygame import Surface
 
@@ -35,6 +35,10 @@ class ILevelData(ABC):
 
     @abstractmethod
     def get_player_init_position(self) -> Position:
+        pass
+
+    @abstractmethod
+    def get_checkpoint(self) -> Optional[Position]:
         pass
 
     @abstractmethod

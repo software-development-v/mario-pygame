@@ -78,6 +78,7 @@ def validate_start_player_position(start_player_position: Dict[str, Any]):
         positive=True,
     )
 
+
 def validate_element(element: Dict[str, Any]):
     validate_field_type(element["position"], list, "position")
     if len(element["position"]) != 2:

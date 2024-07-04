@@ -4,7 +4,6 @@ from pygame import Rect
 
 from src.enums import GameEvent, HeroAction
 from src.utils import HERO_SPEED, MAX_GRAVITY, Camera
-from src.utils.classes import CheckpointManager
 
 from ....interfaces import IHero
 from ..interfaces import IMovementHandler
@@ -13,7 +12,6 @@ from ..interfaces import IMovementHandler
 class MovementHandler(IMovementHandler):
     def __init__(self, hero: IHero) -> None:
         self.__hero = hero
-        self.__flag_reached = False
 
     def handle_hero_movements(
         self,
@@ -32,10 +30,6 @@ class MovementHandler(IMovementHandler):
             dx = -HERO_SPEED
             self.__hero.set_face_right(False)
         else:
-            if hero_rect.x > 5230 and not self.__flag_reached:
-                CheckpointManager.set_checkpoint_reached()
-                self.__flag_reached = True
-
             self.__hero.set_action(HeroAction.RUNNING, False)
             self.__hero.set_action(HeroAction.IDLE, True)
 
@@ -45,5 +39,3 @@ class MovementHandler(IMovementHandler):
             self.__hero.set_vel_y(MAX_GRAVITY)
 
         return dx, self.__hero.get_vel_y()
-
-

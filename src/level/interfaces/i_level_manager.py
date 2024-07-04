@@ -99,6 +99,10 @@ class ILevelManager(ABC):
         pass
 
     @abstractmethod
+    def reset(self) -> None:
+        pass
+
+    @abstractmethod
     def configure_level(
         self,
         hero: Hero,
