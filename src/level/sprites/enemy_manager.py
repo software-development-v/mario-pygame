@@ -1,6 +1,6 @@
 from typing import List
 
-from src.entities.abstractions.sprite import Sprite
+from src.entities import Sprite
 
 from ..abstractions import SpritesManager
 

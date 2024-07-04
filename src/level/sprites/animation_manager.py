@@ -11,7 +11,7 @@ from src.entities import (
 from src.enums import AnimationType
 from src.utils import Position
 
-from ..abstractions.sprites_manager import SpritesManager
+from ..abstractions import SpritesManager
 
 
 class AnimationManager(

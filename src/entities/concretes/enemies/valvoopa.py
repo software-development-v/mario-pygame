@@ -1,7 +1,7 @@
 from src.enums import EnemyState, EnemyType
-from src.utils import ANIMATION_INTERVAL, Position, enemies
+from src.utils import Position, enemies
 
-from ...abstractions.enemy import Enemy
+from ...abstractions import Enemy
 
 
 class Valvoopa(Enemy):
@@ -10,9 +10,6 @@ class Valvoopa(Enemy):
             surfaces=enemies[EnemyType.VALVOOPA],
             position=position,
             initial_state=EnemyState.WALKING,
-            animation_interval=ANIMATION_INTERVAL,
-            x_rect_percent=1,
-            y_rect_percent=1,
         )
 
     def update_state(self):

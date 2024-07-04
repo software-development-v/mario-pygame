@@ -1,16 +1,14 @@
 from typing import Callable, Dict, Optional
 
 from src.data import GameData
-from src.entities import Coin, Hero, InteractiveElement
-from src.enums import CollectedType, HeroType, Level, SceneAction, World
+from src.entities import Hero
+from src.enums import HeroType, Level, SceneAction, World
 from src.level import (
-    CoinObserver,
+    EnemyManager,
     ILevelManager,
     LevelManager,
     ObstaclesManager,
-    ScoreObserver,
 )
-from src.level.sprites.enemy_manager import EnemyManager
 from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
     SCREEN_HEIGHT,

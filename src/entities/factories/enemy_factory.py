@@ -1,9 +1,8 @@
 from src.enums import EnemyType
 from src.utils import Position
 
-from ..abstractions.enemy import Enemy
-from ..concretes.enemies.evoomba import Evoomba
-from ..concretes.enemies.valvoopa import Valvoopa
+from ..abstractions import Enemy
+from ..concretes import Evoomba, Valvoopa
 
 
 class EnemyFactory:
