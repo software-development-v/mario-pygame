@@ -1,5 +1,5 @@
 from json import load
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from src.entities import Element, ElementFactory, EnemyFactory, Sprite
 from src.enums import (
@@ -36,6 +36,7 @@ class LevelMapper(ILevelMapper):
         position = self._map_player_start_position(
             data["start_player_position"]
         )
+        check_point: Optional[Position] = self._map_checkpoint(data)
         enemies = self._map_enemies(data["enemies"])
         elements = self._map_elements(data["elements"])
         power_ups = self._map_power_ups(data["power_ups"])
@@ -48,6 +49,7 @@ class LevelMapper(ILevelMapper):
             background,
             data["background_music"],
             position,
+            check_point,
             enemies,
             elements,
             power_ups,
@@ -73,6 +75,12 @@ class LevelMapper(ILevelMapper):
 
     def _map_player_start_position(self, data: Dict[str, Any]) -> Position:
         return Position(data["x"], data["y"])
+
+    def _map_checkpoint(self, data: Dict[str, Any]) -> Optional[Position]:
+        try:
+            return Position(data["check_point"]["x"], data["check_point"]["y"])
+        except KeyError:
+            return None
 
     def _map_elements(self, elements: List[Dict[str, Any]]) -> List[Element]:
         mappedElements: List[Element] = []

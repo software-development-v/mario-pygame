@@ -12,7 +12,7 @@ from src.level import (
 from src.utils import (
     SCREEN_CAMERA_THRESHOLD,
     SCREEN_HEIGHT,
-    SCREEN_VIEW_PLAY_HEIGHT,
+    SCREEN_VIEW_PLAY_LEFT,
     SCREEN_VIEW_PLAY_WIDTH,
     Camera,
 )
@@ -32,12 +32,12 @@ class TransitionLevelScene(Scene):
         level_manager: Optional[ILevelManager] = None,
     ) -> None:
         self.__game_data = GameData()
-        self.__level_manager: ILevelManager = self.setup_level(
-            hero, world, level
-        )
 
         if level_manager is not None:
-            self.configure_next_level(level_manager)
+            self.__level_manager = level_manager
+            self.__level_manager.reset()
+        else:
+            self.__level_manager = self.setup_level(hero, world, level)
 
         super().__init__(
             TransitionLevelSceneRender(self.__level_manager, self.__game_data),
@@ -51,7 +51,6 @@ class TransitionLevelScene(Scene):
         world: World,
         level: Level,
     ) -> ILevelManager:
-
         level_data = self.__game_data.get_level_data(world, level)
 
         camera = Camera(
@@ -59,13 +58,14 @@ class TransitionLevelScene(Scene):
             SCREEN_HEIGHT,
             SCREEN_VIEW_PLAY_WIDTH,
             SCREEN_CAMERA_THRESHOLD,
-            SCREEN_VIEW_PLAY_HEIGHT,
+            SCREEN_VIEW_PLAY_LEFT,
         )
 
         return LevelManager(
             Hero(
                 self.__game_data.get_hero_data(hero),
                 level_data.get_player_init_position(),
+                level_data.get_checkpoint(),
             ),
             hero,
             ObstaclesManager(level_data.get_elements()),
@@ -76,14 +76,4 @@ class TransitionLevelScene(Scene):
             level_data.get_time(),
             level_data.get_screen_width(),
             camera,
-        )
-
-    def configure_next_level(self, level_manager: ILevelManager) -> None:
-        self.__level_manager.configure_level(
-            level_manager.get_hero(),
-            level_manager.get_hero_type(),
-            level_manager.get_current_time(),
-            level_manager.get_score(),
-            level_manager.get_lives(),
-            level_manager.get_coins(),
         )

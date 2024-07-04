@@ -12,12 +12,16 @@ from ..interfaces import ISprite
 class Sprite(PygameSprite, ISprite, ABC):
     def __init__(
         self,
-        position: Position,
+        init_position: Position,
         animation_interval: int = ANIMATION_INTERVAL,
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
+        check_point: Optional[Position] = None,
     ):
         super().__init__()
+        self.__init_position: Position = init_position
+        self.__check_point: Optional[Position] = check_point
+        self.__reach_check_point: bool = False
         self.__index: int = INIT_IMAGE_INDEX
         self.__face_right: bool = True
         self.__last_update: int = time.get_ticks()
@@ -25,7 +29,7 @@ class Sprite(PygameSprite, ISprite, ABC):
         self.__disposed = False
 
         self.__image_rect: Rect = self.__get_image().get_rect(
-            topleft=position.to_tuple()
+            topleft=init_position.to_tuple()
         )
 
         self.__width = self.__image_rect.width * x_rect_percent
@@ -42,6 +46,29 @@ class Sprite(PygameSprite, ISprite, ABC):
     @abstractmethod
     def _get_surfaces(self) -> List[Surface]:
         pass
+
+    def get_check_point(self) -> Optional[Position]:
+        return self.__check_point
+
+    def get_reach_check_point(self) -> bool:
+        return self.__reach_check_point
+
+    def set_reach_check_point(self, value: bool) -> None:
+        self.__reach_check_point = value
+
+    def reset(self) -> None:
+        if self.__reach_check_point and self.__check_point is not None:
+            self.__image_rect.topleft = self.__check_point.to_tuple()
+        else:
+            self.__image_rect.topleft = self.__init_position.to_tuple()
+
+        self.__rect = Rect(
+            self.__image_rect.x + (self.__image_rect.width - self.__width) / 2,
+            self.__image_rect.y
+            + (self.__image_rect.height - self.__height) / 2,
+            self.__width,
+            self.__height,
+        )
 
     def get_rect(self) -> Rect:
         return self.__rect

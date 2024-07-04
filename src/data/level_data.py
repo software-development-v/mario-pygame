@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from pygame import Surface
 
@@ -20,6 +20,7 @@ class LevelData(ILevelData):
         background: IBackground,
         background_music: str,
         player_init_position: Position,
+        check_point: Optional[Position],
         enemies: List[Sprite],
         elements: List[Element],
         power_ups: List[Sprite],
@@ -32,6 +33,7 @@ class LevelData(ILevelData):
         self.__background: IBackground = background
         self.__background_music: str = background_music
         self.__player_init_position: Position = player_init_position
+        self.__check_point: Optional[Position] = check_point
         self.__enemies: List[Sprite] = enemies
         self.__elements: List[Element] = elements
         self.__power_ups: List[Sprite] = power_ups
@@ -56,6 +58,9 @@ class LevelData(ILevelData):
 
     def get_player_init_position(self) -> Position:
         return self.__player_init_position
+
+    def get_checkpoint(self) -> Optional[Position]:
+        return self.__check_point
 
     def get_enemies(self) -> List[Sprite]:
         return self.__enemies

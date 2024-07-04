@@ -3,7 +3,7 @@ from typing import List
 from pygame import Rect
 
 from src.entities import Element, InteractiveElement
-from src.enums import HeroAction
+from src.enums import HeroAction, HeroState
 
 from ....interfaces import IHero
 from ..interfaces import ICollisionsHandler
@@ -80,7 +80,15 @@ class CollisionsHandler(ICollisionsHandler):
             break
 
         if not floor_collide:
-            self.hero.set_action(HeroAction.JUMPING, True)
+            self.hero.set_actions(
+                {
+                    HeroAction.JUMPING: True,
+                    HeroAction.RUNNING: False,
+                    HeroAction.IDLE: False,
+                    HeroAction.WIN: False,
+                }
+            )
+            self.hero.set_hero_state(HeroState.JUMP)
 
         return dy
 

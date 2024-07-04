@@ -1,10 +1,9 @@
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from pygame import Rect, Surface
 
 from src.enums import GameEvent, HeroAction, HeroLevel, HeroState
 from src.utils import (
-    FLAG_POSITION,
     HERO_ANIMATION_INTERVAL,
     HERO_BIG_RECT_X_PERCENT,
     HERO_NORMAL_RECT_X_PERCENT,
@@ -17,6 +16,7 @@ from src.utils import (
 from ....abstractions import Element, Sprite
 from ..handlers import (
     ActionsHandler,
+    CheckPointHandler,
     CollisionsHandler,
     DamageHandler,
     IActionsHandler,
@@ -24,19 +24,17 @@ from ..handlers import (
     IDamageHandler,
     IMovementHandler,
     MovementHandler,
+    WinHandler,
 )
 from ..interfaces import IHero
 
 
 class Hero(Sprite, IHero):
-
-    LIMIT_BIG = 650
-    LIMIT_SMALL = 710
-
     def __init__(
         self,
         surfaces: Dict[HeroLevel, Dict[HeroState, List[Surface]]],
         position: Position,
+        check_point: Optional[Position] = None,
     ) -> None:
         self.__surfaces = surfaces
         self.__hero_level = HeroLevel.NORMAL
@@ -52,6 +50,8 @@ class Hero(Sprite, IHero):
         self.__movement_handler: IMovementHandler = MovementHandler(self)
         self.__collisions_handler: ICollisionsHandler = CollisionsHandler(self)
         self.__damage_handler: IDamageHandler = DamageHandler(self)
+        self.__win_handler = WinHandler(self)
+        self.__check_point_handler = CheckPointHandler(self)
         self.__collided_win: bool = False
 
         super().__init__(
@@ -61,6 +61,7 @@ class Hero(Sprite, IHero):
             x_rect_percent=self.__hero_level == HeroLevel.NORMAL
             and HERO_NORMAL_RECT_X_PERCENT
             or HERO_BIG_RECT_X_PERCENT,
+            check_point=check_point,
         )
 
     def _get_surfaces(self) -> List[Surface]:
@@ -102,30 +103,19 @@ class Hero(Sprite, IHero):
     def set_collided_win(self, value: bool) -> None:
         self.__collided_win = value
 
-    def hero_down(self) -> None:
-        y_position = self.get_rect().y
-        x_position = self.get_rect().x
-
-        if (
-            (
-                self.get_hero_level() is HeroLevel.NORMAL
-                or self.get_hero_level() is HeroLevel.BORRACHO_SMALL
-            )
-            and y_position < self.LIMIT_SMALL
-        ) or (
-            (
-                self.get_hero_level() is HeroLevel.BIG
-                or self.get_hero_level() is HeroLevel.COCA
-                or self.get_hero_level() is HeroLevel.BORRACHO_BIG
-            )
-            and y_position < self.LIMIT_BIG
-        ):
-            self.set_vel_y(self.get_vel_y() + 0.4)
-            self.add_y_rect(5)
-        elif x_position == FLAG_POSITION or x_position == FLAG_POSITION - 2:
-            self.add_x_rect(60)
-            self.set_face_right(False)
-            self.set_action(HeroAction.WIN, False)
+    def reset(self) -> None:
+        self.set_hero_level(HeroLevel.NORMAL)
+        self.set_hero_state(HeroState.IDLE)
+        self.set_vel_y(INIT_VEL_Y)
+        self.set_actions(
+            {
+                HeroAction.JUMPING: True,
+                HeroAction.RUNNING: False,
+                HeroAction.IDLE: False,
+                HeroAction.WIN: False,
+            }
+        )
+        super().reset()
 
     def update(
         self,
@@ -135,8 +125,7 @@ class Hero(Sprite, IHero):
     ) -> None:
         self.__actions_handler.handle_hero_actions(game_events)
 
-        if self.get_actions()[HeroAction.WIN]:
-            self.hero_down()
+        if self.__win_handler.handle_win():
             return
 
         hero_rect: Rect = self.get_rect()
@@ -149,3 +138,4 @@ class Hero(Sprite, IHero):
         self.add_x_rect(dx)
         self.add_y_rect(dy)
         self.__damage_handler.handle_damage()
+        self.__check_point_handler.handle_check_point()
