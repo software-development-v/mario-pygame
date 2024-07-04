@@ -8,7 +8,7 @@ from .block import (
 )
 from .button import BUTTON
 from .coin import COIN_1, COIN_2, COIN_3, COIN_4
-from .flag import FLAG_PIPE, FLAG_SUPPORT, FLAG_WIN, FLAG_LIMITER
+from .flag import FLAG_LIMITER, FLAG_PIPE, FLAG_SUPPORT, FLAG_WIN
 from .pipe import (
     PIPE_BODY_STYLE_1,
     PIPE_BODY_STYLE_2,

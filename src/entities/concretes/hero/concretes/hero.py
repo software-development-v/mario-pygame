@@ -2,14 +2,9 @@ from typing import Dict, List
 
 from pygame import Rect, Surface
 
-from src.enums import (
-    GameEvent,
-    HeroAction,
-    HeroLevel,
-    HeroState,
-)
-
+from src.enums import GameEvent, HeroAction, HeroLevel, HeroState
 from src.utils import (
+    FLAG_POSITION,
     HERO_ANIMATION_INTERVAL,
     HERO_BIG_RECT_X_PERCENT,
     HERO_NORMAL_RECT_X_PERCENT,
@@ -18,7 +13,6 @@ from src.utils import (
     Camera,
     Position,
 )
-from src.utils.constants import FLAG_POSITION
 
 from ....abstractions import Element, Sprite
 from ..handlers import (

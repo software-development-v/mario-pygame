@@ -1,11 +1,11 @@
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 from pygame import Surface
 
 from src.enums import AnimationType, CollectedType
 from src.utils import Position
 
-from ..interfaces import IElementObserver, IObservableElement
+from ..interfaces import IElementObserver, IObservableElement, ISprite
 from .element import Element
 
 
@@ -52,7 +52,7 @@ class InteractiveElement(Element, IObservableElement[int]):
         if key in self.__observers:
             del self.__observers[key]
 
-    def notify_observers(self) -> None:
+    def notify_observers(self, sprite: Optional[ISprite] = None) -> None:
         if CollectedType.COLLECTED_COIN in self.__observers:
             self.__observers[CollectedType.COLLECTED_COIN].notify(1)
 

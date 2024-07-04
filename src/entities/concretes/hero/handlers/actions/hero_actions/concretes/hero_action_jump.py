@@ -20,6 +20,6 @@ class HeroActionJump(IHeroActionStrategy):
                 HeroAction.JUMPING: True,
                 HeroAction.RUNNING: False,
                 HeroAction.IDLE: False,
-                HeroAction.WIN: False
+                HeroAction.WIN: False,
             }
         )

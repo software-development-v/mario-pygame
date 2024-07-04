@@ -1,7 +1,10 @@
+from typing import Optional
+
 from src.enums import AnimationType, ElementSubType, ElementType
 from src.utils import Position, elements
 
 from ....abstractions import InteractiveElement
+from ....interfaces import ISprite
 
 
 class Coin(InteractiveElement):
@@ -14,7 +17,7 @@ class Coin(InteractiveElement):
             position, elements[ElementType.COIN][element_sub_type], 100
         )
 
-    def notify_observers(self) -> None:
+    def notify_observers(self, sprite: Optional[ISprite] = None) -> None:
         self._set_is_touchable(False)
         self.animation_oberservers.notify(
             (

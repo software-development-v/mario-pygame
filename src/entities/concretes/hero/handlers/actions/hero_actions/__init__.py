@@ -1,4 +1,9 @@
-from .concretes import HeroActionIdle, HeroActionJump, HeroActionRun, HeroActionWin
+from .concretes import (
+    HeroActionIdle,
+    HeroActionJump,
+    HeroActionRun,
+    HeroActionWin,
+)
 from .interfaces import IHeroActionStrategy
 
 __all__ = [

@@ -34,9 +34,7 @@ class ActionsHandler(IActionsHandler):
             and not hero_actions[HeroAction.WIN]
         ):
             hero_action_strategy = HeroActionRun()
-        elif (
-            hero_actions[HeroAction.WIN]
-        ):
+        elif hero_actions[HeroAction.WIN]:
             hero_action_strategy = HeroActionWin()
         elif (
             not hero_actions[HeroAction.JUMPING]

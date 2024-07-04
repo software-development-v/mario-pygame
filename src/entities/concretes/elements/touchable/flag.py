@@ -1,18 +1,14 @@
 from typing import Optional
-from src.entities.concretes.hero import Hero
-from src.entities.concretes.hero.interfaces.i_hero import IHero
-from src.entities.interfaces.i_sprite import ISprite
-from src.enums import ElementSubType, ElementType
-from src.enums.collected_type import CollectedType
-from src.enums.hero_action import HeroAction
-from src.utils import Position, elements
-from src.utils.constants import FLAG_POSITION
+
+from src.enums import CollectedType, ElementSubType, ElementType, HeroAction
+from src.utils import FLAG_POSITION, Position, elements
 
 from ....abstractions import InteractiveElement
+from ....interfaces import ISprite
+from ...hero import Hero, IHero
 
 
 class Flag(InteractiveElement):
-
     RANGES = [
         (240, 299),  # FIRST FLAG POSITION
         (300, 359),  # SECOND FLAG POSITION
@@ -86,6 +82,8 @@ class Flag(InteractiveElement):
         if isinstance(sprite, Hero) and not sprite.get_collided_win():
             sprite.set_action(HeroAction.WIN, True)
             self.__fix_hero_position(sprite)
-            self.get_observer()[CollectedType.COLLECTED_SCORE].notify(self.__points)
+            self.get_observer()[CollectedType.COLLECTED_SCORE].notify(
+                self.__points
+            )
             sprite.set_collided_win(True)
             sprite.set_face_right(True)

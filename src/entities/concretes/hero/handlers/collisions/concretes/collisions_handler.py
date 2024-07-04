@@ -31,7 +31,7 @@ class CollisionsHandler(ICollisionsHandler):
                 continue
 
             if isinstance(obstacle, InteractiveElement):
-                obstacle.notify_observers()
+                obstacle.notify_observers(self.hero)
                 if not obstacle.get_is_touchable():
                     continue
 
@@ -64,7 +64,7 @@ class CollisionsHandler(ICollisionsHandler):
                 continue
 
             if isinstance(obstacle, InteractiveElement):
-                obstacle.notify_observers()
+                obstacle.notify_observers(self.hero)
                 if not obstacle.get_is_touchable():
                     continue
 
