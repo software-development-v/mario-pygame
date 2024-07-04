@@ -115,6 +115,7 @@ class Hero(Sprite, IHero):
                 HeroAction.WIN: False,
             }
         )
+        self.set_face_right(True)
         super().reset()
 
     def update(
