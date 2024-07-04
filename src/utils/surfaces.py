@@ -20,6 +20,7 @@ from .assets import (
     EVOOMBA_DIED,
     EVOOMBA_WALKING_1,
     EVOOMBA_WALKING_2,
+    FLAG_LIMITER,
     FLAG_PIPE,
     FLAG_SUPPORT,
     FLAG_WIN,
@@ -100,6 +101,7 @@ elements: Dict[ElementType, Dict[ElementSubType, List[Surface]]] = {
         ElementSubType.FLAG_PIPE: [FLAG_PIPE],
         ElementSubType.FLAG_WIN: [FLAG_WIN],
         ElementSubType.FLAG_SUPPORT: [FLAG_SUPPORT],
+        ElementSubType.FLAG_LIMITER: [FLAG_LIMITER],
     },
     ElementType.COIN: {
         ElementSubType.COIN: [COIN_1, COIN_2, COIN_3, COIN_4],
