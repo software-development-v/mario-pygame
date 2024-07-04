@@ -13,7 +13,110 @@
         "x": 150,
         "y": 500
     },
-    "enemies": [],
+    "enemies": [
+        {
+            "position": [1150, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [2250, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [2730, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [2790, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [4100, 200],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [4000, 200],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [4800, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [4870, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [5350, 575],
+            "type": "VALVOOPA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [5760, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [5880, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [6400, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [6470, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [6580, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [6650, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [8800, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        },
+        {
+            "position": [8870, 600],
+            "type": "EVOOMBA",
+            "subtype": "DEFAULT_ENEMY"
+
+        }
+    ],
     "elements": [
         {
             "position": [1400, 550],
