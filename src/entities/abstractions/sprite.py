@@ -104,6 +104,7 @@ class Sprite(PygameSprite, ISprite, ABC):
     ) -> None:
         image = self.__get_image()
         self.__check_change_image(image, x_rect_percent, y_rect_percent)
+
         rect = self.__image_rect.topleft
         if camera is not None:
             rect = camera.apply(self.__image_rect)
@@ -112,6 +113,10 @@ class Sprite(PygameSprite, ISprite, ABC):
 
     def animate(self) -> None:
         surfaces = self._get_surfaces()
+
+        if len(surfaces) == 1:
+            return
+
         current_time = time.get_ticks()
 
         if current_time - self.__last_update > self.__animation_interval:

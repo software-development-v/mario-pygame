@@ -1,5 +1,3 @@
-from pygame import Rect
-
 from src.enums import HeroLevel
 from src.level import AnimationManager, ILevelManager
 from src.utils import (
@@ -27,9 +25,6 @@ class LevelSceneRender(Render):
 
         hero = self.__level_manager.get_hero()
         camera = self.__level_manager.get_camera()
-
-        hero_rect: Rect = hero.get_rect()
-        camera.update(hero_rect.x, hero_rect.width)
 
         obstacle_manager = self.__level_manager.get_obstacles_manager()
         obstacle_manager.draw(self._screen, camera)
