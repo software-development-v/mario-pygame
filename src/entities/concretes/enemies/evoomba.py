@@ -1,7 +1,7 @@
 from src.enums import EnemyState, EnemyType
-from src.utils import Position, enemies
+from src.utils import ANIMATION_INTERVAL, Position, enemies
+
 from ...abstractions.enemy import Enemy
-from src.utils import ANIMATION_INTERVAL, Position
 
 
 class Evoomba(Enemy):

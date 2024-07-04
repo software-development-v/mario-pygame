@@ -1,5 +1,5 @@
 from src.enums import EnemyState, EnemyType
-from src.utils import Position, enemies, ANIMATION_INTERVAL
+from src.utils import ANIMATION_INTERVAL, Position, enemies
 
 from ...abstractions.enemy import Enemy
 

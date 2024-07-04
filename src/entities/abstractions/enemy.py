@@ -2,14 +2,14 @@ from abc import ABC, abstractmethod
 from typing import Dict, List
 
 from pygame import Rect, Surface, time, transform
-from pygame.sprite import Sprite
 
-from src.entities.interfaces.i_sprite import ISprite
 from src.enums import EnemyState
 from src.utils import ANIMATION_INTERVAL, Camera, Position
 
+from .sprite import Sprite
 
-class Enemy(Sprite, ISprite, ABC):
+
+class Enemy(Sprite, ABC):
     def __init__(
         self,
         surfaces: Dict[EnemyState, List[Surface]],
@@ -19,13 +19,14 @@ class Enemy(Sprite, ISprite, ABC):
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
     ):
-        super().__init__()
         self.__surfaces = surfaces
         self.__state = initial_state
         self.__index: int = 0
         self.__face_right: bool = True
         self.__last_update: int = time.get_ticks()
         self.__animation_interval: int = animation_interval
+
+        super().__init__(position)
 
         self.__image_rect: Rect = self.__get_image().get_rect(
             topleft=position.to_tuple()
