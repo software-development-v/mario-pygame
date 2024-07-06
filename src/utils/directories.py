@@ -48,6 +48,7 @@ ENEMIES_DIR = SPRITES_DIR + "enemies/"
 ICONS_DIR = SPRITES_DIR + "icons/"
 PLAYERS_DIR = SPRITES_DIR + "players/"
 POWER_UPS_DIR = SPRITES_DIR + "power_ups/"
+FIREWORKS_DIR = SPRITES_DIR + "fireworks/"
 
 # == Flag ==
 # == Flag name ==

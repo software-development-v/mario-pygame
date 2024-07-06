@@ -38,6 +38,9 @@ from .elements import (
     SMALL_MOUNTAIN,
     SMALL_TREE,
     WALL_BLOCK,
+    FIREWORK_SMALL,
+    FIREWORK_MEDIUM,
+    FIREWORK_LARGE,
 )
 from .enemies import (
     EVOOMBA_DEFAULT,
@@ -418,4 +421,8 @@ __all__ = [
     "COIN_ICON_1",
     "COIN_ICON_2",
     "COIN_ICON_3",
+    # FIREWORKS
+    "FIREWORK_SMALL",
+    "FIREWORK_MEDIUM",
+    "FIREWORK_LARGE",
 ]

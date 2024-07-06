@@ -12,6 +12,9 @@ from .non_touchable import (
     SMALL_CLOUD,
     SMALL_MOUNTAIN,
     SMALL_TREE,
+    FIREWORK_SMALL,
+    FIREWORK_MEDIUM,
+    FIREWORK_LARGE
 )
 from .touchable import (
     BUTTON,
@@ -76,4 +79,7 @@ __all__ = [
     "COIN_3",
     "COIN_4",
     "BUTTON",
+    "FIREWORK_SMALL",
+    "FIREWORK_MEDIUM",
+    "FIREWORK_LARGE",
 ]

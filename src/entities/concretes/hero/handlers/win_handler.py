@@ -13,12 +13,12 @@ class WinHandler:
 
     def handle_win(self) -> bool:
         if self.__hero.get_actions()[HeroAction.WIN]:
-            self.__dow_hero()
+            self.__hero_down()
             return True
 
         return False
 
-    def __dow_hero(self):
+    def __hero_down(self):
         y_position = self.__hero.get_rect().y
         x_position = self.__hero.get_rect().x
 
@@ -38,7 +38,12 @@ class WinHandler:
         ):
             self.__hero.set_vel_y(self.__hero.get_vel_y() + 0.4)
             self.__hero.add_y_rect(5)
-        elif x_position == FLAG_POSITION or x_position == FLAG_POSITION - 2:
+        elif x_position == FLAG_POSITION or self.__is_near(x_position):
             self.__hero.add_x_rect(60)
             self.__hero.set_face_right(False)
             self.__hero.set_action(HeroAction.WIN, False)
+
+    def __is_near(self, x_position: int) -> bool:
+        return (
+            FLAG_POSITION - 20 <= x_position <= FLAG_POSITION + 20
+        )
