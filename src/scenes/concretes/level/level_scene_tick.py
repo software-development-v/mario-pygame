@@ -4,6 +4,7 @@ from pygame import Rect, time
 
 from src.enums import GameEvent, HeroState, SceneAction
 from src.level import AnimationManager, ILevelManager
+from src.scenes.concretes.victory_cinematic.victory_cinematic import VictoryCinematic
 from src.utils import TO_SECONDS
 
 from ...abstractions import Tick
@@ -64,5 +65,9 @@ class LevelSceneTick(Tick):
                 )
             )
             self._dispatcher[SceneAction.END]()
-        elif hero.get_hero_state() == HeroState.DOWN:
+        elif not self.__level_manager.is_win() and hero.get_hero_state() == HeroState.DOWN:
             self.__level_manager.win()
+            self._dispatcher[SceneAction.SET_NEXT_SCENE](
+                VictoryCinematic(self._dispatcher, self.__level_manager.get_current_time())
+            )
+            self._dispatcher[SceneAction.END]()
