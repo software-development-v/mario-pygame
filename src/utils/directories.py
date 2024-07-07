@@ -23,6 +23,11 @@ LOGOS_DIR = ASSETS_DIR + "logo/"
 # == Cinematics ==
 CINEMATICS_DIR = ASSETS_DIR + "cinematics/"
 FINAL_CINEMATIC_DIR = CINEMATICS_DIR + "final_cinematic/"
+VICTORY_CINEMATIC_DIR = CINEMATICS_DIR + "victory_cinematic/"
+
+# victory cinematic
+VICTORY_CINEMATIC_VIDEO_DIR = VICTORY_CINEMATIC_DIR + "video/"
+VICTORY_CINEMATIC_AUDIO_DIR = VICTORY_CINEMATIC_DIR + "audio/"
 
 # == Elements ==
 ELEMENTS_DIR = ASSETS_DIR + "elements/"
