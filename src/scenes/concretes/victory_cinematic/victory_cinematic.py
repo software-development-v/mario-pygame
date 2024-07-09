@@ -1,6 +1,6 @@
 from typing import Callable, Dict, Text
 
-from src.enums.scene_action import SceneAction
+from ....enums.scene_action import SceneAction
 from ....utils import (
     VICTORY_CINEMATIC_NORMAL_VIDEO,
     VICTORY_CINEMATIC_ONE_FIREWORK_VIDEO,
@@ -39,7 +39,7 @@ class VictoryCinematic(CinematicScene):
         return video_path
 
     def __define_audio_path(self, current_time: int) -> Text:
-        audio_path = ""
+        audio_path = VICTORY_CINEMATIC_ONE_FIREWORK_AUDIO
 
         number = str(current_time)
         last_number = number[-1]
