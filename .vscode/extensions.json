@@ -1,9 +1,13 @@
 {
     "recommendations": [
-        "ms-pyright.pyright",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
         "ms-python.black-formatter",
+        "ms-python.isort",
         "esbenp.prettier-vscode",
         "editorconfig.editorconfig",
-        "usernamehw.errorlens"
+        "usernamehw.errorlens",
+        "streetsidesoftware.code-spell-checker"
     ]
 }
