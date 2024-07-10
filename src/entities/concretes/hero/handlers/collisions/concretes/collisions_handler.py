@@ -29,6 +29,7 @@ class CollisionsHandler(ICollisionsHandler):
                 hero_rect.x + dx, hero_rect.y, hero_rect.width, hero_rect.height
             ):
                 continue
+            self.hero.set_vel_x(0)
 
             if isinstance(obstacle, InteractiveElement):
                 obstacle.notify_observers(self.hero)

@@ -4,7 +4,6 @@ from pygame import Rect, Surface
 
 from src.enums import GameEvent, HeroAction, HeroLevel, HeroState
 from src.utils import (
-    HERO_ANIMATION_INTERVAL,
     HERO_BIG_RECT_X_PERCENT,
     HERO_NORMAL_RECT_X_PERCENT,
     HERO_RECT_Y_PERCENT,
@@ -40,6 +39,7 @@ class Hero(Sprite, IHero):
         self.__hero_level = HeroLevel.NORMAL
         self.__hero_state = HeroState.IDLE
         self.__vel_y = INIT_VEL_Y
+        self.__vel_x = 0
         self.__actions: Dict[HeroAction, bool] = {
             HeroAction.JUMPING: True,
             HeroAction.RUNNING: False,
@@ -56,7 +56,7 @@ class Hero(Sprite, IHero):
 
         super().__init__(
             position,
-            animation_interval=HERO_ANIMATION_INTERVAL,
+            animation_interval=100,
             y_rect_percent=HERO_RECT_Y_PERCENT,
             x_rect_percent=self.__hero_level == HeroLevel.NORMAL
             and HERO_NORMAL_RECT_X_PERCENT
@@ -78,6 +78,15 @@ class Hero(Sprite, IHero):
 
     def set_hero_state(self, hero_state: HeroState) -> None:
         self.__hero_state = hero_state
+
+    def get_vel_x(self) -> float:
+        return self.__vel_x
+
+    def set_vel_x(self, vel_x: float) -> None:
+        self.__vel_x = vel_x
+
+    def add_vel_x(self, vel_x: float) -> None:
+        self.__vel_x += vel_x
 
     def get_vel_y(self) -> float:
         return self.__vel_y
