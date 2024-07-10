@@ -1,16 +1,16 @@
 from typing import Dict, Tuple
 
 from pygame import Rect
-from src.enums import GameEvent, HeroAction
-from src.enums.hero_state import HeroState
+
+from src.enums import GameEvent, HeroAction, HeroState
 from src.utils import (
-    MAX_GRAVITY,
-    Camera,
-    HERO_SPEED,
-    FRICCION,
     ACCELERATION,
+    FRICCION,
+    HERO_SPEED,
     LEFT_LIMIT_LENGTH,
     MAX_BRAKE_STATUS,
+    MAX_GRAVITY,
+    Camera,
 )
 
 from ....interfaces import IHero
@@ -35,7 +35,6 @@ class MovementHandler(IMovementHandler):
         self.__brake_status = 0
         self.__clicks = 0
 
-
     def handle_hero_movements(
         self,
         hero_rect: Rect,
@@ -57,7 +56,6 @@ class MovementHandler(IMovementHandler):
         self.__hero.set_vel_x(self.__hero_speed)
         return self.__hero_speed, self.__hero.get_vel_y()
 
-
     def __handle_input(
         self,
         hero_rect: Rect,
@@ -70,7 +68,6 @@ class MovementHandler(IMovementHandler):
             self.__last_movement = self.NONE
         self.__handle_side_movements(hero_rect, input, camera)
         self.__hero_speed += self.__hero_acceleration
-
 
     def __handle_side_movements(
         self, hero_rect: Rect, input: Dict[GameEvent, bool], camera: Camera
@@ -86,7 +83,6 @@ class MovementHandler(IMovementHandler):
         else:
             self.__handle_no_movement()
 
-
     def __handle_right_movement(self) -> None:
         if not self.__hero.get_actions()[HeroAction.JUMPING]:
             self.__hero.set_face_right(True)
@@ -100,7 +96,6 @@ class MovementHandler(IMovementHandler):
             self.__hero_acceleration = ACCELERATION
             self.__update_clicks(self.RIGHT)
             self.__last_movement = self.RIGHT
-
 
     def __handle_left_movement(self) -> None:
         if not self.__hero.get_actions()[HeroAction.JUMPING]:
@@ -116,7 +111,6 @@ class MovementHandler(IMovementHandler):
             self.__update_clicks(self.LEFT)
             self.__last_movement = self.LEFT
 
-
     def __brake(self) -> None:
         if self.__clicks > self.TOTAL_CLICKS and (
             not self.__hero.get_actions()[HeroAction.JUMPING]
@@ -126,13 +120,11 @@ class MovementHandler(IMovementHandler):
         self.__clicks = 0
         self.__stop_hero()
 
-
     def __update_clicks(self, direction: int) -> None:
         if self.__last_movement == direction:
             self.__clicks += 1
         else:
             self.__clicks = 0
-
 
     def __handle_no_movement(self) -> None:
         if self.__last_movement == self.LEFT:
@@ -141,7 +133,6 @@ class MovementHandler(IMovementHandler):
             self.__hero_acceleration = -FRICCION
         else:
             self.__hero_acceleration = 0
-
 
     def __brake_hero(self) -> None:
         if self.__brake_status > 0:
@@ -154,11 +145,9 @@ class MovementHandler(IMovementHandler):
         else:
             self.__last_movement = self.NONE
 
-
     def __stop_hero(self) -> None:
         self.__hero_speed = 0
         self.__hero_acceleration = 0
-
 
     def __update_hero_action(self) -> None:
         if (
@@ -172,7 +161,6 @@ class MovementHandler(IMovementHandler):
             else:
                 self.__hero.set_face_right(False)
 
-
     def __handle_speed_bounds(self) -> None:
         if abs(self.__hero_speed) > HERO_SPEED:
             self.__hero_speed = HERO_SPEED * (
@@ -185,12 +173,10 @@ class MovementHandler(IMovementHandler):
             self.__hero.set_action(HeroAction.IDLE, True)
             self.__last_movement = self.NONE
 
-
     def __apply_gravity(self) -> None:
         self.__hero.add_vel_y(1)
         if self.__hero.get_vel_y() > MAX_GRAVITY:
             self.__hero.set_vel_y(MAX_GRAVITY)
-
 
     def __handle_left_camera_limit(self, camera: Camera) -> None:
         if (
