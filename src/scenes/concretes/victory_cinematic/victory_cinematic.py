@@ -2,7 +2,6 @@ from typing import Callable, Dict, Text
 
 from ....enums.scene_action import SceneAction
 from ....utils import (
-    VICTORY_CINEMATIC_NORMAL_VIDEO,
     VICTORY_CINEMATIC_ONE_FIREWORK_VIDEO,
     VICTORY_CINEMATIC_THREE_FIREWORKS_VIDEO,
     VICTORY_CINEMATIC_SIX_FIREWORKS_VIDEO,
@@ -24,7 +23,7 @@ class VictoryCinematic(CinematicScene):
         super().__init__(self.__victory_video, self.__victory_audio, dispatcher)
 
     def __define_video_path(self, current_time: int) -> Text:
-        video_path = VICTORY_CINEMATIC_NORMAL_VIDEO
+        video_path = ""
 
         number = str(current_time)
         last_number = number[-1]
@@ -39,7 +38,7 @@ class VictoryCinematic(CinematicScene):
         return video_path
 
     def __define_audio_path(self, current_time: int) -> Text:
-        audio_path = VICTORY_CINEMATIC_ONE_FIREWORK_AUDIO
+        audio_path = ""
 
         number = str(current_time)
         last_number = number[-1]

@@ -3,6 +3,7 @@ from typing import Callable, Dict
 from pygame import Rect, time
 
 from src.enums import GameEvent, HeroState, SceneAction
+from src.enums.hero_action import HeroAction
 from src.level import AnimationManager, ILevelManager
 from ..victory_cinematic.victory_cinematic import VictoryCinematic
 from src.utils import TO_SECONDS
@@ -66,13 +67,21 @@ class LevelSceneTick(Tick):
             )
             self._dispatcher[SceneAction.END]()
         elif (
-            not self.__level_manager.is_win()
+            self.__level_manager.is_win()
             and (hero.get_rect().x >= 12480 and hero.get_rect().y >= 720)
         ):
+            self.__victory_manage()
+        elif hero.get_hero_state() == HeroState.DOWN and hero.get_actions()[HeroAction.WIN]:
             self.__level_manager.win()
+
+    def __victory_manage(self) -> None:
+        number = str(self.__level_manager.get_current_time())
+        last_number = number[-1]
+
+        if (last_number == "1" or last_number == "3" or last_number == "6"):
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
                 VictoryCinematic(
                     self._dispatcher, self.__level_manager.get_current_time()
                 )
             )
-            self._dispatcher[SceneAction.END]()
+        self._dispatcher[SceneAction.END]()
