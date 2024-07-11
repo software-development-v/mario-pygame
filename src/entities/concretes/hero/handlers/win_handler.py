@@ -16,7 +16,7 @@ class WinHandler:
         if self.__hero.get_actions()[HeroAction.WIN]:
             self.__hero_down()
             return True
-        elif 11894 <= self.__hero.get_rect().x <= 12480 and self.__hero.get_rect().y == 720:
+        elif 11890 <= self.__hero.get_rect().x <= 12480 and 660 <= self.__hero.get_rect().y <= 720:
             self.__move_to_door()
             return True
         return False
@@ -41,8 +41,8 @@ class WinHandler:
         ):
             self.__hero.set_vel_y(self.__hero.get_vel_y() + 0.4)
             self.__hero.add_y_rect(5)
-        elif x_position == FLAG_POSITION or self.__is_near(x_position):
-            self.__hero.add_x_rect(60)
+        elif x_position == FLAG_POSITION or self.__is_near(self.__hero):
+            self.__move_to_other_place_of_the_pipe(self.__hero)
             self.__hero.set_face_right(True)
             self.__hero.add_y_rect(9)
             self.__hero.set_actions(
@@ -57,10 +57,32 @@ class WinHandler:
         else:
             self.__move_to_door()
 
-    def __is_near(self, x_position: int) -> bool:
+    def __is_near(self, hero: IHero) -> bool:
+        x_position = hero.get_rect().x
+
         return (
-            FLAG_POSITION - 20 <= x_position <= FLAG_POSITION + 20
+            (
+                FLAG_POSITION - 20 <= x_position <= FLAG_POSITION + 10
+                and hero.get_hero_level() is HeroLevel.NORMAL
+                or hero.get_hero_level() is HeroLevel.BORRACHO_SMALL
+            )
+            or
+            (
+                FLAG_POSITION - 60 <= x_position <= FLAG_POSITION + 10
+                and hero.get_hero_level() is HeroLevel.BIG
+                or hero.get_hero_level() is HeroLevel.COCA
+                or hero.get_hero_level() is HeroLevel.BORRACHO_BIG
+            )
         )
+
+    def __move_to_other_place_of_the_pipe(self, hero: IHero) -> None:
+        if (
+            hero.get_hero_level() is HeroLevel.NORMAL
+            or hero.get_hero_level() is HeroLevel.BORRACHO_SMALL
+        ):
+            self.__hero.add_x_rect(60)
+        else:
+            self.__hero.add_x_rect(100)
 
     def __move_to_door(self) -> None:
         self.__hero.set_hero_state(HeroState.RUN)

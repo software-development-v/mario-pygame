@@ -82,7 +82,7 @@ class LevelSceneTick(Tick):
             self._dispatcher[SceneAction.END]()
         elif (
             self.__level_manager.is_win()
-            and (hero.get_rect().x >= 12480 and hero.get_rect().y >= 720)
+            and (hero.get_rect().x >= 12480 and hero.get_rect().y >= 660)
             and self.__level_manager.get_current_time() == 0
         ):
             self.__victory_manage()
@@ -102,7 +102,7 @@ class LevelSceneTick(Tick):
                     self._dispatcher, self.__finish_time, self.__level_manager
                 )
             )
-        
+
         update_score(self.__level_manager.get_score())
 
         self._dispatcher[SceneAction.END]()

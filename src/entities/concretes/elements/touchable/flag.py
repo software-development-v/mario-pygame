@@ -53,7 +53,6 @@ class Flag(InteractiveElement):
             collider = 0.45
         return collider
 
-
     def __get_points(self) -> int:
         y_position = self.get_rect().y
 
@@ -75,8 +74,9 @@ class Flag(InteractiveElement):
     def __fix_hero_position(self, hero: IHero):
         if self.__element_sub_type is ElementSubType.FLAG_SUPPORT:
             hero.add_y_rect(-61)
+        elif hero.get_rect().y >= 640:
+            hero.add_y_rect(-121)
         else:
-
             if hero.get_rect().x > FLAG_POSITION:
                 difference_position = hero.get_rect().x - FLAG_POSITION
                 hero.add_x_rect(-difference_position)
