@@ -6,6 +6,7 @@ from src.enums import GameEvent, HeroState, SceneAction
 from src.enums.hero_action import HeroAction
 from src.level import AnimationManager, ILevelManager
 from src.utils.constants import TIME_POINTS
+from src.utils.high_score_manager import update_score
 from ..victory_cinematic.victory_cinematic import VictoryCinematic
 from src.utils import TO_SECONDS
 
@@ -101,4 +102,7 @@ class LevelSceneTick(Tick):
                     self._dispatcher, self.__finish_time, self.__level_manager
                 )
             )
+        
+        update_score(self.__level_manager.get_score())
+
         self._dispatcher[SceneAction.END]()
