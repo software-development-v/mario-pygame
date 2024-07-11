@@ -1,7 +1,6 @@
+from .enemy import Enemy
 from src.enums import EnemyState, EnemyType
 from src.utils import Position, enemies
-
-from ...abstractions import Enemy
 
 
 class Evoomba(Enemy):
@@ -9,7 +8,7 @@ class Evoomba(Enemy):
         super().__init__(
             surfaces=enemies[EnemyType.EVOOMBA],
             position=position,
-            initial_state=EnemyState.WALKING,
+            enemyState=EnemyState.WALKING,
         )
 
     def update_state(self):
