@@ -1,11 +1,14 @@
 from abc import ABC
 from typing import Dict, List
+
 from pygame import Surface
+
 from src.enums import EnemyState
-from src.utils import Position, Camera
+from src.utils import Camera, Position
+
+from ....abstractions import Element
 from ...enemies.handlers import EnemyCollisionsHandler, EnemyMovementHandler
 from ..interfaces import IEnemy
-from ....abstractions import Element
 
 
 class Enemy(IEnemy, ABC):

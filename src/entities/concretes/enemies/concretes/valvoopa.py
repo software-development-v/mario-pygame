@@ -1,6 +1,7 @@
-from .enemy import Enemy
 from src.enums import EnemyState, EnemyType
 from src.utils import Position, enemies
+
+from .enemy import Enemy
 
 
 class Valvoopa(Enemy):
