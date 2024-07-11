@@ -25,7 +25,7 @@ class EnemyMovementHandler(IEnemyMovementHandler):
             camera_right = camera_left + (camera.viewport_width + 700)
 
             if (
-                camera_left - 100 <= enemy_rect.right
+                camera_left <= enemy_rect.right
                 and enemy_rect.left <= camera_right + 100
             ):
                 self.is_active = True
