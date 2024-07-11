@@ -38,11 +38,16 @@ class LevelSceneTick(Tick):
         obstacles_manager = self.__level_manager.get_obstacles_manager()
         obstacles_manager.animate()
 
+        enemies_manager = self.__level_manager.get_enemy_manager()
+        enemies_manager.animate()
+
         hero.update(game_events, obstacles_manager.get_sprites(), camera)
         hero.animate()
 
         hero_rect: Rect = hero.get_rect()
         camera.update(hero_rect.x, hero_rect.width)
+
+        enemies_manager.update(camera, obstacles_manager.getElements())
 
         self.__animation_manager.animate()
 
