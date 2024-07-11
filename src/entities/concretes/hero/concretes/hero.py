@@ -40,6 +40,7 @@ class Hero(Sprite, IHero):
         self.__hero_level = HeroLevel.NORMAL
         self.__hero_state = HeroState.IDLE
         self.__vel_y = INIT_VEL_Y
+        self.__vel_x = 0
         self.__actions: Dict[HeroAction, bool] = {
             HeroAction.JUMPING: True,
             HeroAction.RUNNING: False,
@@ -78,6 +79,15 @@ class Hero(Sprite, IHero):
 
     def set_hero_state(self, hero_state: HeroState) -> None:
         self.__hero_state = hero_state
+
+    def get_vel_x(self) -> float:
+        return self.__vel_x
+
+    def set_vel_x(self, vel_x: float) -> None:
+        self.__vel_x = vel_x
+
+    def add_vel_x(self, vel_x: float) -> None:
+        self.__vel_x += vel_x
 
     def get_vel_y(self) -> float:
         return self.__vel_y

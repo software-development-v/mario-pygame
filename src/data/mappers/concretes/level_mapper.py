@@ -1,7 +1,7 @@
 from json import load
 from typing import Any, Dict, List, Optional
 
-from src.entities import Element, ElementFactory, EnemyFactory, Sprite
+from src.entities import Element, ElementFactory, EnemyFactory, IEnemy, Sprite
 from src.enums import (
     BackgroundType,
     ElementSubType,
@@ -97,8 +97,8 @@ class LevelMapper(ILevelMapper):
 
         return mappedElements
 
-    def _map_enemies(self, enemies: List[Dict[str, Any]]) -> List[Sprite]:
-        mappedEnemies: List[Sprite] = []
+    def _map_enemies(self, enemies: List[Dict[str, Any]]) -> List[IEnemy]:
+        mappedEnemies: List[IEnemy] = []
 
         for enemy in enemies:
             position = Position(enemy["position"][0], enemy["position"][1])

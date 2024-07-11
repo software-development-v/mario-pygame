@@ -3,7 +3,7 @@ from typing import List, Optional
 
 from pygame import Surface
 
-from src.entities import Element, Sprite
+from src.entities import Element, IEnemy, Sprite
 from src.enums import Level, World
 from src.utils import Position
 
@@ -42,7 +42,7 @@ class ILevelData(ABC):
         pass
 
     @abstractmethod
-    def get_enemies(self) -> List[Sprite]:
+    def get_enemies(self) -> List[IEnemy]:
         pass
 
     @abstractmethod

@@ -1,15 +1,15 @@
 from src.enums import EnemyState, EnemyType
 from src.utils import Position, enemies
 
-from ...abstractions import Enemy
+from .enemy import Enemy
 
 
-class Evoomba(Enemy):
+class Valvoopa(Enemy):
     def __init__(self, position: Position):
         super().__init__(
-            surfaces=enemies[EnemyType.EVOOMBA],
+            surfaces=enemies[EnemyType.VALVOOPA],
             position=position,
-            initial_state=EnemyState.WALKING,
+            enemyState=EnemyState.WALKING,
         )
 
     def update_state(self):

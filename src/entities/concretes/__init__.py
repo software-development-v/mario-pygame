@@ -16,12 +16,14 @@ from .elements import (
     Pipe,
     Tree,
 )
-from .enemies import Evoomba, Valvoopa
+from .enemies import Enemy, Evoomba, IEnemy, Valvoopa
 from .hero import Hero
 
 __all__ = [
     "Bush",
     "Cloud",
+    "Enemy",
+    "IEnemy",
     "Mountain",
     "Tree",
     "Block",

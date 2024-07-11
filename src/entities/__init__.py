@@ -1,4 +1,4 @@
-from .abstractions import Animation, Element, Enemy, InteractiveElement, Sprite
+from .abstractions import Animation, Element, InteractiveElement, Sprite
 from .concretes import (
     AnimationCompose,
     Block,
@@ -9,12 +9,16 @@ from .concretes import (
     CoinIcon,
     CollectedCoin,
     CollectedScore,
+    Enemy,
+    Evoomba,
     Flag,
     Hero,
+    IEnemy,
     MisteryBox,
     Mountain,
     Pipe,
     Tree,
+    Valvoopa,
 )
 from .factories import ElementFactory, EnemyFactory
 from .interfaces import (
@@ -26,8 +30,11 @@ from .interfaces import (
 
 __all__ = [
     "IAnimate",
-    "Enemy",
     "IDrawable",
+    "Evoomba",
+    "Valvoopa",
+    "Enemy",
+    "IEnemy",
     "Sprite",
     "Element",
     "InteractiveElement",
