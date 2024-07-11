@@ -26,6 +26,18 @@ class IHero(ISprite, ABC):
         pass
 
     @abstractmethod
+    def get_vel_x(self) -> float:
+        pass
+
+    @abstractmethod
+    def set_vel_x(self, vel_x: float) -> None:
+        pass
+
+    @abstractmethod
+    def add_vel_x(self, vel_x: float) -> None:
+        pass
+
+    @abstractmethod
     def get_vel_y(self) -> float:
         pass
 
