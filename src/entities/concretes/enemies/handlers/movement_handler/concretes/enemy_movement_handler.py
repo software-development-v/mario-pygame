@@ -1,5 +1,6 @@
 from src.enums import EnemyState
 from src.utils import Camera
+
 from ....interfaces import IEnemy
 from ..interfaces import IEnemyMovementHandler
 
