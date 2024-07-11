@@ -54,6 +54,7 @@ class WinHandler:
                 }
             )
             self.__hero.set_hero_state(HeroState.RUN)
+            self.__hero.set_vel_x(-2)
         else:
             self.__move_to_door()
 
@@ -86,4 +87,4 @@ class WinHandler:
 
     def __move_to_door(self) -> None:
         self.__hero.set_hero_state(HeroState.RUN)
-        self.__hero.add_x_rect(5)
+        self.__hero.add_x_rect(2)

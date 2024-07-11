@@ -46,7 +46,23 @@ class LevelSceneTick(Tick):
         enemies_manager = self.__level_manager.get_enemy_manager()
         enemies_manager.animate()
 
-        hero.update(game_events, obstacles_manager.get_sprites(), camera)
+        auxiliar_game_events = game_events
+
+        if self.__level_manager.is_win():
+            auxiliar_game_events = {
+                GameEvent.UP: False,
+                GameEvent.DOWN: False,
+                GameEvent.LEFT: False,
+                GameEvent.RIGHT: False,
+                GameEvent.JUMP: False,
+                GameEvent.RUN: False,
+                GameEvent.PAUSE: False,
+                GameEvent.ATTACK: False,
+            }
+
+        hero.update(
+            auxiliar_game_events, obstacles_manager.get_sprites(), camera
+        )
         hero.animate()
 
         hero_rect: Rect = hero.get_rect()
