@@ -2,15 +2,7 @@ from pygame import Surface
 
 from src.entities import Hero
 from src.enums import HeroType, Level, World
-from src.utils import (
-    HERO_LIVES,
-    SCREEN_CAMERA_THRESHOLD,
-    SCREEN_HEIGHT,
-    SCREEN_VIEW_PLAY_LEFT,
-    SCREEN_VIEW_PLAY_LEFT_WITH_CHECKPOINT,
-    SCREEN_VIEW_PLAY_WIDTH,
-    Camera,
-)
+from src.utils import HERO_LIVES, Camera
 
 from ..interfaces import ILevelManager
 from ..sprites import EnemyManager, ObstaclesManager
@@ -116,17 +108,7 @@ class LevelManager(ILevelManager):
 
     def reset(self) -> None:
         self.__hero.reset()
-        self.__camera = Camera(
-            self.__level_screen_width,
-            SCREEN_HEIGHT,
-            SCREEN_VIEW_PLAY_WIDTH,
-            SCREEN_CAMERA_THRESHOLD,
-            (
-                SCREEN_VIEW_PLAY_LEFT_WITH_CHECKPOINT
-                if self.__hero.get_reach_check_point()
-                else SCREEN_VIEW_PLAY_LEFT
-            ),
-        )
+        self.__camera.reset(self.__hero.get_rect().x)
 
     def configure_level(
         self,

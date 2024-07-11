@@ -9,13 +9,7 @@ from src.level import (
     LevelManager,
     ObstaclesManager,
 )
-from src.utils import (
-    SCREEN_CAMERA_THRESHOLD,
-    SCREEN_HEIGHT,
-    SCREEN_VIEW_PLAY_LEFT,
-    SCREEN_VIEW_PLAY_WIDTH,
-    Camera,
-)
+from src.utils import SCREEN_CAMERA_THRESHOLD, SCREEN_VIEWPORT_WIDTH, Camera
 
 from ...abstractions import Scene
 from .transition_level_scene_render import TransitionLevelSceneRender
@@ -55,10 +49,8 @@ class TransitionLevelScene(Scene):
 
         camera = Camera(
             level_data.get_screen_width(),
-            SCREEN_HEIGHT,
-            SCREEN_VIEW_PLAY_WIDTH,
+            SCREEN_VIEWPORT_WIDTH,
             SCREEN_CAMERA_THRESHOLD,
-            SCREEN_VIEW_PLAY_LEFT,
         )
 
         return LevelManager(
