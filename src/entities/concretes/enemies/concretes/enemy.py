@@ -20,6 +20,8 @@ class Enemy(IEnemy, ABC):
     ):
         self.surfaces = surfaces
         self.state = enemyState
+        self.initial_state = enemyState
+        self.initial_position = position
         self.face_right = True
         self.speed = 2
         self.vel_y = 0
@@ -29,16 +31,6 @@ class Enemy(IEnemy, ABC):
 
     def _get_surfaces(self) -> List[Surface]:
         return self.surfaces[self.state]
-
-    def update(
-        self, obstacles: List[Element], enemies: List[IEnemy], camera: Camera
-    ):
-        dx, dy = self.movement_handler.handle_movement(camera)
-        dx, dy = self.collisions_handler.handle_collisions(
-            self.get_rect(), obstacles, enemies, dx, dy
-        )
-        self.add_x_rect(dx)
-        self.add_y_rect(dy)
 
     def get_state(self):
         return self.state
@@ -63,6 +55,23 @@ class Enemy(IEnemy, ABC):
 
     def add_vel_y(self, vel_y: float):
         self.vel_y += vel_y
+
+    def update(
+        self, obstacles: List[Element], enemies: List[IEnemy], camera: Camera
+    ):
+        dx, dy = self.movement_handler.handle_movement(camera)
+        dx, dy = self.collisions_handler.handle_collisions(
+            self.get_rect(), obstacles, enemies, dx, dy
+        )
+        self.add_x_rect(dx)
+        self.add_y_rect(dy)
+
+    def reset(self) -> None:
+        self.state = self.initial_state
+        self.set_rect(self.initial_position)
+        self.face_right = False
+        self.speed = 2
+        self.vel_y = 0
 
     def kill(self):
         pass
