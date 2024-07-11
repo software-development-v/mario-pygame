@@ -56,6 +56,7 @@ class WinHandler:
             self.__hero.set_hero_state(HeroState.RUN)
             self.__hero.set_vel_x(-2)
         else:
+            self.__hero.set_face_right(True)
             self.__move_to_door()
 
     def __is_near(self, hero: IHero) -> bool:
