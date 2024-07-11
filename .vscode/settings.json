@@ -1,6 +1,13 @@
 {
+    "cSpell.words": ["isort", "pygame", "pyright"],
+    "editor.codeActionsOnSave": {
+        "source.removeUnused": "always",
+        "source.addMissingImports": "always",
+        "source.organizeImports": "always",
+        "source.fixAll": "always"
+    },
+    "editor.formatOnSave": true,
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "ms-python.black-formatter"
     }
 }
