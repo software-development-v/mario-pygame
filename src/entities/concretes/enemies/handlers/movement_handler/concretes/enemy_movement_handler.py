@@ -1,10 +1,10 @@
 from src.enums import EnemyState
 from src.utils import Camera
+from ....interfaces import IEnemy
+from ..interfaces import IEnemyMovementHandler
 
-from ...interfaces import IEnemy
 
-
-class EnemyMovementHandler:
+class EnemyMovementHandler(IEnemyMovementHandler):
     def __init__(self, enemy: IEnemy):
         self.enemy = enemy
         self.enemy.set_face_right(False)

@@ -1,13 +1,11 @@
 from typing import List
-
 from pygame import Rect
-
 from src.entities import Element
+from ....interfaces import IEnemy
+from ..interfaces import IEnemyCollisionsHandler
 
-from ...interfaces import IEnemy
 
-
-class EnemyCollisionsHandler:
+class EnemyCollisionsHandler(IEnemyCollisionsHandler):
     def __init__(self, enemy: IEnemy):
         self.enemy = enemy
 
