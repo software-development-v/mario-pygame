@@ -65,5 +65,4 @@ class Enemy(IEnemy, ABC):
         self.vel_y += vel_y
 
     def kill(self):
-        # Implement enemy removal logic here
         pass

@@ -1,7 +1,10 @@
 from abc import ABC, abstractmethod
 from typing import List, Tuple
+
 from pygame import Rect
+
 from src.entities import Element
+
 from ....interfaces import IEnemy
 
 

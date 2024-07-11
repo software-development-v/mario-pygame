@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Tuple
+
 from src.utils import Camera
+
 from ....interfaces import IEnemy
 
 
