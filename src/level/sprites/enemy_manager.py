@@ -17,3 +17,7 @@ class EnemyManager(SpritesManager[IEnemy]):
     def update(self, camera: Camera, obstacles: List[Element]):
         for enemy in self.__enemies:
             enemy.update(obstacles, self.__enemies, camera)
+
+    def reset_enemies(self) -> None:
+        for enemy in self.__enemies:
+            enemy.reset()

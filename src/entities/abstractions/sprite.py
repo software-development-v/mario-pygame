@@ -73,6 +73,16 @@ class Sprite(PygameSprite, ISprite, ABC):
     def get_rect(self) -> Rect:
         return self.__rect
 
+    def set_rect(self, position: Position) -> None:
+        self.__image_rect.topleft = position.to_tuple()
+        self.__rect = Rect(
+            self.__image_rect.x + (self.__image_rect.width - self.__width) / 2,
+            self.__image_rect.y
+            + (self.__image_rect.height - self.__height) / 2,
+            self.__width,
+            self.__height,
+        )
+
     def add_x_rect(self, x: float) -> None:
         self.__image_rect.x += x
         self.__rect.x = (

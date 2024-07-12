@@ -89,6 +89,8 @@ class LevelSceneTick(Tick):
         ) and not self.__level_manager.is_win():
 
             self.__level_manager.set_lives(self.__level_manager.get_lives() - 1)
+            enemies_manager.reset_enemies()
+
             from ..transition_level import TransitionLevelScene
 
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
