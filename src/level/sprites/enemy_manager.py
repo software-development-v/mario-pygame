@@ -1,10 +1,9 @@
 from typing import List
 
-from pygame import Rect
-
 from src.utils.camera import Camera
 
 from ...entities import Element, IEnemy
+from ...entities.concretes.hero import IHero
 from ..abstractions import SpritesManager
 
 
@@ -22,10 +21,10 @@ class EnemyManager(SpritesManager[IEnemy]):
 
     def if_there_a_collide_with_enemy(
         self,
-        hero_rect: Rect,
+        hero: IHero,
     ) -> bool:
         for enemy in self.__enemies:
-            if enemy.get_hero_collision(hero_rect):
+            if enemy.get_hero_collision(hero):
                 return True
         return False
 

@@ -16,7 +16,10 @@ class WinHandler:
         if self.__hero.get_actions()[HeroAction.WIN]:
             self.__hero_down()
             return True
-        elif 11890 <= self.__hero.get_rect().x <= 12480 and 660 <= self.__hero.get_rect().y <= 720:
+        elif (
+            11890 <= self.__hero.get_rect().x <= 12480
+            and 660 <= self.__hero.get_rect().y <= 720
+        ):
             self.__move_to_door()
             return True
         return False
@@ -63,18 +66,14 @@ class WinHandler:
         x_position = hero.get_rect().x
 
         return (
-            (
-                FLAG_POSITION - 20 <= x_position <= FLAG_POSITION + 10
-                and hero.get_hero_level() is HeroLevel.NORMAL
-                or hero.get_hero_level() is HeroLevel.BORRACHO_SMALL
-            )
-            or
-            (
-                FLAG_POSITION - 60 <= x_position <= FLAG_POSITION + 10
-                and hero.get_hero_level() is HeroLevel.BIG
-                or hero.get_hero_level() is HeroLevel.COCA
-                or hero.get_hero_level() is HeroLevel.BORRACHO_BIG
-            )
+            FLAG_POSITION - 20 <= x_position <= FLAG_POSITION + 10
+            and hero.get_hero_level() is HeroLevel.NORMAL
+            or hero.get_hero_level() is HeroLevel.BORRACHO_SMALL
+        ) or (
+            FLAG_POSITION - 60 <= x_position <= FLAG_POSITION + 10
+            and hero.get_hero_level() is HeroLevel.BIG
+            or hero.get_hero_level() is HeroLevel.COCA
+            or hero.get_hero_level() is HeroLevel.BORRACHO_BIG
         )
 
     def __move_to_other_place_of_the_pipe(self, hero: IHero) -> None:

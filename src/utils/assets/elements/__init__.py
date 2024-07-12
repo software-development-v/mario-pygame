@@ -4,6 +4,9 @@ from .non_touchable import (
     BIG_MOUNTAIN,
     BIG_TREE,
     CASTLE,
+    FIREWORK_LARGE,
+    FIREWORK_MEDIUM,
+    FIREWORK_SMALL,
     MEDIUM_BUSH,
     MEDIUM_CLOUD,
     MEDIUM_MOUNTAIN,
@@ -12,9 +15,6 @@ from .non_touchable import (
     SMALL_CLOUD,
     SMALL_MOUNTAIN,
     SMALL_TREE,
-    FIREWORK_SMALL,
-    FIREWORK_MEDIUM,
-    FIREWORK_LARGE
 )
 from .touchable import (
     BUTTON,
