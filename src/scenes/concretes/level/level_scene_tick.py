@@ -94,9 +94,7 @@ class LevelSceneTick(Tick):
             hero.set_action(HeroAction.DEAD, True)
 
         if (
-            (
-                hero.get_hero_state() == HeroState.DEAD
-            )
+            (hero.get_hero_state() == HeroState.DEAD)
             and hero.get_rect().y > 900
         ) and not self.__level_manager.is_win():
 
