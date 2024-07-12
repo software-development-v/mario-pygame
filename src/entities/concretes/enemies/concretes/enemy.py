@@ -68,9 +68,6 @@ class Enemy(IEnemy, ABC):
     def update(
         self, obstacles: List[Element], enemies: List[IEnemy], camera: Camera
     ):
-        if self.state == EnemyState.GO_AWAY:
-            return
-
         dx, dy = self.movement_handler.handle_movement(camera)
         dx, dy = self.collisions_handler.handle_collisions(
             self.get_rect(), obstacles, enemies, dx, dy
