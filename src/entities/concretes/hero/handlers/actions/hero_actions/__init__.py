@@ -3,6 +3,7 @@ from .concretes import (
     HeroActionJump,
     HeroActionRun,
     HeroActionWin,
+    HeroActionDead
 )
 from .interfaces import IHeroActionStrategy
 
@@ -11,5 +12,6 @@ __all__ = [
     "HeroActionJump",
     "HeroActionRun",
     "HeroActionWin",
+    "HeroActionDead",
     "IHeroActionStrategy",
 ]

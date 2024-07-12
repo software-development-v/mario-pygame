@@ -1,18 +1,19 @@
-from src.enums import HeroAction, HeroState
+from src.enums import HeroAction, HeroState, HeroLevel
 
 from .....interfaces import IHero
 from ..interfaces import IHeroActionStrategy
 
 
-class HeroActionIdle(IHeroActionStrategy):
+class HeroActionDead(IHeroActionStrategy):
     def execute(self, hero: IHero):
-        hero.set_hero_state(HeroState.IDLE)
+        hero.set_hero_level(HeroLevel.NORMAL)
+        hero.set_hero_state(HeroState.DEAD)
         hero.set_actions(
             {
+                HeroAction.IDLE: False,
                 HeroAction.JUMPING: False,
                 HeroAction.RUNNING: False,
-                HeroAction.IDLE: True,
                 HeroAction.WIN: False,
-                HeroAction.DEAD: False
+                HeroAction.DEAD: True,
             }
         )

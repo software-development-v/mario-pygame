@@ -21,5 +21,6 @@ class HeroActionJump(IHeroActionStrategy):
                 HeroAction.RUNNING: False,
                 HeroAction.IDLE: False,
                 HeroAction.WIN: False,
+                HeroAction.DEAD: False
             }
         )

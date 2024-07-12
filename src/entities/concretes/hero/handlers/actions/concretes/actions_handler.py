@@ -1,5 +1,8 @@
 from typing import Dict, Optional
 
+from src.entities.concretes.hero.handlers.actions.hero_actions.concretes.hero_action_dead import (
+    HeroActionDead,
+)
 from src.enums import GameEvent, HeroAction
 
 from ....interfaces import IHero
@@ -25,6 +28,7 @@ class ActionsHandler(IActionsHandler):
             game_events[GameEvent.UP]
             and not hero_actions[HeroAction.JUMPING]
             and not hero_actions[HeroAction.WIN]
+            and not hero_actions[HeroAction.DEAD]
         ):
             hero_action_strategy = HeroActionJump()
         elif (
@@ -32,16 +36,20 @@ class ActionsHandler(IActionsHandler):
             and not hero_actions[HeroAction.JUMPING]
             and not hero_actions[HeroAction.RUNNING]
             and not hero_actions[HeroAction.WIN]
+            and not hero_actions[HeroAction.DEAD]
         ):
             hero_action_strategy = HeroActionRun()
-        elif hero_actions[HeroAction.WIN]:
+        elif hero_actions[HeroAction.WIN] and not hero_actions[HeroAction.DEAD]:
             hero_action_strategy = HeroActionWin()
         elif (
             not hero_actions[HeroAction.JUMPING]
             and not hero_actions[HeroAction.RUNNING]
             and not hero_actions[HeroAction.WIN]
+            and not hero_actions[HeroAction.DEAD]
         ):
             hero_action_strategy = HeroActionIdle()
+        elif hero_actions[HeroAction.DEAD]:
+            hero_action_strategy = HeroActionDead()
 
         if hero_action_strategy is not None:
             hero_action_strategy.execute(self.__hero)
