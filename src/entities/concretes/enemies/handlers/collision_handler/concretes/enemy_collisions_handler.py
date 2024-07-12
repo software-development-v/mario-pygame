@@ -1,17 +1,18 @@
 from abc import ABC, abstractmethod
 from typing import List
-
 from pygame import Rect
 
 from src.entities import Element
-
+from .....hero import IHero
 from ....interfaces import IEnemy
 from ..interfaces import IEnemyCollisionsHandler
+import time
 
 
 class EnemyCollisionsHandler(IEnemyCollisionsHandler, ABC):
     def __init__(self, enemy: IEnemy):
         self.enemy = enemy
+        self.dispose_time = None
 
     def handle_collisions(
         self,
@@ -84,5 +85,10 @@ class EnemyCollisionsHandler(IEnemyCollisionsHandler, ABC):
         return dy
 
     @abstractmethod
-    def handle_hero_collision(self, hero_rect: Rect) -> bool:
+    def handle_hero_collision(self, hero: IHero) -> bool:
         pass
+
+    def check_dispose(self):
+        if self.dispose_time and time.time() >= self.dispose_time:
+            self.enemy.kill()
+            self.dispose_time = None
