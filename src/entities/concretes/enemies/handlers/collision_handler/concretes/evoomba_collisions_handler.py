@@ -1,8 +1,10 @@
-from ....interfaces import IEnemy
-from .....hero import IHero
-from ..concretes import EnemyCollisionsHandler
-from src.enums import EnemyState
 import time
+
+from src.enums import EnemyState
+
+from .....hero import IHero
+from ....interfaces import IEnemy
+from ..concretes import EnemyCollisionsHandler
 
 
 class EvoombaCollisionsHandler(EnemyCollisionsHandler):

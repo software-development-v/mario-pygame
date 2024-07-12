@@ -1,7 +1,8 @@
+import time
+
+from .....hero import IHero
 from ....interfaces import IEnemy
 from ..concretes import EnemyCollisionsHandler
-from .....hero import IHero
-import time
 
 
 class ValvoopaCollisionsHandler(EnemyCollisionsHandler):

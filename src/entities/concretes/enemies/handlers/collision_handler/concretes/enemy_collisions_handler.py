@@ -1,12 +1,14 @@
+import time
 from abc import ABC, abstractmethod
 from typing import List
+
 from pygame import Rect
 
 from src.entities import Element
+
 from .....hero import IHero
 from ....interfaces import IEnemy
 from ..interfaces import IEnemyCollisionsHandler
-import time
 
 
 class EnemyCollisionsHandler(IEnemyCollisionsHandler, ABC):
