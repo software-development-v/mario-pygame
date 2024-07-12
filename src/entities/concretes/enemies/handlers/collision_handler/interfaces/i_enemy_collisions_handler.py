@@ -23,3 +23,7 @@ class IEnemyCollisionsHandler(ABC):
         dy: float,
     ) -> Tuple[float, float]:
         pass
+
+    @abstractmethod
+    def handle_hero_collision(self, hero_rect: Rect) -> bool:
+        pass

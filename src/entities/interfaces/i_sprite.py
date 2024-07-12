@@ -15,6 +15,10 @@ class ISprite(IDrawable, IAnimate, ABC):
         pass
 
     @abstractmethod
+    def set_index(self, index: int) -> None:
+        pass
+
+    @abstractmethod
     def add_x_rect(self, x: float) -> None:
         pass
 

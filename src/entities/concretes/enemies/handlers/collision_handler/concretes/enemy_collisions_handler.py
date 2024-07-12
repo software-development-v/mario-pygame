@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from typing import List
 
 from pygame import Rect
@@ -8,7 +9,7 @@ from ....interfaces import IEnemy
 from ..interfaces import IEnemyCollisionsHandler
 
 
-class EnemyCollisionsHandler(IEnemyCollisionsHandler):
+class EnemyCollisionsHandler(IEnemyCollisionsHandler, ABC):
     def __init__(self, enemy: IEnemy):
         self.enemy = enemy
 
@@ -38,10 +39,7 @@ class EnemyCollisionsHandler(IEnemyCollisionsHandler):
             if obstacle == self.enemy:
                 continue
 
-            if (
-                isinstance(obstacle, Element)
-                and not obstacle.get_is_touchable()
-            ):
+            if not obstacle.get_is_touchable():
                 continue
 
             obstacle_rect = obstacle.get_rect()
@@ -78,9 +76,13 @@ class EnemyCollisionsHandler(IEnemyCollisionsHandler):
                 enemy_rect.width,
                 enemy_rect.height,
             ):
-                if dy > 0:  # Falling
+                if dy > 0:
                     return obstacle_rect.top - enemy_rect.bottom
-                elif dy < 0:  # Moving upwards
+                elif dy < 0:
                     return obstacle_rect.bottom - enemy_rect.top
 
         return dy
+
+    @abstractmethod
+    def handle_hero_collision(self, hero_rect: Rect) -> bool:
+        pass
