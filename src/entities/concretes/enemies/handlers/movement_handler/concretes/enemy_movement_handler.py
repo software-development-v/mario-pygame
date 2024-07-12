@@ -6,6 +6,8 @@ from ..interfaces import IEnemyMovementHandler
 
 
 class EnemyMovementHandler(IEnemyMovementHandler):
+    __slots__ = ("enemy", "is_active", "update_counter")
+
     UPDATE_INTERVAL = 2
 
     def __init__(self, enemy: IEnemy):

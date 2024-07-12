@@ -15,6 +15,20 @@ from ..interfaces import IEnemy
 
 
 class Enemy(IEnemy, ABC):
+    __slots__ = (
+        "surfaces",
+        "state",
+        "initial_state",
+        "initial_position",
+        "face_right",
+        "is_touchable",
+        "speed",
+        "vel_y",
+        "collisions_handler",
+        "movement_handler",
+        "_rect",
+    )
+
     def __init__(
         self,
         position: Position,
