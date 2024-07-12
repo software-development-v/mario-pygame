@@ -1,6 +1,7 @@
 from .bush import BIG_BUSH, MEDIUM_BUSH, SMALL_BUSH
 from .castle import CASTLE
 from .cloud import BIG_CLOUD, MEDIUM_CLOUD, SMALL_CLOUD
+from .fireworks import FIREWORK_LARGE, FIREWORK_MEDIUM, FIREWORK_SMALL
 from .mountain import BIG_MOUNTAIN, MEDIUM_MOUNTAIN, SMALL_MOUNTAIN
 from .tree import BIG_TREE, MEDIUM_TREE, SMALL_TREE
 
@@ -18,4 +19,7 @@ __all__ = [
     "MEDIUM_TREE",
     "SMALL_TREE",
     "CASTLE",
+    "FIREWORK_SMALL",
+    "FIREWORK_MEDIUM",
+    "FIREWORK_LARGE",
 ]

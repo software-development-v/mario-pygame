@@ -3,10 +3,14 @@ from typing import Callable, Dict
 from pygame import Rect, time
 
 from src.enums import GameEvent, HeroState, SceneAction
+from src.enums.hero_action import HeroAction
 from src.level import AnimationManager, ILevelManager
 from src.utils import TO_SECONDS
+from src.utils.constants import TIME_POINTS
+from src.utils.high_score_manager import update_score
 
 from ...abstractions import Tick
+from ..victory_cinematic.victory_cinematic import VictoryCinematic
 
 
 class LevelSceneTick(Tick):
@@ -19,6 +23,7 @@ class LevelSceneTick(Tick):
         self.__level_manager = level_manager
         self.__animation_manager = animation_manager
         super().__init__(dispatcher)
+        self.__finish_time: int = -1
 
     def tick(
         self,
@@ -38,20 +43,58 @@ class LevelSceneTick(Tick):
         obstacles_manager = self.__level_manager.get_obstacles_manager()
         obstacles_manager.animate()
 
-        hero.update(game_events, obstacles_manager.get_sprites(), camera)
+        enemies_manager = self.__level_manager.get_enemy_manager()
+        enemies_manager.animate()
+
+        auxiliar_game_events = game_events
+
+        if self.__level_manager.is_win():
+            auxiliar_game_events = {
+                GameEvent.UP: False,
+                GameEvent.DOWN: False,
+                GameEvent.LEFT: False,
+                GameEvent.RIGHT: False,
+                GameEvent.JUMP: False,
+                GameEvent.RUN: False,
+                GameEvent.PAUSE: False,
+                GameEvent.ATTACK: False,
+            }
+
+        hero.update(
+            auxiliar_game_events, obstacles_manager.get_sprites(), camera
+        )
         hero.animate()
 
         hero_rect: Rect = hero.get_rect()
         camera.update(hero_rect.x, hero_rect.width)
 
+        enemies_manager.update(camera, obstacles_manager.getElements())
+
+        if enemies_manager.if_there_a_collide_with_enemy(hero) == True:
+            hero.set_index(0)
+            hero.set_hero_state(HeroState.DEAD)
+
         self.__animation_manager.animate()
+
+        if (
+            self.__level_manager.is_win()
+            and self.__level_manager.get_current_time() > 0
+        ):
+            if self.__finish_time == -1:
+                self.__finish_time = self.__level_manager.get_current_time()
+            current_time = self.__level_manager.get_current_time() - 1
+            score = self.__level_manager.get_score() + TIME_POINTS
+            self.__level_manager.set_current_time(current_time)
+            self.__level_manager.set_score(score)
 
         if (
             hero.get_hero_state() == HeroState.DEAD
             or self.__level_manager.get_current_time() <= 0
-        ):
+        ) and not self.__level_manager.is_win():
 
             self.__level_manager.set_lives(self.__level_manager.get_lives() - 1)
+            enemies_manager.reset_enemies()
+
             from ..transition_level import TransitionLevelScene
 
             self._dispatcher[SceneAction.SET_NEXT_SCENE](
@@ -64,5 +107,29 @@ class LevelSceneTick(Tick):
                 )
             )
             self._dispatcher[SceneAction.END]()
-        elif hero.get_hero_state() == HeroState.DOWN:
+        elif (
+            self.__level_manager.is_win()
+            and (hero.get_rect().x >= 12480 and hero.get_rect().y >= 660)
+            and self.__level_manager.get_current_time() == 0
+        ):
+            self.__victory_manage()
+        elif (
+            hero.get_hero_state() == HeroState.DOWN
+            and hero.get_actions()[HeroAction.WIN]
+        ):
             self.__level_manager.win()
+
+    def __victory_manage(self) -> None:
+        number = str(self.__finish_time)
+        last_number = number[-1]
+
+        if last_number == "1" or last_number == "3" or last_number == "6":
+            self._dispatcher[SceneAction.SET_NEXT_SCENE](
+                VictoryCinematic(
+                    self._dispatcher, self.__finish_time, self.__level_manager
+                )
+            )
+
+        update_score(self.__level_manager.get_score())
+
+        self._dispatcher[SceneAction.END]()

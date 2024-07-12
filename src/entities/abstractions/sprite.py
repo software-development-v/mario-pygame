@@ -27,6 +27,7 @@ class Sprite(PygameSprite, ISprite, ABC):
         self.__last_update: int = time.get_ticks()
         self.__animation_interval: int = animation_interval
         self.__disposed = False
+        self.__visible = True
 
         self.__image_rect: Rect = self.__get_image().get_rect(
             topleft=init_position.to_tuple()
@@ -70,8 +71,27 @@ class Sprite(PygameSprite, ISprite, ABC):
             self.__height,
         )
 
+    def set_index(self, index: int) -> None:
+        self.__index = index
+
     def get_rect(self) -> Rect:
         return self.__rect
+
+    def appear(self):
+        self.__visible = True
+
+    def disappear(self):
+        self.__visible = False
+
+    def set_rect(self, position: Position) -> None:
+        self.__image_rect.topleft = position.to_tuple()
+        self.__rect = Rect(
+            self.__image_rect.x + (self.__image_rect.width - self.__width) / 2,
+            self.__image_rect.y
+            + (self.__image_rect.height - self.__height) / 2,
+            self.__width,
+            self.__height,
+        )
 
     def add_x_rect(self, x: float) -> None:
         self.__image_rect.x += x
@@ -132,14 +152,15 @@ class Sprite(PygameSprite, ISprite, ABC):
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
     ) -> None:
-        image = self.__get_image()
-        self.__check_change_image(image, x_rect_percent, y_rect_percent)
+        if self.__visible == True:
+            image = self.__get_image()
+            self.__check_change_image(image, x_rect_percent, y_rect_percent)
 
-        rect = self.__image_rect.topleft
-        if camera is not None:
-            rect = camera.apply(self.__image_rect)
+            rect = self.__image_rect.topleft
+            if camera is not None:
+                rect = camera.apply(self.__image_rect)
 
-        screen.blit(image, rect)
+            screen.blit(image, rect)
 
     def animate(self) -> None:
         surfaces = self._get_surfaces()

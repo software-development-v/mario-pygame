@@ -1,7 +1,8 @@
 from src.enums import EnemyState, EnemyType
 from src.utils import Position, enemies
 
-from ...abstractions import Enemy
+from ..handlers import ValvoopaCollisionsHandler
+from .enemy import Enemy
 
 
 class Valvoopa(Enemy):
@@ -9,7 +10,8 @@ class Valvoopa(Enemy):
         super().__init__(
             surfaces=enemies[EnemyType.VALVOOPA],
             position=position,
-            initial_state=EnemyState.WALKING,
+            enemyState=EnemyState.WALKING,
+            collision_handler=ValvoopaCollisionsHandler(self),
         )
 
     def update_state(self):
