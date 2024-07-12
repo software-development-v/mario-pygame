@@ -23,6 +23,11 @@ LOGOS_DIR = ASSETS_DIR + "logo/"
 # == Cinematics ==
 CINEMATICS_DIR = ASSETS_DIR + "cinematics/"
 FINAL_CINEMATIC_DIR = CINEMATICS_DIR + "final_cinematic/"
+VICTORY_CINEMATIC_DIR = CINEMATICS_DIR + "victory_cinematic/"
+
+# victory cinematic
+VICTORY_CINEMATIC_VIDEO_DIR = VICTORY_CINEMATIC_DIR + "video/"
+VICTORY_CINEMATIC_AUDIO_DIR = VICTORY_CINEMATIC_DIR + "audio/"
 
 # == Elements ==
 ELEMENTS_DIR = ASSETS_DIR + "elements/"
@@ -48,6 +53,7 @@ ENEMIES_DIR = SPRITES_DIR + "enemies/"
 ICONS_DIR = SPRITES_DIR + "icons/"
 PLAYERS_DIR = SPRITES_DIR + "players/"
 POWER_UPS_DIR = SPRITES_DIR + "power_ups/"
+FIREWORKS_DIR = SPRITES_DIR + "fireworks/"
 
 # == Flag ==
 # == Flag name ==

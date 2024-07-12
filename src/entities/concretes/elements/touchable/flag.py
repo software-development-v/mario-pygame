@@ -37,15 +37,21 @@ class Flag(InteractiveElement):
         super().__init__(
             position,
             elements[ElementType.FLAG][element_sub_type],
-            x_rect_percent=(
-                0.145 if element_sub_type == ElementSubType.FLAG_SUPPORT else 1
-            ),
+            x_rect_percent=self.__define_x_collider(element_sub_type),
             is_touchable=(
                 False if element_sub_type is ElementSubType.FLAG_WIN else True
             ),
         )
         self.__points = self.__get_points()
         self.__element_sub_type = element_sub_type
+
+    def __define_x_collider(self, subtype: ElementSubType) -> float:
+        collider = 1
+        if subtype is ElementSubType.FLAG_SUPPORT:
+            collider = 0.145
+        elif subtype is ElementSubType.FLAG_LIMITER:
+            collider = 0.45
+        return collider
 
     def __get_points(self) -> int:
         y_position = self.get_rect().y
@@ -68,8 +74,9 @@ class Flag(InteractiveElement):
     def __fix_hero_position(self, hero: IHero):
         if self.__element_sub_type is ElementSubType.FLAG_SUPPORT:
             hero.add_y_rect(-61)
+        elif hero.get_rect().y >= 640:
+            hero.add_y_rect(-121)
         else:
-
             if hero.get_rect().x > FLAG_POSITION:
                 difference_position = hero.get_rect().x - FLAG_POSITION
                 hero.add_x_rect(-difference_position)
