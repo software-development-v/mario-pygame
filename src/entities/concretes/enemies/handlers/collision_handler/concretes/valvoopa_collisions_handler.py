@@ -9,6 +9,9 @@ class ValvoopaCollisionsHandler(EnemyCollisionsHandler):
         super().__init__(enemy)
 
     def handle_hero_collision(self, hero_rect: Rect) -> bool:
+        if not self.enemy.get_is_touchable():
+            return False
+
         enemy_rect = self.enemy.get_rect()
         if hero_rect.colliderect(enemy_rect):
             if hero_rect.bottom < enemy_rect.centery:
