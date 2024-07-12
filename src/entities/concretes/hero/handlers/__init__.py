@@ -4,6 +4,7 @@ from .collisions import CollisionsHandler, ICollisionsHandler
 from .damage import DamageHandler, IDamageHandler
 from .movement import IMovementHandler, MovementHandler
 from .win_handler import WinHandler
+from .jump_handler import JumpHandler
 
 __all__ = [
     "ActionsHandler",
@@ -16,4 +17,5 @@ __all__ = [
     "IDamageHandler",
     "WinHandler",
     "CheckPointHandler",
+    "JumpHandler",
 ]

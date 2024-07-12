@@ -25,6 +25,7 @@ from ..handlers import (
     IMovementHandler,
     MovementHandler,
     WinHandler,
+    JumpHandler
 )
 from ..interfaces import IHero
 
@@ -53,6 +54,7 @@ class Hero(Sprite, IHero):
         self.__damage_handler: IDamageHandler = DamageHandler(self)
         self.__win_handler = WinHandler(self)
         self.__check_point_handler = CheckPointHandler(self)
+        self.__jump_handler = JumpHandler(self)
         self.__collided_win: bool = False
 
         super().__init__(
@@ -140,6 +142,7 @@ class Hero(Sprite, IHero):
             return
 
         hero_rect: Rect = self.get_rect()
+
         dx, dy = self.__movement_handler.handle_hero_movements(
             hero_rect, game_events, camera
         )
@@ -148,5 +151,6 @@ class Hero(Sprite, IHero):
         )
         self.add_x_rect(dx)
         self.add_y_rect(dy)
+        self.__jump_handler.handle_hero_jump(game_events)
         self.__damage_handler.handle_damage()
         self.__check_point_handler.handle_check_point()
