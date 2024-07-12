@@ -1,14 +1,16 @@
 from abc import ABC
 from typing import Dict, List
 
-from pygame import Rect, Surface
+from pygame import Surface
 
+from src.entities.concretes.hero.interfaces.i_hero import IHero
 from src.enums import EnemyState
 from src.utils import Camera, Position
 
 from ....abstractions import Element
 from ...enemies.handlers import EnemyMovementHandler
 from ...enemies.handlers.collision_handler import IEnemyCollisionsHandler
+from ...hero import IHero
 from ..interfaces import IEnemy
 
 
@@ -25,7 +27,7 @@ class Enemy(IEnemy, ABC):
         self.initial_state = enemyState
         self.initial_position = position
         self.face_right = True
-        self.__is_touchable = True
+        self.is_touchable = True
         self.speed = 2
         self.vel_y = 0
         self.collisions_handler = collision_handler
@@ -60,10 +62,10 @@ class Enemy(IEnemy, ABC):
         self.vel_y += vel_y
 
     def get_is_touchable(self) -> bool:
-        return self.__is_touchable
+        return self.is_touchable
 
-    def _set_is_touchable(self, is_touchable: bool) -> None:
-        self.__is_touchable = is_touchable
+    def set_is_touchable(self, is_touchable: bool) -> None:
+        self.is_touchable = is_touchable
 
     def update(
         self, obstacles: List[Element], enemies: List[IEnemy], camera: Camera
@@ -75,18 +77,20 @@ class Enemy(IEnemy, ABC):
         self.add_x_rect(dx)
         self.add_y_rect(dy)
 
-    def get_hero_collision(self, hero_rect: Rect) -> bool:
-        return self.collisions_handler.handle_hero_collision(hero_rect)
+        if hasattr(self.collisions_handler, "check_dispose"):
+            self.collisions_handler.check_dispose()
+
+    def get_hero_collision(self, hero: IHero) -> bool:
+        return self.collisions_handler.handle_hero_collision(hero)
 
     def reset(self) -> None:
         self.state = self.initial_state
         self.set_rect(self.initial_position)
         self.face_right = False
-        self.__is_touchable = True
+        self.is_touchable = True
         self.speed = 2
         self.vel_y = 0
         self.appear()
 
     def kill(self):
-        self.__is_touchable = False
         self.disappear()

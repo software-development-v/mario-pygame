@@ -5,12 +5,12 @@ from pygame import Rect, time
 from src.enums import GameEvent, HeroState, SceneAction
 from src.enums.hero_action import HeroAction
 from src.level import AnimationManager, ILevelManager
+from src.utils import TO_SECONDS
 from src.utils.constants import TIME_POINTS
 from src.utils.high_score_manager import update_score
-from ..victory_cinematic.victory_cinematic import VictoryCinematic
-from src.utils import TO_SECONDS
 
 from ...abstractions import Tick
+from ..victory_cinematic.victory_cinematic import VictoryCinematic
 
 
 class LevelSceneTick(Tick):
@@ -70,7 +70,7 @@ class LevelSceneTick(Tick):
 
         enemies_manager.update(camera, obstacles_manager.getElements())
 
-        if enemies_manager.if_there_a_collide_with_enemy(hero_rect) == True:
+        if enemies_manager.if_there_a_collide_with_enemy(hero) == True:
             hero.set_index(0)
             hero.set_hero_state(HeroState.DEAD)
 

@@ -5,6 +5,7 @@ from pygame import Rect
 
 from src.entities import Element
 
+from .....hero import IHero
 from ....interfaces import IEnemy
 
 
@@ -25,5 +26,9 @@ class IEnemyCollisionsHandler(ABC):
         pass
 
     @abstractmethod
-    def handle_hero_collision(self, hero_rect: Rect) -> bool:
+    def handle_hero_collision(self, hero: IHero) -> bool:
+        pass
+
+    @abstractmethod
+    def check_dispose(self):
         pass
