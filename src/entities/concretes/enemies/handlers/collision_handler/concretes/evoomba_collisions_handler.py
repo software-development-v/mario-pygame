@@ -1,7 +1,7 @@
 import time
 
 from src.enums import EnemyState
-
+from src.utils import BOUNCE_JUMP
 from .....hero import IHero
 from ....interfaces import IEnemy
 from ..concretes import EnemyCollisionsHandler
@@ -23,7 +23,7 @@ class EvoombaCollisionsHandler(EnemyCollisionsHandler):
                 self.enemy.set_index(0)
                 self.enemy.set_state(EnemyState.DEAD)
                 self.enemy.set_is_touchable(False)
-                hero.set_vel_y(-20)  # TODO: Improve jump managment
+                hero.set_vel_y(-BOUNCE_JUMP)
                 self.dispose_time = time.time() + 1
                 return False
             else:
