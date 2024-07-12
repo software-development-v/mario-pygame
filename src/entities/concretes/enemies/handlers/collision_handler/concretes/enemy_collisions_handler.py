@@ -12,9 +12,12 @@ from ..interfaces import IEnemyCollisionsHandler
 
 
 class EnemyCollisionsHandler(IEnemyCollisionsHandler, ABC):
+    __slots__ = ("enemy", "dispose_time", "_temp_rect")
+
     def __init__(self, enemy: IEnemy):
         self.enemy = enemy
         self.dispose_time = None
+        self._temp_rect = Rect(0, 0, 0, 0)
 
     def handle_collisions(
         self,
@@ -38,21 +41,16 @@ class EnemyCollisionsHandler(IEnemyCollisionsHandler, ABC):
         if dx == 0:
             return dx
 
+        self._temp_rect.x = enemy_rect.x + dx
+        self._temp_rect.y = enemy_rect.y
+        self._temp_rect.width = enemy_rect.width
+        self._temp_rect.height = enemy_rect.height
+
         for obstacle in obstacles + enemies:
-            if obstacle == self.enemy:
+            if obstacle == self.enemy or not obstacle.get_is_touchable():
                 continue
 
-            if not obstacle.get_is_touchable():
-                continue
-
-            obstacle_rect = obstacle.get_rect()
-
-            if obstacle_rect.colliderect(
-                enemy_rect.x + dx,
-                enemy_rect.y,
-                enemy_rect.width,
-                enemy_rect.height,
-            ):
+            if self._temp_rect.colliderect(obstacle.get_rect()):
                 self.enemy.set_face_right(not self.enemy.get_face_right())
                 return -dx
 
@@ -67,21 +65,20 @@ class EnemyCollisionsHandler(IEnemyCollisionsHandler, ABC):
         if dy == 0:
             return dy
 
+        self._temp_rect.x = enemy_rect.x
+        self._temp_rect.y = enemy_rect.y + dy
+        self._temp_rect.width = enemy_rect.width
+        self._temp_rect.height = enemy_rect.height
+
         for obstacle in obstacles:
             if not obstacle.get_is_touchable():
                 continue
 
             obstacle_rect = obstacle.get_rect()
-
-            if obstacle_rect.colliderect(
-                enemy_rect.x,
-                enemy_rect.y + dy,
-                enemy_rect.width,
-                enemy_rect.height,
-            ):
+            if self._temp_rect.colliderect(obstacle_rect):
                 if dy > 0:
                     return obstacle_rect.top - enemy_rect.bottom
-                elif dy < 0:
+                else:
                     return obstacle_rect.bottom - enemy_rect.top
 
         return dy
