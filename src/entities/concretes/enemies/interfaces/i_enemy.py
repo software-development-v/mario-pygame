@@ -1,12 +1,11 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from pygame import Rect
-
 from src.enums import EnemyState
 from src.utils import Camera
 
 from ....abstractions import Element, Sprite
+from ...hero.interfaces import IHero
 
 
 class IEnemy(Sprite, ABC):
@@ -29,11 +28,11 @@ class IEnemy(Sprite, ABC):
 
     @abstractmethod
     def get_is_touchable(self) -> bool:
-        return self.__is_touchable
+        pass
 
     @abstractmethod
-    def _set_is_touchable(self, is_touchable: bool) -> None:
-        self.__is_touchable = is_touchable
+    def set_is_touchable(self, is_touchable: bool) -> None:
+        pass
 
     @abstractmethod
     def set_vel_y(self, vel_y: float) -> None:
@@ -53,5 +52,5 @@ class IEnemy(Sprite, ABC):
         pass
 
     @abstractmethod
-    def get_hero_collision(self, hero_rect: Rect) -> bool:
+    def get_hero_collision(self, hero: IHero) -> bool:
         pass
