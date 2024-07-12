@@ -23,9 +23,9 @@ from ..handlers import (
     ICollisionsHandler,
     IDamageHandler,
     IMovementHandler,
+    JumpHandler,
     MovementHandler,
     WinHandler,
-    JumpHandler
 )
 from ..interfaces import IHero
 

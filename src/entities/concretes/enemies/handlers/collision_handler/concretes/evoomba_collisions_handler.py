@@ -2,6 +2,7 @@ import time
 
 from src.enums import EnemyState
 from src.utils import BOUNCE_JUMP
+
 from .....hero import IHero
 from ....interfaces import IEnemy
 from ..concretes import EnemyCollisionsHandler

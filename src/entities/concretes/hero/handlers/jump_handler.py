@@ -1,9 +1,12 @@
 from typing import Dict
+
+from pygame import mixer
+
 from src.enums import GameEvent
 from src.enums.hero_action import HeroAction
 from src.utils import JUMP_SOUND
+
 from ..interfaces import IHero
-from pygame import mixer
 
 
 class JumpHandler:
@@ -59,5 +62,3 @@ class JumpHandler:
                     hero.add_vel_y(jump[self.HEIGHT])
                     jump[self.TAKEN] = True
                 break
-
-
