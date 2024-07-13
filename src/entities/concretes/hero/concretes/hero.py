@@ -2,6 +2,7 @@ from typing import Dict, List, Optional
 
 from pygame import Rect, Surface
 
+from src.entities.concretes.hero.handlers.dead_handler import DeadHandler
 from src.enums import GameEvent, HeroAction, HeroLevel, HeroState
 from src.utils import (
     HERO_ANIMATION_INTERVAL,
@@ -47,12 +48,14 @@ class Hero(Sprite, IHero):
             HeroAction.RUNNING: False,
             HeroAction.IDLE: False,
             HeroAction.WIN: False,
+            HeroAction.DEAD: False,
         }
         self.__actions_handler: IActionsHandler = ActionsHandler(self)
         self.__movement_handler: IMovementHandler = MovementHandler(self)
         self.__collisions_handler: ICollisionsHandler = CollisionsHandler(self)
         self.__damage_handler: IDamageHandler = DamageHandler(self)
         self.__win_handler = WinHandler(self)
+        self.__dead_handler = DeadHandler(self)
         self.__check_point_handler = CheckPointHandler(self)
         self.__jump_handler = JumpHandler(self)
         self.__collided_win: bool = False
@@ -134,6 +137,7 @@ class Hero(Sprite, IHero):
                 HeroAction.RUNNING: False,
                 HeroAction.IDLE: False,
                 HeroAction.WIN: False,
+                HeroAction.DEAD: False,
             }
         )
         self.set_is_bouncing(False)
@@ -149,6 +153,9 @@ class Hero(Sprite, IHero):
         self.__actions_handler.handle_hero_actions(game_events)
 
         if self.__win_handler.handle_win():
+            return
+
+        if self.__dead_handler.handle_dead():
             return
 
         hero_rect: Rect = self.get_rect()

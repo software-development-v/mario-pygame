@@ -6,3 +6,4 @@ class HeroAction(Enum):
     RUNNING = "RUNNING"
     IDLE = "IDLE"
     WIN = "WIN"
+    DEAD = "DEAD"
