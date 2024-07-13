@@ -13,6 +13,6 @@ class HeroActionIdle(IHeroActionStrategy):
                 HeroAction.RUNNING: False,
                 HeroAction.IDLE: True,
                 HeroAction.WIN: False,
-                HeroAction.DEAD: False
+                HeroAction.DEAD: False,
             }
         )

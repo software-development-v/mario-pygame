@@ -3,7 +3,7 @@ from typing import Callable, Dict
 from pygame import time
 
 from src.entities import InteractiveElement
-from src.enums import  SceneAction
+from src.enums import SceneAction
 from src.level import (
     AnimationManager,
     CoinObserver,

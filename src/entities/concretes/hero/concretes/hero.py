@@ -119,8 +119,6 @@ class Hero(Sprite, IHero):
     def set_collided_win(self, value: bool) -> None:
         self.__collided_win = value
 
-
-
     def is_bouncing(self) -> bool:
         return self.__is_bouncing
 
@@ -171,4 +169,3 @@ class Hero(Sprite, IHero):
         self.__jump_handler.handle_hero_jump(game_events)
         self.__damage_handler.handle_damage()
         self.__check_point_handler.handle_check_point()
-

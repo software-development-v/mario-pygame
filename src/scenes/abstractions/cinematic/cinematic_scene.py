@@ -25,7 +25,6 @@ class CinematicScene(Scene, ABC):
 
         self.__success, image = capture.read()
         self.__audio = mixer.Sound(audio_path)
-        self.__audio.play()
 
         super().__init__(
             CinematicSceneRender(

@@ -25,6 +25,9 @@ class CinematicSceneTick(Tick):
         self,
         game_events: Dict[GameEvent, bool],
     ) -> None:
+        if self.__audio.get_num_channels() == 0:
+            self.__audio.play()
+
         if game_events[GameEvent.PAUSE] or not self.__get_success():
             self.__audio.stop()
             if self.__next_scene is not None:

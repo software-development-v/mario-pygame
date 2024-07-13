@@ -29,7 +29,10 @@ class EvoombaCollisionsHandler(EnemyCollisionsHandler):
         self._temp_rect.update(hero_rect)
 
         if self._temp_rect.colliderect(enemy_rect):
-            if self._temp_rect.bottom < enemy_rect.centery and hero.get_hero_state() != HeroState.DEAD:
+            if (
+                self._temp_rect.bottom < enemy_rect.centery
+                and hero.get_hero_state() != HeroState.DEAD
+            ):
                 self.enemy.set_index(0)
                 self.enemy.set_state(self.enemy_state)
                 self.enemy.set_is_touchable(False)
