@@ -1,4 +1,4 @@
-from src.enums.hero_state import HeroState
+from src.enums import HeroState
 
 from ..interfaces import IHero
 

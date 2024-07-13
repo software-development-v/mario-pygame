@@ -5,7 +5,7 @@ from src.enums import EnemyState
 from src.utils import Camera
 
 from ....abstractions import Element, Sprite
-from ...hero.interfaces import IHero
+from ...hero import IHero
 
 
 class IEnemy(Sprite, ABC):

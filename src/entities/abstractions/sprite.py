@@ -4,16 +4,10 @@ from typing import List, Optional, Tuple
 from pygame import Rect, Surface, time, transform
 from pygame.sprite import Sprite as PygameSprite
 
-from src.entities.interfaces.observables.i_element_observer import (
-    IElementObserver,
-)
-from src.entities.interfaces.observables.i_observable_element import (
-    IObservableElement,
-)
 from src.enums import SpriteEventType
 from src.utils import ANIMATION_INTERVAL, INIT_IMAGE_INDEX, Camera, Position
 
-from ..interfaces import ISprite
+from ..interfaces import IElementObserver, IObservableElement, ISprite
 
 
 class Sprite(

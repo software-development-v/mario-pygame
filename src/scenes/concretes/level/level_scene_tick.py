@@ -7,7 +7,7 @@ from src.level import AnimationManager, ILevelManager
 from src.utils import TIME_POINTS, TO_SECONDS, update_score
 
 from ...abstractions import Tick
-from ..victory_cinematic.victory_cinematic import VictoryCinematic
+from ..victory_cinematic import VictoryCinematic
 
 
 class LevelSceneTick(Tick):

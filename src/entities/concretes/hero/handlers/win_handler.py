@@ -1,5 +1,4 @@
-from src.enums import HeroAction, HeroLevel
-from src.enums.hero_state import HeroState
+from src.enums import HeroAction, HeroLevel, HeroState
 from src.utils import FLAG_POSITION
 
 from ..interfaces import IHero

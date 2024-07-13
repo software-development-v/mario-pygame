@@ -2,7 +2,6 @@ from typing import Dict, List, Optional
 
 from pygame import Rect, Surface
 
-from src.entities.concretes.hero.handlers.dead_handler import DeadHandler
 from src.enums import GameEvent, HeroAction, HeroLevel, HeroState
 from src.utils import (
     HERO_ANIMATION_INTERVAL,
@@ -20,6 +19,7 @@ from ..handlers import (
     CheckPointHandler,
     CollisionsHandler,
     DamageHandler,
+    DeadHandler,
     IActionsHandler,
     ICollisionsHandler,
     IDamageHandler,

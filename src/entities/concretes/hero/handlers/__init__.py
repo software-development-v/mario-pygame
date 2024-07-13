@@ -2,6 +2,7 @@ from .actions import ActionsHandler, IActionsHandler
 from .check_point_handler import CheckPointHandler
 from .collisions import CollisionsHandler, ICollisionsHandler
 from .damage import DamageHandler, IDamageHandler
+from .dead_handler import DeadHandler
 from .jump_handler import JumpHandler
 from .movement import IMovementHandler, MovementHandler
 from .win_handler import WinHandler
@@ -18,4 +19,5 @@ __all__ = [
     "WinHandler",
     "CheckPointHandler",
     "JumpHandler",
+    "DeadHandler",
 ]
