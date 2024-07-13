@@ -8,9 +8,9 @@ from src.entities import (
     CollectedScore,
     Enemy,
     IElementObserver,
+    IHero,
     Sprite,
 )
-from src.entities.concretes.hero import IHero
 from src.enums import SpriteEventType
 from src.utils import Position
 

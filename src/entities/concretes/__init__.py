@@ -17,7 +17,7 @@ from .elements import (
     Tree,
 )
 from .enemies import Enemy, Evoomba, IEnemy, Valvoopa
-from .hero import Hero
+from .hero import Hero, IHero
 
 __all__ = [
     "Bush",
@@ -39,4 +39,5 @@ __all__ = [
     "AnimationCompose",
     "Evoomba",
     "Valvoopa",
+    "IHero",
 ]

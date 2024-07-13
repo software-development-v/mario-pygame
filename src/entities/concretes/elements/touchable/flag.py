@@ -1,7 +1,6 @@
 from typing import Optional
 
-from src.enums import ElementSubType, ElementType, HeroAction
-from src.enums.sprite_event_type import SpriteEventType
+from src.enums import ElementSubType, ElementType, HeroAction, SpriteEventType
 from src.utils import FLAG_POSITION, Position, elements
 
 from ....abstractions import InteractiveElement

@@ -2,8 +2,7 @@ from typing import Dict
 
 from pygame import mixer
 
-from src.enums import GameEvent
-from src.enums.hero_action import HeroAction
+from src.enums import GameEvent, HeroAction
 from src.utils import JUMP_SOUND
 
 from ..interfaces import IHero

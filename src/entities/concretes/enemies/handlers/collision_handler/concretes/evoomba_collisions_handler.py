@@ -2,7 +2,8 @@ import time
 
 from pygame import Rect
 
-from .......enums import EnemyState, HeroState
+from src.enums import EnemyState, HeroState
+
 from .....hero import IHero
 from ....interfaces import IEnemy
 from ..concretes import EnemyCollisionsHandler

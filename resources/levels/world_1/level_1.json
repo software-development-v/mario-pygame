@@ -9,7 +9,7 @@
     },
     "background_music": "LEVEL_01",
     "start_player_position": {
-        "x": 11000,
+        "x": 150,
         "y": 500
     },
     "check_point": {

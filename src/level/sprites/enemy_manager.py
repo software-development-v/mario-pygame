@@ -1,9 +1,8 @@
 from typing import List
 
-from src.utils.camera import Camera
+from src.utils import Camera
 
-from ...entities import Element, IEnemy
-from ...entities.concretes.hero import IHero
+from ...entities import Element, IEnemy, IHero
 from ..abstractions import SpritesManager
 
 

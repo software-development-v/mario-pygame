@@ -1,12 +1,10 @@
 from typing import Dict, Optional
 
-from src.entities.concretes.hero.handlers.actions.hero_actions.concretes.hero_action_dead import (
-    HeroActionDead,
-)
 from src.enums import GameEvent, HeroAction
 
 from ....interfaces import IHero
 from ..hero_actions import (
+    HeroActionDead,
     HeroActionIdle,
     HeroActionRun,
     HeroActionWin,
