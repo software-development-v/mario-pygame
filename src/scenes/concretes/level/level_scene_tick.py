@@ -3,6 +3,7 @@ from typing import Callable, Dict
 from pygame import Rect, time
 
 from src.enums import GameEvent, HeroAction, HeroState, SceneAction
+from src.enums.hero_level import HeroLevel
 from src.level import AnimationManager, ILevelManager
 from src.utils import TIME_POINTS, TO_SECONDS, update_score
 
@@ -94,6 +95,7 @@ class LevelSceneTick(Tick):
             self.__level_manager.set_score(score)
 
         if self.__level_manager.get_current_time() <= 0:
+            hero.set_hero_level(HeroLevel.NORMAL)
             hero.set_action(HeroAction.DEAD, True)
 
         if (
@@ -121,7 +123,6 @@ class LevelSceneTick(Tick):
             and (hero.get_rect().x >= 12480 and hero.get_rect().y >= 660)
             and self.__level_manager.get_current_time() == 0
         ):
-            print("WIN")
             self.__victory_manager()
         elif (
             hero.get_hero_state() == HeroState.DOWN
