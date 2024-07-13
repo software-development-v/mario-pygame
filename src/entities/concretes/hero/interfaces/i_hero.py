@@ -77,3 +77,23 @@ class IHero(ISprite, ABC):
         camera: Camera,
     ) -> None:
         pass
+
+    @abstractmethod
+    def is_borracho(self) -> bool:
+        pass
+
+    @abstractmethod
+    def is_invulnerable(self) -> bool:
+        pass
+
+    @abstractmethod
+    def borracho(self) -> None:
+        pass
+
+    @abstractmethod
+    def grow(self, level: HeroLevel) -> None:
+        pass
+
+    @abstractmethod
+    def decrease(self) -> None:
+        pass

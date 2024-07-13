@@ -3368,12 +3368,12 @@
             "subtype": ""
         },
         {
-            "position": [570, 500],
+            "position": [650, 500],
             "type": "COCA",
             "subtype": ""
         },
         {
-            "position": [640, 500],
+            "position": [800, 500],
             "type": "CAIMAN",
             "subtype": ""
         }

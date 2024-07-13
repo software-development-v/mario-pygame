@@ -24,6 +24,7 @@ class Sprite(
         y_rect_percent: float = 1,
         check_point: Optional[Position] = None,
         value: int = 0,
+        alpha: bool = False,
     ):
         super().__init__()
         self.__init_position: Position = init_position
@@ -39,6 +40,8 @@ class Sprite(
         self.__observer: Optional[
             IElementObserver[Tuple["Sprite", List[SpriteEventType]]]
         ]
+        self.__alpha = alpha
+        self.__transparency = 255
 
         self.__image_rect: Rect = self.__get_image().get_rect(
             topleft=init_position.to_tuple()
@@ -87,6 +90,9 @@ class Sprite(
 
     def get_rect(self) -> Rect:
         return self.__rect
+
+    def set_transparency(self, transparency: int) -> None:
+        self.__transparency = transparency
 
     def appear(self):
         self.__visible = True
@@ -163,15 +169,23 @@ class Sprite(
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
     ) -> None:
-        if self.__visible:
-            image = self.__get_image()
-            self.__check_change_image(image, x_rect_percent, y_rect_percent)
+        if not self.__visible:
+            return
 
-            rect = self.__image_rect.topleft
-            if camera is not None:
-                rect = camera.apply(self.__image_rect)
+        image = self.__get_image()
 
-            screen.blit(image, rect)
+        if self.__alpha:
+            image.convert_alpha()
+            image.set_alpha(self.__transparency)
+
+        self.__check_change_image(image, x_rect_percent, y_rect_percent)
+
+        rect = self.__image_rect.topleft
+
+        if camera is not None:
+            rect = camera.apply(self.__image_rect)
+
+        screen.blit(image, rect)
 
     def animate(self) -> None:
         surfaces = self._get_surfaces()

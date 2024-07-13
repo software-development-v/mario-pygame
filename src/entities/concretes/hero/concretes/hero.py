@@ -1,6 +1,6 @@
 from typing import Dict, List, Optional
 
-from pygame import Rect, Surface
+from pygame import Rect, Surface, time
 
 from src.enums import GameEvent, HeroAction, HeroLevel, HeroState
 from src.utils import (
@@ -60,6 +60,11 @@ class Hero(Sprite, IHero):
         self.__jump_handler = JumpHandler(self)
         self.__collided_win: bool = False
         self.__is_bouncing: bool = False
+        self.__levels = [HeroLevel.NORMAL, HeroLevel.BIG, HeroLevel.COCA]
+        self.__is_invulnerable: bool = False
+        self.__invulnerable_time: Optional[int] = None
+        self.__prev_level: Optional[HeroLevel] = None
+        self.__borracho_time: Optional[int] = None
 
         super().__init__(
             position,
@@ -69,6 +74,7 @@ class Hero(Sprite, IHero):
             and HERO_NORMAL_RECT_X_PERCENT
             or HERO_BIG_RECT_X_PERCENT,
             check_point=check_point,
+            alpha=True,
         )
 
     def _get_surfaces(self) -> List[Surface]:
@@ -140,6 +146,10 @@ class Hero(Sprite, IHero):
         )
         self.set_is_bouncing(False)
         self.set_face_right(True)
+        self.__is_invulnerable = False
+        self.__invulnerable_time = None
+        self.__borracho_time = None
+        self.__prev_level = None
         super().reset()
 
     def update(
@@ -148,6 +158,24 @@ class Hero(Sprite, IHero):
         obstacles: List[Element],
         camera: Camera,
     ) -> None:
+        if (
+            self.__borracho_time is not None
+            and time.get_ticks() > self.__borracho_time
+        ):
+            if self.__prev_level is not None:
+                self.__hero_level = self.__prev_level
+                self._prev_level = None
+
+            self.__borracho_time = None
+
+        if (
+            self.__invulnerable_time is not None
+            and time.get_ticks() > self.__invulnerable_time
+        ):
+            self.__is_invulnerable = False
+            self.set_transparency(255)
+            self.__invulnerable_time = None
+
         self.__actions_handler.handle_hero_actions(game_events)
 
         if self.__win_handler.handle_win():
@@ -169,3 +197,43 @@ class Hero(Sprite, IHero):
         self.__jump_handler.handle_hero_jump(game_events)
         self.__damage_handler.handle_damage()
         self.__check_point_handler.handle_check_point()
+
+    def is_borracho(self) -> bool:
+        return self.__borracho_time is not None
+
+    def is_invulnerable(self) -> bool:
+        return self.__is_invulnerable
+
+    def borracho(self) -> None:
+        self.__prev_level = self.__hero_level
+        self.__borracho_time = time.get_ticks() + 10000
+
+        if self.__hero_level == HeroLevel.NORMAL:
+            self.__hero_level = HeroLevel.BORRACHO_SMALL
+        else:
+            self.__hero_level = HeroLevel.BORRACHO_BIG
+
+    def grow(self, level: HeroLevel) -> None:
+        if self.__prev_level is None:
+            self.__hero_level = level
+            return
+
+        self.__prev_level = level
+        self.__hero_level = HeroLevel.BORRACHO_BIG
+
+    def decrease(self) -> None:
+        index = self.__levels.index(self.__hero_level)
+
+        if index == 0 and not self.__is_invulnerable:
+            self.set_index(0)
+            self.set_hero_state(HeroState.DEAD)
+            self.set_action(HeroAction.DEAD, True)
+            return
+
+        if not self.__is_invulnerable:
+            self.__is_invulnerable = True
+            self.set_transparency(165)
+            self.__invulnerable_time = time.get_ticks() + 3000
+
+        if index != 0:
+            self.__hero_level = self.__levels[index - 1]

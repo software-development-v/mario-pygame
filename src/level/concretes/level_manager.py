@@ -114,6 +114,7 @@ class LevelManager(ILevelManager):
     def reset(self) -> None:
         self.__hero.reset()
         self.__camera.reset(self.__hero.get_rect().x)
+        self.__power_up_manager.reset_power_ups()
 
     def configure_level(
         self,

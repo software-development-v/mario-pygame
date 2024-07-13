@@ -71,13 +71,13 @@ class LevelSceneTick(Tick):
         hero_rect: Rect = hero.get_rect()
         camera.update(hero_rect.x, hero_rect.width)
 
+        power_up_manager.update(hero)
+
         enemies_manager.update(camera, obstacles_manager.get_sprites())
         self.__animation_manager.reset()
 
         if enemies_manager.if_there_a_collide_with_enemy(hero):
-            hero.set_index(0)
-            hero.set_hero_state(HeroState.DEAD)
-            hero.set_action(HeroAction.DEAD, True)
+            hero.decrease()
 
         self.__animation_manager.animate()
 

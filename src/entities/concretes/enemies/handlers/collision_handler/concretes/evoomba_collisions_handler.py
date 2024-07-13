@@ -30,6 +30,16 @@ class EvoombaCollisionsHandler(EnemyCollisionsHandler):
         self._temp_rect.update(hero_rect)
 
         if self._temp_rect.colliderect(enemy_rect):
+            if hero.is_borracho():
+                self.enemy.set_index(0)
+                self.enemy.set_state(self.enemy_state)
+                self.enemy.set_is_touchable(False)
+                self.dispose_time = time.time() + self.DISPOSE_DELAY
+                return False
+
+            if hero.is_invulnerable():
+                return True
+
             if (
                 self._temp_rect.bottom < enemy_rect.centery
                 and hero.get_hero_state() != HeroState.DEAD
