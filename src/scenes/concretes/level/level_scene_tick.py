@@ -64,7 +64,10 @@ class LevelSceneTick(Tick):
             }
 
         hero.update(
-            auxiliar_game_events, obstacles_manager.get_sprites(), camera
+            auxiliar_game_events,
+            obstacles_manager.get_sprites(),
+            enemies_manager.get_sprites(),
+            camera,
         )
         hero.animate()
 

@@ -1,5 +1,5 @@
 from abc import ABC
-from typing import Generic, List, Optional, TypeVar
+from typing import Generic, List, Optional, Sequence, TypeVar
 
 from pygame import Surface
 
@@ -27,3 +27,6 @@ class SpritesManager(Generic[T], IDrawable, IAnimate, ABC):
     def animate(self) -> None:
         for sprite in self.__sprites:
             sprite.animate()
+
+    def get_sequence(self) -> Sequence[T]:
+        return self.__sprites

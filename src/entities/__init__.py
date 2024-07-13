@@ -7,6 +7,7 @@ from .concretes import (
     Castle,
     Cloud,
     Coca,
+    CocaBall,
     Coin,
     CoinIcon,
     CollectedCoin,
@@ -15,6 +16,7 @@ from .concretes import (
     Evoomba,
     Flag,
     Hero,
+    ICocaBall,
     IEnemy,
     IHero,
     IPowerUp,
@@ -73,4 +75,6 @@ __all__ = [
     "Pastel",
     "IPowerUp",
     "PowerUpFactory",
+    "CocaBall",
+    "ICocaBall",
 ]

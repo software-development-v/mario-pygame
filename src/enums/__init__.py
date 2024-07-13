@@ -1,6 +1,8 @@
 from .background_type import BackgroundType
+from .coca_ball_states import CocaBallStates
 from .collected_type import CollectedType
 from .controller_input import ControllerInput
+from .direction import Direction
 from .element_sub_type import ElementSubType
 from .element_type import ElementType
 from .enemy_state import EnemyState
@@ -36,4 +38,6 @@ __all__ = [
     "EnemyState",
     "EnemyType",
     "PowerUpType",
+    "CocaBallStates",
+    "Direction",
 ]

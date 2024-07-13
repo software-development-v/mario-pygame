@@ -4,6 +4,7 @@ from .animations import (
     CollectedCoin,
     CollectedScore,
 )
+from .coca_ball import CocaBall, ICocaBall
 from .elements import (
     Block,
     Bush,
@@ -21,6 +22,8 @@ from .hero import Hero, IHero
 from .power_ups import Caiman, Coca, IPowerUp, Pastel, PowerUp
 
 __all__ = [
+    "CocaBall",
+    "ICocaBall",
     "Bush",
     "Cloud",
     "Enemy",

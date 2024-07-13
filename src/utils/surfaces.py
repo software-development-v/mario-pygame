@@ -3,6 +3,7 @@ from typing import Dict, List
 from pygame import Surface
 
 from src.enums import (
+    CocaBallStates,
     ElementSubType,
     ElementType,
     EnemyState,
@@ -181,6 +182,13 @@ from .assets import (
     PARIENTE_LVL_4_2_WALKING_2,
     PARIENTE_LVL_4_2_WALKING_3,
     PASTEL,
+    PIJCHU_BALL_1,
+    PIJCHU_BALL_2,
+    PIJCHU_BALL_3,
+    PIJCHU_BALL_4,
+    PIJCHU_BALL_BOOM_1,
+    PIJCHU_BALL_BOOM_2,
+    PIJCHU_BALL_BOOM_3,
     PIPE_BODY_STYLE_1,
     PIPE_BODY_STYLE_2,
     PIPE_BODY_STYLE_3,
@@ -492,4 +500,18 @@ power_ups: Dict[PowerUpType, List[Surface]] = {
     PowerUpType.PASTEL: [PASTEL],
     PowerUpType.CAIMAN: [ALCOHOL_CAIMAN],
     PowerUpType.COCA: [COCA_PLANT_1, COCA_PLANT_2],
+}
+
+coca_ball: Dict[CocaBallStates, List[Surface]] = {
+    CocaBallStates.MOVING: [
+        PIJCHU_BALL_1,
+        PIJCHU_BALL_2,
+        PIJCHU_BALL_3,
+        PIJCHU_BALL_4,
+    ],
+    CocaBallStates.DESTROYED: [
+        PIJCHU_BALL_BOOM_1,
+        PIJCHU_BALL_BOOM_2,
+        PIJCHU_BALL_BOOM_3,
+    ],
 }

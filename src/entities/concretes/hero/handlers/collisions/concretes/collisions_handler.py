@@ -1,4 +1,4 @@
-from typing import List
+from typing import Sequence
 
 from pygame import Rect
 
@@ -14,7 +14,7 @@ class CollisionsHandler(ICollisionsHandler):
         self.hero = hero
 
     def __handle_x_collisions(
-        self, hero_rect: Rect, obstacles: List[Element], dx: float
+        self, hero_rect: Rect, obstacles: Sequence[Element], dx: float
     ) -> float:
         if dx == 0:
             return dx
@@ -46,7 +46,7 @@ class CollisionsHandler(ICollisionsHandler):
         return dx
 
     def __handle_y_collisions(
-        self, hero_rect: Rect, obstacles: List[Element], dy: float
+        self, hero_rect: Rect, obstacles: Sequence[Element], dy: float
     ) -> float:
         if dy == 0:
             return dy
@@ -91,7 +91,11 @@ class CollisionsHandler(ICollisionsHandler):
         return dy
 
     def handle_collisions(
-        self, hero_rect: Rect, obstacles: List[Element], dx: float, dy: float
+        self,
+        hero_rect: Rect,
+        obstacles: Sequence[Element],
+        dx: float,
+        dy: float,
     ) -> tuple[float, float]:
         dx = self.__handle_x_collisions(hero_rect, obstacles, dx)
         dy = self.__handle_y_collisions(hero_rect, obstacles, dy)

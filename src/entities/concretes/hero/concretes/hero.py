@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Sequence
 
 from pygame import Rect, Surface, time
 
@@ -14,6 +14,7 @@ from src.utils import (
 )
 
 from ....abstractions import Element, Sprite
+from ....interfaces import ISprite
 from ..handlers import (
     ActionsHandler,
     CheckPointHandler,
@@ -29,6 +30,7 @@ from ..handlers import (
     WinHandler,
 )
 from ..interfaces import IHero
+from ..managers import CocaBallManager
 
 
 class Hero(Sprite, IHero):
@@ -65,6 +67,7 @@ class Hero(Sprite, IHero):
         self.__invulnerable_time: Optional[int] = None
         self.__prev_level: Optional[HeroLevel] = None
         self.__borracho_time: Optional[int] = None
+        self.__coca_ball_manager = CocaBallManager()
 
         super().__init__(
             position,
@@ -79,6 +82,12 @@ class Hero(Sprite, IHero):
 
     def _get_surfaces(self) -> List[Surface]:
         return self.__surfaces[self.__hero_level][self.__hero_state]
+
+    def get_pre_level(self) -> Optional[HeroLevel]:
+        return self.__prev_level
+
+    def get_coca_ball_manager(self) -> CocaBallManager:
+        return self.__coca_ball_manager
 
     def get_hero_level(self) -> HeroLevel:
         return self.__hero_level
@@ -155,9 +164,12 @@ class Hero(Sprite, IHero):
     def update(
         self,
         game_events: Dict[GameEvent, bool],
-        obstacles: List[Element],
+        obstacles: Sequence[Element],
+        enemies: Sequence[ISprite],
         camera: Camera,
     ) -> None:
+        self.__coca_ball_manager.update(obstacles, enemies)
+
         if (
             self.__borracho_time is not None
             and time.get_ticks() > self.__borracho_time
@@ -237,3 +249,19 @@ class Hero(Sprite, IHero):
 
         if index != 0:
             self.__hero_level = self.__levels[index - 1]
+
+    def draw(
+        self,
+        screen: Surface,
+        camera: Optional[Camera] = None,
+        x_rect_percent: float = 1,
+        y_rect_percent: float = 1,
+    ) -> None:
+        self.__coca_ball_manager.draw(screen, camera)
+
+        super().draw(screen, camera, x_rect_percent, y_rect_percent)
+
+    def animate(self) -> None:
+        self.__coca_ball_manager.animate()
+
+        super().animate()

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import Sequence
 
 from pygame import Rect
 
@@ -10,6 +10,10 @@ class ICollisionsHandler(ABC):
 
     @abstractmethod
     def handle_collisions(
-        self, hero_rect: Rect, obstacles: List[Element], dx: float, dy: float
+        self,
+        hero_rect: Rect,
+        obstacles: Sequence[Element],
+        dx: float,
+        dy: float,
     ) -> tuple[float, float]:
         pass

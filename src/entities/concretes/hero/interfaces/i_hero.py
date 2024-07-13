@@ -1,14 +1,23 @@
 from abc import ABC, abstractmethod
-from typing import Dict, List
+from typing import Dict, Optional, Sequence
 
 from src.enums import GameEvent, HeroAction, HeroLevel, HeroState
 from src.utils import Camera
 
 from ....abstractions import Element
 from ....interfaces import ISprite
+from ..managers import CocaBallManager
 
 
 class IHero(ISprite, ABC):
+    @abstractmethod
+    def get_coca_ball_manager(self) -> CocaBallManager:
+        pass
+
+    @abstractmethod
+    def get_pre_level(self) -> Optional[HeroLevel]:
+        pass
+
     @abstractmethod
     def get_hero_level(self) -> HeroLevel:
         pass
@@ -73,7 +82,8 @@ class IHero(ISprite, ABC):
     def update(
         self,
         game_events: Dict[GameEvent, bool],
-        obstacles: List[Element],
+        obstacles: Sequence[Element],
+        enemies: Sequence[ISprite],
         camera: Camera,
     ) -> None:
         pass
