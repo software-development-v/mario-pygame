@@ -1881,6 +1881,41 @@
             "subtype": "OVERWORLD_TERRAIN_BLOCK"
         },
         {
+            "position": [5950, 500],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
+            "position": [6000, 500],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
+            "position": [6050, 500],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
+            "position": [7000, 500],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
+            "position": [7050, 500],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
+            "position": [8000, 500],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
+            "position": [8050, 500],
+            "type": "COIN",
+            "subtype": "COIN"
+        },
+        {
             "position": [6050, 250],
             "type": "BLOCK",
             "subtype": "OVERWORLD_BLOCK"
