@@ -17,11 +17,17 @@ class WinHandler:
             self.__hero_down()
             return True
         elif (
-            11890 <= self.__hero.get_rect().x <= 12480
+            11890 <= self.__hero.get_rect().x < 12480
             and 660 <= self.__hero.get_rect().y <= 720
         ):
+            self.__hero.set_face_right(True)
             self.__move_to_door()
             return True
+        elif self.__hero.get_rect().x >= 12480:
+            self.__hero.set_hero_state(HeroState.IDLE)
+            self.__hero.set_vel_x(0)
+            return True
+
         return False
 
     def __hero_down(self):
@@ -54,6 +60,7 @@ class WinHandler:
                     HeroAction.WIN: False,
                     HeroAction.JUMPING: False,
                     HeroAction.RUNNING: True,
+                    HeroAction.DEAD: False,
                 }
             )
             self.__hero.set_hero_state(HeroState.RUN)
