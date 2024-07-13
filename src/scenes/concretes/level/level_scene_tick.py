@@ -69,7 +69,7 @@ class LevelSceneTick(Tick):
         camera.update(hero_rect.x, hero_rect.width)
 
         enemies_manager.update(camera, obstacles_manager.getElements())
-
+        self.__animation_manager.reset()
         if enemies_manager.if_there_a_collide_with_enemy(hero) == True:
             hero.set_index(0)
             hero.set_hero_state(HeroState.DEAD)
@@ -94,6 +94,7 @@ class LevelSceneTick(Tick):
 
             self.__level_manager.set_lives(self.__level_manager.get_lives() - 1)
             enemies_manager.reset_enemies()
+
 
             from ..transition_level import TransitionLevelScene
 

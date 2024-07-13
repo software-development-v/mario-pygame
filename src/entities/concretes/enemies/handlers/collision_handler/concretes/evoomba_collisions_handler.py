@@ -34,6 +34,7 @@ class EvoombaCollisionsHandler(EnemyCollisionsHandler):
                 self.enemy.set_state(self.enemy_state)
                 self.enemy.set_is_touchable(False)
                 hero.set_vel_y(self.HERO_BOUNCE_VELOCITY)
+                hero.set_is_bouncing(True)
                 self.dispose_time = time.time() + self.DISPOSE_DELAY
                 return False
             else:
