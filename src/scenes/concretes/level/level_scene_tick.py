@@ -48,7 +48,10 @@ class LevelSceneTick(Tick):
 
         auxiliar_game_events = game_events
 
-        if self.__level_manager.is_win():
+        if (
+            self.__level_manager.is_win()
+            or self.__level_manager.get_hero().get_actions()[HeroAction.DEAD]
+        ):
             auxiliar_game_events = {
                 GameEvent.UP: False,
                 GameEvent.DOWN: False,
@@ -73,6 +76,7 @@ class LevelSceneTick(Tick):
         if enemies_manager.if_there_a_collide_with_enemy(hero) == True:
             hero.set_index(0)
             hero.set_hero_state(HeroState.DEAD)
+            hero.set_action(HeroAction.DEAD, True)
 
         self.__animation_manager.animate()
 
@@ -87,9 +91,12 @@ class LevelSceneTick(Tick):
             self.__level_manager.set_current_time(current_time)
             self.__level_manager.set_score(score)
 
+        if self.__level_manager.get_current_time() <= 0:
+            hero.set_action(HeroAction.DEAD, True)
+
         if (
-            hero.get_hero_state() == HeroState.DEAD
-            or self.__level_manager.get_current_time() <= 0
+            (hero.get_hero_state() == HeroState.DEAD)
+            and hero.get_rect().y > 900
         ) and not self.__level_manager.is_win():
 
             self.__level_manager.set_lives(self.__level_manager.get_lives() - 1)
