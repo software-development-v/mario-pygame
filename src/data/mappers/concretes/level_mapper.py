@@ -111,8 +111,20 @@ class LevelMapper(ILevelMapper):
 
         return mappedEnemies
 
-    def _map_power_ups(self, _power_ups: List[Dict[str, Any]]) -> List[Sprite]:
+    def _map_power_ups(self, power_ups: List[Dict[str, Any]]) -> List[Sprite]:
         return []
+        # mappedPowerUps: List[IPowerUp] = []
+        #
+        # for power_up in power_ups:
+        #     position = Position(enemy["position"][0], enemy["position"][1])
+        #     mappedPowerUps.append(
+        #         self.power_up_factory.create(
+        #             PowerUpType(power_up["type"]),
+        #             position,
+        #         )
+        #     )
+        #
+        # return mappedPowerUps
 
 
 def adjust_positions(elements: List[Dict[str, Any]], scale: float):

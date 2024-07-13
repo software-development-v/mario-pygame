@@ -3,14 +3,13 @@ from typing import Generic, TypeVar
 
 from .i_element_observer import IElementObserver
 
-
 T = TypeVar("T")
 
 
 class IObservableElement(ABC, Generic[T]):
 
     @abstractmethod
-    def set_observer(self, observer: IElementObserver[T])-> None:
+    def set_observer(self, observer: IElementObserver[T]) -> None:
         pass
 
     @abstractmethod

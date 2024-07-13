@@ -3,13 +3,12 @@ from typing import Dict, List
 
 from pygame import Surface
 
-from src.entities.concretes.hero.interfaces.i_hero import IHero
 from src.enums import EnemyState, SpriteEventType
 from src.utils import Camera, Position
 
 from ....abstractions import Element
-from ...enemies.handlers import EnemyMovementHandler
-from ...enemies.handlers.collision_handler import IEnemyCollisionsHandler
+from ...hero import IHero
+from ..handlers import EnemyMovementHandler, IEnemyCollisionsHandler
 from ..interfaces import IEnemy
 
 
@@ -56,9 +55,7 @@ class Enemy(IEnemy, ABC):
 
     def set_state(self, state: EnemyState):
         if state == EnemyState.DEAD:
-            self.notify_observer(
-                (self, [SpriteEventType.COLLECTED_SCORE])
-            )
+            self.notify_observer((self, [SpriteEventType.COLLECTED_SCORE]))
             self.state = state
 
     def get_face_right(self):

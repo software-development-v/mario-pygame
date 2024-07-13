@@ -1,8 +1,8 @@
 from .concretes import (
+    HeroActionDead,
     HeroActionIdle,
     HeroActionRun,
     HeroActionWin,
-    HeroActionDead
 )
 from .interfaces import IHeroActionStrategy
 

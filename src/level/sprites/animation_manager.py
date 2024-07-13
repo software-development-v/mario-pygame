@@ -3,17 +3,17 @@ from typing import List, Tuple
 from src.entities import (
     Animation,
     AnimationCompose,
+    Coin,
     CollectedCoin,
     CollectedScore,
+    Enemy,
     IElementObserver,
     Sprite,
-    Enemy,
-    Coin,
 )
-
+from src.entities.concretes.hero import IHero
 from src.enums import SpriteEventType
 from src.utils import Position
-from src.entities.concretes.hero import IHero
+
 from ..abstractions import SpritesManager
 
 
@@ -72,7 +72,6 @@ class AnimationManager(
                 animations.append(CollectedScore(pos, sprite.get_value()))
 
         return animations
-
 
     def reset(self):
         self.__bouncing_counter = 0

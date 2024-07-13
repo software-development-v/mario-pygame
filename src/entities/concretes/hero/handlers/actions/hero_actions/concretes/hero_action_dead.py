@@ -1,4 +1,4 @@
-from src.enums import HeroAction, HeroState, HeroLevel
+from src.enums import HeroAction, HeroLevel, HeroState
 
 from .....interfaces import IHero
 from ..interfaces import IHeroActionStrategy

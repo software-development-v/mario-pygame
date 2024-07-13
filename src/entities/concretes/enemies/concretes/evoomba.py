@@ -12,7 +12,7 @@ class Evoomba(Enemy):
             position=position,
             enemyState=EnemyState.WALKING,
             collision_handler=EvoombaCollisionsHandler(self),
-            value=100
+            value=100,
         )
 
     def update_state(self):

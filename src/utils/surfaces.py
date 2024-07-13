@@ -2,14 +2,23 @@ from typing import Dict, List
 
 from pygame import Surface
 
-from src.enums import ElementSubType, ElementType, EnemyState, EnemyType
+from src.enums import (
+    ElementSubType,
+    ElementType,
+    EnemyState,
+    EnemyType,
+    PowerUpType,
+)
 
 from .assets import (
+    ALCOHOL_CAIMAN,
     BIG_BUSH,
     BIG_CLOUD,
     BIG_MOUNTAIN,
     BIG_TREE,
     CASTLE,
+    COCA_PLANT_1,
+    COCA_PLANT_2,
     COIN_1,
     COIN_2,
     COIN_3,
@@ -33,6 +42,7 @@ from .assets import (
     MEDIUM_TREE,
     OVERWORLD_BLOCK,
     OVERWORLD_TERRAIN_BLOCK,
+    PASTEL,
     PIPE_BODY_STYLE_1,
     PIPE_BODY_STYLE_2,
     PIPE_BODY_STYLE_3,
@@ -121,4 +131,10 @@ enemies: Dict[EnemyType, Dict[EnemyState, List[Surface]]] = {
         EnemyState.WALKING: [EVOOMBA_WALKING_1, EVOOMBA_WALKING_2],
         EnemyState.DEAD: [EVOOMBA_DIED],
     },
+}
+
+power_ups: Dict[PowerUpType, List[Surface]] = {
+    PowerUpType.PASTEL: [PASTEL],
+    PowerUpType.CAIMAN: [ALCOHOL_CAIMAN],
+    PowerUpType.COCA: [COCA_PLANT_1, COCA_PLANT_2],
 }

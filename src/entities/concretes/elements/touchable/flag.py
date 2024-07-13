@@ -91,8 +91,6 @@ class Flag(InteractiveElement):
             sprite.set_action(HeroAction.WIN, True)
             self.__fix_hero_position(sprite)
             self.set_value(self.__points)
-            self.notify_observer((
-            self,[SpriteEventType.COLLECTED_SCORE])
-            )
+            self.notify_observer((self, [SpriteEventType.COLLECTED_SCORE]))
             sprite.set_collided_win(True)
             sprite.set_face_right(True)

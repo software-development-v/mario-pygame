@@ -1,4 +1,3 @@
-from .sprite_event_type import SpriteEventType
 from .background_type import BackgroundType
 from .collected_type import CollectedType
 from .controller_input import ControllerInput
@@ -13,7 +12,9 @@ from .hero_state import HeroState
 from .hero_type import HeroType
 from .keyboard_input import KeyboardInput
 from .level import Level
+from .power_up_type import PowerUpType
 from .scene_action import SceneAction
+from .sprite_event_type import SpriteEventType
 from .world import World
 
 __all__ = [
@@ -34,4 +35,5 @@ __all__ = [
     "SpriteEventType",
     "EnemyState",
     "EnemyType",
+    "PowerUpType",
 ]

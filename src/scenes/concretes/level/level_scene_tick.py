@@ -2,12 +2,9 @@ from typing import Callable, Dict
 
 from pygame import Rect, time
 
-from src.enums import GameEvent, HeroState, SceneAction
-from src.enums.hero_action import HeroAction
+from src.enums import GameEvent, HeroAction, HeroState, SceneAction
 from src.level import AnimationManager, ILevelManager
-from src.utils import TO_SECONDS
-from src.utils.constants import TIME_POINTS
-from src.utils.high_score_manager import update_score
+from src.utils import TIME_POINTS, TO_SECONDS, update_score
 
 from ...abstractions import Tick
 from ..victory_cinematic.victory_cinematic import VictoryCinematic
@@ -73,7 +70,8 @@ class LevelSceneTick(Tick):
 
         enemies_manager.update(camera, obstacles_manager.getElements())
         self.__animation_manager.reset()
-        if enemies_manager.if_there_a_collide_with_enemy(hero) == True:
+
+        if enemies_manager.if_there_a_collide_with_enemy(hero):
             hero.set_index(0)
             hero.set_hero_state(HeroState.DEAD)
             hero.set_action(HeroAction.DEAD, True)
@@ -86,6 +84,7 @@ class LevelSceneTick(Tick):
         ):
             if self.__finish_time == -1:
                 self.__finish_time = self.__level_manager.get_current_time()
+
             current_time = self.__level_manager.get_current_time() - 1
             score = self.__level_manager.get_score() + TIME_POINTS
             self.__level_manager.set_current_time(current_time)
@@ -101,7 +100,6 @@ class LevelSceneTick(Tick):
 
             self.__level_manager.set_lives(self.__level_manager.get_lives() - 1)
             enemies_manager.reset_enemies()
-
 
             from ..transition_level import TransitionLevelScene
 
@@ -120,23 +118,20 @@ class LevelSceneTick(Tick):
             and (hero.get_rect().x >= 12480 and hero.get_rect().y >= 660)
             and self.__level_manager.get_current_time() == 0
         ):
-            self.__victory_manage()
+            print("WIN")
+            self.__victory_manager()
         elif (
             hero.get_hero_state() == HeroState.DOWN
             and hero.get_actions()[HeroAction.WIN]
         ):
             self.__level_manager.win()
 
-    def __victory_manage(self) -> None:
-        number = str(self.__finish_time)
-        last_number = number[-1]
-
-        if last_number == "1" or last_number == "3" or last_number == "6":
-            self._dispatcher[SceneAction.SET_NEXT_SCENE](
-                VictoryCinematic(
-                    self._dispatcher, self.__finish_time, self.__level_manager
-                )
+    def __victory_manager(self) -> None:
+        self._dispatcher[SceneAction.SET_NEXT_SCENE](
+            VictoryCinematic(
+                self._dispatcher, self.__finish_time, self.__level_manager
             )
+        )
 
         update_score(self.__level_manager.get_score())
 

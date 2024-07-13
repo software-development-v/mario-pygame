@@ -12,7 +12,7 @@ class Valvoopa(Enemy):
             position=position,
             enemyState=EnemyState.WALKING,
             collision_handler=ValvoopaCollisionsHandler(self),
-            value=200
+            value=200,
         )
 
     def update_state(self):
