@@ -10,7 +10,6 @@ from src.utils import Camera, Position
 from ....abstractions import Element
 from ...enemies.handlers import EnemyMovementHandler
 from ...enemies.handlers.collision_handler import IEnemyCollisionsHandler
-from ...hero import IHero
 from ..interfaces import IEnemy
 
 

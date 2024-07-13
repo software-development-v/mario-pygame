@@ -2,16 +2,14 @@ import time
 
 from pygame import Rect
 
-from src.enums.hero_state import HeroState
-
-from .......enums import EnemyState
+from .......enums import EnemyState, HeroState
 from .....hero import IHero
 from ....interfaces import IEnemy
 from ..concretes import EnemyCollisionsHandler
 
 
 class EvoombaCollisionsHandler(EnemyCollisionsHandler):
-    HERO_BOUNCE_VELOCITY = -20
+    HERO_BOUNCE_VELOCITY = -7
     DISPOSE_DELAY = 1
 
     __slots__ = ("enemy", "dispose_time", "_temp_rect")

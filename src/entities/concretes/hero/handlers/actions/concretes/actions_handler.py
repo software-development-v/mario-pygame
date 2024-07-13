@@ -8,7 +8,6 @@ from src.enums import GameEvent, HeroAction
 from ....interfaces import IHero
 from ..hero_actions import (
     HeroActionIdle,
-    HeroActionJump,
     HeroActionRun,
     HeroActionWin,
     IHeroActionStrategy,
@@ -25,13 +24,6 @@ class ActionsHandler(IActionsHandler):
         hero_action_strategy: Optional[IHeroActionStrategy] = None
 
         if (
-            game_events[GameEvent.UP]
-            and not hero_actions[HeroAction.JUMPING]
-            and not hero_actions[HeroAction.WIN]
-            and not hero_actions[HeroAction.DEAD]
-        ):
-            hero_action_strategy = HeroActionJump()
-        elif (
             (game_events[GameEvent.LEFT] or game_events[GameEvent.RIGHT])
             and not hero_actions[HeroAction.JUMPING]
             and not hero_actions[HeroAction.RUNNING]
