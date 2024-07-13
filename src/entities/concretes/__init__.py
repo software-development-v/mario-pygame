@@ -18,6 +18,7 @@ from .elements import (
 )
 from .enemies import Enemy, Evoomba, IEnemy, Valvoopa
 from .hero import Hero, IHero
+from .power_ups import Caiman, Coca, IPowerUp, Pastel, PowerUp
 
 __all__ = [
     "Bush",
@@ -40,4 +41,9 @@ __all__ = [
     "Evoomba",
     "Valvoopa",
     "IHero",
+    "PowerUp",
+    "Caiman",
+    "Coca",
+    "Pastel",
+    "IPowerUp",
 ]

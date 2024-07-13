@@ -11,7 +11,4 @@ class ObstaclesManager(SpritesManager[Element]):
         elements: List[Element],
     ) -> None:
         self.__elements = elements
-        super().__init__(elements)
-
-    def getElements(self) -> List[Element]:
-        return self.__elements
+        super().__init__(self.__elements)

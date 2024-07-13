@@ -3361,5 +3361,21 @@
             "subtype": "PIPE_HEAD_BIG"
         }
     ],
-    "power_ups": []
+    "power_ups": [
+        {
+            "position": [500, 500],
+            "type": "PASTEL",
+            "subtype": ""
+        },
+        {
+            "position": [570, 500],
+            "type": "COCA",
+            "subtype": ""
+        },
+        {
+            "position": [640, 500],
+            "type": "CAIMAN",
+            "subtype": ""
+        }
+    ]
 }

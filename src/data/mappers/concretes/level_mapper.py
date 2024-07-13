@@ -1,13 +1,21 @@
 from json import load
 from typing import Any, Dict, List, Optional
 
-from src.entities import Element, ElementFactory, EnemyFactory, IEnemy, Sprite
+from src.entities import (
+    Element,
+    ElementFactory,
+    EnemyFactory,
+    IEnemy,
+    IPowerUp,
+    PowerUpFactory,
+)
 from src.enums import (
     BackgroundType,
     ElementSubType,
     ElementType,
     EnemyType,
     Level,
+    PowerUpType,
     World,
 )
 from src.utils import BLACK_COLOR, LEVELS_DIR, SCALE, Position
@@ -24,6 +32,7 @@ class LevelMapper(ILevelMapper):
     def __init__(self) -> None:
         self.element_factory = ElementFactory()
         self.enemy_factory = EnemyFactory()
+        self.power_up_factory = PowerUpFactory()
 
     def map_level(self, world: World, level: Level) -> ILevelData:
         data = self.read_file_level(world, level)
@@ -111,20 +120,21 @@ class LevelMapper(ILevelMapper):
 
         return mappedEnemies
 
-    def _map_power_ups(self, power_ups: List[Dict[str, Any]]) -> List[Sprite]:
-        return []
-        # mappedPowerUps: List[IPowerUp] = []
-        #
-        # for power_up in power_ups:
-        #     position = Position(enemy["position"][0], enemy["position"][1])
-        #     mappedPowerUps.append(
-        #         self.power_up_factory.create(
-        #             PowerUpType(power_up["type"]),
-        #             position,
-        #         )
-        #     )
-        #
-        # return mappedPowerUps
+    def _map_power_ups(self, power_ups: List[Dict[str, Any]]) -> List[IPowerUp]:
+        mappedPowerUps: List[IPowerUp] = []
+
+        for power_up in power_ups:
+            position = Position(
+                power_up["position"][0], power_up["position"][1]
+            )
+            mappedPowerUps.append(
+                self.power_up_factory.create(
+                    position,
+                    PowerUpType(power_up["type"]),
+                )
+            )
+
+        return mappedPowerUps
 
 
 def adjust_positions(elements: List[Dict[str, Any]], scale: float):

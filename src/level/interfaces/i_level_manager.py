@@ -6,7 +6,7 @@ from src.entities import Hero
 from src.enums import HeroType, Level, World
 from src.utils import Camera
 
-from ..sprites import EnemyManager, ObstaclesManager
+from ..sprites import EnemyManager, ObstaclesManager, PowerUpManager
 
 
 class ILevelManager(ABC):
@@ -24,6 +24,10 @@ class ILevelManager(ABC):
 
     @abstractmethod
     def get_enemy_manager(self) -> EnemyManager:
+        pass
+
+    @abstractmethod
+    def get_power_up_manager(self) -> PowerUpManager:
         pass
 
     @abstractmethod

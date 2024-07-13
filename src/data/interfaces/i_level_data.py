@@ -3,7 +3,7 @@ from typing import List, Optional
 
 from pygame import Surface
 
-from src.entities import Element, IEnemy, Sprite
+from src.entities import Element, IEnemy, IPowerUp
 from src.enums import Level, World
 from src.utils import Position
 
@@ -50,5 +50,5 @@ class ILevelData(ABC):
         pass
 
     @abstractmethod
-    def get_power_ups(self) -> List[Sprite]:
+    def get_power_ups(self) -> List[IPowerUp]:
         pass

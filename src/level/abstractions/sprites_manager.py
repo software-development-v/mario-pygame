@@ -3,10 +3,10 @@ from typing import Generic, List, Optional, TypeVar
 
 from pygame import Surface
 
-from src.entities import IAnimate, IDrawable, Sprite
+from src.entities import IAnimate, IDrawable, ISprite
 from src.utils import Camera
 
-T = TypeVar("T", bound=Sprite)
+T = TypeVar("T", bound=ISprite)
 
 
 class SpritesManager(Generic[T], IDrawable, IAnimate, ABC):

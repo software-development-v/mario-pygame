@@ -2,7 +2,7 @@ from typing import List, Optional
 
 from pygame import Surface
 
-from src.entities import Element, IEnemy, Sprite
+from src.entities import Element, IEnemy, IPowerUp
 from src.enums import Level, World
 from src.utils import Position
 
@@ -23,7 +23,7 @@ class LevelData(ILevelData):
         check_point: Optional[Position],
         enemies: List[IEnemy],
         elements: List[Element],
-        power_ups: List[Sprite],
+        power_ups: List[IPowerUp],
     ) -> None:
 
         self.__world: World = world
@@ -36,7 +36,7 @@ class LevelData(ILevelData):
         self.__check_point: Optional[Position] = check_point
         self.__enemies: List[IEnemy] = enemies
         self.__elements: List[Element] = elements
-        self.__power_ups: List[Sprite] = power_ups
+        self.__power_ups: List[IPowerUp] = power_ups
 
     def get_world(self) -> World:
         return self.__world
@@ -68,5 +68,5 @@ class LevelData(ILevelData):
     def get_elements(self) -> List[Element]:
         return self.__elements
 
-    def get_power_ups(self) -> List[Sprite]:
+    def get_power_ups(self) -> List[IPowerUp]:
         return self.__power_ups

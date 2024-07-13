@@ -3,8 +3,10 @@ from .concretes import (
     AnimationCompose,
     Block,
     Bush,
+    Caiman,
     Castle,
     Cloud,
+    Coca,
     Coin,
     CoinIcon,
     CollectedCoin,
@@ -15,18 +17,22 @@ from .concretes import (
     Hero,
     IEnemy,
     IHero,
+    IPowerUp,
     MisteryBox,
     Mountain,
+    Pastel,
     Pipe,
+    PowerUp,
     Tree,
     Valvoopa,
 )
-from .factories import ElementFactory, EnemyFactory
+from .factories import ElementFactory, EnemyFactory, PowerUpFactory
 from .interfaces import (
     IAnimate,
     IDrawable,
     IElementObserver,
     IObservableElement,
+    ISprite,
 )
 
 __all__ = [
@@ -37,6 +43,7 @@ __all__ = [
     "Enemy",
     "IEnemy",
     "Sprite",
+    "ISprite",
     "Element",
     "InteractiveElement",
     "Bush",
@@ -60,4 +67,10 @@ __all__ = [
     "CollectedScore",
     "Animation",
     "AnimationCompose",
+    "PowerUp",
+    "Caiman",
+    "Coca",
+    "Pastel",
+    "IPowerUp",
+    "PowerUpFactory",
 ]

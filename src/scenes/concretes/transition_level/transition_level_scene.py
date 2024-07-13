@@ -8,6 +8,7 @@ from src.level import (
     ILevelManager,
     LevelManager,
     ObstaclesManager,
+    PowerUpManager,
 )
 from src.utils import SCREEN_CAMERA_THRESHOLD, SCREEN_VIEWPORT_WIDTH, Camera
 
@@ -62,6 +63,7 @@ class TransitionLevelScene(Scene):
             hero,
             ObstaclesManager(level_data.get_elements()),
             EnemyManager(level_data.get_enemies()),
+            PowerUpManager(level_data.get_power_ups()),
             world,
             level,
             level_data.get_background(),

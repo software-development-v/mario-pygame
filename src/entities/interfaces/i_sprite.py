@@ -49,3 +49,27 @@ class ISprite(IDrawable, IAnimate, ABC):
     @abstractmethod
     def reset(self) -> None:
         pass
+
+    @abstractmethod
+    def dispose(self) -> None:
+        pass
+
+    @abstractmethod
+    def is_disposed(self) -> bool:
+        pass
+
+    @abstractmethod
+    def get_value(self) -> int:
+        pass
+
+    @abstractmethod
+    def set_value(self, value: int) -> None:
+        pass
+
+    @abstractmethod
+    def is_visible(self) -> bool:
+        pass
+
+    @abstractmethod
+    def remove_observer(self):
+        pass

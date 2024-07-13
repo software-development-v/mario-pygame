@@ -29,6 +29,9 @@ class LevelSceneRender(Render):
         obstacle_manager = self.__level_manager.get_obstacles_manager()
         obstacle_manager.draw(self._screen, camera)
 
+        power_up_manager = self.__level_manager.get_power_up_manager()
+        power_up_manager.draw(self._screen, camera)
+
         self.__animation_manager.draw(self._screen, camera)
 
         enemy_manager = self.__level_manager.get_enemy_manager()
