@@ -480,7 +480,7 @@ enemies: Dict[EnemyType, Dict[EnemyState, List[Surface]]] = {
     EnemyType.VALVOOPA: {
         EnemyState.WALKING: [VALVOOPA_WALKING_1, VALVOOPA_WALKING_2],
         EnemyState.COMING_OUT: [VALVOOPA_COMING_OUT_1, VALVOOPA_COMING_OUT_2],
-        EnemyState.INSIDE: [VALVOOPA_INSIDE],
+        EnemyState.DEAD: [VALVOOPA_INSIDE],
     },
     EnemyType.EVOOMBA: {
         EnemyState.WALKING: [EVOOMBA_WALKING_1, EVOOMBA_WALKING_2],

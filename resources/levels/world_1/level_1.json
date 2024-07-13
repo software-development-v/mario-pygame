@@ -3363,19 +3363,19 @@
     ],
     "power_ups": [
         {
-            "position": [500, 500],
+            "position": [1260, 470],
             "type": "PASTEL",
             "subtype": ""
         },
         {
-            "position": [650, 500],
+            "position": [4679, 470],
             "type": "COCA",
             "subtype": ""
         },
         {
-            "position": [800, 500],
+            "position": [6060, 470],
             "type": "CAIMAN",
-            "subtype": ""
+            "subtype":""
         }
     ]
 }
