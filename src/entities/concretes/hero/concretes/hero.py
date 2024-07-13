@@ -59,6 +59,7 @@ class Hero(Sprite, IHero):
         self.__check_point_handler = CheckPointHandler(self)
         self.__jump_handler = JumpHandler(self)
         self.__collided_win: bool = False
+        self.__is_bouncing: bool = False
 
         super().__init__(
             position,
@@ -118,6 +119,14 @@ class Hero(Sprite, IHero):
     def set_collided_win(self, value: bool) -> None:
         self.__collided_win = value
 
+
+
+    def is_bouncing(self) -> bool:
+        return self.__is_bouncing
+
+    def set_is_bouncing(self, is_bouncing: bool) -> None:
+        self.__is_bouncing = is_bouncing
+
     def reset(self) -> None:
         self.set_hero_level(HeroLevel.NORMAL)
         self.set_hero_state(HeroState.IDLE)
@@ -131,6 +140,7 @@ class Hero(Sprite, IHero):
                 HeroAction.DEAD: False,
             }
         )
+        self.set_is_bouncing(False)
         self.set_face_right(True)
         super().reset()
 
@@ -161,3 +171,4 @@ class Hero(Sprite, IHero):
         self.__jump_handler.handle_hero_jump(game_events)
         self.__damage_handler.handle_damage()
         self.__check_point_handler.handle_check_point()
+

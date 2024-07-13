@@ -5,7 +5,7 @@ from ..interfaces import ILevelManager
 
 
 class ScoreObserver(IElementObserver[int]):
-    def __init__(self, level_manager: ILevelManager) -> None:
+    def __init__(self, level_manager: "ILevelManager") -> None:
         self.__level_manager = level_manager
 
     def notify(self, value: int) -> None:

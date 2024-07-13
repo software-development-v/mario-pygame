@@ -1,6 +1,7 @@
 from typing import Optional
 
-from src.enums import CollectedType, ElementSubType, ElementType, HeroAction
+from src.enums import ElementSubType, ElementType, HeroAction
+from src.enums.sprite_event_type import SpriteEventType
 from src.utils import FLAG_POSITION, Position, elements
 
 from ....abstractions import InteractiveElement
@@ -89,8 +90,9 @@ class Flag(InteractiveElement):
         if isinstance(sprite, Hero) and not sprite.get_collided_win():
             sprite.set_action(HeroAction.WIN, True)
             self.__fix_hero_position(sprite)
-            self.get_observer()[CollectedType.COLLECTED_SCORE].notify(
-                self.__points
+            self.set_value(self.__points)
+            self.notify_observer((
+            self,[SpriteEventType.COLLECTED_SCORE])
             )
             sprite.set_collided_win(True)
             sprite.set_face_right(True)

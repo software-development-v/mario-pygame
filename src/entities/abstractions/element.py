@@ -16,6 +16,7 @@ class Element(Sprite, ABC):
         is_touchable: bool = True,
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
+        value: int = 0,
     ) -> None:
         self.__surfaces: List[Surface] = images
         self.__is_touchable = is_touchable
@@ -23,6 +24,7 @@ class Element(Sprite, ABC):
             position,
             x_rect_percent=x_rect_percent,
             y_rect_percent=y_rect_percent,
+            value=value,
         )
 
     def _get_surfaces(self) -> List[Surface]:

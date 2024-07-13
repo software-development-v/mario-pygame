@@ -62,6 +62,14 @@ class IHero(ISprite, ABC):
         pass
 
     @abstractmethod
+    def is_bouncing(self) -> bool:
+        pass
+
+    @abstractmethod
+    def set_is_bouncing(self, is_bouncing: bool) -> None:
+        pass
+
+    @abstractmethod
     def update(
         self,
         game_events: Dict[GameEvent, bool],

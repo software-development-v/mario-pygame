@@ -74,6 +74,7 @@ class CollisionsHandler(ICollisionsHandler):
                 self.hero.set_vel_y(0)
             elif self.hero.get_vel_y() >= 0:
                 floor_collide = True
+                self.hero.set_is_bouncing(False)
                 dy = obstacle_rect.top - hero_rect.bottom
                 self.hero.set_vel_y(0)
                 self.hero.set_action(HeroAction.JUMPING, False)
