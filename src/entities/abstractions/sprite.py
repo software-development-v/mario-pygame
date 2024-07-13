@@ -1,15 +1,27 @@
 from abc import ABC, abstractmethod
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from pygame import Rect, Surface, time, transform
 from pygame.sprite import Sprite as PygameSprite
 
+from src.entities.interfaces.observables.i_element_observer import (
+    IElementObserver,
+)
+from src.entities.interfaces.observables.i_observable_element import (
+    IObservableElement,
+)
+from src.enums import SpriteEventType
 from src.utils import ANIMATION_INTERVAL, INIT_IMAGE_INDEX, Camera, Position
 
 from ..interfaces import ISprite
 
 
-class Sprite(PygameSprite, ISprite, ABC):
+class Sprite(
+    PygameSprite,
+    ISprite,
+    IObservableElement[Tuple["Sprite", List[SpriteEventType]]],
+    ABC,
+):
     def __init__(
         self,
         init_position: Position,
@@ -17,6 +29,7 @@ class Sprite(PygameSprite, ISprite, ABC):
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
         check_point: Optional[Position] = None,
+        value: int = 0,
     ):
         super().__init__()
         self.__init_position: Position = init_position
@@ -28,6 +41,10 @@ class Sprite(PygameSprite, ISprite, ABC):
         self.__animation_interval: int = animation_interval
         self.__disposed = False
         self.__visible = True
+        self.__value = value
+        self.__observer: Optional[
+            IElementObserver[Tuple["Sprite", List[SpriteEventType]]]
+        ]
 
         self.__image_rect: Rect = self.__get_image().get_rect(
             topleft=init_position.to_tuple()
@@ -152,7 +169,7 @@ class Sprite(PygameSprite, ISprite, ABC):
         x_rect_percent: float = 1,
         y_rect_percent: float = 1,
     ) -> None:
-        if self.__visible == True:
+        if self.__visible:
             image = self.__get_image()
             self.__check_change_image(image, x_rect_percent, y_rect_percent)
 
@@ -185,3 +202,27 @@ class Sprite(PygameSprite, ISprite, ABC):
 
     def is_disposed(self) -> bool:
         return self.__disposed
+
+    def get_value(self) -> int:
+        return self.__value
+
+    def set_value(self, value: int) -> None:
+        self.__value = value
+
+    def is_visible(self) -> bool:
+        return self.__visible
+
+    def set_observer(
+        self,
+        observer: Optional[
+            IElementObserver[Tuple["Sprite", List[SpriteEventType]]]
+        ],
+    ):
+        self.__observer = observer
+
+    def remove_observer(self):
+        self.__observer = None
+
+    def notify_observer(self, event: Tuple["Sprite", List[SpriteEventType]]):
+        if self.__observer is not None:
+            self.__observer.notify(event)

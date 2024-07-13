@@ -1,6 +1,6 @@
 from typing import Optional
 
-from src.enums import AnimationType, ElementSubType, ElementType
+from src.enums import ElementSubType, ElementType, SpriteEventType
 from src.utils import Position, elements
 
 from ....abstractions import InteractiveElement
@@ -19,11 +19,12 @@ class Coin(InteractiveElement):
 
     def notify_observers(self, sprite: Optional[ISprite] = None) -> None:
         self._set_is_touchable(False)
-        self.animation_oberservers.notify(
+        self.notify_observer(
             (
                 self,
-                [AnimationType.COLLECTED_COIN, AnimationType.COLLECTED_SCORE],
+                [
+                    SpriteEventType.COLLECTED_COIN,
+                ],
             )
         )
-        super().notify_observers()
         self.dispose()

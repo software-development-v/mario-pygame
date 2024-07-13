@@ -7,7 +7,7 @@ from ..interfaces import ILevelManager
 
 
 class CoinObserver(IElementObserver[int]):
-    def __init__(self, level_manager: ILevelManager) -> None:
+    def __init__(self, level_manager: "ILevelManager") -> None:
         self.__level_manager = level_manager
         self.sound = mixer.Sound(COLLECTED_COIN_SOUND)
 

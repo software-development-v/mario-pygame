@@ -2,8 +2,8 @@ from typing import Callable, Dict
 
 from pygame import time
 
-from src.entities import Coin, InteractiveElement
-from src.enums import CollectedType, SceneAction
+from src.entities import InteractiveElement
+from src.enums import  SceneAction
 from src.level import (
     AnimationManager,
     CoinObserver,
@@ -22,7 +22,11 @@ class LevelScene(Scene):
         level_manager: ILevelManager,
         dispatcher: Dict[SceneAction, Callable[..., None]],
     ):
-        self.__animation_manager = AnimationManager()
+        self.__animation_manager = AnimationManager(
+            level_manager.get_hero(),
+            CoinObserver(level_manager),
+            ScoreObserver(level_manager),
+        )
         level_manager.set_start_tick(time.get_ticks())
         self.__configure_observers(level_manager)
 
@@ -33,16 +37,9 @@ class LevelScene(Scene):
         )
 
     def __configure_observers(self, level_manager: ILevelManager) -> None:
-        score_observer = ScoreObserver(level_manager)
-        coin_observer = CoinObserver(level_manager)
-
         for element in level_manager.get_obstacles_manager().get_sprites():
             if isinstance(element, InteractiveElement):
-                element.add_observer(
-                    CollectedType.COLLECTED_SCORE, score_observer
-                )
-                element.add_animation_oberver(self.__animation_manager)
-                if isinstance(element, Coin):
-                    element.add_observer(
-                        CollectedType.COLLECTED_COIN, coin_observer
-                    )
+                element.set_observer(self.__animation_manager)
+
+        for enemy in level_manager.get_enemy_manager().get_sprites():
+            enemy.set_observer(self.__animation_manager)

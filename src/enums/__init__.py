@@ -1,4 +1,4 @@
-from .animation_type import AnimationType
+from .sprite_event_type import SpriteEventType
 from .background_type import BackgroundType
 from .collected_type import CollectedType
 from .controller_input import ControllerInput
@@ -31,7 +31,7 @@ __all__ = [
     "SceneAction",
     "CollectedType",
     "HeroAction",
-    "AnimationType",
+    "SpriteEventType",
     "EnemyState",
     "EnemyType",
 ]

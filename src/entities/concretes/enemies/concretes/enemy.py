@@ -4,7 +4,7 @@ from typing import Dict, List
 from pygame import Surface
 
 from src.entities.concretes.hero.interfaces.i_hero import IHero
-from src.enums import EnemyState
+from src.enums import EnemyState, SpriteEventType
 from src.utils import Camera, Position
 
 from ....abstractions import Element
@@ -34,6 +34,7 @@ class Enemy(IEnemy, ABC):
         enemyState: EnemyState,
         surfaces: Dict[EnemyState, List[Surface]],
         collision_handler: IEnemyCollisionsHandler,
+        value: int = 0,
     ):
         self.surfaces = surfaces
         self.state = enemyState
@@ -45,7 +46,7 @@ class Enemy(IEnemy, ABC):
         self.vel_y = 0
         self.collisions_handler = collision_handler
         self.movement_handler = EnemyMovementHandler(self)
-        super().__init__(position)
+        super().__init__(position, value=value)
 
     def _get_surfaces(self) -> List[Surface]:
         return self.surfaces[self.state]
@@ -54,7 +55,11 @@ class Enemy(IEnemy, ABC):
         return self.state
 
     def set_state(self, state: EnemyState):
-        self.state = state
+        if state == EnemyState.DEAD:
+            self.notify_observer(
+                (self, [SpriteEventType.COLLECTED_SCORE])
+            )
+            self.state = state
 
     def get_face_right(self):
         return self.face_right
@@ -103,6 +108,7 @@ class Enemy(IEnemy, ABC):
         self.is_touchable = True
         self.speed = 2
         self.vel_y = 0
+        self.set_value(100)
         self.appear()
 
     def kill(self):
